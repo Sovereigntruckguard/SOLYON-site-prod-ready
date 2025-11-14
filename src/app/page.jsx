@@ -8,91 +8,95 @@ import PartnersCTA from "@/components/PartnersCTA";
 export default function Page() {
   return (
     <main className="space-y-24 pb-24">
-      {/* HERO – mantiene el slogan original */}
+      {/* HERO – mantiene el slogan original dentro del componente */}
       <Hero />
 
-      {/* BLOQUE 1: PROBLEMA */}
+      {/* 1. EL PROBLEMA QUE ESTAMOS ENFRENTANDO */}
       <section className="section space-y-6">
         <h2 className="font-display text-3xl md:text-4xl gradient-gold">
           El problema que estamos enfrentando
         </h2>
         <p className="text-gray-200 max-w-3xl">
-          LATAM está llena de talento, resiliencia y ganas, pero la mayoría de las personas no
-          tienen acceso a DeepTech real. La infraestructura, las herramientas y los modelos
-          avanzados siguen concentrados en manos de gigantes globales.
+          América Latina está llena de talento, resiliencia y creatividad, pero la mayoría de las personas
+          no tienen acceso a DeepTech real. La infraestructura, las herramientas y los modelos avanzados
+          siguen concentrados en manos de gigantes globales, lejos de los barrios, las calles y los emprendimientos
+          que necesitan esa tecnología para sobrevivir y crecer.
         </p>
 
         <div className="grid md:grid-cols-3 gap-6">
           <div className="card p-6">
             <h3 className="font-display text-xl gradient-gold">Desigualdad tecnológica</h3>
             <p className="text-gray-300 mt-2">
-              Millones de personas quedan por fuera de la nueva economía porque no tienen acceso
-              a tecnologías de inteligencia artificial y automatización de alto nivel.
+              Millones quedan por fuera de la nueva economía porque no pueden pagar plataformas ni equipos
+              pensados para realidades muy distintas a las nuestras.
             </p>
           </div>
           <div className="card p-6">
             <h3 className="font-display text-xl gradient-gold">Dependencia total</h3>
             <p className="text-gray-300 mt-2">
-              La mayoría de soluciones dependen de plataformas externas, sin soberanía de datos,
-              contexto ni dirección estratégica propia.
+              Dependemos de infraestructuras que no controlamos: datos, modelos y decisiones están fuera de LATAM.
             </p>
           </div>
           <div className="card p-6">
             <h3 className="font-display text-xl gradient-gold">Talento subutilizado</h3>
             <p className="text-gray-300 mt-2">
-              Hay una generación completa de latinos brillantes que no encuentra un puente
-              entre su realidad y la DeepTech que mueve el mundo.
+              Hay una generación completa de latinos brillantes que no encuentra un puente entre su realidad
+              y la DeepTech que está definiendo el futuro.
             </p>
           </div>
         </div>
       </section>
 
-      {/* BLOQUE 2: SOLUCIÓN */}
+      {/* 2. NUESTRA SOLUCIÓN: ECOSISTEMA COGNITIVO */}
       <section className="section space-y-6">
         <h2 className="font-display text-3xl md:text-4xl gradient-gold">
           Nuestra solución: un ecosistema cognitivo soberano
         </h2>
         <p className="text-gray-200 max-w-3xl">
-          SOLYON diseña un ecosistema DeepTech completo, donde el cerebro cognitivo (Arcanum),
-          el orquestador (Nexus) y las aplicaciones reales (Azoth, TruckBoss, EL-VIA, Vita)
-          trabajan juntos para resolver problemas concretos de negocio y de vida.
+          SOLYON construye un ecosistema DeepTech completo donde el cerebro cognitivo (Arcanum),
+          el orquestador (Nexus) y las aplicaciones especializadas (Azoth, TruckBoss, EL-VIA, Vita)
+          trabajan juntos para resolver problemas reales de negocio, educación y vida diaria.
         </p>
 
         <div className="grid md:grid-cols-4 gap-6">
           <div className="card p-6">
-            <h3 className="font-display text-lg gradient-gold">Motor cognitivo</h3>
+            <h3 className="font-display text-lg gradient-gold">Arcanum</h3>
             <p className="text-gray-300 mt-2">
-              Arcanum: memoria fractal, anti-alucinación y autoaprendizaje para tomar mejores decisiones.
+              Motor cognitivo con memoria fractal, anti-alucinación y autoaprendizaje, diseñado para decidir
+              con contexto profundo y precisión.
             </p>
           </div>
           <div className="card p-6">
-            <h3 className="font-display text-lg gradient-gold">Orquestación</h3>
+            <h3 className="font-display text-lg gradient-gold">Nexus</h3>
             <p className="text-gray-300 mt-2">
-              Nexus conecta agentes, datos y aplicaciones en flujos vivos, medibles y soberanos.
+              Orquestador de agentes, datos y flujos. Conecta todo el ecosistema y permite ejecutar estrategias
+              complejas de manera automatizada.
             </p>
           </div>
           <div className="card p-6">
-            <h3 className="font-display text-lg gradient-gold">Aplicaciones reales</h3>
+            <h3 className="font-display text-lg gradient-gold">Aplicaciones</h3>
             <p className="text-gray-300 mt-2">
-              Azoth, TruckBoss, EL-VIA, Vita y otros módulos que atacan problemas específicos con impacto real.
+              Azoth, TruckBoss, EL-VIA, Vita y nuevos módulos que operan directamente sobre seguros, logística,
+              educación y bienestar integral.
             </p>
           </div>
           <div className="card p-6">
-            <h3 className="font-display text-lg gradient-gold">Acceso simplificado</h3>
+            <h3 className="font-display text-lg gradient-gold">Acceso escalonado</h3>
             <p className="text-gray-300 mt-2">
-              Desde un Kit Digital accesible hasta soluciones enterprise, el ecosistema está diseñado para escalar.
+              Desde un Kit Digital accesible hasta soluciones enterprise y alianzas con grandes organizaciones:
+              misma tecnología, distinta profundidad.
             </p>
           </div>
         </div>
       </section>
 
-      {/* BLOQUE 3: IMPACTO */}
+      {/* 3. IMPACTO HUMANO */}
       <section className="section space-y-6">
         <h2 className="font-display text-3xl md:text-4xl gradient-gold">Impacto SOLYON</h2>
         <p className="text-gray-200 max-w-3xl">
-          Este ecosistema no es solo una plataforma tecnológica: es un puente para quienes el sistema
-          dejó atrás. Camioneros, emprendedores, autodidactas, familias completas que necesitan
-          herramientas reales para transformar su vida.
+          El núcleo de SOLYON no es solo código: es la decisión de que nadie se quede afuera de la revolución
+          tecnológica por su código postal, su acento o su historia. Todo lo que construimos está pensado
+          para volver la tecnología una extensión de la dignidad humana.
         </p>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -105,44 +109,43 @@ export default function Page() {
           <div className="card p-6 text-center">
             <h3 className="font-display text-3xl gradient-gold">3</h3>
             <p className="text-gray-300 mt-2">
-              Sectores clave: transporte, educación y transformación personal.
+              Sectores clave: transporte, educación y transformación personal, como puntos de entrada al cambio.
             </p>
           </div>
           <div className="card p-6 text-center">
             <h3 className="font-display text-3xl gradient-gold">1</h3>
             <p className="text-gray-300 mt-2">
-              Ecosistema que integra propósito, negocio y tecnología soberana.
+              Un mismo ecosistema que unifica propósito, negocio y tecnología soberana para toda una generación.
             </p>
           </div>
         </div>
       </section>
 
-      {/* BLOQUE 4: QUIÉNES SOMOS */}
+      {/* 4. QUIÉNES SOMOS Y DE DÓNDE VENIMOS */}
       <section className="section space-y-6">
         <h2 className="font-display text-3xl md:text-4xl gradient-gold">
           Quiénes somos y de dónde venimos
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="card p-6">
-            <h3 className="font-display text-xl gradient-gold">Origen</h3>
+            <h3 className="font-display text-xl gradient-gold">Desde la calle al DeepTech</h3>
             <p className="text-gray-300 mt-2">
-              SOLYON nace de la historia real de un latino que creció entre crisis, calle,
-              barras y lucha diaria, y que decidió convertir esa energía en un ecosistema DeepTech
-              soberano diseñado para los que nunca tuvieron acceso.
+              SOLYON nace de la historia de un joven que vio de cerca la violencia, la escasez y la injusticia,
+              y que decidió transformar su propia vida a través del código, la disciplina y la visión.
             </p>
           </div>
           <div className="card p-6">
-            <h3 className="font-display text-xl gradient-gold">Propósito</h3>
+            <h3 className="font-display text-xl gradient-gold">Un propósito innegociable</h3>
             <p className="text-gray-300 mt-2">
-              Empoderar a la comunidad latina y a los creadores independientes con tecnología soberana,
-              ayudándoles a construir empresas de alto rendimiento y una vida con propósito, sin tener
-              que pedirle permiso al sistema.
+              No venimos del privilegio, venimos del esfuerzo. Por eso nuestro compromiso es claro:
+              que la tecnología de más alto nivel deje de ser un lujo y se convierta en una herramienta
+              al servicio de quienes construyen el futuro desde abajo.
             </p>
           </div>
         </div>
       </section>
 
-      {/* BLOQUE 5: ROADMAP */}
+      {/* 5. HOJA DE RUTA – HACIA DÓNDE VAMOS */}
       <section className="section space-y-6">
         <h2 className="font-display text-3xl md:text-4xl gradient-gold">
           Hacia dónde vamos
@@ -150,44 +153,35 @@ export default function Page() {
         <div className="card p-6 grid md:grid-cols-5 gap-4 text-sm text-gray-200">
           <div>
             <h3 className="font-display text-base gradient-gold">2025</h3>
-            <p className="mt-1">
-              Arcanum y Nexus se consolidan como núcleo cognitivo del ecosistema SOLYON.
-            </p>
+            <p className="mt-1">Arcanum y Nexus se consolidan como núcleo cognitivo del ecosistema SOLYON.</p>
           </div>
           <div>
             <h3 className="font-display text-base gradient-gold">2026</h3>
-            <p className="mt-1">
-              Expansión de Azoth y TruckBoss en el mercado de transporte y servicios en EE.UU.
-            </p>
+            <p className="mt-1">Azoth y TruckBoss aceleran la transformación del transporte y los seguros en EE.UU. y LATAM.</p>
           </div>
           <div>
             <h3 className="font-display text-base gradient-gold">2027</h3>
-            <p className="mt-1">
-              Plataforma de agentes autónomos SOLYON para empresas y proyectos de alto impacto.
-            </p>
+            <p className="mt-1">Lanzamiento de la plataforma de agentes autónomos SOLYON para empresas y gobiernos.</p>
           </div>
           <div>
             <h3 className="font-display text-base gradient-gold">2028</h3>
-            <p className="mt-1">
-              IA educativa para LATAM, combinando EL-VIA, Vita y Foundation.
-            </p>
+            <p className="mt-1">IA educativa SOLYON para millones de estudiantes y trabajadores en LATAM.</p>
           </div>
           <div>
             <h3 className="font-display text-base gradient-gold">2030</h3>
-            <p className="mt-1">
-              SOLYON Foundation operando en múltiples países, becando y conectando talento con DeepTech soberano.
-            </p>
+            <p className="mt-1">SOLYON Foundation operando en múltiples países, becando y conectando talento con DeepTech soberano.</p>
           </div>
         </div>
       </section>
 
-      {/* LO QUE YA TENÍAS */}
+      {/* BLOQUES ORIGINALES */}
       <Vision />
       <Ecosystem />
       <TechIP />
       <Purchase />
       <PartnersCTA />
 
+      {/* FOOTER */}
       <footer className="section mt-24 border-t border-[#2A2A2A] pt-10 text-sm text-gray-300">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} SOLYON Technologies. All rights reserved.</p>
