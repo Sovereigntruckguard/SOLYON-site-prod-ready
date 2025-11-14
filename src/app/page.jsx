@@ -11,7 +11,7 @@ export default function Page() {
       {/* HERO – mantiene el slogan original */}
       <Hero />
 
-      {/* 1. EL PROBLEMA QUE RESOLVEMOS */}
+      {/* BLOQUE 1: PROBLEMA */}
       <section className="section space-y-6">
         <h2 className="font-display text-3xl md:text-4xl gradient-gold">
           El problema que estamos enfrentando
@@ -47,7 +47,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 2. NUESTRA SOLUCIÓN – EL ECOSISTEMA COGNITIVO */}
+      {/* BLOQUE 2: SOLUCIÓN */}
       <section className="section space-y-6">
         <h2 className="font-display text-3xl md:text-4xl gradient-gold">
           Nuestra solución: un ecosistema cognitivo soberano
@@ -86,7 +86,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 3. IMPACTO HUMANO */}
+      {/* BLOQUE 3: IMPACTO */}
       <section className="section space-y-6">
         <h2 className="font-display text-3xl md:text-4xl gradient-gold">Impacto SOLYON</h2>
         <p className="text-gray-200 max-w-3xl">
@@ -117,7 +117,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 4. QUIÉNES SOMOS Y DE DÓNDE VENIMOS */}
+      {/* BLOQUE 4: QUIÉNES SOMOS */}
       <section className="section space-y-6">
         <h2 className="font-display text-3xl md:text-4xl gradient-gold">
           Quiénes somos y de dónde venimos
@@ -142,7 +142,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 5. LÍNEA DE TIEMPO – HACIA DÓNDE VAMOS */}
+      {/* BLOQUE 5: ROADMAP */}
       <section className="section space-y-6">
         <h2 className="font-display text-3xl md:text-4xl gradient-gold">
           Hacia dónde vamos
@@ -150,35 +150,44 @@ export default function Page() {
         <div className="card p-6 grid md:grid-cols-5 gap-4 text-sm text-gray-200">
           <div>
             <h3 className="font-display text-base gradient-gold">2025</h3>
-            <p className="mt-1">Arcanum y Nexus se consolidan como núcleo cognitivo del ecosistema SOLYON.</p>
+            <p className="mt-1">
+              Arcanum y Nexus se consolidan como núcleo cognitivo del ecosistema SOLYON.
+            </p>
           </div>
           <div>
             <h3 className="font-display text-base gradient-gold">2026</h3>
-            <p className="mt-1">Expansión de Azoth y TruckBoss en el mercado de transporte y servicios en EE.UU.</p>
+            <p className="mt-1">
+              Expansión de Azoth y TruckBoss en el mercado de transporte y servicios en EE.UU.
+            </p>
           </div>
           <div>
             <h3 className="font-display text-base gradient-gold">2027</h3>
-            <p className="mt-1">Plataforma de agentes autónomos SOLYON para empresas y proyectos de alto impacto.</p>
+            <p className="mt-1">
+              Plataforma de agentes autónomos SOLYON para empresas y proyectos de alto impacto.
+            </p>
           </div>
           <div>
             <h3 className="font-display text-base gradient-gold">2028</h3>
-            <p className="mt-1">IA educativa para LATAM, combinando EL-VIA, Vita y Foundation.</p>
+            <p className="mt-1">
+              IA educativa para LATAM, combinando EL-VIA, Vita y Foundation.
+            </p>
           </div>
           <div>
             <h3 className="font-display text-base gradient-gold">2030</h3>
-            <p className="mt-1">SOLYON Foundation operando en múltiples países, becando y conectando talento con DeepTech soberano.</p>
+            <p className="mt-1">
+              SOLYON Foundation operando en múltiples países, becando y conectando talento con DeepTech soberano.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* 6. BLOQUES QUE YA TENÍAS – VISIÓN, ECOSISTEMA, TECNOLOGÍA, MONETIZACIÓN, ALIANZAS */}
+      {/* LO QUE YA TENÍAS */}
       <Vision />
       <Ecosystem />
       <TechIP />
       <Purchase />
       <PartnersCTA />
 
-      {/* FOOTER */}
       <footer className="section mt-24 border-t border-[#2A2A2A] pt-10 text-sm text-gray-300">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} SOLYON Technologies. All rights reserved.</p>
