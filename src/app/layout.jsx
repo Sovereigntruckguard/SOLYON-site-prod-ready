@@ -34,23 +34,29 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body className="bg-[#181818] text-white">
         {/* HEADER FIJO */}
-        <header className="sticky top-0 z-40 border-b border-[#2A2A2A] bg-[#181818]/85 backdrop-blur">
-          <div className="section flex items-center justify-between py-3">
-            <Link href="/" className="flex items-center gap-3">
+        <header className="sticky top-0 z-40 border-b border-[#2A2A2A] bg-[#181818]/90 backdrop-blur">
+          <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-3">
+            {/* LOGO IZQUIERDA, MÁS GRANDE */}
+            <Link href="/" className="flex items-center gap-3 shrink-0">
               <img
                 src="/logo.png"
                 alt="SOLYON"
-                className="w-8 h-8 object-contain"
+                className="w-10 h-10 object-contain drop-shadow-lg"
               />
-              <span className="font-display text-lg text-white">
-                <span className="gradient-gold">SOLYON</span>{" "}
-                <span className="text-gray-200">Technologies</span>
+              <span className="flex flex-col leading-tight">
+                <span className="font-display text-xl tracking-[0.2em] text-[#F2B45C]">
+                  SOLYON
+                </span>
+                <span className="text-sm text-gray-300 tracking-[0.2em] uppercase">
+                  Technologies
+                </span>
               </span>
             </Link>
 
-            <nav className="hidden md:flex items-center gap-6 text-sm text-gray-200">
+            {/* NAVEGACIÓN DESKTOP */}
+            <nav className="hidden lg:flex items-center gap-6 text-sm text-gray-200">
               <Link href="/ecosystem" className="hover:text-white">
                 Ecosistema
               </Link>
@@ -77,22 +83,29 @@ export default function RootLayout({ children }) {
               </Link>
             </nav>
 
-            <div className="hidden md:flex gap-2">
-              <Link href="/store" className="btn text-sm">
+            {/* BOTONES DERECHA */}
+            <div className="hidden lg:flex items-center gap-2">
+              <Link href="/store" className="btn text-sm px-5 py-2">
                 Comprar Kit
               </Link>
               <Link
                 href="/investors"
-                className="btn text-sm"
-                style={{ background: "#2D2D2D", color: "#FFFFFF", border: "1px solid #3a3a3a" }}
+                className="text-sm px-5 py-2 rounded-2xl border border-[#FFD700]/70 bg-[#2D2D2D] text-[#FFD700]"
               >
-                Alianzas & Grants
+                Alianzas &amp; Grants
               </Link>
+            </div>
+
+            {/* BOTÓN MENÚ MÓVIL (placeholder simple) */}
+            <div className="flex lg:hidden">
+              <span className="text-xs text-gray-300 uppercase tracking-[0.2em]">
+                MENU
+              </span>
             </div>
           </div>
         </header>
 
-        {/* CONTENIDO */}
+        {/* CONTENIDO PRINCIPAL */}
         {children}
       </body>
     </html>
