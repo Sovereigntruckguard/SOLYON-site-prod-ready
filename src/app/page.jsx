@@ -439,46 +439,60 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 6. HOJA DE RUTA – HACIA DÓNDE VAMOS */}
-      <section className="section space-y-6">
-        <h2 className="font-display text-3xl md:text-4xl gradient-gold">
-          Hacia dónde vamos
-        </h2>
-        <div className="card p-6 grid md:grid-cols-5 gap-4 text-sm text-gray-200">
-          <div>
-            <h3 className="font-display text-base gradient-gold">2025</h3>
-            <p className="mt-1">
-              Arcanum y Nexus se consolidan como núcleo cognitivo del ecosistema
-              SOLYON.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-display text-base gradient-gold">2026</h3>
-            <p className="mt-1">
-              Azoth y TruckBoss aceleran la transformación del transporte y los
-              seguros en EE.UU. y LATAM.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-display text-base gradient-gold">2027</h3>
-            <p className="mt-1">
-              Lanzamiento de la plataforma de agentes autónomos SOLYON para
-              empresas y gobiernos.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-display text-base gradient-gold">2028</h3>
-            <p className="mt-1">
-              IA educativa SOLYON para millones de estudiantes y trabajadores en
-              LATAM.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-display text-base gradient-gold">2030</h3>
-            <p className="mt-1">
-              SOLYON Foundation operando en múltiples países, becando y
-              conectando talento con DeepTech soberano.
-            </p>
+            {/* 6. HOJA DE RUTA – HACIA DÓNDE VAMOS */}
+      <section className="section space-y-10 text-center" id="ruta">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Hacia dónde vamos
+          </h2>
+          <p className="text-gray-200 text-lg">
+            SOLYON no es un proyecto de un año. Es una hoja de ruta consciente
+            para construir, paso a paso, un ecosistema DeepTech soberano que
+            pueda crecer, resistir y mantenerse en el tiempo.
+          </p>
+          <p className="text-gray-400 text-sm md:text-base">
+            Este es el mapa que guía nuestras decisiones hoy y las alianzas que
+            buscamos para mañana.
+          </p>
+        </div>
+
+        <div className="card p-8 md:p-10 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-5 gap-6 text-sm text-gray-200">
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">2025</h3>
+              <p>
+                Arcanum y Nexus se consolidan como núcleo cognitivo del
+                ecosistema SOLYON.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">2026</h3>
+              <p>
+                Azoth y TruckBoss aceleran la transformación del transporte y
+                los seguros en EE.UU. y LATAM.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">2027</h3>
+              <p>
+                Lanzamiento de la plataforma de agentes autónomos SOLYON para
+                empresas y gobiernos.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">2028</h3>
+              <p>
+                IA educativa SOLYON para millones de estudiantes y trabajadores
+                en LATAM.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">2030</h3>
+              <p>
+                SOLYON Foundation operando en múltiples países, becando y
+                conectando talento con DeepTech soberano.
+              </p>
+            </div>
           </div>
         </div>
       </section>
