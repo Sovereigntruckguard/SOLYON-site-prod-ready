@@ -196,9 +196,9 @@ export default function Hero() {
             Comprar Kit Premium
           </a>
 
-          {/* Conocer ecosistema – scroll interno */}
+          {/* Conocer ecosistema – navega a la página del ecosistema */}
           <a
-            href="#ecosistema"
+            href="/ecosystem"
             className="px-8 py-3 rounded-2xl border border-[#FFD700]/60 text-sm md:text-base text-gray-100 hover:bg-[#181818] hover:border-[#FFD700] transition-colors"
           >
             Conocer ecosistema
