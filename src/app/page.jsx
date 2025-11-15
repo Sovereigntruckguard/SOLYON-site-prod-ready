@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import WompiTrustBand from "@/components/WompiTrustBand";
 import SupportModal from "@/components/SupportModal";
 
 export default function Page() {
@@ -204,7 +203,7 @@ export default function Page() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* TARJETA 1 · KIT DIGITAL */}
+         {/* TARJETA 1 · KIT DIGITAL */}
           <article className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#141414] to-[#050505] border border-[#FFD700]/40 shadow-[0_30px_80px_rgba(0,0,0,0.8)] flex flex-col min-h-[260px]">
             <div className="absolute inset-x-0 -top-24 h-40 bg-gradient-to-b from-[#FFD7001f] to-transparent pointer-events-none" />
             <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
@@ -222,7 +221,7 @@ export default function Page() {
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <p className="text-gray-100 text-lg font-semibold">
                   $99.000 COP · Pago seguro vía Wompi
                 </p>
@@ -234,9 +233,14 @@ export default function Page() {
                 >
                   Comprar Kit Premium
                 </a>
-
-                {/* Banda de confianza Wompi (variant full) */}
-                <WompiTrustBand variant="full" />
+                <p className="text-[0.7rem] md:text-xs text-gray-400 mt-1">
+                  En el checkout de Wompi podrás pagar con tarjeta débito o
+                  crédito, Nequi, PSE, efectivo en corresponsales y la opción{" "}
+                  <span className="text-[#FFD700] font-semibold">
+                    “Paga con crédito”
+                  </span>{" "}
+                  según disponibilidad de la entidad financiera.
+                </p>
               </div>
             </div>
           </article>
