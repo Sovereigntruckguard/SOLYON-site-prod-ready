@@ -4,7 +4,6 @@ import Ecosystem from "@/components/Ecosystem";
 import TechIP from "@/components/TechIP";
 import Purchase from "@/components/Purchase";
 import PartnersCTA from "@/components/PartnersCTA";
-import DonateButton from "@/components/DonateButton";
 import SupportModal from "@/components/SupportModal";
 
 export default function Page() {
@@ -13,18 +12,19 @@ export default function Page() {
       {/* HERO – slogan y CTAs principales */}
       <Hero />
 
-       {/* 1. EL PROBLEMA QUE ESTAMOS ENFRENTANDO */}
+      {/* 1. EL PROBLEMA QUE ESTAMOS ENFRENTANDO */}
       <section className="section space-y-10 text-center" id="problema">
         <div className="space-y-4 max-w-4xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl gradient-gold">
             El problema que estamos enfrentando
           </h2>
           <p className="text-gray-200">
-            América Latina está llena de talento, resiliencia y creatividad, pero la mayoría
-            de las personas no tienen acceso a DeepTech real. La infraestructura, las
-            herramientas y los modelos avanzados siguen concentrados en manos de gigantes
-            globales, lejos de los barrios, las calles y los emprendimientos que necesitan
-            esa tecnología para sobrevivir y crecer.
+            América Latina está llena de talento, resiliencia y creatividad,
+            pero la mayoría de las personas no tienen acceso a DeepTech real.
+            La infraestructura, las herramientas y los modelos avanzados siguen
+            concentrados en manos de gigantes globales, lejos de los barrios,
+            las calles y los emprendimientos que necesitan esa tecnología para
+            sobrevivir y crecer.
           </p>
         </div>
 
@@ -34,15 +34,18 @@ export default function Page() {
               Desigualdad tecnológica
             </h3>
             <p className="text-gray-300 mt-2">
-              Millones quedan por fuera de la nueva economía porque no pueden pagar
-              plataformas ni equipos pensados para realidades muy distintas a las nuestras.
+              Millones quedan por fuera de la nueva economía porque no pueden
+              pagar plataformas ni equipos pensados para realidades muy
+              distintas a las nuestras.
             </p>
           </div>
           <div className="card p-6">
-            <h3 className="font-display text-lg gradient-gold">Dependencia total</h3>
+            <h3 className="font-display text-lg gradient-gold">
+              Dependencia total
+            </h3>
             <p className="text-gray-300 mt-2">
-              Dependemos de infraestructuras que no controlamos: datos, modelos y
-              decisiones están fuera de LATAM.
+              Dependemos de infraestructuras que no controlamos: datos, modelos
+              y decisiones están fuera de LATAM.
             </p>
           </div>
           <div className="card p-6">
@@ -50,8 +53,9 @@ export default function Page() {
               Talento subutilizado
             </h3>
             <p className="text-gray-300 mt-2">
-              Hay una generación completa de latinos brillantes que no encuentra un puente
-              entre su realidad y la DeepTech que está definiendo el futuro.
+              Hay una generación completa de latinos brillantes que no
+              encuentra un puente entre su realidad y la DeepTech que está
+              definiendo el futuro.
             </p>
           </div>
         </div>
@@ -64,15 +68,17 @@ export default function Page() {
             Nuestra solución: arquitectura del sistema visualizada
           </h2>
           <p className="text-gray-200">
-            SOLYON no es una sola herramienta, es una arquitectura completa. Visualmente,
-            se organiza en tres capas: el{" "}
-            <span className="text-[#FFD700] font-semibold">Arcanum Core</span> como cerebro
-            cognitivo, el{" "}
-            <span className="text-[#FFD700] font-semibold">Nexus Control Grid</span> como
-            sistema nervioso operativo y el{" "}
-            <span className="text-[#FFD700] font-semibold">Ecosistema de 10 módulos</span>{" "}
-            donde viven las aplicaciones que tocan la vida real de las personas y las
-            empresas.
+            SOLYON no es una sola herramienta, es una arquitectura completa.
+            Visualmente, se organiza en tres capas: el{" "}
+            <span className="text-[#FFD700] font-semibold">Arcanum Core</span>{" "}
+            como cerebro cognitivo, el{" "}
+            <span className="text-[#FFD700] font-semibold">Nexus Control Grid</span>{" "}
+            como sistema nervioso operativo y el{" "}
+            <span className="text-[#FFD700] font-semibold">
+              Ecosistema de 10 módulos
+            </span>{" "}
+            donde viven las aplicaciones que tocan la vida real de las personas
+            y las empresas.
           </p>
         </div>
 
@@ -86,8 +92,9 @@ export default function Page() {
             </div>
             <h3 className="font-display text-xl gradient-gold">Arcanum Core</h3>
             <p className="text-gray-300 text-sm">
-              Motor cognitivo con memoria fractal, anti-alucinación y autoaprendizaje.
-              Es el núcleo que procesa contexto profundo y toma decisiones con precisión.
+              Motor cognitivo con memoria fractal, anti-alucinación y
+              autoaprendizaje. Es el núcleo que procesa contexto profundo y
+              toma decisiones con precisión.
             </p>
           </div>
 
@@ -105,11 +112,13 @@ export default function Page() {
                 ))}
               </div>
             </div>
-            <h3 className="font-display text-xl gradient-gold">Nexus Control Grid</h3>
+            <h3 className="font-display text-xl gradient-gold">
+              Nexus Control Grid
+            </h3>
             <p className="text-gray-300 text-sm">
-              Sistema nervioso que orquesta agentes, tareas y datos en tiempo real.
-              Coordina cómo la inteligencia de Arcanum se despliega sobre cada flujo
-              operativo.
+              Sistema nervioso que orquesta agentes, tareas y datos en tiempo
+              real. Coordina cómo la inteligencia de Arcanum se despliega sobre
+              cada flujo operativo.
             </p>
           </div>
 
@@ -148,9 +157,9 @@ export default function Page() {
               Ecosistema de 10 módulos
             </h3>
             <p className="text-gray-300 text-sm">
-              Aplicaciones soberanas para transporte, seguros, educación, hábitos,
-              operación y filantropía. Todo conectado sobre la misma arquitectura
-              cognitiva.
+              Aplicaciones soberanas para transporte, seguros, educación,
+              hábitos, operación y filantropía. Todo conectado sobre la misma
+              arquitectura cognitiva.
             </p>
           </div>
         </div>
@@ -192,7 +201,9 @@ export default function Page() {
                   $99.000 COP · Pago seguro vía Wompi
                 </p>
                 <a
-                  href="#comprar"
+                  href={process.env.NEXT_PUBLIC_WOMPI_KIT_URL || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn w-full py-3 text-sm md:text-base shadow-[0_0_30px_rgba(255,215,0,0.45)] text-center"
                 >
                   Comprar Kit Premium
@@ -248,8 +259,8 @@ export default function Page() {
                 </h3>
                 <p className="text-gray-300 text-sm md:text-base">
                   Pilotos y proyectos a medida con nuestro motor cognitivo,
-                  arquitectura de agentes y orquestación Nexus, para compañías y
-                  organizaciones que necesitan autonomía operativa real.
+                  arquitectura de agentes y orquestación Nexus, para compañías
+                  y organizaciones que necesitan autonomía operativa real.
                 </p>
                 <p className="text-gray-100 text-lg font-semibold">
                   Programa piloto 2025 · Cupos limitados
@@ -274,8 +285,8 @@ export default function Page() {
         <p className="text-gray-200 max-w-3xl">
           El núcleo de SOLYON no es solo código: es la decisión de que nadie se
           quede afuera de la revolución tecnológica por su código postal, su
-          acento o su historia. Todo lo que construimos está pensado para volver
-          la tecnología una extensión de la dignidad humana.
+          acento o su historia. Todo lo que construimos está pensado para
+          volver la tecnología una extensión de la dignidad humana.
         </p>
 
         <div className="grid md:grid-cols-3 gap-6">
