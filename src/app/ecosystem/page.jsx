@@ -125,17 +125,17 @@ export default function EcosystemPage() {
   return (
     <main className="space-y-24 pb-24">
       {/* HERO ECOSISTEMA */}
-      <section className="section space-y-8 text-center">
-        <div className="space-y-4 max-w-4xl mx-auto">
+      <section className="section space-y-8 text-center mt-10 md:mt-16">
+        <div className="space-y-6 max-w-4xl mx-auto">
           <h1 className="font-display text-4xl md:text-5xl gradient-gold">
             Ecosistema SOLYON
           </h1>
-          <p className="text-gray-200 text-lg">
+          <p className="text-gray-200 text-lg leading-relaxed">
             Un único ecosistema cognitivo que conecta DeepTech, seguros,
             logística, educación y transformación humana en una arquitectura
             viva y soberana.
           </p>
-          <p className="text-gray-400 text-sm md:text-base">
+          <p className="text-gray-400 text-sm md:text-base leading-relaxed">
             Lo que ves aquí no son “proyectos sueltos”, sino piezas de un mismo
             sistema: Arcanum como cerebro, Nexus como sistema nervioso y una
             red de aplicaciones soberanas que convierten la tecnología en
@@ -232,7 +232,7 @@ export default function EcosystemPage() {
           <h2 className="font-display text-3xl md:text-4xl gradient-gold">
             Cómo se conectan las piezas
           </h2>
-        <p className="text-gray-300 text-sm md:text-base">
+          <p className="text-gray-300 text-sm md:text-base">
             SOLYON está diseñado como un sistema en capas. Esta arquitectura es
             lo que nos permite escalar a nuevos sectores sin perder control ni
             propósito.
@@ -273,8 +273,8 @@ export default function EcosystemPage() {
             </h3>
             <p className="text-gray-300">
               EL-VIA, Vita y SOLYON Foundation llevan la tecnología al terreno
-              humano: idioma, hábitos, formación y becas para quienes históricamente
-              quedaron por fuera.
+              humano: idioma, hábitos, formación y becas para quienes
+              históricamente quedaron por fuera.
             </p>
           </div>
         </div>
@@ -357,17 +357,21 @@ export default function EcosystemPage() {
 
         <div className="flex flex-col md:flex-row justify-center flex-wrap gap-4 md:gap-6">
           <a
-            href="/#acceso"
+            href={process.env.NEXT_PUBLIC_WOMPI_KIT_URL || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn px-8 py-3 text-sm md:text-base"
           >
             Comprar Kit Digital
           </a>
+
           <a
-            href="/#circulo-interno"
+            href="/circle"
             className="px-8 py-3 rounded-full border border-[#FFD700]/60 text-sm md:text-base text-gray-100 hover:bg-[#181818] hover:border-[#FFD700] transition-colors"
           >
             Unirme al círculo interno
           </a>
+
           <a
             href={process.env.NEXT_PUBLIC_WOMPI_DONATE_URL || "#"}
             target="_blank"
@@ -379,8 +383,9 @@ export default function EcosystemPage() {
               ♥
             </span>
           </a>
+
           <a
-            href="/#alianzas"
+            href="/alliances"
             className="px-8 py-3 rounded-full bg-[#111111] border border-[#ffb6f0]/60 text-sm md:text-base text-[#ffcee8] hover:bg-[#181818] transition-colors"
           >
             Explorar alianzas &amp; grants
