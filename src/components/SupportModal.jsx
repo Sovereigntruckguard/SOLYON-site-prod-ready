@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import DonateButton from "@/components/DonateButton";
+import WompiTrustBand from "@/components/WompiTrustBand";
+
 
 const AMOUNTS = [5000, 10000, 20000, 50000, 100000];
 
@@ -82,44 +84,24 @@ export default function SupportModal() {
                 </div>
               </div>
   
-             {/* RESUMEN + BOTÓN WOMPI */}
-              <div className="space-y-3">
-                <p className="text-sm text-gray-200 text-center">
-                  <span className="text-gray-400">Monto seleccionado: </span>
-                  <span className="text-[#FFD700] font-semibold">
-                    {selected > 0
-                      ? `$${selected.toLocaleString("es-CO")} COP`
-                      : "Defínelo en el checkout"}
-                  </span>
-                </p>
-                <DonateButton />
-  
-                {/* Cinta de confianza Wompi + PCI */}
-                <div className="mt-3 flex flex-col gap-2 border-t border-[#2A2A2A] pt-3">
-                  <div className="flex flex-col gap-2 rounded-2xl bg-[#2C2A29] px-3 py-2">
-                    <div className="flex items-center justify-between gap-3">
-                      <img
-                        src="/wompi/logo-wompi.svg"
-                        alt="Wompi"
-                        className="h-4"
-                      />
-                      <img
-                        src="/wompi/wompi-pci-dss.svg"
-                        alt="Certificación PCI DSS Wompi"
-                        className="h-5"
-                      />
+              {/* RESUMEN + BOTÓN WOMPI */}
+            <div className="space-y-3">
+              <p className="text-sm text-gray-200 text-center">
+                <span className="text-gray-400">Monto seleccionado: </span>
+                <span className="text-[#FFD700] font-semibold">
+                  {selected > 0
+                    ? `$${selected.toLocaleString("es-CO")} COP`
+                    : "Defínelo en el checkout"}
+                </span>
+              </p>
+                        <DonateButton />
+          
+                        {/* Banda compacta de confianza Wompi */}
+                        <WompiTrustBand variant="compact" />
+                      </div>
                     </div>
-                    <p className="text-[0.7rem] text-gray-300 text-center">
-                      Pagos procesados por Wompi, pasarela certificada bajo
-                      estándares de seguridad PCI DSS. SOLYON nunca almacena datos
-                      de tarjetas.
-                    </p>
                   </div>
-                </div>
-              </div>             
-            </div>
-          </div>
-        )}
-      </>
-    );
-  }
+                  )}
+                </>
+              );
+            }
