@@ -11,6 +11,33 @@ export default function Page() {
       {/* HERO – slogan y CTAs principales */}
       <Hero />
 
+      {/* CINTILLO DE CONFIANZA / SOCIAL PROOF */}
+      <section className="section mt-4 mb-10 text-center">
+        <div className="card py-4 px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs md:text-sm text-gray-400">
+            SOLYON está siendo visibilizado y validado dentro del ecosistema
+            de innovación y ciencia en Colombia.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3 text-[0.7rem] md:text-xs text-gray-300">
+            <span className="px-3 py-1 rounded-full border border-[#2A2A2A] bg-black/40">
+              Cámara de Comercio · Ecosistema empresarial
+            </span>
+            <span className="px-3 py-1 rounded-full border border-[#2A2A2A] bg-black/40">
+              MinCiencias · Ciencia, tecnología e innovación
+            </span>
+            <span className="px-3 py-1 rounded-full border border-[#2A2A2A] bg-black/40">
+              SIC · Propiedad intelectual en curso
+            </span>
+            <span className="px-3 py-1 rounded-full border border-[#2A2A2A] bg-black/40">
+              Premios Cinco Días · Invitación a ceremonia
+            </span>
+            <span className="px-3 py-1 rounded-full border border-[#FFD700]/30 bg-black/60 text-[#FFD700]">
+              Estado: Patent Pending
+            </span>
+          </div>
+        </div>
+      </section>
+
       {/* 1. EL PROBLEMA QUE ESTAMOS ENFRENTANDO */}
       <section className="section space-y-10 text-center" id="problema">
         <div className="space-y-4 max-w-4xl mx-auto">
@@ -278,6 +305,67 @@ export default function Page() {
         </div>
       </section>
 
+       {/* CASOS DE USO: QUÉ PUEDES HACER HOY CON SOLYON */}
+      <section className="section space-y-10 text-center" id="casos-uso">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Qué puedes hacer hoy con SOLYON
+          </h2>
+          <p className="text-gray-200 text-lg">
+            No somos solo una visión a futuro. Desde hoy puedes usar SOLYON
+            para resolver problemas muy concretos en tu vida y en tu negocio.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {/* Camioneros / transporte */}
+          <div className="card p-6 text-left space-y-3">
+            <h3 className="font-display text-xl gradient-gold">
+              Si eres camionero o trabajas en transporte
+            </h3>
+            <p className="text-gray-300 text-sm">
+              Usa TruckBoss, Sovereign TruckGuard y EL-VIA para cotizar seguros,
+              ordenar tu operación, entender el inglés del sistema y proteger tu
+              futuro en EE.UU.
+            </p>
+            <p className="text-gray-400 text-xs">
+              Pronto: acceso directo desde la app y desde nuestra agencia.
+            </p>
+          </div>
+
+          {/* Founders / emprendedores */}
+          <div className="card p-6 text-left space-y-3">
+            <h3 className="font-display text-xl gradient-gold">
+              Si eres founder o emprendedor
+            </h3>
+            <p className="text-gray-300 text-sm">
+              Adquiere el Kit Digital SOLYON y obtén la arquitectura, las
+              plantillas y el marco mental para construir tu propio proyecto
+              DeepTech con propósito.
+            </p>
+            <p className="text-gray-400 text-xs">
+              Ideal para postularte a grants, aceleradoras y rondas tempranas.
+            </p>
+          </div>
+
+          {/* Aliados / fondos / corporativos */}
+          <div className="card p-6 text-left space-y-3">
+            <h3 className="font-display text-xl gradient-gold">
+              Si eres aliado, fondo o corporativo
+            </h3>
+            <p className="text-gray-300 text-sm">
+              Conéctate a nuestro laboratorio cognitivo y co-diseña pilotos
+              con Arcanum y Nexus para tu organización, gobierno o programa de
+              impacto.
+            </p>
+            <p className="text-gray-400 text-xs">
+              Escríbenos desde la sección de Alianzas &amp; Grants para iniciar
+              una conversación estratégica.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* 4. IMPACTO & PROPÓSITO */}
       <section
         className="section space-y-10 text-center bg-gradient-to-b from-transparent via-[#050505] to-transparent"
@@ -357,6 +445,34 @@ export default function Page() {
             <p className="mt-1 text-[0.7rem] text-gray-500">
               Provisional · Consolidación · Portafolio
             </p>
+          </div>
+        </div>
+      </section>
+
+            {/* CÍRCULO INTERNO SOLYON – LEAD CAPTURE SUAVE */}
+      <section className="section space-y-6 text-center" id="circulo-interno">
+        <div className="card p-8 md:p-10 max-w-3xl mx-auto space-y-4">
+          <h2 className="font-display text-2xl md:text-3xl gradient-gold">
+            Únete al Círculo Interno SOLYON
+          </h2>
+          <p className="text-gray-200 text-sm md:text-base">
+            Si sientes que este proyecto resuena contigo, queremos que estés
+            cerca. Compartiremos avances, oportunidades de colaboración y
+            acceso temprano a pilotos y herramientas.
+          </p>
+          <p className="text-gray-400 text-xs md:text-sm">
+            Por ahora estamos manejando el Círculo Interno de forma directa.
+            Escríbenos y cuéntanos quién eres y cómo te gustaría participar.
+          </p>
+          <div className="flex flex-col md:flex-row gap-3 items-center justify-center">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=sergio@solyontechnologies.com&su=C%C3%ADrculo%20Interno%20SOLYON&body=Hola%20equipo%20SOLYON%2C%0D%0A%0D%0AMe%20gustar%C3%ADa%20sumarme%20al%20C%C3%ADrculo%20Interno.%0D%0A%0D%0ANombre%3A%0D%0ARol%20o%20perfil%3A%0D%0APa%C3%ADs%3A%0D%0A%C2%BFC%C3%B3mo%20me%20gustar%C3%ADa%20aportar%20o%20participar%3F%0D%0A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn px-8 py-3 text-sm md:text-base"
+            >
+              Quiero estar más cerca
+            </a>
           </div>
         </div>
       </section>
@@ -815,6 +931,82 @@ export default function Page() {
             Iniciar conversación de alianza
            </a>
           </div>
+        </div>
+      </section>
+
+            {/* FAQ ESTRATÉGICO */}
+      <section className="section space-y-8 text-left" id="faq">
+        <div className="space-y-3 text-center max-w-3xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Preguntas frecuentes
+          </h2>
+          <p className="text-gray-300 text-sm md:text-base">
+            Algunas respuestas rápidas para que tomes una decisión con claridad.
+          </p>
+        </div>
+
+        <div className="card p-6 md:p-8 space-y-4">
+          <details className="group">
+            <summary className="cursor-pointer text-sm md:text-base text-gray-100 flex justify-between items-center">
+              <span>¿Qué recibo exactamente al comprar el Kit Digital SOLYON?</span>
+              <span className="text-[#FFD700] text-xs ml-4 group-open:rotate-90 transition-transform">
+                ❯
+              </span>
+            </summary>
+            <p className="mt-2 text-gray-300 text-sm">
+              Recibes la arquitectura estratégica del ecosistema SOLYON,
+              mapas del sistema, plantillas operativas y un marco mental para
+              estructurar tu proyecto DeepTech con propósito. Es material listo
+              para usar en convocatorias, grants, aceleradoras y presentaciones
+              a inversionistas.
+            </p>
+          </details>
+
+          <details className="group">
+            <summary className="cursor-pointer text-sm md:text-base text-gray-100 flex justify-between items-center">
+              <span>¿Cómo se usan los aportes al laboratorio SOLYON?</span>
+              <span className="text-[#FFD700] text-xs ml-4 group-open:rotate-90 transition-transform">
+                ❯
+              </span>
+            </summary>
+            <p className="mt-2 text-gray-300 text-sm">
+              Se destinan a infraestructura tecnológica, horas de desarrollo,
+              documentación, pruebas de concepto y, progresivamente, a becas
+              para talento latino que quiera formarse y construir dentro del
+              ecosistema.
+            </p>
+          </details>
+
+          <details className="group">
+            <summary className="cursor-pointer text-sm md:text-base text-gray-100 flex justify-between items-center">
+              <span>¿SOLYON es solo para camioneros y seguros?</span>
+              <span className="text-[#FFD700] text-xs ml-4 group-open:rotate-90 transition-transform">
+                ❯
+              </span>
+            </summary>
+            <p className="mt-2 text-gray-300 text-sm">
+              No. Nuestro punto de partida son transporte y seguros porque
+              conocemos profundamente esa industria, pero la arquitectura de
+              Arcanum, Nexus y Azoth está pensada para extenderse a educación,
+              salud, finanzas, ciudades y más.
+            </p>
+          </details>
+
+          <details className="group">
+            <summary className="cursor-pointer text-sm md:text-base text-gray-100 flex justify-between items-center">
+              <span>¿Qué tipo de alianzas están buscando ahora?</span>
+              <span className="text-[#FFD700] text-xs ml-4 group-open:rotate-90 transition-transform">
+                ❯
+              </span>
+            </summary>
+            <p className="mt-2 text-gray-300 text-sm">
+              Buscamos fondos, corporativos, universidades y programas de
+              ciencia e innovación que quieran co-desarrollar pilotos, apoyar
+              nuestra IP y amplificar el impacto en LATAM. Estamos en la fase
+              perfecta: arquitectura sólida, reconocimiento temprano y espacio
+              para construir en grande.
+            </p>
+          </details>
         </div>
       </section>
 
