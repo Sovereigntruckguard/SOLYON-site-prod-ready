@@ -726,9 +726,95 @@ export default function Page() {
         </div>
       </section>
 
-      {/* BLOQUES ORIGINALES – DETALLE POR SECCIÓN */}
-      <Purchase />
-      <PartnersCTA />
+      {/* ALIANZAS ESTRATÉGICAS & GRANTS */}
+      <section className="section space-y-10 text-center" id="alianzas">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Alianzas estratégicas & Grants
+          </h2>
+          <p className="text-gray-200 text-lg">
+            SOLYON ya no es solo una idea. Es un ecosistema en proceso de
+            validación formal ante las principales entidades del país y con
+            reconocimiento temprano en espacios de innovación.
+          </p>
+          <p className="text-gray-400 text-sm md:text-base">
+            Buscamos aliados que quieran construir DeepTech soberana desde
+            LATAM, con trazabilidad legal, propiedad intelectual clara y
+            propósito social real.
+          </p>
+        </div>
+
+        <div className="card p-8 md:p-10 max-w-6xl mx-auto space-y-8 text-left">
+          <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-200">
+            {/* Columna 1: Validaciones */}
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">
+                Validaciones y ecosistema local
+              </h3>
+              <p>
+                • Registro formal ante Cámara de Comercio y vinculación al
+                ecosistema empresarial de la ciudad.
+              </p>
+              <p>
+                • Radicados y procesos activos ante entidades como
+                MinCiencias y SIC, alineando SOLYON con marcos de ciencia,
+                tecnología e innovación.
+              </p>
+            </div>
+
+            {/* Columna 2: IP & Ciencia */}
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">
+                Propiedad intelectual & ciencia
+              </h3>
+              <p>
+                • Fórmula de memoria fractal, anti-alucinación y
+                orquestación multi-agente en estado{" "}
+                <span className="text-[#FFD700] font-semibold">
+                  Patent Pending
+                </span>
+                .
+              </p>
+              <p>
+                • Alineación con categorías de producto de MinCiencias y
+                procesos en SIC para proteger el núcleo tecnológico.
+              </p>
+            </div>
+
+            {/* Columna 3: Reconocimiento & oportunidad */}
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">
+                Reconocimiento temprano & oportunidad
+              </h3>
+              <p>
+                • Invitación a espacios de reconocimiento como los Premios
+                Cinco Días, donde SOLYON se posiciona como actor emergente
+                en DeepTech.
+              </p>
+              <p>
+                • Oportunidad única para aliados que quieran entrar en la
+                fase donde la arquitectura está lista, pero el crecimiento
+                aún es temprano.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 border-t border-[#2A2A2A]">
+            <p className="text-gray-400 text-sm max-w-2xl">
+              Estamos abiertos a alianzas con fondos, corporativos,
+              universidades y programas de grants que quieran apoyar una
+              DeepTech nacida desde la realidad latinoamericana, con impacto
+              global.
+            </p>
+            <a
+              href="mailto:sergio@solyontechnologies.com?subject=Alianza%20estratégica%20SOLYON"
+              className="btn px-8 py-3 text-sm md:text-base"
+            >
+              Iniciar conversación de alianza
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* FOOTER */}
       <footer className="section mt-24 border-t border-[#2A2A2A] pt-10 text-sm text-gray-300">
