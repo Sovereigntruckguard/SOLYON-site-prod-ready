@@ -64,10 +64,26 @@ body {
 /* CONTENEDOR DE SECCIONES */
 .section {
   @apply max-w-6xl mx-auto px-6 md:px-10;
+  position: relative;
   opacity: 0;
   transform: translateY(18px);
   animation: sectionFade 0.9s ease-out forwards;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* HALO ALQUÍMICO ALREDEDOR DE CADA SECCIÓN */
+.section::before {
+  content: "";
+  position: absolute;
+  inset: -40px -24px;
+  border-radius: 3rem;
+  background:
+    radial-gradient(circle at top, rgba(255, 182, 240, 0.16), transparent 55%),
+    radial-gradient(circle at bottom, rgba(255, 215, 0, 0.12), transparent 60%);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(4px);
 }
 
 /* ANIMACIÓN SUAVE DE ENTRADA PARA TODAS LAS SECCIONES */
