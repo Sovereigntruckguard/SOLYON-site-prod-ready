@@ -82,7 +82,7 @@ export default function SupportModal() {
               </div>
             </div>
 
-            {/* RESUMEN + BOTÓN WOMPI */}
+           {/* RESUMEN + BOTÓN WOMPI */}
             <div className="space-y-3">
               <p className="text-sm text-gray-200 text-center">
                 <span className="text-gray-400">Monto seleccionado: </span>
@@ -94,28 +94,27 @@ export default function SupportModal() {
               </p>
               <DonateButton />
 
-              {/* Cinta de confianza Wompi + PCI */}
+              {/* Cinta de confianza Wompi */}
               <div className="mt-3 flex flex-col gap-2 border-t border-[#2A2A2A] pt-3">
-                <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center justify-between gap-3 rounded-2xl bg-[#2C2A29] px-3 py-2">
                   <div className="flex items-center gap-2">
                     <img
-                      src="/wompi/logo-wompi-white.svg"
+                      src="/wompi/logo-wompi.svg"
                       alt="Wompi"
                       className="h-4"
                     />
-                    <span className="text-[0.7rem] text-gray-400">
+                    <span className="text-[0.7rem] text-gray-300">
                       Pagos procesados por Wompi.
                     </span>
                   </div>
-                  <img
-                    src="/wompi/wompi-pci-dss.svg"
-                    alt="Certificado PCI DSS"
-                    className="h-5"
-                  />
+                  <span className="text-[0.65rem] text-gray-400 text-right">
+                    Pasarela de pagos certificada bajo estándares de seguridad
+                    PCI DSS.
+                  </span>
                 </div>
                 <p className="text-[0.65rem] text-gray-500 text-center">
-                  Wompi cuenta con certificación PCI DSS Level 1, el máximo
-                  estándar de seguridad para procesar pagos electrónicos.
+                  Tus datos de pago se manejan en la infraestructura segura de
+                  Wompi. SOLYON nunca almacena la información de tarjetas.
                 </p>
               </div>
             </div>

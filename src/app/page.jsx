@@ -207,7 +207,7 @@ export default function Page() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    {/* TARJETA 1 · KIT DIGITAL */}
+           {/* TARJETA 1 · KIT DIGITAL */}
           <article className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#141414] to-[#050505] border border-[#FFD700]/40 shadow-[0_30px_80px_rgba(0,0,0,0.8)] flex flex-col min-h-[260px]">
             <div className="absolute inset-x-0 -top-24 h-40 bg-gradient-to-b from-[#FFD7001f] to-transparent pointer-events-none" />
             <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
@@ -225,7 +225,7 @@ export default function Page() {
                 </p>
               </div>
 
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <p className="text-gray-100 text-lg font-semibold">
                   $99.000 COP · Pago seguro vía Wompi
                 </p>
@@ -238,8 +238,8 @@ export default function Page() {
                   Comprar Kit Premium
                 </a>
 
-                {/* Medios de pago Wompi */}
-                <div className="mt-3 flex flex-col gap-2">
+                {/* Banda Wompi – construida por nosotros, respetando el manual */}
+                <div className="mt-2 space-y-2">
                   <p className="text-[0.7rem] md:text-xs text-gray-400">
                     En el checkout de Wompi podrás pagar con tarjeta débito o
                     crédito, Nequi, PSE, efectivo en corresponsales y la opción{" "}
@@ -248,23 +248,48 @@ export default function Page() {
                     </span>{" "}
                     ofrecida por sus aliados.
                   </p>
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="flex-1">
-                      <p className="text-[0.65rem] md:text-[0.7rem] text-gray-500">
-                        Pagos procesados por
+
+                  <div className="flex flex-col gap-2">
+                    {/* Logo + texto en contenedor negro sólido (uso correcto) */}
+                    <div className="flex items-center justify-between gap-3 rounded-2xl bg-[#2C2A29] px-3 py-2">
+                      <div className="flex items-center gap-2">
+                        <img
+                          src="/wompi/logo-wompi.svg"
+                          alt="Wompi"
+                          className="h-5"
+                        />
+                      </div>
+                      <p className="text-[0.65rem] md:text-[0.7rem] text-gray-300">
+                        Pasarela de pagos del sistema financiero colombiano.
                       </p>
-                      <img
-                        src="/wompi/logo-wompi-white.svg"
-                        alt="Wompi"
-                        className="h-5 mt-1"
-                      />
                     </div>
-                    <div className="flex-1 flex justify-end">
-                      <img
-                        src="/wompi/wompi-medios-pago-dark.svg"
-                        alt="Medios de pago Wompi"
-                        className="h-7 md:h-8"
-                      />
+
+                    {/* Representación de medios de pago (hecha por nosotros) */}
+                    <div className="flex flex-wrap items-center gap-2 justify-between text-[0.65rem] md:text-[0.7rem] text-gray-400">
+                      <div className="flex items-center gap-1">
+                        <span className="inline-flex items-center justify-center rounded-md bg-[#2C2A29] px-2 py-1">
+                          💳
+                        </span>
+                        <span>Tarjetas débito y crédito</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <span className="inline-flex items-center justify-center rounded-md bg-[#2C2A29] px-2 py-1">
+                          🏦
+                        </span>
+                        <span>Nequi / PSE / cuentas</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <span className="inline-flex items-center justify-center rounded-md bg-[#2C2A29] px-2 py-1">
+                          💵
+                        </span>
+                        <span>Efectivo en corresponsales</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <span className="inline-flex items-center justify-center rounded-md bg-[#2C2A29] px-2 py-1 border border-[#DFFF61]/70">
+                          ⚡
+                        </span>
+                        <span>Nuevo: Paga con crédito</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -897,16 +922,21 @@ export default function Page() {
             {/* Columna 1: Validaciones */}
             <div className="space-y-2">
               <h3 className="font-display text-base gradient-gold">
-                Validaciones y ecosistema local
+                Validaciones & ecosistema local
               </h3>
               <p>
                 • Registro formal ante Cámara de Comercio y vinculación al
                 ecosistema empresarial de la ciudad.
               </p>
               <p>
-                • Radicados y procesos activos ante entidades como
-                MinCiencias y SIC, alineando SOLYON con marcos de ciencia,
-                tecnología e innovación.
+                • Radicados y procesos activos ante entidades como{" "}
+                <span className="font-semibold">MinCiencias</span> y{" "}
+                <span className="font-semibold">SIC</span>, alineando SOLYON
+                con marcos de ciencia, tecnología e innovación.
+              </p>
+              <p>
+                • Inclusión en conversaciones con nodos de innovación y
+                programas que buscan proyectos DeepTech de alto impacto.
               </p>
             </div>
 
@@ -916,33 +946,45 @@ export default function Page() {
                 Propiedad intelectual & ciencia
               </h3>
               <p>
-                • Fórmula de memoria fractal, anti-alucinación y
-                orquestación multi-agente en estado{" "}
+                • Núcleo tecnológico en estado{" "}
                 <span className="text-[#FFD700] font-semibold">
                   Patent Pending
                 </span>
-                .
+                : memoria fractal, anti-alucinación, orquestación cognitiva y
+                ecosistema multi-agente.
               </p>
               <p>
                 • Alineación con categorías de producto de MinCiencias y
-                procesos en SIC para proteger el núcleo tecnológico.
+                procesos en SIC para proteger el corazón tecnológico de
+                SOLYON.
+              </p>
+              <p>
+                • Integración a{" "}
+                <span className="font-semibold">Wompi</span>, pasarela de
+                pagos del sistema financiero colombiano, con infraestructura
+                certificada bajo estándares de seguridad PCI DSS.
               </p>
             </div>
 
-            {/* Columna 3: Reconocimiento & oportunidad */}
+            {/* Columna 3: Reconocimiento & Oportunidad */}
             <div className="space-y-2">
               <h3 className="font-display text-base gradient-gold">
                 Reconocimiento temprano & oportunidad
               </h3>
               <p>
-                • Invitación a espacios de reconocimiento como los Premios
-                Cinco Días, donde SOLYON se posiciona como actor emergente
-                en DeepTech.
+                • Invitación a espacios de visibilidad como la ceremonia de los{" "}
+                <span className="font-semibold">Premios Cinco Días</span>,
+                donde SOLYON se posiciona como actor emergente en DeepTech.
               </p>
               <p>
-                • Oportunidad única para aliados que quieran entrar en la
-                fase donde la arquitectura está lista, pero el crecimiento
-                aún es temprano.
+                • Desarrollo del ecosistema casi por completo entre dos
+                personas —Sergio y Elizabeth—, demostrando capacidad de
+                ejecución extrema con recursos limitados.
+              </p>
+              <p>
+                • Oportunidad única para aliados que quieran entrar en la fase
+                donde la arquitectura está lista, la IP en curso y el
+                crecimiento aún es temprano.
               </p>
             </div>
           </div>
@@ -952,20 +994,20 @@ export default function Page() {
               Estamos abiertos a alianzas con fondos, corporativos,
               universidades y programas de grants que quieran apoyar una
               DeepTech nacida desde la realidad latinoamericana, con impacto
-              global.
+              global y una arquitectura tecnológica soberana ya en marcha.
             </p>
             <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=sergio@solyontechnologies.com&su=Alianza%20estratégica%20SOLYON&body=Hola%20equipo%20SOLYON%2C%0D%0A%0D%0AQuisiera%20explorar%20una%20posible%20alianza%20estratégica%20o%20acceso%20a%20grants%20para%20el%20ecosistema.%0D%0A%0D%0A----%0D%0ANombre%3A%0D%0AOrganizaci%C3%B3n%3A%0D%0ACargo%3A%0D%0A%0D%0A"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=sergio@solyontechnologies.com&su=Alianza%20estrat%C3%A9gica%20SOLYON&body=Hola%20equipo%20SOLYON%2C%0D%0A%0D%0AQuisiera%20explorar%20una%20posible%20alianza%20estrat%C3%A9gica%20o%20acceso%20a%20grants%20para%20el%20ecosistema.%0D%0A%0D%0A----%0D%0ANombre%3A%0D%0AOrganizaci%C3%B3n%3A%0D%0ACargo%3A%0D%0A%0D%0A"
               target="_blank"
               rel="noopener noreferrer"
               className="btn px-8 py-3 text-sm md:text-base"
-           >
-            Iniciar conversación de alianza
-           </a>
+            >
+              Iniciar conversación de alianza
+            </a>
           </div>
         </div>
       </section>
-
+      
             {/* FAQ ESTRATÉGICO */}
       <section className="section space-y-8 text-left" id="faq">
         <div className="space-y-3 text-center max-w-3xl mx-auto">
