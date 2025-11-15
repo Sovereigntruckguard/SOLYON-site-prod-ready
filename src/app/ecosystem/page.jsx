@@ -94,11 +94,11 @@ const PROJECTS = [
 function ProjectLogo({ logo, name }) {
   return (
     <div className="mb-4 flex items-center gap-3">
-      <div className="h-10 w-10 rounded-2xl bg-[#111111] border border-[#2A2A2A] flex items-center justify-center overflow-hidden">
+      <div className="h-14 w-14 rounded-2xl bg-[#111111] border border-[#2A2A2A] flex items-center justify-center overflow-hidden">
         <img
           src={logo}
           alt={name}
-          className="h-8 w-8 object-contain"
+          className="h-10 w-10 object-contain"
           onError={(e) => {
             // Fallback simple si falta el logo
             e.currentTarget.style.display = "none";
@@ -107,7 +107,7 @@ function ProjectLogo({ logo, name }) {
               const span = document.createElement("span");
               span.textContent = name.charAt(0);
               span.className =
-                "text-[#FFD700] font-bold text-lg flex items-center justify-center w-full h-full";
+                "text-[#FFD700] font-bold text-xl flex items-center justify-center w-full h-full";
               parent.appendChild(span);
             }
           }}
@@ -232,7 +232,7 @@ export default function EcosystemPage() {
           <h2 className="font-display text-3xl md:text-4xl gradient-gold">
             Cómo se conectan las piezas
           </h2>
-          <p className="text-gray-300 text-sm md:text-base">
+        <p className="text-gray-300 text-sm md:text-base">
             SOLYON está diseñado como un sistema en capas. Esta arquitectura es
             lo que nos permite escalar a nuevos sectores sin perder control ni
             propósito.
@@ -355,7 +355,7 @@ export default function EcosystemPage() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6">
+        <div className="flex flex-col md:flex-row justify-center flex-wrap gap-4 md:gap-6">
           <a
             href="/#acceso"
             className="btn px-8 py-3 text-sm md:text-base"
@@ -367,6 +367,17 @@ export default function EcosystemPage() {
             className="px-8 py-3 rounded-full border border-[#FFD700]/60 text-sm md:text-base text-gray-100 hover:bg-[#181818] hover:border-[#FFD700] transition-colors"
           >
             Unirme al círculo interno
+          </a>
+          <a
+            href={process.env.NEXT_PUBLIC_WOMPI_DONATE_URL || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 rounded-full bg-[#111111] border border-[#ffb6f0]/60 text-sm md:text-base text-[#ffcee8] hover:bg-[#181818] transition-colors flex items-center justify-center gap-1"
+          >
+            Apoyar el ecosistema
+            <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-br from-[#ff9ecf] to-[#FFD700] text-[0.65rem] text-black">
+              ♥
+            </span>
           </a>
           <a
             href="/#alianzas"
