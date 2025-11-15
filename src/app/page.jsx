@@ -807,11 +807,13 @@ export default function Page() {
               global.
             </p>
             <a
-              href="mailto:sergio@solyontechnologies.com?subject=Alianza%20estratégica%20SOLYON"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=sergio@solyontechnologies.com&su=Alianza%20estratégica%20SOLYON&body=Hola%20equipo%20SOLYON%2C%0D%0A%0D%0AQuisiera%20explorar%20una%20posible%20alianza%20estratégica%20o%20acceso%20a%20grants%20para%20el%20ecosistema.%0D%0A%0D%0A----%0D%0ANombre%3A%0D%0AOrganizaci%C3%B3n%3A%0D%0ACargo%3A%0D%0A%0D%0A"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn px-8 py-3 text-sm md:text-base"
-            >
-              Iniciar conversación de alianza
-            </a>
+           >
+            Iniciar conversación de alianza
+           </a>
           </div>
         </div>
       </section>
