@@ -207,7 +207,7 @@ export default function Page() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-           {/* TARJETA 1 · KIT DIGITAL */}
+        {/* TARJETA 1 · KIT DIGITAL */}
           <article className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#141414] to-[#050505] border border-[#FFD700]/40 shadow-[0_30px_80px_rgba(0,0,0,0.8)] flex flex-col min-h-[260px]">
             <div className="absolute inset-x-0 -top-24 h-40 bg-gradient-to-b from-[#FFD7001f] to-transparent pointer-events-none" />
             <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
@@ -238,7 +238,7 @@ export default function Page() {
                   Comprar Kit Premium
                 </a>
 
-                {/* Banda Wompi – construida por nosotros, respetando el manual */}
+                {/* Banda Wompi oficial + métodos de pago */}
                 <div className="mt-2 space-y-2">
                   <p className="text-[0.7rem] md:text-xs text-gray-400">
                     En el checkout de Wompi podrás pagar con tarjeta débito o
@@ -249,47 +249,37 @@ export default function Page() {
                     ofrecida por sus aliados.
                   </p>
 
-                  <div className="flex flex-col gap-2">
-                    {/* Logo + texto en contenedor negro sólido (uso correcto) */}
-                    <div className="flex items-center justify-between gap-3 rounded-2xl bg-[#2C2A29] px-3 py-2">
-                      <div className="flex items-center gap-2">
-                        <img
-                          src="/wompi/logo-wompi.svg"
-                          alt="Wompi"
-                          className="h-5"
-                        />
-                      </div>
-                      <p className="text-[0.65rem] md:text-[0.7rem] text-gray-300">
-                        Pasarela de pagos del sistema financiero colombiano.
-                      </p>
+                  {/* Sello Wompi + Bancolombia */}
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-3 rounded-2xl bg-[#2C2A29] px  -3 py-2">
+                    <div className="flex items-center gap-2">
+                      <img
+                        src="/wompi/sello-wompi-bancolombia-horizontal-negativo.png"
+                        alt="Plataforma de pago Wompi · Una idea de Bancolombia"
+                        className="h-8 md:h-9"
+                      />
                     </div>
+                    <p className="text-[0.65rem] md:text-[0.7rem] text-gray-300 text-left md:text-right">
+                      Pasarela del sistema financiero colombiano. Tus pagos se
+                      procesan en infraestructura bancaria certificada.
+                    </p>
+                  </div>
 
-                    {/* Representación de medios de pago (hecha por nosotros) */}
-                    <div className="flex flex-wrap items-center gap-2 justify-between text-[0.65rem] md:text-[0.7rem] text-gray-400">
-                      <div className="flex items-center gap-1">
-                        <span className="inline-flex items-center justify-center rounded-md bg-[#2C2A29] px-2 py-1">
-                          💳
-                        </span>
-                        <span>Tarjetas débito y crédito</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <span className="inline-flex items-center justify-center rounded-md bg-[#2C2A29] px-2 py-1">
-                          🏦
-                        </span>
-                        <span>Nequi / PSE / cuentas</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <span className="inline-flex items-center justify-center rounded-md bg-[#2C2A29] px-2 py-1">
-                          💵
-                        </span>
-                        <span>Efectivo en corresponsales</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <span className="inline-flex items-center justify-center rounded-md bg-[#2C2A29] px-2 py-1 border border-[#DFFF61]/70">
-                          ⚡
-                        </span>
-                        <span>Nuevo: Paga con crédito</span>
-                      </div>
+                  {/* Tira de medios de pago + certificación */}
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-3">
+                    <div className="flex-1 flex justify-start">
+                      <img
+                        src="/wompi/wompi-medios-pago-horizontal.png"
+                        alt="Medios de pago disponibles con Wompi"
+                        className="h-7 md:h-8"
+                      />
+                    </div>
+                    <div className="flex-1 flex items-center justify-end gap-2 text-[0.65rem] text-gray-400">
+                      <img
+                        src="/wompi/wompi-pci-dss.svg"
+                        alt="Certificación PCI DSS Wompi"
+                        className="h-5"
+                      />
+                      <span>Wompi cuenta con certificación PCI DSS.</span>
                     </div>
                   </div>
                 </div>
@@ -1007,7 +997,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      
+
             {/* FAQ ESTRATÉGICO */}
       <section className="section space-y-8 text-left" id="faq">
         <div className="space-y-3 text-center max-w-3xl mx-auto">
