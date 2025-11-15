@@ -6,6 +6,7 @@ export default function InvestorsPage() {
       {/* HERO INVESTORS */}
       <section className="section mt-10 md:mt-16 space-y-10 text-center md:text-left">
         <div className="grid md:grid-cols-2 gap-10 items-center">
+          {/* Texto principal */}
           <div className="space-y-5">
             <h1 className="font-display text-4xl md:text-5xl gradient-gold">
               Investors &amp; Strategic Partners
@@ -37,18 +38,23 @@ export default function InvestorsPage() {
             </div>
           </div>
 
-          {/* Visual: mapa simple de inversión */}
-          <div className="relative flex items-center justify-center">
-            <div className="relative h-60 w-60">
-              <div className="absolute inset-0 rounded-3xl border border-[#2A2A2A] bg-gradient-to-br from-[#151515] to-[#050505] shadow-[0_24px_60px_rgba(0,0,0,0.8)]" />
-              <div className="absolute inset-6 rounded-3xl border border-[#FFD700]/40" />
-              <div className="absolute inset-4 flex flex-col items-center justify-center gap-3">
-                <p className="font-display text-lg gradient-gold">
+          {/* Visual minimal, sin caja fea */}
+          <div className="relative flex items-center justify-center md:justify-end">
+            <div className="relative h-56 w-56">
+              {/* halo externo */}
+              <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,215,0,0.15),transparent_65%)]" />
+              {/* anillos */}
+              <div className="absolute inset-3 rounded-full border border-[#ffb6f0]/40" />
+              <div className="absolute inset-9 rounded-full border border-[#FFD700]/55" />
+              <div className="absolute inset-[40%] rounded-full bg-gradient-to-br from-[#ffb6f0] via-[#ffd700] to-[#ff9ecf] blur-sm opacity-90" />
+              {/* texto dentro */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+                <p className="font-display text-sm gradient-gold">
                   IP · Productos · Impacto
                 </p>
-                <p className="text-xs text-gray-300 text-center max-w-[11rem]">
-                  Arquitectura cognitiva propia, ecosistema de productos y
-                  una narrativa social única.
+                <p className="text-[0.7rem] text-gray-300 mt-1">
+                  Arquitectura cognitiva propia, ecosistema de productos y una
+                  historia social que solo puede nacer en LATAM.
                 </p>
               </div>
             </div>
@@ -83,8 +89,8 @@ export default function InvestorsPage() {
                 Mercado &amp; Timing
               </h3>
               <p className="mt-1 text-gray-300">
-                ola de adopción de IA en sectores de alto margen (seguros,
-                transporte, educación, salud mental), con un vacío claro en
+                Ola de adopción de IA en sectores de alto margen (seguros,
+                transporte, educación, salud mental), con un vacío claro de
                 soluciones pensadas para LATAM y sus contextos.
               </p>
             </div>
@@ -93,7 +99,7 @@ export default function InvestorsPage() {
                 Modelo de negocio
               </h3>
               <p className="mt-1 text-gray-300">
-                Ecosistema de productos: SaaS B2B, B2C, consultoría
+                Ecosistema de productos: SaaS B2B y B2C, consultoría
                 estratégica, membresías y un brazo de impacto (Foundation) que
                 abre puertas a grants y fondos de impacto social.
               </p>
@@ -102,7 +108,7 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      {/* POR QUÉ AHORA */}
+      {/* ¿POR QUÉ AHORA? */}
       <section className="section space-y-8">
         <div className="card p-6 md:p-8 space-y-4 text-left">
           <h2 className="font-display text-2xl md:text-3xl gradient-gold">
@@ -147,30 +153,29 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      {/* MAPA ARCANUM → NEXUS → APPS */}
+      {/* ARQUITECTURA QUE CREA VALOR */}
       <section className="section space-y-8 text-center">
         <div className="space-y-3 max-w-4xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl gradient-gold">
             Arquitectura que crea valor
           </h2>
           <p className="text-gray-300 text-sm md:text-base">
-            La tecnología de SOLYON no es una sola aplicación. Es una
-            arquitectura cognitiva compuesta por un motor de pensamiento
-            (Arcanum), un orquestador (Nexus) y una red de aplicaciones
-            verticales listas para el mercado.
+            SOLYON no es una sola app, sino una arquitectura cognitiva con un
+            motor de pensamiento (Arcanum), un orquestador (Nexus) y una red de
+            apps verticales listas para el mercado.
           </p>
         </div>
 
         <div className="max-w-5xl mx-auto card p-8">
-          <div className="grid md:grid-cols-3 gap-6 items-center text-left text-gray-200 text-sm">
+          <div className="grid md:grid-cols-3 gap-6 items-start text-left text-gray-200 text-sm">
             <div className="space-y-2">
               <h3 className="font-display text-base gradient-gold">
                 Arcanum · Motor cognitivo
               </h3>
               <p>
-                Motor de IA con memoria fractal jerárquica y capa
-                anti-alucinación. Diseñado para trabajar con datos complejos y
-                contextos cambiantes.
+                Memoria fractal jerárquica, capa anti-alucinación, capacidad de
+                aprender de interacciones reales. Diseñado para operar 24/7 en
+                nubes modernas como Azure.
               </p>
             </div>
             <div className="space-y-2">
@@ -179,7 +184,8 @@ export default function InvestorsPage() {
               </h3>
               <p>
                 Coordina agentes, flujos y productos. Convierte insights de
-                Arcanum en workflows concretos para cada vertical.
+                Arcanum en workflows concretos para seguros, logística,
+                educación, hábitos y más.
               </p>
             </div>
             <div className="space-y-2">
@@ -187,8 +193,9 @@ export default function InvestorsPage() {
                 Apps &amp; Ecosistema
               </h3>
               <p>
-                Azoth, TruckBoss, Sovereign TruckGuard, EL-VIA, Vita, Foundation
-                y nuevos módulos que se conectan a la misma base cognitiva.
+                Azoth, TruckBoss, Sovereign TruckGuard, EL-VIA, Vita, SOLYON
+                Foundation y nuevos módulos conectados a la misma base
+                cognitiva.
               </p>
             </div>
           </div>
@@ -199,12 +206,12 @@ export default function InvestorsPage() {
       <section className="section space-y-8">
         <div className="card p-6 md:p-8 space-y-4 text-left">
           <h2 className="font-display text-2xl md:text-3xl gradient-gold">
-            IP &amp; Protección
+            IP &amp; protección
           </h2>
           <p className="text-gray-300 text-sm md:text-base">
-            Nuestra apuesta central es la **propiedad intelectual**:
-            tecnologías, metodologías y arquitecturas que nos diferencian y
-            protegen en el largo plazo.
+            Nuestra apuesta central es la propiedad intelectual: tecnologías,
+            metodologías y arquitecturas que nos diferencian y protegen en el
+            largo plazo.
           </p>
           <ul className="text-sm text-gray-200 space-y-2 list-disc list-inside mt-2">
             <li>
@@ -220,9 +227,7 @@ export default function InvestorsPage() {
             </li>
             <li>
               Protección en proceso:{" "}
-              <span className="text-[#FFD700] font-semibold">
-                Patent Pending
-              </span>{" "}
+              <span className="text-[#FFD700] font-semibold">Patent Pending</span>{" "}
               en jurisdicciones clave.
             </li>
           </ul>
@@ -232,7 +237,7 @@ export default function InvestorsPage() {
       {/* TRACCIÓN & VALIDACIÓN */}
       <section className="section space-y-8">
         <div className="card p-6 md:p-8 space-y-4 text-left">
-          <h2 className="font-display text-2xl md:text-4xl gradient-gold">
+          <h2 className="font-display text-2xl md:text-3xl gradient-gold">
             Tracción &amp; validación temprana
           </h2>
           <p className="text-gray-300 text-sm md:text-base">
@@ -325,12 +330,12 @@ export default function InvestorsPage() {
               </h3>
               <ul className="list-disc list-inside mt-2 space-y-1">
                 <li>
-                  Aceleración de desarrollo de Arcanum &amp; Nexus (contratación
-                  de equipo técnico senior).
+                  Aceleración de desarrollo de Arcanum &amp; Nexus (equipo
+                  técnico senior).
                 </li>
                 <li>
-                  Go-to-market de TruckBoss, Azoth y Vita con campañas
-                  digitales y alianzas estratégicas.
+                  Go-to-market de TruckBoss, Azoth y Vita con campañas digitales
+                  y alianzas estratégicas.
                 </li>
                 <li>
                   Fondo de becas y acompañamiento a comunidades objetivo a
@@ -357,7 +362,7 @@ export default function InvestorsPage() {
 
         <div className="flex flex-wrap justify-center gap-4">
           <a
-            href="mailto:alliances@solyontechnologies.com?subject=Interés%20de%20inversión%20en%20SOLYON"
+            href="mailto:alliances@solyontechnologies.com?subject=Inter%C3%A9s%20de%20inversi%C3%B3n%20en%20SOLYON"
             className="btn px-8 py-3 text-sm md:text-base"
           >
             Escribir al equipo de alianzas
@@ -377,8 +382,8 @@ export default function InvestorsPage() {
         </div>
 
         <p className="text-[0.8rem] text-gray-500 max-w-3xl mx-auto">
-          Creemos que las mejores alianzas se construyen cuando las historias
-          se encuentran. Trae tu experiencia, tu capital y tu visión. Nosotros
+          Creemos que las mejores alianzas se construyen cuando las historias se
+          encuentran. Trae tu experiencia, tu capital y tu visión. Nosotros
           ponemos la tecnología, la ejecución y el propósito.
         </p>
       </section>
