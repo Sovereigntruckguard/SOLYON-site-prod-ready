@@ -117,6 +117,9 @@ function QuantumScene() {
  * HERO PRINCIPAL SOLYON
  */
 export default function Hero() {
+  const kitUrl = process.env.NEXT_PUBLIC_WOMPI_KIT_URL;
+  const donateUrl = process.env.NEXT_PUBLIC_WOMPI_DONATE_URL;
+
   return (
     <section className="relative overflow-hidden min-h-[85vh] flex items-center justify-center">
       {/* GLOW DE FONDO */}
@@ -183,23 +186,35 @@ export default function Hero() {
           transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
           className="flex flex-wrap justify-center gap-4 mt-4"
         >
+          {/* Comprar Kit – directo a Wompi */}
           <a
-            href="#comprar"
+            href={kitUrl || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn px-8 py-3 text-sm md:text-base shadow-[0_0_30px_rgba(255,215,0,0.35)]"
           >
             Comprar Kit Premium
           </a>
+
+          {/* Conocer ecosistema – scroll interno */}
           <a
             href="#ecosistema"
             className="px-8 py-3 rounded-2xl border border-[#FFD700]/60 text-sm md:text-base text-gray-100 hover:bg-[#181818] hover:border-[#FFD700] transition-colors"
           >
             Conocer ecosistema
           </a>
+
+          {/* Apoyar el ecosistema – directo a Wompi donaciones con ícono */}
           <a
-            href="#alianzas"
-            className="px-8 py-3 rounded-2xl bg-[#111111] border border-[#ff9ecf]/60 text-sm md:text-base text-[#ffcee8] hover:bg-[#181818] transition-colors"
+            href={donateUrl || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 rounded-2xl bg-[#111111] border border-[#ff9ecf]/60 text-sm md:text-base text-[#ffcee8] hover:bg-[#181818] transition-colors flex items-center gap-2"
           >
-            Apoyar el ecosistema (50K)
+            Apoyar el ecosistema
+            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-[#ff9ecf] to-[#FFD700] text-[0.7rem] text-black shadow-[0_0_18px_rgba(255,158,207,0.9)]">
+              ♥
+            </span>
           </a>
         </motion.div>
 
