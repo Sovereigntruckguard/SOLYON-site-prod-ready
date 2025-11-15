@@ -571,9 +571,162 @@ export default function Page() {
         </p>
       </section>
 
+      {/* ECOSISTEMA SOLYON */}
+      <section className="section space-y-10 text-center" id="ecosistema">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Ecosistema SOLYON
+          </h2>
+          <p className="text-gray-200 text-lg">
+            SOLYON es un ecosistema DeepTech soberano compuesto por tecnologías,
+            aplicaciones y sistemas diseñados para resolver problemas reales
+            en transporte, educación, hábitos, impacto social y automatización.
+          </p>
+          <p className="text-gray-400 text-sm md:text-base">
+            Cada módulo nace para cubrir una necesidad crítica. Unidos, forman un
+            sistema vivo que evoluciona con cada usuario.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">Arcanum</h3>
+            <p className="text-gray-300 mt-2">
+              Motor cognitivo con memoria fractal y anti-alucinación. La base de
+              toda la inteligencia del ecosistema.
+            </p>
+          </div>
+
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">Nexus</h3>
+            <p className="text-gray-300 mt-2">
+              Sistema nervioso operativo que orquesta agentes, datos y tareas en
+              tiempo real.
+            </p>
+          </div>
+
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">Azoth</h3>
+            <p className="text-gray-300 mt-2">
+              CRM soberano para ventas, operación y automatización de procesos.
+            </p>
+          </div>
+
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">TruckBoss</h3>
+            <p className="text-gray-300 mt-2">
+              App para camioneros latinos: cotizador, comunidad, PRO y
+              herramientas de operación.
+            </p>
+          </div>
+
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">
+              Sovereign TruckGuard LLC
+            </h3>
+            <p className="text-gray-300 mt-2">
+              Agencia de seguros de lujo para transporte. Operación EE.UU. y
+              soporte bilingüe.
+            </p>
+          </div>
+
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">
+              EL-VIA DOT Express
+            </h3>
+            <p className="text-gray-300 mt-2">
+              Inglés + cumplimiento DOT para camioneros. Educación real para
+              el mercado más olvidado.
+            </p>
+          </div>
+
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">Vita</h3>
+            <p className="text-gray-300 mt-2">
+              Transformación integral: hábitos, cuerpo, energía, foco y mente.
+            </p>
+          </div>
+
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">Foundation</h3>
+            <p className="text-gray-300 mt-2">
+              Educación, impacto social y becas para talento latino que merece
+              oportunidades reales.
+            </p>
+          </div>
+        </div>
+
+        <p className="text-gray-500 italic text-sm max-w-3xl mx-auto">
+          El ecosistema crece contigo. Cada módulo refuerza al siguiente. Todo
+          está diseñado para escalar en LATAM y EE.UU.
+        </p>
+      </section>
+
+      {/* TECNOLOGÍA & IP */}
+      <section className="section space-y-10 text-center" id="tech-ip">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Tecnología & IP
+          </h2>
+          <p className="text-gray-200 text-lg">
+            Lo que diferencia a SOLYON no es solo su ecosistema, sino la ciencia,
+            la propiedad intelectual y la arquitectura soberana que lo sostiene.
+          </p>
+          <p className="text-gray-400 text-sm">
+            Estamos construyendo tecnología con la misma seriedad de los grandes
+            laboratorios del mundo, pero desde la realidad de LATAM.
+          </p>
+        </div>
+
+        <div className="card p-10 max-w-5xl mx-auto space-y-6 text-left">
+          <ul className="text-gray-300 space-y-3">
+            <li>
+              <span className="gradient-gold font-semibold">
+                • Memoria fractal jerárquica para LLM:
+              </span>{" "}
+              arquitectura propia para retención profunda, sin perder contexto.
+            </li>
+
+            <li>
+              <span className="gradient-gold font-semibold">
+                • Anti-alucinación y autoaprendizaje:
+              </span>{" "}
+              Arcanum corrige desviaciones y mejora su razonamiento.
+            </li>
+
+            <li>
+              <span className="gradient-gold font-semibold">
+                • Orquestación multi-agente Nexus:
+              </span>{" "}
+              coordinación cognitiva en tiempo real.
+            </li>
+
+            <li>
+              <span className="gradient-gold font-semibold">
+                • Agentes autónomos soberanos:
+              </span>{" "}
+              IA que no depende de servidores externos para funcionar.
+            </li>
+
+            <li>
+              <span className="gradient-gold font-semibold">
+                • DeepTech desde LATAM:
+              </span>{" "}
+              tecnología diseñada para nuestras condiciones, no para Silicon
+              Valley.
+            </li>
+          </ul>
+
+          <p className="text-gray-400 text-sm">
+            Estado actual:{" "}
+            <span className="text-[#FFD700] font-semibold">Patent Pending</span>{" "}
+            (fórmula anti-alucinación, memoria fractal, orquestación y sistema
+            cognitivo).
+          </p>
+        </div>
+      </section>
+
       {/* BLOQUES ORIGINALES – DETALLE POR SECCIÓN */}
-      <Ecosystem />
-      <TechIP />
       <Purchase />
       <PartnersCTA />
 
