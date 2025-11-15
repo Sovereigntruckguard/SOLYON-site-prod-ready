@@ -5,6 +5,7 @@ import TechIP from "@/components/TechIP";
 import Purchase from "@/components/Purchase";
 import PartnersCTA from "@/components/PartnersCTA";
 import DonateButton from "@/components/DonateButton";
+import SupportModal from "@/components/SupportModal";
 
 export default function Page() {
   return (
@@ -155,84 +156,113 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 3. PRODUCTOS ESTRELLA Y MONETIZACIÓN INMEDIATA */}
-      <section className="section space-y-6" id="productos">
-        <h2 className="font-display text-3xl md:text-4xl gradient-gold">
-          Productos estrella para impulsar el ecosistema
-        </h2>
-        <p className="text-gray-200 max-w-3xl">
-          Comenzamos monetizando de forma simple pero estratégica: un acceso
-          premium al conocimiento, licencias de nuestra tecnología y un canal
-          directo para que personas y empresas apoyen el laboratorio.
-        </p>
+      {/* CATÁLOGO PREMIUM · PUERTAS DE ACCESO */}
+      <section className="section space-y-10" id="acceso">
+        <div className="text-center space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Puertas de acceso al ecosistema SOLYON
+          </h2>
+          <p className="text-gray-200 text-lg">
+            Un catálogo premium de acceso, apoyo e implementación para
+            acompañarnos en la construcción de DeepTech soberana desde LATAM
+            hacia el mundo.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {/* KIT DIGITAL */}
-          <div className="card p-6 flex flex-col justify-between">
-            <div>
-              <h3 className="font-display text-xl gradient-gold">
-                SOLYON Kit Digital
-              </h3>
-              <p className="text-gray-300 mt-2">
-                Entrada Premium al ecosistema: documentación estratégica,
-                plantillas operativas y acceso a futuras actualizaciones.
-                Pensado para founders, equipos y visionarios.
-              </p>
-              <p className="text-gray-100 mt-3 text-lg font-semibold">
-                $99.000 COP · Pago seguro vía Wompi
-              </p>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* TARJETA 1 · KIT DIGITAL */}
+          <article className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#141414] to-[#050505] border border-[#FFD700]/40 shadow-[0_30px_80px_rgba(0,0,0,0.8)] flex flex-col min-h-[260px]">
+            <div className="absolute inset-x-0 -top-24 h-40 bg-gradient-to-b from-[#FFD7001f] to-transparent pointer-events-none" />
+            <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <p className="text-[0.7rem] uppercase tracking-[0.25em] text-[#FFD700]">
+                  Entrada Premium
+                </p>
+                <h3 className="font-display text-2xl gradient-gold">
+                  SOLYON Kit Digital
+                </h3>
+                <p className="text-gray-300 text-sm md:text-base">
+                  Documentación estratégica, mapas del ecosistema y plantillas
+                  operativas para founders, equipos y visionarios que quieren
+                  construir con nuestra lógica DeepTech.
+                </p>
+              </div>
+              <div className="space-y-3">
+                <p className="text-gray-100 text-lg font-semibold">
+                  $99.000 COP · Pago seguro vía Wompi
+                </p>
+                <a
+                  href="#comprar"
+                  className="btn w-full py-3 text-sm md:text-base shadow-[0_0_30px_rgba(255,215,0,0.45)] text-center"
+                >
+                  Comprar Kit Premium
+                </a>
+              </div>
             </div>
-            <div className="mt-4">
-              <a href="#comprar" className="btn px-6 py-3 text-sm md:text-base">
-                Comprar Kit Premium
-              </a>
-            </div>
-          </div>
+          </article>
 
-          {/* ARCANUM EMPRESAS */}
-          <div className="card p-6 flex flex-col justify-between">
-            <div>
-              <h3 className="font-display text-xl gradient-gold">
-                Arcanum para empresas
-              </h3>
-              <p className="text-gray-300 mt-2">
-                Implementación de nuestro motor cognitivo y arquitectura de
-                agentes para compañías, gobiernos y organizaciones que necesiten
-                autonomía operativa real.
-              </p>
-              <p className="text-gray-100 mt-3 text-lg font-semibold">
-                Programa piloto 2025 · Cupos limitados
-              </p>
+          {/* TARJETA 2 · APOYO LABORATORIO + MODAL */}
+          <article className="relative overflow-hidden rounded-3xl bg-[#0c0c0c] border border-[#ffb6f0]/40 shadow-[0_30px_80px_rgba(0,0,0,0.8)] flex flex-col min-h-[260px]">
+            <div className="absolute inset-x-0 -top-24 h-40 bg-gradient-to-b from-[#ffb6f022] to-transparent pointer-events-none" />
+            <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <p className="text-[0.7rem] uppercase tracking-[0.25em] text-[#ffb6f0]">
+                  Apoyo continuo
+                </p>
+                <h3 className="font-display text-2xl gradient-gold">
+                  Apoya el laboratorio SOLYON
+                </h3>
+                <p className="text-gray-300 text-sm md:text-base">
+                  Tu aporte mantiene vivo el laboratorio, la infraestructura y
+                  las becas que permiten que más personas en LATAM accedan a
+                  tecnología soberana, sin importar su historia.
+                </p>
+                <p className="text-gray-100 text-lg font-semibold">
+                  Aporta desde{" "}
+                  <span className="text-[#FFD700]">$5.000 COP</span>
+                </p>
+              </div>
+
+              {/* Aquí va el modal flotante */}
+              <div className="space-y-3">
+                <SupportModal />
+                <p className="text-[0.7rem] text-gray-500 text-center">
+                  También puedes hacer aportes mayores para financiar becas,
+                  hardware o infraestructura específica. Escríbenos desde la
+                  sección Alianzas &amp; Grants.
+                </p>
+              </div>
             </div>
-            <div className="mt-4 flex flex-wrap gap-3">
+          </article>
+
+          {/* TARJETA 3 · ARCANUM EMPRESAS */}
+          <article className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#151515] to-[#050505] border border-[#FFD700]/25 shadow-[0_30px_80px_rgba(0,0,0,0.8)] flex flex-col min-h-[260px]">
+            <div className="absolute inset-x-0 -top-24 h-40 bg-gradient-to-b from-[#FFD7001a] to-transparent pointer-events-none" />
+            <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <p className="text-[0.7rem] uppercase tracking-[0.25em] text-gray-400">
+                  Implementación de alta gama
+                </p>
+                <h3 className="font-display text-2xl gradient-gold">
+                  Arcanum para empresas
+                </h3>
+                <p className="text-gray-300 text-sm md:text-base">
+                  Pilotos y proyectos a medida con nuestro motor cognitivo,
+                  arquitectura de agentes y orquestación Nexus, para compañías y
+                  organizaciones que necesitan autonomía operativa real.
+                </p>
+                <p className="text-gray-100 text-lg font-semibold">
+                  Programa piloto 2025 · Cupos limitados
+                </p>
+              </div>
               <a
                 href="/contact"
-                className="px-6 py-3 text-sm md:text-base rounded-2xl border border-[#FFD700] text-[#FFD700] hover:bg-[#2D2D2D]"
+                className="w-full px-8 py-3 rounded-2xl border border-[#FFD700] text-sm md:text-base mt-2 text-[#FFD700] hover:bg-[#181818] text-center"
               >
                 Solicitar demo estratégica
               </a>
             </div>
-          </div>
-
-          {/* APOYO AL LABORATORIO */}
-          <div className="card p-6 flex flex-col justify-between">
-            <div>
-              <h3 className="font-display text-xl gradient-gold">
-                Apoya el laboratorio SOLYON
-              </h3>
-              <p className="text-gray-300 mt-2">
-                Cada aporte mantiene vivo el laboratorio, la investigación y las
-                becas que permitirán que más personas en LATAM accedan a
-                tecnología soberana.
-              </p>
-              <p className="text-gray-100 mt-3 text-lg font-semibold">
-                Donación sugerida: 50.000 COP
-              </p>
-            </div>
-            <div className="mt-4">
-              <DonateButton />
-            </div>
-          </div>
+          </article>
         </div>
       </section>
 
