@@ -5,7 +5,6 @@ import TechIP from "@/components/TechIP";
 import Purchase from "@/components/Purchase";
 import PartnersCTA from "@/components/PartnersCTA";
 import SupportModal from "@/components/SupportModal";
-import ImpactOrbit from "@/components/ImpactOrbit";
 
 export default function Page() {
   return (
@@ -281,11 +280,11 @@ export default function Page() {
       </section>
 
       {/* 4. IMPACTO & PROPÓSITO */}
-      <section className="section relative overflow-hidden space-y-10 text-center" id="impacto">
-        {/* Animación 3D de fondo */}
-        <ImpactOrbit />
-
-        <div className="relative z-10 space-y-4 max-w-4xl mx-auto">
+      <section
+        className="section space-y-10 text-center bg-gradient-to-b from-transparent via-[#050505] to-transparent"
+        id="impacto"
+      >
+        <div className="space-y-4 max-w-4xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl gradient-gold">
             Impacto & propósito
           </h2>
@@ -302,7 +301,9 @@ export default function Page() {
           </p>
         </div>
 
-        <div className="relative z-10 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        {/* Diagramas de impacto */}
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {/* Personas */}
           <div className="card p-6 text-center">
             <h3 className="font-display text-3xl md:text-4xl gradient-gold">
               +10.000
@@ -311,7 +312,17 @@ export default function Page() {
               Personas y equipos proyectados a impactar en los primeros años
               del ecosistema SOLYON entre LATAM y EE.UU.
             </p>
+            <div className="mt-4 flex justify-center items-end gap-1 h-8">
+              <div className="w-6 rounded-full bg-[#FFD700]/30 h-3" />
+              <div className="w-6 rounded-full bg-[#FFD700]/60 h-5" />
+              <div className="w-6 rounded-full bg-[#FFD700] h-7" />
+            </div>
+            <p className="mt-1 text-[0.7rem] text-gray-500">
+              Hoy · 12 meses · 36 meses
+            </p>
           </div>
+
+          {/* Proyectos */}
           <div className="card p-6 text-center">
             <h3 className="font-display text-3xl md:text-4xl gradient-gold">
               10
@@ -320,7 +331,17 @@ export default function Page() {
               Proyectos DeepTech interconectados en un mismo ecosistema: de
               seguros y transporte a educación, hábitos y filantropía.
             </p>
+            <div className="mt-4 flex justify-center items-end gap-1 h-8">
+              <div className="w-6 rounded-full bg-[#ffb6f0]/30 h-2" />
+              <div className="w-6 rounded-full bg-[#ffb6f0]/60 h-4" />
+              <div className="w-6 rounded-full bg-[#ffb6f0] h-6" />
+            </div>
+            <p className="mt-1 text-[0.7rem] text-gray-500">
+              Concepto · MVP · Ecosistema vivo
+            </p>
           </div>
+
+          {/* Patentes / IP */}
           <div className="card p-6 text-center">
             <h3 className="font-display text-3xl md:text-4xl gradient-gold">
               3
@@ -328,6 +349,14 @@ export default function Page() {
             <p className="text-gray-300 mt-2 text-sm md:text-base">
               Familias de patentes y propiedad intelectual en marcha: memoria
               fractal, orquestación cognitiva y ecosistema soberano.
+            </p>
+            <div className="mt-4 flex justify-center items-end gap-1 h-8">
+              <div className="w-6 rounded-full bg-[#FFD700]/25 h-2" />
+              <div className="w-6 rounded-full bg-[#FFD700]/45 h-3" />
+              <div className="w-6 rounded-full bg-[#FFD700]/80 h-5" />
+            </div>
+            <p className="mt-1 text-[0.7rem] text-gray-500">
+              Provisional · Consolidación · Portafolio
             </p>
           </div>
         </div>
