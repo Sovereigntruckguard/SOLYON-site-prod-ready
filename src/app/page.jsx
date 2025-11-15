@@ -12,94 +12,144 @@ export default function Page() {
       {/* HERO – slogan y CTAs principales */}
       <Hero />
 
-      {/* 1. EL PROBLEMA QUE ESTAMOS ENFRENTANDO */}
-      <section className="section space-y-6">
-        <h2 className="font-display text-3xl md:text-4xl gradient-gold">
-          El problema que estamos enfrentando
-        </h2>
-        <p className="text-gray-200 max-w-3xl">
-          América Latina está llena de talento, resiliencia y creatividad, pero
-          la mayoría de las personas no tienen acceso a DeepTech real. La
-          infraestructura, las herramientas y los modelos avanzados siguen
-          concentrados en manos de gigantes globales, lejos de los barrios, las
-          calles y los emprendimientos que necesitan esa tecnología para
-          sobrevivir y crecer.
-        </p>
+       {/* 1. EL PROBLEMA QUE ESTAMOS ENFRENTANDO */}
+      <section className="section space-y-10 text-center" id="problema">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            El problema que estamos enfrentando
+          </h2>
+          <p className="text-gray-200">
+            América Latina está llena de talento, resiliencia y creatividad, pero la mayoría
+            de las personas no tienen acceso a DeepTech real. La infraestructura, las
+            herramientas y los modelos avanzados siguen concentrados en manos de gigantes
+            globales, lejos de los barrios, las calles y los emprendimientos que necesitan
+            esa tecnología para sobrevivir y crecer.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <div className="card p-6">
-            <h3 className="font-display text-xl gradient-gold">
+            <h3 className="font-display text-lg gradient-gold">
               Desigualdad tecnológica
             </h3>
             <p className="text-gray-300 mt-2">
-              Millones quedan por fuera de la nueva economía porque no pueden
-              pagar plataformas ni equipos pensados para realidades muy
-              distintas a las nuestras.
+              Millones quedan por fuera de la nueva economía porque no pueden pagar
+              plataformas ni equipos pensados para realidades muy distintas a las nuestras.
             </p>
           </div>
           <div className="card p-6">
-            <h3 className="font-display text-xl gradient-gold">
-              Dependencia total
-            </h3>
+            <h3 className="font-display text-lg gradient-gold">Dependencia total</h3>
             <p className="text-gray-300 mt-2">
-              Dependemos de infraestructuras que no controlamos: datos, modelos
-              y decisiones están fuera de LATAM.
+              Dependemos de infraestructuras que no controlamos: datos, modelos y
+              decisiones están fuera de LATAM.
             </p>
           </div>
           <div className="card p-6">
-            <h3 className="font-display text-xl gradient-gold">
+            <h3 className="font-display text-lg gradient-gold">
               Talento subutilizado
             </h3>
             <p className="text-gray-300 mt-2">
-              Hay una generación completa de latinos brillantes que no encuentra
-              un puente entre su realidad y la DeepTech que está definiendo el
-              futuro.
+              Hay una generación completa de latinos brillantes que no encuentra un puente
+              entre su realidad y la DeepTech que está definiendo el futuro.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 2. NUESTRA SOLUCIÓN: ECOSISTEMA COGNITIVO */}
-      <section className="section space-y-6">
-        <h2 className="font-display text-3xl md:text-4xl gradient-gold">
-          Nuestra solución: un ecosistema cognitivo soberano
-        </h2>
-        <p className="text-gray-200 max-w-3xl">
-          SOLYON construye un ecosistema DeepTech completo donde el cerebro
-          cognitivo (Arcanum), el orquestador (Nexus) y las aplicaciones
-          especializadas (Azoth, TruckBoss, EL-VIA, Vita) trabajan juntos para
-          resolver problemas reales de negocio, educación y vida diaria.
-        </p>
+      {/* 2. NUESTRA SOLUCIÓN: ARQUITECTURA DEL SISTEMA VISUALIZADA */}
+      <section className="section space-y-10 text-center" id="solucion">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Nuestra solución: arquitectura del sistema visualizada
+          </h2>
+          <p className="text-gray-200">
+            SOLYON no es una sola herramienta, es una arquitectura completa. Visualmente,
+            se organiza en tres capas: el{" "}
+            <span className="text-[#FFD700] font-semibold">Arcanum Core</span> como cerebro
+            cognitivo, el{" "}
+            <span className="text-[#FFD700] font-semibold">Nexus Control Grid</span> como
+            sistema nervioso operativo y el{" "}
+            <span className="text-[#FFD700] font-semibold">Ecosistema de 10 módulos</span>{" "}
+            donde viven las aplicaciones que tocan la vida real de las personas y las
+            empresas.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-4 gap-6">
-          <div className="card p-6">
-            <h3 className="font-display text-lg gradient-gold">Arcanum</h3>
-            <p className="text-gray-300 mt-2">
-              Motor cognitivo con memoria fractal, anti-alucinación y
-              autoaprendizaje, diseñado para decidir con contexto profundo y
-              precisión.
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* ARCANUM CORE */}
+          <div className="card p-6 flex flex-col items-center text-center space-y-4">
+            <div className="relative w-40 h-40 md:w-44 md:h-44">
+              <div className="absolute inset-4 rounded-full border border-[#ffb6f0]/50" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-b from-[#ffb6f022] to-transparent blur-xl" />
+              <div className="absolute inset-[32%] rounded-full border border-[#FFD700]/70" />
+            </div>
+            <h3 className="font-display text-xl gradient-gold">Arcanum Core</h3>
+            <p className="text-gray-300 text-sm">
+              Motor cognitivo con memoria fractal, anti-alucinación y autoaprendizaje.
+              Es el núcleo que procesa contexto profundo y toma decisiones con precisión.
             </p>
           </div>
-          <div className="card p-6">
-            <h3 className="font-display text-lg gradient-gold">Nexus</h3>
-            <p className="text-gray-300 mt-2">
-              Sistema nervioso que orquesta agentes, tareas y datos en tiempo
-              real para empresas y organizaciones.
+
+          {/* NEXUS CONTROL GRID */}
+          <div className="card p-6 flex flex-col items-center text-center space-y-4">
+            <div className="relative w-40 h-40 md:w-44 md:h-44">
+              <div className="absolute inset-1 rounded-full border border-[#FFD700]/40" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,215,0,0.18),_transparent_60%)]" />
+              <div className="absolute inset-4 grid grid-cols-3 grid-rows-3 gap-1 opacity-80">
+                {Array.from({ length: 9 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="rounded-full border border-[#ffb6f0]/40 bg-black/60"
+                  />
+                ))}
+              </div>
+            </div>
+            <h3 className="font-display text-xl gradient-gold">Nexus Control Grid</h3>
+            <p className="text-gray-300 text-sm">
+              Sistema nervioso que orquesta agentes, tareas y datos en tiempo real.
+              Coordina cómo la inteligencia de Arcanum se despliega sobre cada flujo
+              operativo.
             </p>
           </div>
-          <div className="card p-6">
-            <h3 className="font-display text-lg gradient-gold">Aplicaciones</h3>
-            <p className="text-gray-300 mt-2">
-              Apps de alto impacto para transporte, seguros, educación y
-              transformación personal, construidas sobre nuestra tecnología
-              soberana.
-            </p>
-          </div>
-          <div className="card p-6">
-            <h3 className="font-display text-lg gradient-gold">Fundación</h3>
-            <p className="text-gray-300 mt-2">
-              Una base para becas, investigación y formación que conecta talento
-              latino con DeepTech de clase mundial.
+
+          {/* ECOSISTEMA 10 MÓDULOS */}
+          <div className="card p-6 flex flex-col items-center text-center space-y-4">
+            <div className="relative w-40 h-40 md:w-44 md:h-44">
+              <div className="absolute inset-0 rounded-3xl border border-[#ffb6f0]/40 bg-gradient-to-br from-[#1a1a1a] to-[#050505]" />
+              <div className="absolute inset-3 grid grid-cols-3 grid-rows-3 gap-2">
+                {Array.from({ length: 9 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center justify-center rounded-xl bg-[#111111] border border-[#FFD700]/25 text-[0.55rem] text-[#FFD700]/80"
+                  >
+                    {i === 0
+                      ? "Arcanum"
+                      : i === 1
+                      ? "Nexus"
+                      : i === 2
+                      ? "Azoth"
+                      : i === 3
+                      ? "TruckBoss"
+                      : i === 4
+                      ? "STG"
+                      : i === 5
+                      ? "EL-VIA"
+                      : i === 6
+                      ? "Vita"
+                      : i === 7
+                      ? "Command"
+                      : "Foundation"}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <h3 className="font-display text-xl gradient-gold">
+              Ecosistema de 10 módulos
+            </h3>
+            <p className="text-gray-300 text-sm">
+              Aplicaciones soberanas para transporte, seguros, educación, hábitos,
+              operación y filantropía. Todo conectado sobre la misma arquitectura
+              cognitiva.
             </p>
           </div>
         </div>
