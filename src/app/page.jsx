@@ -362,33 +362,80 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 5. QUIÉNES SOMOS Y DE DÓNDE VENIMOS */}
-      <section className="section space-y-6">
-        <h2 className="font-display text-3xl md:text-4xl gradient-gold">
-          Quiénes somos y de dónde venimos
-        </h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="card p-6">
-            <h3 className="font-display text-xl gradient-gold">
+            {/* 5. QUIÉNES SOMOS Y DE DÓNDE VENIMOS */}
+      <section className="section space-y-10 text-center" id="origen">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Quiénes somos y de dónde venimos
+          </h2>
+          <p className="text-gray-300 text-lg">
+            Toda revolución tecnológica nace de una historia humana. SOLYON no
+            comenzó en un laboratorio; comenzó en una realidad dura, en una vida
+            donde las oportunidades eran un privilegio lejano. Comenzó con dos
+            personas que decidieron romper sus límites y construir algo que
+            nadie imaginaba posible.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* TARJETA 1 */}
+          <div className="card p-8 text-left space-y-4">
+            <h3 className="font-display text-2xl gradient-gold">
               Desde la calle al DeepTech
             </h3>
-            <p className="text-gray-300 mt-2">
-              SOLYON nace de la historia de un joven que vio de cerca la
-              violencia, la escasez y la injusticia, y que decidió transformar
-              su propia vida a través del código, la disciplina y la visión.
+            <p className="text-gray-300 leading-relaxed">
+              Sergio creció entre la violencia, el caos y la escasez. Vio morir,
+              vio caer, vio cómo el mundo podía partirte en dos antes de
+              cumplir los 10 años. Pero también vio que del dolor nace una fuerza:
+              la fuerza de crear tu propio destino. Aprendió código, aprendió a
+              construir desde cero y convirtió su historia en un motor de
+              propósito, no de victimismo.
+            </p>
+            <p className="text-gray-400 text-sm">
+              De los barrios donde nadie apuesta por ti, a diseñar tecnología de
+              frontera. Esa es la raíz de SOLYON.
             </p>
           </div>
-          <div className="card p-6">
-            <h3 className="font-display text-xl gradient-gold">
-              Un propósito innegociable
+
+          {/* TARJETA 2 */}
+          <div className="card p-8 text-left space-y-4">
+            <h3 className="font-display text-2xl gradient-gold">
+              Elizabeth: la mente que sostiene el universo
             </h3>
-            <p className="text-gray-300 mt-2">
-              No venimos del privilegio, venimos del esfuerzo. Por eso nuestro
-              compromiso es claro: que la tecnología de más alto nivel deje de
-              ser un lujo y se convierta en una herramienta al servicio de
-              quienes construyen el futuro desde abajo.
+            <p className="text-gray-300 leading-relaxed">
+              Elizabeth vivió su propia guerra: la presión, el miedo, la falta de
+              apoyo, el peso de sostenerse sola en un sistema que no fue diseñado
+              para que una mujer latina construya tecnología. Pero lo hizo. Sostuvo
+              al proyecto cuando no había nada, cuando no había dinero, cuando no
+              había fuerzas. Sostuvo con amor, con disciplina y con una fe que no
+              se quiebra.
+            </p>
+            <p className="text-gray-400 text-sm">
+              Sin Elizabeth, SOLYON nunca hubiera sobrevivido su primera fase.
             </p>
           </div>
+        </div>
+
+        {/* TARJETA 3 – LA UNIÓN */}
+        <div className="card p-10 max-w-4xl mx-auto space-y-4 text-center">
+          <h3 className="font-display text-2xl gradient-gold">
+            Dos vidas, un propósito: construir soberanía
+          </h3>
+          <p className="text-gray-300 leading-relaxed">
+            Juntos, Sergio y Elizabeth vendieron todo: carros, celulares,
+            pertenencias, incluso la comodidad básica. Pasaron hambre, noches sin
+            dormir, discusiones, caída tras caída. Pero algo nunca cambió:
+            <span className="text-[#FFD700] font-semibold">
+              {" "}
+              la convicción de que la tecnología debe nacer desde quienes han
+              vivido la falta de oportunidades, no desde quienes siempre las han
+              tenido.
+            </span>
+          </p>
+          <p className="text-gray-400">
+            SOLYON no es una empresa. Es un manifiesto. Una declaración de guerra
+            contra el destino que les tocó. Una promesa para quienes vienen detrás.
+          </p>
         </div>
       </section>
 
