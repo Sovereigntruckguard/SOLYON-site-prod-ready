@@ -1,5 +1,4 @@
 import Hero from "@/components/Hero";
-import Vision from "@/components/Vision";
 import Ecosystem from "@/components/Ecosystem";
 import TechIP from "@/components/TechIP";
 import Purchase from "@/components/Purchase";
@@ -497,8 +496,82 @@ export default function Page() {
         </div>
       </section>
 
+           {/* VISIÓN & PROPÓSITO */}
+      <section className="section space-y-10 text-center" id="vision">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Visión & Propósito
+          </h2>
+
+          <p className="text-gray-200 text-lg">
+            SOLYON nace con una pregunta profunda:{" "}
+            <span className="text-[#FFD700] font-semibold">
+              ¿y si la tecnología más avanzada del mundo pudiera nacer desde quienes nunca fueron escuchados?
+            </span>
+          </p>
+
+          <p className="text-gray-300 text-base">
+            Nuestra visión no es crear más software. Es expandir la percepción humana,
+            rediseñar cómo coexistimos con la inteligencia artificial y demostrar que
+            la innovación de élite también puede nacer desde LATAM, desde el dolor,
+            la historia y la resiliencia.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {/* Bloque 1 */}
+          <div className="card p-6 text-left space-y-3">
+            <h3 className="font-display text-xl gradient-gold">
+              Coexistencia con propósito
+            </h3>
+            <p className="text-gray-300">
+              Creemos en una IA que no reemplaza, sino que eleva. Una inteligencia
+              que acompaña, potencia y permite que los humanos vivan con dignidad,
+              claridad y libertad.
+            </p>
+            <p className="text-gray-400 text-sm">
+              La tecnología debe ser un aliado espiritual, emocional y operativo.
+            </p>
+          </div>
+
+          {/* Bloque 2 */}
+          <div className="card p-6 text-left space-y-3">
+            <h3 className="font-display text-xl gradient-gold">
+              Innovación como legado
+            </h3>
+            <p className="text-gray-300">
+              Creamos DeepTech como arte funcional. Cada sistema, cada módulo,
+              cada agente cognitivo que desarrollamos está diseñado para trascender,
+              no solo para funcionar.
+            </p>
+            <p className="text-gray-400 text-sm">
+              El legado de SOLYON no es el producto: es la conciencia que deja en quienes lo usan.
+            </p>
+          </div>
+
+          {/* Bloque 3 */}
+          <div className="card p-6 text-left space-y-3">
+            <h3 className="font-display text-xl gradient-gold">
+              Expansión de percepción
+            </h3>
+            <p className="text-gray-300">
+              No buscamos cambiar el mundo. Buscamos expandir la forma en que lo ves:
+              tu libertad, tus capacidades, tu visión, tus posibilidades.
+            </p>
+            <p className="text-gray-400 text-sm">
+              La verdadera revolución es interna antes que tecnológica.
+            </p>
+          </div>
+        </div>
+
+        {/* CTA emocional suave */}
+        <p className="max-w-3xl mx-auto text-gray-500 text-sm mt-4 italic">
+          Si estás aquí, probablemente también sientes que el mundo puede ser distinto.
+          En SOLYON no buscamos seguidores, sino constructores de futuro.
+        </p>
+      </section>
+
       {/* BLOQUES ORIGINALES – DETALLE POR SECCIÓN */}
-      <Vision />
       <Ecosystem />
       <TechIP />
       <Purchase />
