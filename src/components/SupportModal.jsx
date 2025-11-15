@@ -93,11 +93,31 @@ export default function SupportModal() {
                 </span>
               </p>
               <DonateButton />
-              <p className="text-[0.7rem] text-gray-500 text-center">
-                El monto final se confirma en la ventana de pago de Wompi. Cada
-                aporte, por pequeño que sea, nos acerca a una infraestructura
-                tecnológica soberana creada desde LATAM.
-              </p>
+
+              {/* Cinta de confianza Wompi + PCI */}
+              <div className="mt-3 flex flex-col gap-2 border-t border-[#2A2A2A] pt-3">
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2">
+                    <img
+                      src="/wompi/logo-wompi-white.svg"
+                      alt="Wompi"
+                      className="h-4"
+                    />
+                    <span className="text-[0.7rem] text-gray-400">
+                      Pagos procesados por Wompi.
+                    </span>
+                  </div>
+                  <img
+                    src="/wompi/wompi-pci-dss.svg"
+                    alt="Certificado PCI DSS"
+                    className="h-5"
+                  />
+                </div>
+                <p className="text-[0.65rem] text-gray-500 text-center">
+                  Wompi cuenta con certificación PCI DSS Level 1, el máximo
+                  estándar de seguridad para procesar pagos electrónicos.
+                </p>
+              </div>
             </div>
           </div>
         </div>
