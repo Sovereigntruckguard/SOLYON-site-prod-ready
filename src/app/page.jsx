@@ -5,6 +5,7 @@ import TechIP from "@/components/TechIP";
 import Purchase from "@/components/Purchase";
 import PartnersCTA from "@/components/PartnersCTA";
 import SupportModal from "@/components/SupportModal";
+import ImpactOrbit from "@/components/ImpactOrbit";
 
 export default function Page() {
   return (
@@ -72,7 +73,9 @@ export default function Page() {
             Visualmente, se organiza en tres capas: el{" "}
             <span className="text-[#FFD700] font-semibold">Arcanum Core</span>{" "}
             como cerebro cognitivo, el{" "}
-            <span className="text-[#FFD700] font-semibold">Nexus Control Grid</span>{" "}
+            <span className="text-[#FFD700] font-semibold">
+              Nexus Control Grid
+            </span>{" "}
             como sistema nervioso operativo y el{" "}
             <span className="text-[#FFD700] font-semibold">
               Ecosistema de 10 módulos
@@ -277,38 +280,54 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 4. IMPACTO HUMANO */}
-      <section className="section space-y-6">
-        <h2 className="font-display text-3xl md:text-4xl gradient-gold">
-          Impacto SOLYON
-        </h2>
-        <p className="text-gray-200 max-w-3xl">
-          El núcleo de SOLYON no es solo código: es la decisión de que nadie se
-          quede afuera de la revolución tecnológica por su código postal, su
-          acento o su historia. Todo lo que construimos está pensado para
-          volver la tecnología una extensión de la dignidad humana.
-        </p>
+      {/* 4. IMPACTO & PROPÓSITO */}
+      <section className="section relative overflow-hidden space-y-10 text-center" id="impacto">
+        {/* Animación 3D de fondo */}
+        <ImpactOrbit />
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="relative z-10 space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Impacto & propósito
+          </h2>
+          <p className="text-gray-200 text-lg">
+            El núcleo de SOLYON no es solo código: es la decisión de que nadie
+            se quede afuera de la revolución tecnológica por su código postal,
+            su acento o su historia. Nuestro propósito es convertir la
+            tecnología de más alto nivel en una extensión de la dignidad humana.
+          </p>
+          <p className="text-gray-400 text-sm md:text-base">
+            Esto es lo que estamos cambiando: cómo se accede a la inteligencia,
+            quién la diseña y desde dónde se construyen los sistemas que van a
+            decidir sobre nuestra vida diaria.
+          </p>
+        </div>
+
+        <div className="relative z-10 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <div className="card p-6 text-center">
-            <h3 className="font-display text-3xl gradient-gold">+1000</h3>
-            <p className="text-gray-300 mt-2">
-              Personas proyectadas a impactar en la primera fase LATAM del
-              ecosistema.
+            <h3 className="font-display text-3xl md:text-4xl gradient-gold">
+              +10.000
+            </h3>
+            <p className="text-gray-300 mt-2 text-sm md:text-base">
+              Personas y equipos proyectados a impactar en los primeros años
+              del ecosistema SOLYON entre LATAM y EE.UU.
             </p>
           </div>
           <div className="card p-6 text-center">
-            <h3 className="font-display text-3xl gradient-gold">3</h3>
-            <p className="text-gray-300 mt-2">
-              Sectores clave: transporte, educación y transformación personal,
-              como puntos de entrada al cambio.
+            <h3 className="font-display text-3xl md:text-4xl gradient-gold">
+              10
+            </h3>
+            <p className="text-gray-300 mt-2 text-sm md:text-base">
+              Proyectos DeepTech interconectados en un mismo ecosistema: de
+              seguros y transporte a educación, hábitos y filantropía.
             </p>
           </div>
           <div className="card p-6 text-center">
-            <h3 className="font-display text-3xl gradient-gold">1</h3>
-            <p className="text-gray-300 mt-2">
-              Un mismo ecosistema que unifica propósito, negocio y tecnología
-              soberana para toda una generación.
+            <h3 className="font-display text-3xl md:text-4xl gradient-gold">
+              3
+            </h3>
+            <p className="text-gray-300 mt-2 text-sm md:text-base">
+              Familias de patentes y propiedad intelectual en marcha: memoria
+              fractal, orquestación cognitiva y ecosistema soberano.
             </p>
           </div>
         </div>
