@@ -15,9 +15,12 @@ export default function SupportModal() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="btn w-full py-3 text-sm md:text-base"
+        className="btn w-full py-3 text-sm md:text-base flex items-center justify-center gap-2"
       >
-        Apoyar el ecosistema (50K)
+        <span>Apoyar el ecosistema</span>
+        <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-[#ff9ecf] to-[#FFD700] text-[0.7rem] text-black shadow-[0_0_18px_rgba(255,158,207,0.9)]">
+          ♥
+        </span>
       </button>
 
       {/* MODAL FLOTANTE */}
@@ -39,8 +42,9 @@ export default function SupportModal() {
               </h3>
               <p className="text-gray-300 text-sm">
                 Tu aporte sostiene investigación, infraestructura y becas para
-                talento latino que está construyendo DeepTech soberana. Elige un
-                monto o define el que sientas.
+                talento latino que está construyendo la primera arquitectura
+                DeepTech soberana de la región. Elige un monto sugerido o define
+                el que sientas.
               </p>
             </div>
 
@@ -90,7 +94,7 @@ export default function SupportModal() {
               </p>
               <DonateButton />
               <p className="text-[0.7rem] text-gray-500 text-center">
-                El monto final se confirma en la ventana de pago de Wompi. Tu
+                El monto final se confirma en la ventana de pago de Wompi. Cada
                 aporte, por pequeño que sea, nos acerca a una infraestructura
                 tecnológica soberana creada desde LATAM.
               </p>
