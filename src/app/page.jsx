@@ -40,7 +40,7 @@ export default function Page() {
           <h2 className="font-display text-3xl md:text-4xl gradient-gold">
             El problema que estamos enfrentando
           </h2>
-          <p className="text-gray-200">
+          <p className="text-gray-200 leading-relaxed">
             América Latina está llena de talento, resiliencia y creatividad,
             pero la mayoría de las personas no tienen acceso a DeepTech real.
             La infraestructura, las herramientas y los modelos avanzados siguen
@@ -89,7 +89,7 @@ export default function Page() {
           <h2 className="font-display text-3xl md:text-4xl gradient-gold">
             Nuestra solución: arquitectura del sistema visualizada
           </h2>
-          <p className="text-gray-200">
+          <p className="text-gray-200 leading-relaxed">
             SOLYON no es una sola herramienta, es una arquitectura completa.
             Visualmente, se organiza en tres capas: el{" "}
             <span className="text-[#FFD700] font-semibold">Arcanum Core</span>{" "}
@@ -203,7 +203,7 @@ export default function Page() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-         {/* TARJETA 1 · KIT DIGITAL */}
+          {/* TARJETA 1 · KIT DIGITAL */}
           <article className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#141414] to-[#050505] border border-[#FFD700]/40 shadow-[0_30px_80px_rgba(0,0,0,0.8)] flex flex-col min-h-[260px]">
             <div className="absolute inset-x-0 -top-24 h-40 bg-gradient-to-b from-[#FFD7001f] to-transparent pointer-events-none" />
             <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
@@ -267,7 +267,6 @@ export default function Page() {
                 </p>
               </div>
 
-              {/* Aquí va el modal flotante */}
               <div className="space-y-3">
                 <SupportModal />
                 <p className="text-[0.7rem] text-gray-500 text-center">
@@ -310,7 +309,7 @@ export default function Page() {
         </div>
       </section>
 
-       {/* CASOS DE USO: QUÉ PUEDES HACER HOY CON SOLYON */}
+      {/* CASOS DE USO: QUÉ PUEDES HACER HOY CON SOLYON */}
       <section className="section space-y-10 text-center" id="casos-uso">
         <div className="space-y-4 max-w-4xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl gradient-gold">
@@ -371,7 +370,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* 4. IMPACTO & PROPÓSITO */}
+      {/* IMPACTO & PROPÓSITO */}
       <section
         className="section space-y-10 text-center bg-gradient-to-b from-transparent via-[#050505] to-transparent"
         id="impacto"
@@ -454,7 +453,7 @@ export default function Page() {
         </div>
       </section>
 
-            {/* CÍRCULO INTERNO SOLYON – LEAD CAPTURE SUAVE */}
+      {/* CÍRCULO INTERNO SOLYON – LEAD CAPTURE SUAVE */}
       <section className="section space-y-6 text-center" id="circulo-interno">
         <div className="card p-8 md:p-10 max-w-3xl mx-auto space-y-4">
           <h2 className="font-display text-2xl md:text-3xl gradient-gold">
@@ -482,13 +481,13 @@ export default function Page() {
         </div>
       </section>
 
-            {/* 5. QUIÉNES SOMOS Y DE DÓNDE VENIMOS */}
+      {/* 5. QUIÉNES SOMOS Y DE DÓNDE VENIMOS */}
       <section className="section space-y-10 text-center" id="origen">
         <div className="space-y-4 max-w-4xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl gradient-gold">
             Quiénes somos y de dónde venimos
           </h2>
-          <p className="text-gray-300 text-lg">
+          <p className="text-gray-300 text-lg leading-relaxed">
             Toda revolución tecnológica nace de una historia humana. SOLYON no
             comenzó en un laboratorio; comenzó en una realidad dura, en una vida
             donde las oportunidades eran un privilegio lejano. Comenzó con dos
@@ -559,7 +558,7 @@ export default function Page() {
         </div>
       </section>
 
-            {/* 6. HOJA DE RUTA – HACIA DÓNDE VAMOS */}
+      {/* 6. HOJA DE RUTA – HACIA DÓNDE VAMOS */}
       <section className="section space-y-10 text-center" id="ruta">
         <div className="space-y-4 max-w-4xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl gradient-gold">
@@ -617,7 +616,7 @@ export default function Page() {
         </div>
       </section>
 
-           {/* VISIÓN & PROPÓSITO */}
+      {/* VISIÓN & PROPÓSITO */}
       <section className="section space-y-10 text-center" id="vision">
         <div className="space-y-4 max-w-4xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl gradient-gold">
@@ -631,7 +630,7 @@ export default function Page() {
             </span>
           </p>
 
-          <p className="text-gray-300 text-base">
+          <p className="text-gray-300 text-base leading-relaxed">
             Nuestra visión no es crear más software. Es expandir la percepción humana,
             rediseñar cómo coexistimos con la inteligencia artificial y demostrar que
             la innovación de élite también puede nacer desde LATAM, desde el dolor,
@@ -956,7 +955,7 @@ export default function Page() {
         </div>
       </section>
 
-            {/* FAQ ESTRATÉGICO */}
+      {/* FAQ ESTRATÉGICO */}
       <section className="section space-y-8 text-left" id="faq">
         <div className="space-y-3 text-center max-w-3xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl gradient-gold">
