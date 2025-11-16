@@ -125,7 +125,7 @@ export default function EcosystemPage() {
   return (
     <main className="space-y-24 pb-24">
       {/* HERO ECOSISTEMA */}
-      <section className="section space-y-8 text-center mt-10 md:mt-16">
+      <section className="section mt-10 md:mt-16 space-y-8 text-center">
         <div className="space-y-6 max-w-4xl mx-auto">
           <h1 className="font-display text-4xl md:text-5xl gradient-gold">
             Ecosistema SOLYON
@@ -269,13 +269,78 @@ export default function EcosystemPage() {
               Capa 3 · Personas e impacto
             </p>
             <h3 className="font-display text-xl gradient-gold">
-              Educación & transformación
+              Educación &amp; transformación
             </h3>
             <p className="text-gray-300">
               EL-VIA, Vita y SOLYON Foundation llevan la tecnología al terreno
-              humano: idioma, hábitos, formación y becas para quienes
-              históricamente quedaron por fuera.
+              humano: idioma, hábitos, formación y becas para quienes históricamente
+              quedaron por fuera.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* DIAGRAMA DEL ECOSISTEMA */}
+      <section className="section space-y-8">
+        <div className="text-center space-y-3 max-w-3xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Diagrama del ecosistema SOLYON
+          </h2>
+          <p className="text-gray-300 text-sm md:text-base">
+            Una vista simplificada de cómo fluye la inteligencia dentro del
+            ecosistema: desde el núcleo cognitivo hasta las aplicaciones que
+            tocan la vida real de las personas.
+          </p>
+        </div>
+
+        <div className="card p-6 md:p-8 space-y-6 text-sm text-gray-200">
+          {/* Fila 1 */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-3">
+            <div className="px-4 py-2 rounded-full bg-[#111111] border border-[#FFD700]/60">
+              <span className="font-display text-sm gradient-gold">
+                Arcanum · Motor cognitivo
+              </span>
+            </div>
+            <span className="hidden md:inline text-[#FFD700] text-lg">➜</span>
+            <div className="px-4 py-2 rounded-full bg-[#111111] border border-[#ffb6f0]/60">
+              <span className="font-display text-sm gradient-gold">
+                Nexus · Orquestador
+              </span>
+            </div>
+          </div>
+
+          {/* Fila 2 */}
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <span className="text-xs uppercase tracking-[0.2em] text-gray-400">
+              Capa de negocio
+            </span>
+            <div className="px-3 py-1 rounded-full bg-[#151515] border border-[#FFD700]/40">
+              Azoth CRM
+            </div>
+            <div className="px-3 py-1 rounded-full bg-[#151515] border border-[#FFD700]/40">
+              TruckBoss
+            </div>
+            <div className="px-3 py-1 rounded-full bg-[#151515] border border-[#FFD700]/40">
+              Sovereign TruckGuard
+            </div>
+          </div>
+
+          {/* Fila 3 */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-3">
+            <span className="text-xs uppercase tracking-[0.2em] text-gray-400">
+              Capa humana &amp; social
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <div className="px-3 py-1 rounded-full bg-[#151515] border border-[#ffb6f0]/40">
+              EL-VIA DOT Express
+            </div>
+            <div className="px-3 py-1 rounded-full bg-[#151515] border border-[#ffb6f0]/40">
+              Vita
+            </div>
+            <div className="px-3 py-1 rounded-full bg-[#151515] border border-[#ffb6f0]/40">
+              SOLYON Foundation
+            </div>
           </div>
         </div>
       </section>
@@ -299,7 +364,7 @@ export default function EcosystemPage() {
               DeepTech
             </p>
             <h3 className="font-display text-lg gradient-gold">
-              Licencias & pilotos
+              Licencias &amp; pilotos
             </h3>
             <p className="text-gray-300">
               Licenciamiento de Arcanum y Nexus, pilotos a medida y consultorías
@@ -308,9 +373,9 @@ export default function EcosystemPage() {
           </div>
           <div className="card p-5 space-y-2">
             <p className="text-xs uppercase tracking-[0.2em] text-gray-400">
-              B2B & B2C
+              B2B &amp; B2C
             </p>
-            <h3 className="font-display text-lg gradient-gold">SaaS & PRO</h3>
+            <h3 className="font-display text-lg gradient-gold">SaaS &amp; PRO</h3>
             <p className="text-gray-300">
               Suscripciones a Azoth, TruckBoss PRO y Vita, con capas freemium y
               módulos avanzados.
@@ -321,7 +386,7 @@ export default function EcosystemPage() {
               Servicios
             </p>
             <h3 className="font-display text-lg gradient-gold">
-              Comisiones & fees
+              Comisiones &amp; fees
             </h3>
             <p className="text-gray-300">
               Ingresos por pólizas de Sovereign TruckGuard, servicios de
@@ -333,7 +398,7 @@ export default function EcosystemPage() {
               Impacto
             </p>
             <h3 className="font-display text-lg gradient-gold">
-              Grants & donaciones
+              Grants &amp; donaciones
             </h3>
             <p className="text-gray-300">
               Grants, becas y donaciones canalizadas a través de SOLYON
@@ -364,14 +429,12 @@ export default function EcosystemPage() {
           >
             Comprar Kit Digital
           </a>
-
           <a
             href="/circle"
             className="px-8 py-3 rounded-full border border-[#FFD700]/60 text-sm md:text-base text-gray-100 hover:bg-[#181818] hover:border-[#FFD700] transition-colors"
           >
-            Unirme al círculo interno
+            Unirme al Círculo Interno
           </a>
-
           <a
             href={process.env.NEXT_PUBLIC_WOMPI_DONATE_URL || "#"}
             target="_blank"
@@ -383,7 +446,6 @@ export default function EcosystemPage() {
               ♥
             </span>
           </a>
-
           <a
             href="/alliances"
             className="px-8 py-3 rounded-full bg-[#111111] border border-[#ffb6f0]/60 text-sm md:text-base text-[#ffcee8] hover:bg-[#181818] transition-colors"
