@@ -10,11 +10,11 @@ export default function StorePage() {
   return (
     <main className="space-y-24 pb-24">
       {/* HERO STORE */}
-      <section className="section mt-10 md:14 space-y-10 text-center md:text-left">
+      <section className="section mt-10 md:mt-16 space-y-10 text-center md:text-left">
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="space-y-5">
             <h1 className="font-display text-4xl md:text-5xl gradient-gold">
-              Tienda & Apoyo SOLYON
+              Tienda &amp; Apoyo SOLYON
             </h1>
             <p className="text-gray-200 text-lg leading-relaxed">
               Este no es un e-commerce más. Es el corazón de financiamiento de
@@ -22,10 +22,9 @@ export default function StorePage() {
               tecnología soberana, comunidad y oportunidades reales.
             </p>
             <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-              Desde un Kit Digital que te ayuda a diseñar tu propio proyecto
-              DeepTech, hasta la membresía del Círculo Interno y el acceso
-              temprano a Arcanum, aquí es donde decides pasar de ser espectador
-              a protagonista.
+              Estamos lanzando la primera versión pública del ecosistema. Si
+              estás aquí hoy, haces parte de la primera ola que impulsa Arcanum,
+              Nexus, TruckBoss, EL-VIA, Vita y SOLYON Foundation.
             </p>
             <div className="flex flex-wrap gap-3 mt-4">
               <a
@@ -84,9 +83,8 @@ export default function StorePage() {
             crean en esta visión.
           </p>
           <p className="text-gray-400 text-sm">
-            Tu aporte, por pequeño que parezca, se convierte en horas de
-            desarrollo, infraestructura, acompañamiento a personas y becas
-            gestionadas por SOLYON Foundation.
+            Tu aporte se convierte en horas de desarrollo, infraestructura,
+            acompañamiento a personas y becas gestionadas por SOLYON Foundation.
           </p>
 
           <div className="mt-4 grid md:grid-cols-4 gap-4 text-sm text-gray-200">
@@ -105,7 +103,7 @@ export default function StorePage() {
               </p>
               <p className="text-gray-300 mt-1">Desde $50.000 COP</p>
               <p className="text-[0.75rem] text-gray-400 mt-1">
-                Ayudas a financiar sprints clave de desarrollo y validación.
+                Financia sprints clave de desarrollo y validación.
               </p>
             </div>
             <div className="card p-3 flex flex-col justify-between">
@@ -161,7 +159,7 @@ export default function StorePage() {
 
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {/* Producto: Kit Digital */}
-          <div className="card p-6 flex flex-col justify-between text-left">
+          <article className="card p-6 flex flex-col justify-between text-left">
             <div className="space-y-3">
               <p className="text-[0.7rem] uppercase tracking-[0.25em] text-[#FFD700]">
                 Producto principal
@@ -178,6 +176,10 @@ export default function StorePage() {
               <p className="text-gray-100 mt-4 text-lg font-semibold">
                 $99.000 COP · Pago único vía Wompi
               </p>
+              <p className="text-[0.7rem] text-gray-400 mt-1">
+                Precio de lanzamiento. Disponible así solo durante esta primera
+                fase pública del ecosistema.
+              </p>
             </div>
             <div className="mt-4">
               <a
@@ -189,10 +191,10 @@ export default function StorePage() {
                 Comprar Kit Digital
               </a>
             </div>
-          </div>
+          </article>
 
           {/* Producto: Membresía Círculo Interno */}
-          <div className="card p-6 flex flex-col justify-between text-left">
+          <article className="card p-6 flex flex-col justify-between text-left">
             <div className="space-y-3">
               <p className="text-[0.7rem] uppercase tracking-[0.25em] text-[#ffb6f0]">
                 Membresía
@@ -208,6 +210,13 @@ export default function StorePage() {
               <p className="text-gray-100 mt-4 text-lg font-semibold">
                 Aporte inicial sugerido: $50.000 COP
               </p>
+              <p className="text-[0.7rem] text-gray-400 mt-1">
+                Cupos limitados a{" "}
+                <span className="text-[#FFD700] font-semibold">
+                  50 personas
+                </span>{" "}
+                en esta primera cohorte.
+              </p>
             </div>
             <div className="mt-4">
               <a
@@ -219,10 +228,10 @@ export default function StorePage() {
                 Unirme al Círculo Interno
               </a>
             </div>
-          </div>
+          </article>
 
           {/* Producto: Arcanum Preview Pack */}
-          <div className="card p-6 flex flex-col justify-between text-left">
+          <article className="card p-6 flex flex-col justify-between text-left">
             <div className="space-y-3">
               <p className="text-[0.7rem] uppercase tracking-[0.25em] text-[#FFD700]">
                 Experiencia avanzada
@@ -231,13 +240,20 @@ export default function StorePage() {
                 Arcanum Preview Pack
               </h3>
               <p className="text-gray-300 text-sm md:text-base">
-                Un acceso temprano y exclusivo a la visión de Arcanum: demos
-                guiadas, prompts avanzados, mapas conceptuales y una sesión
-                de preguntas & respuestas sobre la arquitectura cognitiva de
+                Acceso temprano y exclusivo a la visión de Arcanum: demos
+                guiadas, prompts avanzados, mapas conceptuales y una sesión de
+                preguntas &amp; respuestas sobre la arquitectura cognitiva de
                 SOLYON.
               </p>
               <p className="text-gray-100 mt-4 text-lg font-semibold">
                 $120.000 COP · Acceso anticipado
+              </p>
+              <p className="text-[0.7rem] text-gray-400 mt-1">
+                Disponible solo para la primera generación de{" "}
+                <span className="text-[#FFD700] font-semibold">
+                  25 visionarios
+                </span>{" "}
+                que quieran co-crear el futuro de Arcanum.
               </p>
             </div>
             <div className="mt-4">
@@ -250,8 +266,27 @@ export default function StorePage() {
                 Obtener acceso anticipado
               </a>
             </div>
-          </div>
+          </article>
         </div>
+      </section>
+
+      {/* META DE LANZAMIENTO */}
+      <section className="section text-center space-y-3">
+        <h3 className="font-display text-2xl gradient-gold">
+          Meta de lanzamiento: $20.000.000 COP en 10 días
+        </h3>
+        <p className="text-gray-300 text-sm md:text-base max-w-3xl mx-auto">
+          Somos un equipo de dos personas construyendo un ecosistema DeepTech
+          que nace desde LATAM para el mundo. Cada compra y cada aporte nos
+          acerca a sostener el laboratorio, pagar servidores y seguir
+          desarrollando Arcanum, Nexus, TruckBoss, EL-VIA, Vita y SOLYON
+          Foundation.
+        </p>
+        <p className="text-gray-400 text-xs max-w-3xl mx-auto">
+          Compartiremos reportes de avance y resultados con nuestra comunidad
+          y con todas las personas y empresas que nos apoyen en esta primera
+          ola de lanzamiento.
+        </p>
       </section>
 
       {/* CIERRE ESTRATÉGICO */}
@@ -262,8 +297,9 @@ export default function StorePage() {
           </h2>
           <p className="text-gray-300 text-sm md:text-base">
             Cada vez que compras un producto SOLYON o apoyas el laboratorio,
-            estás financiando horas de desarrollo, investigación y acompañamiento
-            humano. No eres un cliente más: eres parte del equipo.
+            estás financiando horas de desarrollo, investigación y
+            acompañamiento humano. No eres un cliente más: eres parte del
+            equipo.
           </p>
         </div>
 
@@ -304,10 +340,10 @@ export default function StorePage() {
         </div>
 
         <p className="text-[0.8rem] text-gray-500 max-w-3xl mx-auto">
-          Nuestro objetivo inmediato: recaudar 20 millones de pesos en 10 días
-          para seguir construyendo SOLYON. Con cada clic, cada compra y cada
-          aporte, nos ayudas a mantener vivo este laboratorio y a llevar IA
-          soberana a quienes más la necesitan.
+          Nuestro objetivo inmediato es sostener el laboratorio y demostrar que
+          desde la calle de LATAM también se pueden construir sistemas que
+          compiten con los mejores del mundo. Gracias por decidir ser parte de
+          esta historia.
         </p>
       </section>
     </main>
