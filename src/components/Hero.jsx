@@ -4,6 +4,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useRef } from "react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/lib/language";
 
 /**
  * RING CUÁNTICO PRINCIPAL
@@ -54,7 +55,6 @@ function RingCluster() {
 function QuantumParticles() {
   const ref = useRef();
 
-  // Nube de puntos
   const count = 400;
   const positions = new Float32Array(count * 3);
   for (let i = 0; i < count; i++) {
@@ -103,22 +103,20 @@ function QuantumScene() {
       <pointLight position={[-4, -2, -4]} intensity={1.5} color="#ff9ed8" />
       <RingCluster />
       <QuantumParticles />
-      <OrbitControls
-        enableZoom={false}
-        enablePan={false}
-        autoRotate
-        autoRotateSpeed={0.4}
-      />
+      <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.4} />
     </>
   );
 }
 
 /**
- * HERO PRINCIPAL SOLYON
+ * HERO PRINCIPAL SOLYON – BILINGÜE
  */
 export default function Hero() {
   const kitUrl = process.env.NEXT_PUBLIC_WOMPI_KIT_URL;
   const donateUrl = process.env.NEXT_PUBLIC_WOMPI_DONATE_URL;
+
+  const { lang } = useLanguage();
+  const t = lang === "es" ? heroEs : heroEn;
 
   return (
     <section className="relative overflow-hidden min-h-[85vh] flex items-center justify-center">
@@ -130,13 +128,13 @@ export default function Hero() {
         <Canvas camera={{ position: [0, 0, 7], fov: 40 }}>
           <QuantumScene />
         </Canvas>
-        {/* Degradado para leer mejor el texto */}
+
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#050505] via-[#050505e6] to-[#050505]" />
       </div>
 
-      {/* CONTENIDO TEXTO */}
+      {/* CONTENIDO */}
       <div className="relative z-10 section flex flex-col items-center text-center space-y-8">
-        {/* LOGO + SUBTEXTO */}
+        {/* LOGO + SLOGAN */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -150,8 +148,9 @@ export default function Hero() {
               className="h-10 w-10 object-contain"
             />
           </div>
+
           <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-gray-300/80">
-            No buscamos cambiar el mundo, expandimos la forma de verlo.
+            {t.kicker}
           </p>
         </motion.div>
 
@@ -163,74 +162,105 @@ export default function Hero() {
           className="space-y-4 max-w-4xl"
         >
           <h1 className="font-display text-4xl md:text-6xl leading-tight gradient-title">
-            SOLYON Technologies
+            {t.title}
           </h1>
+
           <p className="text-lg md:text-2xl text-gray-100/90">
-            Tecnología DeepTech soberana que{" "}
+            {t.subtitleBefore}{" "}
             <span className="text-[#FFD700] font-semibold">
-              expande la conciencia humana
+              {t.subtitleHighlight}
             </span>{" "}
-            y transforma negocios, ciudades y vidas reales.
+            {t.subtitleAfter}
           </p>
+
           <p className="text-sm md:text-base text-gray-300 max-w-3xl mx-auto">
-            El primer ecosistema cognitivo creado desde LATAM para el mundo:
-            Arcanum como cerebro, Nexus como sistema nervioso y aplicaciones
-            soberanas que convierten la tecnología en legado e impacto medible.
+            {t.description}
           </p>
         </motion.div>
 
-        {/* BOTONES CTA */}
+        {/* CTA BUTTONS */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
           className="flex flex-wrap justify-center gap-4 mt-4"
         >
-          {/* Comprar Kit – directo a Wompi */}
+          {/* Kit → Wompi */}
           <a
             href={kitUrl || "#"}
             target="_blank"
             rel="noopener noreferrer"
             className="btn px-8 py-3 text-sm md:text-base shadow-[0_0_30px_rgba(255,215,0,0.35)]"
           >
-            Comprar Kit Premium
+            {t.btnKit}
           </a>
 
-          {/* Conocer ecosistema – navega a la página del ecosistema */}
+          {/* Ecosistema → página Ecosystem */}
           <a
             href="/ecosystem"
             className="px-8 py-3 rounded-2xl border border-[#FFD700]/60 text-sm md:text-base text-gray-100 hover:bg-[#181818] hover:border-[#FFD700] transition-colors"
           >
-            Conocer ecosistema
+            {t.btnEcosystem}
           </a>
 
-          {/* Apoyar el ecosistema – directo a Wompi donaciones con ícono */}
+          {/* Apoyo → Wompi donaciones */}
           <a
             href={donateUrl || "#"}
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 rounded-2xl bg-[#111111] border border-[#ff9ecf]/60 text-sm md:text-base text-[#ffcee8] hover:bg-[#181818] transition-colors flex items-center gap-2"
           >
-            Apoyar el ecosistema
+            {t.btnSupport}
             <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-[#ff9ecf] to-[#FFD700] text-[0.7rem] text-black shadow-[0_0_18px_rgba(255,158,207,0.9)]">
               ♥
             </span>
           </a>
         </motion.div>
 
-        {/* TEXTO SECUNDARIO PARA GRANTS */}
+        {/* TEXTO INFERIOR */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.9 }}
           transition={{ delay: 0.45, duration: 0.8 }}
           className="text-xs md:text-sm text-gray-400 max-w-3xl"
         >
-          Construimos una arquitectura DeepTech integral – motor cognitivo,
-          orquestación multi-agente y aplicaciones soberanas – para que la
-          próxima generación de innovación no dependa de infraestructuras que
-          LATAM no controla.
+          {t.bottom}
         </motion.p>
       </div>
     </section>
   );
 }
+
+/* =============================================================
+   TEXTOS ES / EN — Manteniendo tu narrativa original
+   ============================================================= */
+
+const heroEs = {
+  kicker: "No buscamos cambiar el mundo, expandimos la forma de verlo.",
+  title: "SOLYON Technologies",
+  subtitleBefore: "Tecnología DeepTech soberana que",
+  subtitleHighlight: "expande la conciencia humana",
+  subtitleAfter: "y transforma negocios, ciudades y vidas reales.",
+  description:
+    "El primer ecosistema cognitivo creado desde LATAM para el mundo: Arcanum como cerebro, Nexus como sistema nervioso y aplicaciones soberanas que convierten la tecnología en legado e impacto medible.",
+  btnKit: "Comprar Kit Premium",
+  btnEcosystem: "Conocer ecosistema",
+  btnSupport: "Apoyar el ecosistema",
+  bottom:
+    "Construimos una arquitectura DeepTech integral – motor cognitivo, orquestación multi-agente y aplicaciones soberanas – para que la próxima generación de innovación no dependa de infraestructuras que LATAM no controla.",
+};
+
+const heroEn = {
+  kicker: "We don’t try to change the world, we expand how we see it.",
+  title: "SOLYON Technologies",
+  subtitleBefore: "Sovereign DeepTech that",
+  subtitleHighlight: "expands human consciousness",
+  subtitleAfter: "and transforms businesses, cities and real lives.",
+  description:
+    "The first cognitive ecosystem created from LATAM for the world: Arcanum as the brain, Nexus as the nervous system and sovereign applications that turn technology into legacy and measurable impact.",
+  btnKit: "Buy Premium Kit",
+  btnEcosystem: "Explore ecosystem",
+  btnSupport: "Support the ecosystem",
+  bottom:
+    "We build a fully integrated DeepTech architecture – cognitive engine, multi-agent orchestration and sovereign applications – so the next generation of innovation does not depend on infrastructures LATAM does not control.",
+};

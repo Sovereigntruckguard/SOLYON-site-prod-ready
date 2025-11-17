@@ -1,321 +1,559 @@
 "use client";
 
+import { useLanguage } from "@/lib/language";
+
 export default function AboutPage() {
+  const { lang } = useLanguage();
+  const t = lang === "es" ? TEXT_ES : TEXT_EN;
+
   return (
     <main className="space-y-24 pb-24">
-      {/* HERO ACERCA DE SOLYON */}
-      <section className="section mt-10 md:mt-16 space-y-10 text-center md:text-left">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="space-y-5">
-            <h1 className="font-display text-4xl md:text-5xl gradient-gold">
-              Acerca de SOLYON
-            </h1>
-            <p className="text-gray-200 text-lg leading-relaxed">
-              SOLYON Technologies es una casa DeepTech de lujo creada para
-              diseñar inteligencia cognitiva soberana, con raíces en LATAM y
-              visión global.
-            </p>
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-              No buscamos cambiar el mundo. Buscamos expandir la forma de verlo:
-              que más personas, empresas y comunidades tengan acceso a
-              tecnología de alto nivel sin perder su identidad, su libertad ni
-              su propósito.
-            </p>
-            <div className="flex flex-wrap gap-3 mt-4">
-              <a
-                href="/contact"
-                className="btn px-7 py-3 text-sm md:text-base"
-              >
-                Solicitar demo empresarial
-              </a>
-              <a
-                href={process.env.NEXT_PUBLIC_WOMPI_KIT_URL || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-7 py-3 rounded-full border border-[#FFD700]/60 text-sm md:text-base text-gray-100 hover:bg-[#181818] hover:border-[#FFD700] transition-colors"
-              >
-                Comprar Kit Digital
-              </a>
-              <a
-                href={process.env.NEXT_PUBLIC_WOMPI_DONATE_URL || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-7 py-3 rounded-full border border-[#ffb6f0]/60 text-sm md:text-base text-[#ffcee8] hover:bg-[#181818] transition-colors flex items-center gap-2"
-              >
-                Apoyar el laboratorio
-                <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-br from-[#ff9ecf] to-[#FFD700] text-[0.7rem] text-black">
-                  ♥
-                </span>
-              </a>
-            </div>
-          </div>
-
-          {/* Visual simple: anillos de propósito */}
-          <div className="relative flex items-center justify-center">
-            <div className="relative h-56 w-56">
-              <div className="absolute inset-0 rounded-full border border-[#FFD700]/40" />
-              <div className="absolute inset-6 rounded-full border border-[#ffb6f0]/40" />
-              <div className="absolute inset-12 rounded-full border border-[#FFD700]/20" />
-              <div className="absolute inset-[40%] rounded-full bg-gradient-to-br from-[#ffb6f0] to-[#FFD700] blur-sm opacity-80" />
-            </div>
-            <div className="absolute text-center space-y-1">
-              <p class patented="font-display text-xl gradient-gold">Casa DeepTech</p>
-              <p className="text-xs text-gray-300 max-w-xs">
-                Donde la ciencia cognitiva, la calle y el lujo se encuentran
-                para construir sistemas que cuidan a las personas.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ORIGEN Y PROPÓSITO */}
-      <section className="section space-y-8">
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="card p-6 space-y-3 text-left">
-            <h2 className="font-display text-2xl gradient-gold">Origen</h2>
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-              SOLYON nace de la experiencia de vida de su fundador, que convirtió
-              adversidad, calle y resiliencia en una arquitectura tecnológica al
-              servicio de quienes no tuvieron un camino fácil.
-            </p>
-            <p className="text-gray-400 text-sm">
-              De un joven que vio de cerca la violencia y la escasez, a una
-              visión de mundo donde la tecnología no es un lujo para pocos, sino
-              una herramienta de supervivencia y expansión para muchos.
-            </p>
-          </div>
-
-          <div className="card p-6 space-y-3 text-left">
-            <h2 className="font-display text-2xl gradient-gold">Propósito</h2>
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-              Empoderar a la comunidad latina y a los creadores independientes
-              con tecnología soberana, ayudándoles a construir empresas de alto
-              rendimiento y vidas con propósito.
-            </p>
-            <p className="text-gray-400 text-sm">
-              Creemos que el talento está distribuido por igual, pero las
-              oportunidades no. Nuestra misión es cerrar esa brecha usando IA,
-              diseño y acompañamiento humano.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FUNDADORES */}
-      <section className="section space-y-8">
-        <div className="space-y-4 text-center max-w-3xl mx-auto">
-          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
-            Fundadores de SOLYON
-          </h2>
-          <p className="text-gray-300 text-sm md:text-base">
-            Detrás de la tecnología hay personas que decidieron apostarlo todo
-            por una idea y por la gente a la que sirve.
+      {/* HERO NOSOTROS */}
+      <section className="section mt-10 md:mt-16 space-y-10 text-center">
+        <div className="space-y-6 max-w-4xl mx-auto">
+          <h1 className="font-display text-4xl md:text-5xl gradient-gold">
+            {t.hero.title}
+          </h1>
+          <p className="text-gray-200 text-lg leading-relaxed">
+            {t.hero.subtitle}
+          </p>
+          <p className="text-gray-400 text-sm md:text-base leading-relaxed">
+            {t.hero.body}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {/* Sergio */}
-          <div className="card p-6 space-y-4 text-left">
-            <div className="flex items-center gap-4">
-              <div className="h-14 w-14 rounded-full bg-gradient-to-br from-[#ffb6f0] to-[#ffd700] flex items-center justify-center text-[#050505] font-bold text-xl">
-                S
-              </div>
-              <div>
-                <h3 className="font-display text-xl gradient-gold">
-                  Sergio Andrés Murillo
-                </h3>
-                <p className="text-xs uppercase tracking-[0.2em] text-gray-400">
-                  Fundador · Arquitecto Cognitivo & CEO
-                </p>
-              </div>
-            </div>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              De la calle al DeepTech. Sergio es un ex peleador, líder de barra
-              y emprendedor que decidió transformar su historia de adversidad en
-              una misión: demostrar que la tecnología de élite también puede
-              nacer desde los barrios de LATAM.
-            </p>
-            <p className="text-gray-400 text-sm">
-              Su visión mezcla disciplina, calle, ciencia de datos y una
-              obsesión por construir sistemas que cuiden a quienes casi nadie
-              está mirando.
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto text-sm text-gray-200">
+          <div className="card p-6 text-center">
+            <h3 className="font-display text-3xl gradient-gold">
+              {t.hero.stats[0].value}
+            </h3>
+            <p className="mt-2 text-gray-300">
+              {t.hero.stats[0].desc}
             </p>
           </div>
-
-          {/* Elizabeth */}
-          <div className="card p-6 space-y-4 text-left">
-            <div className="flex items-center gap-4">
-              <div className="h-14 w-14 rounded-full bg-gradient-to-br from-[#ffb6f0] to-[#ffd700] flex items-center justify-center text-[#050505] font-bold text-xl">
-                E
-              </div>
-              <div>
-                <h3 className="font-display text-xl gradient-gold">
-                  Elizabeth Tamayo Londoño
-                </h3>
-                <p className="text-xs uppercase tracking-[0.2em] text-gray-400">
-                  Cofundadora · Operaciones & Impacto
-                </p>
-              </div>
-            </div>
-            <p className="text-gray-300 text-sm leading-relaxed">
-              Elizabeth es la columna vertebral operativa de SOLYON. Con una
-              historia de resiliencia propia, ha sostenido y empujado el
-              proyecto cuando no había recursos, solo fe y determinación.
+          <div className="card p-6 text-center">
+            <h3 className="font-display text-3xl gradient-gold">
+              {t.hero.stats[1].value}
+            </h3>
+            <p className="mt-2 text-gray-300">
+              {t.hero.stats[1].desc}
             </p>
-            <p className="text-gray-400 text-sm">
-              Su liderazgo combina cuidado profundo por las personas, visión
-              estratégica y una capacidad única para convertir ideas complejas
-              en procesos claros, equipos alineados y resultados medibles.
+          </div>
+          <div className="card p-6 text-center">
+            <h3 className="font-display text-3xl gradient-gold">
+              {t.hero.stats[2].value}
+            </h3>
+            <p className="mt-2 text-gray-300">
+              {t.hero.stats[2].desc}
             </p>
           </div>
         </div>
       </section>
 
-      {/* FILOSOFÍA Y PRINCIPIOS */}
+      {/* ORIGEN & LÍNEA DE VIDA */}
       <section className="section space-y-8">
-        <div className="space-y-4 text-center max-w-3xl mx-auto">
-          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
-            Filosofía SOLYON
+        <div className="card p-6 md:p-8 space-y-4">
+          <h2 className="font-display text-2xl md:text-3xl gradient-gold">
+            {t.line.title}
           </h2>
           <p className="text-gray-300 text-sm md:text-base">
-            No construimos productos por construir. Diseñamos experiencias que
-            honran a quienes confían en nosotros, desde un lugar de respeto y
-            excelencia.
+            {t.line.body}
+          </p>
+          <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-200 mt-4">
+            {t.line.blocks.map((block) => (
+              <div key={block.title}>
+                <h3 className="font-display text-base gradient-gold">
+                  {block.title}
+                </h3>
+                <p className="mt-1 text-gray-300">
+                  {block.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* IDENTIDAD & PRINCIPIOS */}
+      <section className="section space-y-8">
+        <div className="text-center space-y-3 max-w-3xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            {t.axes.title}
+          </h2>
+          <p className="text-gray-300 text-sm md:text-base">
+            {t.axes.body}
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-200">
-          <div className="card p-6 text-left space-y-3">
-            <h3 className="font-display text-lg gradient-gold">
-              Soberanía primero
-            </h3>
-            <p className="text-gray-300">
-              La tecnología debe servir a las personas y a los proyectos, no
-              controlarlos. Diseñamos sistemas que ponen el poder en manos de
-              quienes los usan.
-            </p>
-          </div>
-          <div className="card pizz-6 text-left space-y-3">
-            <h3 className="font-display text-lg gradient-gold">
-              Lujo consciente
-            </h3>
-            <p className="text-gray-300">
-              El lujo no es ostentación, es cuidado extremo por los detalles.
-              Cada interfaz, cada experiencia y cada interacción se diseña con
-              respeto, estética y utilidad.
-            </p>
-          </div>
-          <div className="card p-6 text-left space-y-3">
-            <h3 className="font-display text-lg gradient-gold">
-              Coevolución humano · IA
-            </h3>
-            <p className="text-gray-300">
-              No creemos en una IA que reemplace humanos, sino en una que les
-              dé más claridad, mejores decisiones y una vida más plena.
-            </p>
-          </div>
+          {t.axes.items.map((axis) => (
+            <div key={axis.title} className="card p-6 space-y-3">
+              <p className="text-xs uppercase tracking-[0.2em] text-gray-400">
+                {axis.kicker}
+              </p>
+              <h3 className="font-display text-lg gradient-gold">
+                {axis.title}
+              </h3>
+              <p className="text-gray-300">
+                {axis.body}
+              </p>
+              <p className="text-[0.75rem] text-gray-400 mt-2">
+                {axis.impact}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* CÓMO TRABAJAMOS CON ALIADOS */}
+      {/* QUIÉNES SOMOS – EQUIPO NÚCLEO */}
       <section className="section space-y-8">
-        <div className="card p-6 md:p-8 space-y-4 text-left">
-          <h2 className="font-display text-2xl md:text-3xl gradient-gold">
-            Cómo trabajamos con empresas y aliados
+        <div className="text-center space-y-3 max-w-3xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            {t.team.title}
           </h2>
           <p className="text-gray-300 text-sm md:text-base">
-            Construimos relaciones de largo plazo basadas en transparencia,
-            evidencia y resultados. No vendemos promesas vacías, co-creamos
-            soluciones reales.
+            {t.team.body}
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-200">
+          {t.team.cards.map((card) => (
+            <div key={card.title} className="card p-6 space-y-3 text-left">
+              <p className="text-xs uppercase tracking-[0.2em] text-gray-400">
+                {card.kicker}
+              </p>
+              <h3 className="font-display text-lg gradient-gold">
+                {card.title}
+              </h3>
+              <p className="text-gray-300">
+                {card.body}
+              </p>
+              {card.note && (
+                <p className="text-[0.75rem] text-gray-400 mt-2">
+                  {card.note}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CÓMO TRABAJAMOS */}
+      <section className="section space-y-8">
+        <div className="card p-6 md:p-8 space-y-4">
+          <h2 className="font-display text-2xl md:text-3xl gradient-gold">
+            {t.work.title}
+          </h2>
+          <p className="text-gray-300 text-sm md:text-base">
+            {t.work.body}
           </p>
           <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-200 mt-2">
-            <div>
-              <h3 className="font-display text-base gradient-gold">
-                Diagnóstico profundo
-              </h3>
-              <p className="mt-1 text-gray-300">
-                Entendemos tu contexto, tus datos y tus procesos antes de
-                proponer cualquier integración. La tecnología debe adaptarse a
-                tu realidad, no al revés.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-display text-base gradient-gold">
-                Co-diseño con tu equipo
-              </h3>
-              <p className="mt-1 text-gray-300">
-                Diseñamos soluciones junto a tus líderes y equipos, para que la
-                tecnología se viva como una herramienta propia, no como un
-                sistema impuesto.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-display text-base gradient-gold">
-                Impacto medible
-              </h3>
-              <p className="mt-1 text-gray-300">
-                Establecemos métricas claras de impacto y las conectamos a tu
-                realidad: menos fricción, más ingresos, más tiempo disponible,
-                más personas beneficiadas.
-              </p>
-            </div>
+            {t.work.blocks.map((block) => (
+              <div key={block.title}>
+                <h3 className="font-display text-base gradient-gold">
+                  {block.title}
+                </h3>
+                <p className="mt-1 text-gray-300">
+                  {block.body}
+                </p>
+              </div>
+            ))}
           </div>
+          <p className="text-[0.8rem] text-gray-500 mt-3">
+            {t.work.footer}
+          </p>
+        </div>
+      </section>
+
+      {/* RECONOCIMIENTOS & LEGITIMIDAD */}
+      <section className="section space-y-8">
+        <div className="card p-6 md:p-8 space-y-4">
+          <h2 className="font-display text-2xl md:text-3xl gradient-gold">
+            {t.recognition.title}
+          </h2>
+          <p className="text-gray-300 text-sm md:text-base">
+            {t.recognition.body}
+          </p>
+          <ul className="text-sm text-gray-300 space-y-2 list-disc list-inside">
+            {t.recognition.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <p className="text-[0.8rem] text-gray-500 mt-2">
+            {t.recognition.footer}
+          </p>
         </div>
       </section>
 
       {/* CTA FINAL */}
       <section className="section space-y-8 text-center">
-        <div className="space-y-4 max-w-4xl mx-auto">
+        <div className="space-y-4 max-w-3xl mx-auto">
           <h2 className="font-display text-3xl md:text-4xl gradient-gold">
-            ¿Te ves construyendo el futuro con nosotros?
+            {t.cta.title}
           </h2>
           <p className="text-gray-300 text-sm md:text-base">
-            Si algo en esta historia te resonó, probablemente no es casualidad.
-            Puedes ser cliente, aliado, mentor, inversor o parte del equipo.
+            {t.cta.body}
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4">
-          <a
-            href="/contact"
-            className="btn px-8 py-3 text-sm md:text-base"
-          >
-            Hablar con el equipo
-          </a>
+        <div className="flex flex-col md:flex-row justify-center flex-wrap gap-4 md:gap-6">
           <a
             href={process.env.NEXT_PUBLIC_WOMPI_KIT_URL || "#"}
             target="_blank"
             rel="noopener noreferrer"
+            className="btn px-8 py-3 text-sm md:text-base"
+          >
+            {t.cta.buttons.kit}
+          </a>
+          <a
+            href="/circle"
             className="px-8 py-3 rounded-full border border-[#FFD700]/60 text-sm md:text-base text-gray-100 hover:bg-[#181818] hover:border-[#FFD700] transition-colors"
           >
-            Comprar Kit Digital
+            {t.cta.buttons.circle}
           </a>
           <a
             href={process.env.NEXT_PUBLIC_WOMPI_DONATE_URL || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 rounded-full border border-[#ffb6f0]/60 text-sm md:text-base text-[#ffcee8] hover:bg-[#181818] transition-colors flex items-center gap-2"
+            className="px-8 py-3 rounded-full bg-[#111111] border border-[#ffb6f0]/60 text-sm md:text-base text-[#ffcee8] hover:bg-[#181818] transition-colors flex items-center justify-center gap-1"
           >
-            Apoyar el laboratorio
-            <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-br from-[#ff9ecf] to-[#FFD700] text-[0.7rem] text-black">
+            {t.cta.buttons.donate}
+            <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-br from-[#ff9ecf] to-[#FFD700] text-[0.65rem] text-black">
               ♥
             </span>
           </a>
           <a
-            href="/circle"
-            className="px-8 py-3 rounded-full border border-[#2A2A2A] text-sm md:text-base text-gray-300 hover:bg-[#111111] transition-colors"
+            href="/alliances"
+            className="px-8 py-3 rounded-full bg-[#111111] border border-[#ffb6f0]/60 text-sm md:text-base text-[#ffcee8] hover:bg-[#181818] transition-colors"
           >
-            Unirme al Círculo Interno
+            {t.cta.buttons.alliances}
           </a>
         </div>
 
         <p className="text-[0.8rem] text-gray-500 max-w-3xl mx-auto">
-          Esta página es una invitación abierta: a quienes sienten que su historia
-          no encaja en los moldes tradicionales. En SOLYON creemos que justamente
-          ahí nacen las ideas que cambian la percepción del mundo.
+          {t.cta.footer}
         </p>
       </section>
     </main>
   );
 }
+
+/* =========================
+   TEXTOS ES / EN
+   ========================= */
+
+const TEXT_ES = {
+  hero: {
+    title: "Quiénes somos",
+    subtitle:
+      "SOLYON es una casa DeepTech nacida desde Medellín, construida por dos personas que decidieron transformar una historia de calle, violencia y escasez en una arquitectura de tecnología soberana, propósito y lujo consciente.",
+    body:
+      "No somos un corporativo ni una empresa anónima. Somos Sergio y Elizabeth, una familia que vendió todo para construir un ecosistema que demuestre que desde LATAM también se puede crear tecnología de élite, sin renunciar a la identidad ni a la humanidad.",
+    stats: [
+      {
+        value: "2",
+        desc: "Personas fundadoras que sostienen el núcleo del ecosistema SOLYON.",
+      },
+      {
+        value: "10",
+        desc: "Proyectos DeepTech interconectados dentro del universo SOLYON.",
+      },
+      {
+        value: "1",
+        desc: "Visión compartida: soberanía tecnológica con impacto real en vidas humanas.",
+      },
+    ],
+  },
+  line: {
+    title: "De dónde venimos",
+    body:
+      "La historia de SOLYON no nace en Silicon Valley, sino en barrios donde la violencia, la pobreza y la falta de oportunidades eran la norma. Esa historia es la base ética y emocional de todo lo que construimos.",
+    blocks: [
+      {
+        title: "Medellín · Raíz",
+        body:
+          "Sergio crece entre barras, peleas, cárceles cercanas y una realidad donde el futuro no estaba garantizado. Elizabeth sostiene la vida desde la disciplina, el coraje y una fe que no se rompe. Desde ahí, deciden apostar por el código y la tecnología como vía de libertad.",
+      },
+      {
+        title: "Camino · Decisión radical",
+        body:
+          "Venden carros, celulares, pertenencias y comodidad básica para dedicarlo todo a construir un ecosistema tecnológico que nazca desde la calle hacia el DeepTech. No hay plan B, solo compromiso con la visión.",
+      },
+      {
+        title: "SOLYON · Presente",
+        body:
+          "Hoy, esa apuesta se convierte en Arcanum, Nexus, TruckBoss, Azoth, EL-VIA, Vita y la SOLYON Foundation: un universo que combina negocio, impacto y transformación personal.",
+      },
+    ],
+  },
+  axes: {
+    title: "Identidad SOLYON",
+    body:
+      "Nuestra forma de trabajar y de existir como ecosistema se apoya en tres ejes centrales. Sin ellos, SOLYON no tendría sentido.",
+    items: [
+      {
+        kicker: "Eje 1 · Soberanía",
+        title: "Tecnología que no se arrodilla",
+        body:
+          "Construimos arquitecturas para que personas, empresas y comunidades no dependan ciegamente de infraestructuras externas que no entienden ni controlan.",
+        impact:
+          "Queremos que la IA sea una herramienta en manos de quienes nunca tuvieron la oportunidad de diseñar el sistema.",
+      },
+      {
+        kicker: "Eje 2 · Lujo consciente",
+        title: "Estética, profundidad y respeto",
+        body:
+          "Entendemos el lujo como el derecho a tener herramientas hermosas, funcionales y respetuosas, incluso si vienes de la pobreza.",
+        impact:
+          "El diseño de SOLYON busca recordarle a cada persona que su historia merece una experiencia de alto nivel.",
+      },
+      {
+        kicker: "Eje 3 · Transformación real",
+        title: "Sin teatro, sin humo",
+        body:
+          "No nos interesa el marketing vacío. Nos importa que camioneros, founders y comunidades vean resultados concretos en su día a día.",
+        impact:
+          "Si la tecnología no cambia la calidad de vida, no está cumpliendo su propósito.",
+      },
+    ],
+  },
+  team: {
+    title: "El equipo detrás del ecosistema",
+    body:
+      "SOLYON comienza con dos personas, pero está diseñado para convertirse en un equipo expandido de talento, aliados y comunidades que co-crean desde la misma base ética.",
+    cards: [
+      {
+        kicker: "Co-fundador · Visión & Arquitectura",
+        title: "Sergio Andrés Murillo Estrada",
+        body:
+          "Ex barrista, peleador, autodidacta y programador en formación. Lleva su historia de calle y supervivencia al diseño de arquitecturas profundas, modelos de negocio y experiencias de lujo para quienes han sido ignorados por el sistema.",
+        note:
+          "Su rol: visión estratégica, arquitectura DeepTech, narrativa, diseño de producto y liderazgo del ecosistema.",
+      },
+      {
+        kicker: "Co-fundadora · Operación & Cuidado",
+        title: "Elizabeth Tamayo Londoño",
+        body:
+          "Columna vertebral emocional y operativa de SOLYON. Sostiene procesos, personas y decisiones difíciles. Representa la fuerza silenciosa que hace posible que el ecosistema exista en medio del caos.",
+        note:
+          "Su rol: operación diaria, soporte al laboratorio, construcción de EL-VIA y tutela del factor humano en cada decisión.",
+      },
+      {
+        kicker: "Ecosistema & aliados",
+        title: "Equipo extendido SOLYON",
+        body:
+          "Proveedores, amigos, testers, camioneros, emprendedores y futuros colaboradores que se han ido sumando a la visión. SOLYON está diseñado para que más personas puedan integrarse al núcleo y escalar el impacto.",
+        note:
+          "Nuestra meta es que, con el tiempo, SOLYON se convierta en un lugar donde el talento de alto nivel pueda crecer sin arrepentirse de dónde viene.",
+      },
+    ],
+  },
+  work: {
+    title: "Cómo trabajamos",
+    body:
+      "Nuestro estilo de trabajo mezcla la disciplina de un laboratorio con la urgencia de quienes saben lo que es no tener nada. Cada decisión técnica y de negocio pasa por un filtro de congruencia.",
+    blocks: [
+      {
+        title: "Profundidad antes que ruido",
+        body:
+          "Preferimos avanzar un poco más lento pero con bases sólidas, documentación clara y decisiones conscientes, en lugar de prometer lo que no podemos cumplir.",
+      },
+      {
+        title: "Transparencia radical",
+        body:
+          "Hablamos con honestidad sobre nuestras limitaciones y nuestros avances. No maquillamos la realidad: la compartimos para sumar aliados que entiendan el proceso.",
+      },
+      {
+        title: "Trabajo con propósito",
+        body:
+          "Cada línea de código, diseño, documento y alianza se contrasta con la pregunta: ¿acerca esto a SOLYON a su propósito central o lo aleja?",
+      },
+    ],
+    footer:
+      "SOLYON no quiere ser un unicornio vacío. Quiere ser una referencia de cómo se construye tecnología soberana con conciencia, orden y respeto.",
+  },
+  recognition: {
+    title: "Reconocimientos & legitimidad",
+    body:
+      "Aunque nacimos desde la periferia, ya empezamos a entrar en los circuitos donde se valida la ciencia, la tecnología y la innovación.",
+    items: [
+      "Registro formal ante Cámara de Comercio y vinculación al ecosistema empresarial de Medellín.",
+      "Procesos activos ante MinCiencias y SIC para reconocimiento, clasificación y protección de nuestra innovación.",
+      "Invitación a la ceremonia de los Premios Cinco Días, validando a SOLYON como actor emergente en el panorama DeepTech.",
+      "Contacto y acercamientos con grandes jugadores tecnológicos para infraestructura y posibles alianzas.",
+    ],
+    footer:
+      "No buscamos reconocimiento por ego, sino porque cada sello de legitimidad abre puertas para que el impacto de SOLYON llegue más lejos.",
+  },
+  cta: {
+    title: "Construyamos esta historia juntos",
+    body:
+      "Si lees esto y algo en ti siente que esta historia también podría ser la tuya, es probable que formes parte de la tribu SOLYON: gente que viene de abajo, pero apunta hacia lo más alto.",
+    buttons: {
+      kit: "Comprar Kit Digital",
+      circle: "Unirme al círculo interno",
+      donate: "Apoyar el ecosistema",
+      alliances: "Explorar alianzas & grants",
+    },
+    footer:
+      "SOLYON no es un espectáculo desde lejos. Es una invitación a co-crear una nueva narrativa de tecnología soberana nacida desde LATAM.",
+  },
+};
+
+const TEXT_EN = {
+  hero: {
+    title: "Who we are",
+    subtitle:
+      "SOLYON is a DeepTech house born in Medellín, built by two people who decided to transform a story of street, violence and scarcity into an architecture of sovereign technology, purpose and conscious luxury.",
+    body:
+      "We are not a corporate, nor an anonymous company. We are Sergio and Elizabeth, a family that sold everything to build an ecosystem proving that elite technology can also be created from LATAM, without renouncing identity or humanity.",
+    stats: [
+      {
+        value: "2",
+        desc: "Founders holding the core of the SOLYON ecosystem.",
+      },
+      {
+        value: "10",
+        desc: "DeepTech projects interconnected inside the SOLYON universe.",
+      },
+      {
+        value: "1",
+        desc: "Shared vision: technological sovereignty with real impact on human lives.",
+      },
+    ],
+  },
+  line: {
+    title: "Where we come from",
+    body:
+      "SOLYON’s story does not start in Silicon Valley, but in neighborhoods where violence, poverty and lack of opportunity were the norm. That story is the ethical and emotional base of everything we build.",
+    blocks: [
+      {
+        title: "Medellín · Roots",
+        body:
+          "Sergio grows up among barras, fights, nearby prisons and a reality where the future was not guaranteed. Elizabeth sustains life with discipline, courage and unbreakable faith. From there, they decide to bet on code and technology as a path to freedom.",
+      },
+      {
+        title: "Path · Radical decision",
+        body:
+          "They sell cars, phones, belongings and basic comfort to dedicate everything to building a tech ecosystem born from the street into DeepTech. No plan B, only commitment to the vision.",
+      },
+      {
+        title: "SOLYON · Present",
+        body:
+          "Today, that bet becomes Arcanum, Nexus, TruckBoss, Azoth, EL-VIA, Vita and the SOLYON Foundation: a universe that combines business, impact and personal transformation.",
+      },
+    ],
+  },
+  axes: {
+    title: "SOLYON identity",
+    body:
+      "Our way of working and existing as an ecosystem rests on three central pillars. Without them, SOLYON would not make sense.",
+    items: [
+      {
+        kicker: "Pillar 1 · Sovereignty",
+        title: "Technology that does not bow",
+        body:
+          "We build architectures so that people, companies and communities do not depend blindly on external infrastructures they don’t understand or control.",
+        impact:
+          "We want AI to be a tool in the hands of those who never had the chance to design the system.",
+      },
+      {
+        kicker: "Pillar 2 · Conscious luxury",
+        title: "Aesthetics, depth and respect",
+        body:
+          "We understand luxury as the right to have beautiful, functional and respectful tools, even if you come from poverty.",
+        impact:
+          "SOLYON’s design aims to remind each person that their story deserves a high-end experience.",
+      },
+      {
+        kicker: "Pillar 3 · Real transformation",
+        title: "No theater, no smoke",
+        body:
+          "We are not interested in empty marketing. We care that truckers, founders and communities see concrete results in their daily lives.",
+        impact:
+          "If technology does not change quality of life, it is not fulfilling its purpose.",
+      },
+    ],
+  },
+  team: {
+    title: "The team behind the ecosystem",
+    body:
+      "SOLYON begins with two people but is designed to become an expanded team of talent, allies and communities who co-create from the same ethical base.",
+    cards: [
+      {
+        kicker: "Co-founder · Vision & Architecture",
+        title: "Sergio Andrés Murillo Estrada",
+        body:
+          "Former barra leader, fighter, self-taught and programmer in training. He brings his street and survival story into the design of deep architectures, business models and luxury experiences for those the system usually ignores.",
+        note:
+          "His role: strategic vision, DeepTech architecture, narrative, product design and ecosystem leadership.",
+      },
+      {
+        kicker: "Co-founder · Operations & Care",
+        title: "Elizabeth Tamayo Londoño",
+        body:
+          "Emotional and operational backbone of SOLYON. She holds processes, people and hard decisions. She represents the silent force that makes the ecosystem possible in the middle of chaos.",
+        note:
+          "Her role: daily operations, lab support, building EL-VIA and guarding the human factor in every decision.",
+      },
+      {
+        kicker: "Ecosystem & allies",
+        title: "SOLYON extended team",
+        body:
+          "Providers, friends, testers, truckers, entrepreneurs and future collaborators who have joined the vision. SOLYON is designed so more people can integrate into the core and scale the impact.",
+        note:
+          "Our goal is that, over time, SOLYON becomes a place where high-level talent can grow without regretting where they come from.",
+      },
+    ],
+  },
+  work: {
+    title: "How we work",
+    body:
+      "Our working style mixes the discipline of a lab with the urgency of those who know what it means to have nothing. Every technical and business decision passes through a congruence filter.",
+    blocks: [
+      {
+        title: "Depth over noise",
+        body:
+          "We prefer to move a bit slower but with solid foundations, clear documentation and conscious decisions, instead of promising what we cannot deliver.",
+      },
+      {
+        title: "Radical transparency",
+        body:
+          "We speak honestly about our limitations and our progress. We don’t sugarcoat reality: we share it to attract allies who understand the process.",
+      },
+      {
+        title: "Purpose-driven work",
+        body:
+          "Every line of code, design, document and alliance is contrasted with one question: does this bring SOLYON closer to its core purpose or farther away from it?",
+      },
+    ],
+    footer:
+      "SOLYON does not aim to be an empty unicorn. It aims to be a reference for how sovereign technology is built with awareness, order and respect.",
+  },
+  recognition: {
+    title: "Recognition & legitimacy",
+    body:
+      "Even though we were born from the periphery, we are already entering the circuits where science, technology and innovation are validated.",
+    items: [
+      "Formal registration at the Chamber of Commerce and connection to Medellín’s business ecosystem.",
+      "Active processes with MinCiencias and SIC for recognition, classification and protection of our innovation.",
+      "Invitation to the Cinco Días Awards ceremony, validating SOLYON as an emerging player in the DeepTech landscape.",
+      "Contact and approaches with major tech players for infrastructure and potential alliances.",
+    ],
+    footer:
+      "We do not seek recognition for ego, but because each legitimacy seal opens doors for SOLYON’s impact to reach further.",
+  },
+  cta: {
+    title: "Let’s build this story together",
+    body:
+      "If you are reading this and something in you feels this story could also be yours, you probably belong to the SOLYON tribe: people who come from below but aim for the highest.",
+    buttons: {
+      kit: "Buy Digital Kit",
+      circle: "Join the Inner Circle",
+      donate: "Support the ecosystem",
+      alliances: "Explore alliances & grants",
+    },
+    footer:
+      "SOLYON is not a show from afar. It is an invitation to co-create a new narrative of sovereign technology born from LATAM.",
+  },
+};

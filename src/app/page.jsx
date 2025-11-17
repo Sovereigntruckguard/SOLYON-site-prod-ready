@@ -1,12 +1,29 @@
+"use client";
+
 import Hero from "@/components/Hero";
 import SupportModal from "@/components/SupportModal";
+import { useLanguage } from "@/lib/language";
 
 export default function Page() {
+  const { lang } = useLanguage();
+
   return (
     <main className="space-y-24 pb-24">
-      {/* HERO – slogan y CTAs principales */}
+      {/* HERO – slogan y CTAs principales (aún en ES, lo internacionalizamos después si quieres) */}
       <Hero />
 
+      {lang === "es" ? <SpanishHome /> : <EnglishHome />}
+    </main>
+  );
+}
+
+/* =========================
+   VERSIÓN ESPAÑOL (ACTUAL)
+   ========================= */
+
+function SpanishHome() {
+  return (
+    <>
       {/* CINTILLO DE CONFIANZA / SOCIAL PROOF */}
       <section className="section mt-4 mb-10 text-center">
         <div className="card py-4 px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -1041,6 +1058,1051 @@ export default function Page() {
           <p>Contacto: {process.env.NEXT_PUBLIC_CONTACT_EMAIL}</p>
         </div>
       </footer>
-    </main>
+    </>
+  );
+}
+
+/* =========================
+   VERSIÓN INGLÉS
+   ========================= */
+
+function EnglishHome() {
+  return (
+    <>
+      {/* TRUST RIBBON / SOCIAL PROOF */}
+      <section className="section mt-4 mb-10 text-center">
+        <div className="card py-4 px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs md:text-sm text-gray-400">
+            SOLYON is being showcased and validated within Colombia&apos;s
+            innovation and science ecosystem.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3 text-[0.7rem] md:text-xs text-gray-300">
+            <span className="px-3 py-1 rounded-full border border-[#2A2A2A] bg-black/40">
+              Chamber of Commerce · Business ecosystem
+            </span>
+            <span className="px-3 py-1 rounded-full border border-[#2A2A2A] bg-black/40">
+              MinCiencias · Science, technology & innovation
+            </span>
+            <span className="px-3 py-1 rounded-full border border-[#2A2A2A] bg-black/40">
+              SIC · Intellectual property in progress
+            </span>
+            <span className="px-3 py-1 rounded-full border border-[#2A2A2A] bg-black/40">
+              Cinco Días Awards · Ceremony invitation
+            </span>
+            <span className="px-3 py-1 rounded-full border border-[#FFD700]/30 bg-black/60 text-[#FFD700]">
+              Status: Patent Pending
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* 1. THE PROBLEM WE ARE FACING */}
+      <section className="section space-y-10 text-center" id="problema">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            The problem we are facing
+          </h2>
+          <p className="text-gray-200 leading-relaxed">
+            Latin America is full of talent, resilience and creativity, but most
+            people do not have access to real DeepTech. Infrastructure, tools
+            and advanced models remain concentrated in the hands of global
+            giants, far from the neighborhoods, streets and ventures that need
+            this technology to survive and grow.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="card p-6">
+            <h3 className="font-display text-lg gradient-gold">
+              Technological inequality
+            </h3>
+            <p className="text-gray-300 mt-2">
+              Millions are left outside the new economy because they cannot
+              afford platforms or tools designed for realities very different
+              from ours.
+            </p>
+          </div>
+          <div className="card p-6">
+            <h3 className="font-display text-lg gradient-gold">
+              Full dependence
+            </h3>
+            <p className="text-gray-300 mt-2">
+              We depend on infrastructures we don&apos;t control: data, models
+              and decisions are outside LATAM.
+            </p>
+          </div>
+          <div className="card p-6">
+            <h3 className="font-display text-lg gradient-gold">
+              Underused talent
+            </h3>
+            <p className="text-gray-300 mt-2">
+              There is an entire generation of brilliant Latinos who cannot find
+              a real bridge between their reality and the DeepTech that is
+              defining the future.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. OUR SOLUTION: SYSTEM ARCHITECTURE VISUALIZED */}
+      <section className="section space-y-10 text-center" id="solucion">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Our solution: system architecture, visualized
+          </h2>
+          <p className="text-gray-200 leading-relaxed">
+            SOLYON is not a single tool, it is a complete architecture.
+            Visually, it organizes into three layers:{" "}
+            <span className="text-[#FFD700] font-semibold">Arcanum Core</span>{" "}
+            as the cognitive brain,{" "}
+            <span className="text-[#FFD700] font-semibold">
+              Nexus Control Grid
+            </span>{" "}
+            as the operational nervous system, and the{" "}
+            <span className="text-[#FFD700] font-semibold">
+              10-module ecosystem
+            </span>{" "}
+            where the applications live that impact real people and real
+            companies.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* ARCANUM CORE */}
+          <div className="card p-6 flex flex-col items-center text-center space-y-4">
+            <div className="relative w-40 h-40 md:w-44 md:h-44">
+              <div className="absolute inset-4 rounded-full border border-[#ffb6f0]/50" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-b from-[#ffb6f022] to-transparent blur-xl" />
+              <div className="absolute inset-[32%] rounded-full border border-[#FFD700]/70" />
+            </div>
+            <h3 className="font-display text-xl gradient-gold">Arcanum Core</h3>
+            <p className="text-gray-300 text-sm">
+              Cognitive engine with fractal memory, anti-hallucination and
+              self-learning. It is the core that processes deep context and
+              makes precise decisions.
+            </p>
+          </div>
+
+          {/* NEXUS CONTROL GRID */}
+          <div className="card p-6 flex flex-col items-center text-center space-y-4">
+            <div className="relative w-40 h-40 md:w-44 md:h-44">
+              <div className="absolute inset-1 rounded-full border border-[#FFD700]/40" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,215,0,0.18),_transparent_60%)]" />
+              <div className="absolute inset-4 grid grid-cols-3 grid-rows-3 gap-1 opacity-80">
+                {Array.from({ length: 9 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="rounded-full border border-[#ffb6f0]/40 bg-black/60"
+                  />
+                ))}
+              </div>
+            </div>
+            <h3 className="font-display text-xl gradient-gold">
+              Nexus Control Grid
+            </h3>
+            <p className="text-gray-300 text-sm">
+              Nervous system that orchestrates agents, tasks and data in real
+              time. It coordinates how Arcanum&apos;s intelligence is deployed
+              over each operational flow.
+            </p>
+          </div>
+
+          {/* ECOSYSTEM 10 MODULES */}
+          <div className="card p-6 flex flex-col items-center text-center space-y-4">
+            <div className="relative w-40 h-40 md:w-44 md:h-44">
+              <div className="absolute inset-0 rounded-3xl border border-[#ffb6f0]/40 bg-gradient-to-br from-[#1a1a1a] to-[#050505]" />
+              <div className="absolute inset-3 grid grid-cols-3 grid-rows-3 gap-2">
+                {Array.from({ length: 9 }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center justify-center rounded-xl bg-[#111111] border border-[#FFD700]/25 text-[0.55rem] text-[#FFD700]/80"
+                  >
+                    {i === 0
+                      ? "Arcanum"
+                      : i === 1
+                      ? "Nexus"
+                      : i === 2
+                      ? "Azoth"
+                      : i === 3
+                      ? "TruckBoss"
+                      : i === 4
+                      ? "STG"
+                      : i === 5
+                      ? "EL-VIA"
+                      : i === 6
+                      ? "Vita"
+                      : i === 7
+                      ? "Command"
+                      : "Foundation"}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <h3 className="font-display text-xl gradient-gold">
+              10-module ecosystem
+            </h3>
+            <p className="text-gray-300 text-sm">
+              Sovereign applications for transport, insurance, education,
+              habits, operations and philanthropy. All connected on the same
+              cognitive architecture.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* PREMIUM CATALOG · ACCESS GATES */}
+      <section className="section space-y-10" id="acceso">
+        <div className="text-center space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Access gates to the SOLYON ecosystem
+          </h2>
+          <p className="text-gray-200 text-lg">
+            A premium catalog of entry points, support and implementation to
+            join us in building sovereign DeepTech from LATAM to the world.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* CARD 1 · DIGITAL KIT */}
+          <article className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#141414] to-[#050505] border border-[#FFD700]/40 shadow-[0_30px_80px_rgba(0,0,0,0.8)] flex flex-col min-h-[260px]">
+            <div className="absolute inset-x-0 -top-24 h-40 bg-gradient-to-b from-[#FFD7001f] to-transparent pointer-events-none" />
+            <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <p className="text-[0.7rem] uppercase tracking-[0.25em] text-[#FFD700]">
+                  Premium entry
+                </p>
+                <h3 className="font-display text-2xl gradient-gold">
+                  SOLYON Digital Kit
+                </h3>
+                <p className="text-gray-300 text-sm md:text-base">
+                  Strategic documentation, ecosystem maps and operational
+                  templates for founders, teams and visionaries who want to
+                  build using our DeepTech logic.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <p className="text-gray-100 text-lg font-semibold">
+                  $99.000 COP · Secure payment via Wompi
+                </p>
+                <a
+                  href={process.env.NEXT_PUBLIC_WOMPI_KIT_URL || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn w-full py-3 text-sm md:text-base shadow-[0_0_30px_rgba(255,215,0,0.45)] text-center"
+                >
+                  Buy Premium Kit
+                </a>
+                <p className="text-[0.7rem] md:text-xs text-gray-400 mt-1">
+                  On the Wompi checkout you can pay with debit or credit card,
+                  Nequi, PSE, cash through partners and the{" "}
+                  <span className="text-[#FFD700] font-semibold">
+                    &quot;Pay with credit&quot;
+                  </span>{" "}
+                  option depending on availability from your financial entity.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          {/* CARD 2 · LAB SUPPORT + MODAL */}
+          <article className="relative overflow-hidden rounded-3xl bg-[#0c0c0c] border border-[#ffb6f0]/40 shadow-[0_30px_80px_rgba(0,0,0,0.8)] flex flex-col min-h-[260px]">
+            <div className="absolute inset-x-0 -top-24 h-40 bg-gradient-to-b from-[#ffb6f022] to-transparent pointer-events-none" />
+            <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <p className="text-[0.7rem] uppercase tracking-[0.25em] text-[#ffb6f0]">
+                  Continuous support
+                </p>
+                <h3 className="font-display text-2xl gradient-gold">
+                  Support the SOLYON lab
+                </h3>
+                <p className="text-gray-300 text-sm md:text-base">
+                  Your contribution keeps the lab, infrastructure and
+                  scholarships alive so more people in LATAM can access
+                  sovereign technology, regardless of their story.
+                </p>
+                <p className="text-gray-100 text-lg font-semibold">
+                  Contribute from{" "}
+                  <span className="text-[#FFD700]">$5.000 COP</span>
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <SupportModal />
+                <p className="text-[0.7rem] text-gray-500 text-center">
+                  You can also make larger contributions to fund scholarships,
+                  hardware or specific infrastructure. Write to us via the
+                  Alliances &amp; Grants section.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          {/* CARD 3 · ARCANUM FOR COMPANIES */}
+          <article className="relative overflow-hidden rounded-3xl bg-gradient-to-b from-[#151515] to-[#050505] border border-[#FFD700]/25 shadow-[0_30px_80px_rgba(0,0,0,0.8)] flex flex-col min-h-[260px]">
+            <div className="absolute inset-x-0 -top-24 h-40 bg-gradient-to-b from-[#FFD7001a] to-transparent pointer-events-none" />
+            <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="space-y-3">
+                <p className="text-[0.7rem] uppercase tracking-[0.25em] text-gray-400">
+                  High-end implementation
+                </p>
+                <h3 className="font-display text-2xl gradient-gold">
+                  Arcanum for companies
+                </h3>
+                <p className="text-gray-300 text-sm md:text-base">
+                  Pilots and custom projects with our cognitive engine, agent
+                  architecture and Nexus orchestration, for organizations that
+                  need real operational autonomy.
+                </p>
+                <p className="text-gray-100 text-lg font-semibold">
+                  2025 pilot program · Limited spots
+                </p>
+              </div>
+              <a
+                href="/contact"
+                className="w-full px-8 py-3 rounded-2xl border border-[#FFD700] text-sm md:text-base mt-2 text-[#FFD700] hover:bg-[#181818] text-center"
+              >
+                Request strategic demo
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* USE CASES: WHAT YOU CAN DO TODAY WITH SOLYON */}
+      <section className="section space-y-10 text-center" id="casos-uso">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            What you can do today with SOLYON
+          </h2>
+          <p className="text-gray-200 text-lg">
+            We are not just a future vision. From today, you can use SOLYON to
+            solve very concrete problems in your life and business.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {/* Truckers / transport */}
+          <div className="card p-6 text-left space-y-3">
+            <h3 className="font-display text-xl gradient-gold">
+              If you are a trucker or work in transport
+            </h3>
+            <p className="text-gray-300 text-sm">
+              Use TruckBoss, Sovereign TruckGuard and EL-VIA to quote
+              insurance, organize your operation, understand the system&apos;s
+              English and protect your future in the U.S.
+            </p>
+            <p className="text-gray-400 text-xs">
+              Coming soon: direct access from the app and our agency.
+            </p>
+          </div>
+
+          {/* Founders / entrepreneurs */}
+          <div className="card p-6 text-left space-y-3">
+            <h3 className="font-display text-xl gradient-gold">
+              If you are a founder or entrepreneur
+            </h3>
+            <p className="text-gray-300 text-sm">
+              Get the SOLYON Digital Kit and access the architecture, templates
+              and mental framework to build your own DeepTech project with
+              purpose.
+            </p>
+            <p className="text-gray-400 text-xs">
+              Ideal for applying to grants, accelerators and early rounds.
+            </p>
+          </div>
+
+          {/* Allies / funds / corporates */}
+          <div className="card p-6 text-left space-y-3">
+            <h3 className="font-display text-xl gradient-gold">
+              If you are an ally, fund or corporate
+            </h3>
+            <p className="text-gray-300 text-sm">
+              Connect to our cognitive lab and co-design pilots with Arcanum and
+              Nexus for your organization, government or impact program.
+            </p>
+            <p className="text-gray-400 text-xs">
+              Write to us from the Alliances &amp; Grants section to start a
+              strategic conversation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* IMPACT & PURPOSE */}
+      <section
+        className="section space-y-10 text-center bg-gradient-to-b from-transparent via-[#050505] to-transparent"
+        id="impacto"
+      >
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Impact & purpose
+          </h2>
+          <p className="text-gray-200 text-lg">
+            The core of SOLYON is not just code: it is the decision that no one
+            should be left out of the technological revolution because of their
+            ZIP code, accent or story. Our purpose is to turn the highest level
+            of technology into an extension of human dignity.
+          </p>
+          <p className="text-gray-400 text-sm md:text-base">
+            This is what we are changing: how intelligence is accessed, who
+            designs it and from where the systems that will decide on our daily
+            life are built.
+          </p>
+        </div>
+
+        {/* Impact diagrams */}
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {/* People */}
+          <div className="card p-6 text-center">
+            <h3 className="font-display text-3xl md:text-4xl gradient-gold">
+              +10,000
+            </h3>
+            <p className="text-gray-300 mt-2 text-sm md:text-base">
+              People and teams projected to be impacted in the first years of
+              the SOLYON ecosystem between LATAM and the U.S.
+            </p>
+            <div className="mt-4 flex justify-center items-end gap-1 h-8">
+              <div className="w-6 rounded-full bg-[#FFD700]/30 h-3" />
+              <div className="w-6 rounded-full bg-[#FFD700]/60 h-5" />
+              <div className="w-6 rounded-full bg-[#FFD700] h-7" />
+            </div>
+            <p className="mt-1 text-[0.7rem] text-gray-500">
+              Today · 12 months · 36 months
+            </p>
+          </div>
+
+          {/* Projects */}
+          <div className="card p-6 text-center">
+            <h3 className="font-display text-3xl md:text-4xl gradient-gold">
+              10
+            </h3>
+            <p className="text-gray-300 mt-2 text-sm md:text-base">
+              Interconnected DeepTech projects in a single ecosystem: from
+              insurance and transport to education, habits and philanthropy.
+            </p>
+            <div className="mt-4 flex justify-center items-end gap-1 h-8">
+              <div className="w-6 rounded-full bg-[#ffb6f0]/30 h-2" />
+              <div className="w-6 rounded-full bg-[#ffb6f0]/60 h-4" />
+              <div className="w-6 rounded-full bg-[#ffb6f0] h-6" />
+            </div>
+            <p className="mt-1 text-[0.7rem] text-gray-500">
+              Concept · MVP · Living ecosystem
+            </p>
+          </div>
+
+          {/* Patents / IP */}
+          <div className="card p-6 text-center">
+            <h3 className="font-display text-3xl md:text-4xl gradient-gold">
+              3
+            </h3>
+            <p className="text-gray-300 mt-2 text-sm md:text-base">
+              IP and patent families in progress: fractal memory, cognitive
+              orchestration and sovereign ecosystem.
+            </p>
+            <div className="mt-4 flex justify-center items-end gap-1 h-8">
+              <div className="w-6 rounded-full bg-[#FFD700]/25 h-2" />
+              <div className="w-6 rounded-full bg-[#FFD700]/45 h-3" />
+              <div className="w-6 rounded-full bg-[#FFD700]/80 h-5" />
+            </div>
+            <p className="mt-1 text-[0.7rem] text-gray-500">
+              Provisional · Consolidation · Portfolio
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* INNER CIRCLE – SOFT LEAD CAPTURE */}
+      <section className="section space-y-6 text-center" id="circulo-interno">
+        <div className="card p-8 md:p-10 max-w-3xl mx-auto space-y-4">
+          <h2 className="font-display text-2xl md:text-3xl gradient-gold">
+            Join the SOLYON Inner Circle
+          </h2>
+          <p className="text-gray-200 text-sm md:text-base">
+            If this project resonates with you, we want you close. We will
+            share progress, collaboration opportunities and early access to
+            pilots and tools.
+          </p>
+          <p className="text-gray-400 text-xs md:text-sm">
+            For now we manage the Inner Circle directly. Write to us and tell us
+            who you are and how you would like to participate.
+          </p>
+          <div className="flex flex-col md:flex-row gap-3 items-center justify-center">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=sergio@solyontechnologies.com&su=SOLYON%20Inner%20Circle&body=Hi%20SOLYON%20team%2C%0D%0A%0D%0AI%27d%20like%20to%20join%20the%20Inner%20Circle.%0D%0A%0D%0AName%3A%0D%0ARole%20or%20profile%3A%0D%0ACountry%3A%0D%0AHow%20I%27d%20like%20to%20contribute%20or%20participate%3A%0D%0A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn px-8 py-3 text-sm md:text-base"
+            >
+              I want to be closer
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. WHO WE ARE & WHERE WE COME FROM */}
+      <section className="section space-y-10 text-center" id="origen">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Who we are and where we come from
+          </h2>
+          <p className="text-gray-300 text-lg leading-relaxed">
+            Every technological revolution is born from a human story. SOLYON
+            did not start in a lab; it started in a harsh reality, in a life
+            where opportunities were a distant privilege. It began with two
+            people who decided to break their limits and build something nobody
+            thought was possible.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* CARD 1 */}
+          <div className="card p-8 text-left space-y-4">
+            <h3 className="font-display text-2xl gradient-gold">
+              From the street to DeepTech
+            </h3>
+            <p className="text-gray-300 leading-relaxed">
+              Sergio grew up among violence, chaos and scarcity. He saw death,
+              he saw people fall, he saw how the world can break you in half
+              before age ten. But he also saw that from pain comes a force: the
+              force to create your own destiny. He learned code, learned to
+              build from zero and turned his story into an engine of purpose,
+              not victimhood.
+            </p>
+            <p className="text-gray-400 text-sm">
+              From neighborhoods where no one bets on you, to designing frontier
+              technology. That is the root of SOLYON.
+            </p>
+          </div>
+
+          {/* CARD 2 */}
+          <div className="card p-8 text-left space-y-4">
+            <h3 className="font-display text-2xl gradient-gold">
+              Elizabeth: the mind holding the universe
+            </h3>
+            <p className="text-gray-300 leading-relaxed">
+              Elizabeth fought her own war: pressure, fear, lack of support, the
+              weight of standing on her own in a system not designed for a Latin
+              woman to build technology. But she did it. She held the project
+              when there was nothing, no money, no strength. She held it with
+              love, discipline and unbreakable faith.
+            </p>
+            <p className="text-gray-400 text-sm">
+              Without Elizabeth, SOLYON would never have survived its first
+              phase.
+            </p>
+          </div>
+        </div>
+
+        {/* CARD 3 – UNION */}
+        <div className="card p-10 max-w-4xl mx-auto space-y-4 text-center">
+          <h3 className="font-display text-2xl gradient-gold">
+            Two lives, one purpose: building sovereignty
+          </h3>
+          <p className="text-gray-300 leading-relaxed">
+            Together, Sergio and Elizabeth sold everything: cars, phones,
+            belongings, even basic comfort. They went through hunger, sleepless
+            nights, arguments, fall after fall. But one thing never changed:
+            <span className="text-[#FFD700] font-semibold">
+              {" "}
+              the conviction that technology must be born from those who have
+              lived lack of opportunity, not just from those who always had
+              it.
+            </span>
+          </p>
+          <p className="text-gray-400">
+            SOLYON is not just a company. It is a manifesto. A declaration of
+            war against the destiny they were handed. A promise for those who
+            come after.
+          </p>
+        </div>
+      </section>
+
+      {/* 6. ROADMAP – WHERE WE ARE GOING */}
+      <section className="section space-y-10 text-center" id="ruta">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Where we are going
+          </h2>
+          <p className="text-gray-200 text-lg">
+            SOLYON is not a one-year project. It is a conscious roadmap to
+            build, step by step, a sovereign DeepTech ecosystem that can grow,
+            endure and sustain itself over time.
+          </p>
+          <p className="text-gray-400 text-sm md:text-base">
+            This is the map that guides our decisions today and the alliances we
+            seek for tomorrow.
+          </p>
+        </div>
+
+        <div className="card p-8 md:p-10 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-5 gap-6 text-sm text-gray-200">
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">2025</h3>
+              <p>
+                Arcanum and Nexus consolidate as the cognitive core of the
+                SOLYON ecosystem.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">2026</h3>
+              <p>
+                Azoth and TruckBoss accelerate the transformation of transport
+                and insurance in the U.S. and LATAM.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">2027</h3>
+              <p>
+                Launch of the SOLYON autonomous agents platform for companies
+                and governments.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">2028</h3>
+              <p>
+                SOLYON educational AI for millions of students and workers in
+                LATAM.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">2030</h3>
+              <p>
+                SOLYON Foundation operating in multiple countries, funding and
+                connecting talent with sovereign DeepTech.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VISION & PURPOSE */}
+      <section className="section space-y-10 text-center" id="vision">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Vision & Purpose
+          </h2>
+
+          <p className="text-gray-200 text-lg">
+            SOLYON is born from a deep question:{" "}
+            <span className="text-[#FFD700] font-semibold">
+              what if the most advanced technology in the world could be born
+              from those who were never listened to?
+            </span>
+          </p>
+
+          <p className="text-gray-300 text-base leading-relaxed">
+            Our vision is not to create more software. It is to expand human
+            perception, redesign how we coexist with artificial intelligence and
+            prove that elite innovation can also be born from LATAM, from pain,
+            history and resilience.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {/* Block 1 */}
+          <div className="card p-6 text-left space-y-3">
+            <h3 className="font-display text-xl gradient-gold">
+              Coexistence with purpose
+            </h3>
+            <p className="text-gray-300">
+              We believe in AI that does not replace but elevates. Intelligence
+              that accompanies, empowers and allows humans to live with
+              dignity, clarity and freedom.
+            </p>
+            <p className="text-gray-400 text-sm">
+              Technology should be a spiritual, emotional and operational ally.
+            </p>
+          </div>
+
+          {/* Block 2 */}
+          <div className="card p-6 text-left space-y-3">
+            <h3 className="font-display text-xl gradient-gold">
+              Innovation as legacy
+            </h3>
+            <p className="text-gray-300">
+              We create DeepTech as functional art. Every system, every module,
+              every cognitive agent we develop is designed to transcend, not
+              just to function.
+            </p>
+            <p className="text-gray-400 text-sm">
+              SOLYON&apos;s legacy is not the product: it is the awareness it
+              leaves in those who use it.
+            </p>
+          </div>
+
+          {/* Block 3 */}
+          <div className="card p-6 text-left space-y-3">
+            <h3 className="font-display text-xl gradient-gold">
+              Expansion of perception
+            </h3>
+            <p className="text-gray-300">
+              We don&apos;t aim to change the world. We aim to expand how you
+              see it: your freedom, your capabilities, your vision, your
+              possibilities.
+            </p>
+            <p className="text-gray-400 text-sm">
+              The real revolution is internal before it is technological.
+            </p>
+          </div>
+        </div>
+
+        {/* Soft emotional CTA */}
+        <p className="max-w-3xl mx-auto text-gray-500 text-sm mt-4 italic">
+          If you are here, you probably also feel the world can be different. At
+          SOLYON we are not looking for followers, but for builders of the
+          future.
+        </p>
+      </section>
+
+      {/* SOLYON ECOSYSTEM */}
+      <section className="section space-y-10 text-center" id="ecosistema">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            SOLYON ecosystem
+          </h2>
+          <p className="text-gray-200 text-lg">
+            SOLYON is a sovereign DeepTech ecosystem composed of technologies,
+            applications and systems designed to solve real problems in
+            transport, education, habits, social impact and automation.
+          </p>
+          <p className="text-gray-400 text-sm md:text-base">
+            Each module exists to cover a critical need. Together, they form a
+            living system that evolves with each user.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">Arcanum</h3>
+            <p className="text-gray-300 mt-2">
+              Cognitive engine with fractal memory and anti-hallucination. The
+              base of all intelligence in the ecosystem.
+            </p>
+          </div>
+
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">Nexus</h3>
+            <p className="text-gray-300 mt-2">
+              Operational nervous system that orchestrates agents, data and
+              tasks in real time.
+            </p>
+          </div>
+
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">Azoth</h3>
+            <p className="text-gray-300 mt-2">
+              Sovereign CRM for sales, operations and process automation.
+            </p>
+          </div>
+
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">TruckBoss</h3>
+            <p className="text-gray-300 mt-2">
+              App for Latino truckers: quoting, community, PRO and operational
+              tools.
+            </p>
+          </div>
+
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">
+              Sovereign TruckGuard LLC
+            </h3>
+            <p className="text-gray-300 mt-2">
+              Luxury insurance agency for transport. U.S. operation and
+              bilingual support.
+            </p>
+          </div>
+
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">
+              EL-VIA DOT Express
+            </h3>
+            <p className="text-gray-300 mt-2">
+              English + DOT compliance for truckers. Real education for the most
+              ignored market.
+            </p>
+          </div>
+
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">Vita</h3>
+            <p className="text-gray-300 mt-2">
+              Integral transformation: habits, body, energy, focus and mind.
+            </p>
+          </div>
+
+          <div className="card p-6 text-left">
+            <h3 className="font-display text-xl gradient-gold">Foundation</h3>
+            <p className="text-gray-300 mt-2">
+              Education, social impact and scholarships for Latin talent that
+              deserves real opportunities.
+            </p>
+          </div>
+        </div>
+
+        <p className="text-gray-500 italic text-sm max-w-3xl mx-auto">
+          The ecosystem grows with you. Each module reinforces the next.
+          Everything is designed to scale in LATAM and the U.S.
+        </p>
+      </section>
+
+      {/* TECHNOLOGY & IP */}
+      <section className="section space-y-10 text-center" id="tech-ip">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Technology & IP
+          </h2>
+          <p className="text-gray-200 text-lg">
+            What differentiates SOLYON is not only its ecosystem, but the
+            science, IP and sovereign architecture that supports it.
+          </p>
+          <p className="text-gray-400 text-sm">
+            We are building technology with the same seriousness as major world
+            labs, but from LATAM reality.
+          </p>
+        </div>
+
+        <div className="card p-10 max-w-5xl mx-auto space-y-6 text-left">
+          <ul className="text-gray-300 space-y-3">
+            <li>
+              <span className="gradient-gold font-semibold">
+                • Hierarchical fractal memory for LLMs:
+              </span>{" "}
+              proprietary architecture for deep retention without losing
+              context.
+            </li>
+
+            <li>
+              <span className="gradient-gold font-semibold">
+                • Anti-hallucination and self-learning:
+              </span>{" "}
+              Arcanum corrects deviations and improves its reasoning.
+            </li>
+
+            <li>
+              <span className="gradient-gold font-semibold">
+                • Nexus multi-agent orchestration:
+              </span>{" "}
+              cognitive coordination in real time.
+            </li>
+
+            <li>
+              <span className="gradient-gold font-semibold">
+                • Sovereign autonomous agents:
+              </span>{" "}
+              AI that does not depend on external servers to function.
+            </li>
+
+            <li>
+              <span className="gradient-gold font-semibold">
+                • DeepTech from LATAM:
+              </span>{" "}
+              technology designed for our conditions, not just for Silicon
+              Valley.
+            </li>
+          </ul>
+
+          <p className="text-gray-400 text-sm">
+            Current status:{" "}
+            <span className="text-[#FFD700] font-semibold">Patent Pending</span>{" "}
+            (anti-hallucination formula, fractal memory, orchestration and
+            cognitive system).
+          </p>
+        </div>
+      </section>
+
+      {/* STRATEGIC ALLIANCES & GRANTS */}
+      <section className="section space-y-10 text-center" id="alianzas">
+        <div className="space-y-4 max-w-4xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Strategic Alliances & Grants
+          </h2>
+          <p className="text-gray-200 text-lg">
+            SOLYON is no longer just an idea. It is an ecosystem in formal
+            validation with key national entities and early recognition in
+            innovation spaces.
+          </p>
+          <p className="text-gray-400 text-sm md:text-base">
+            We are looking for partners who want to build sovereign DeepTech
+            from LATAM, with legal traceability, clear IP and real social
+            purpose.
+          </p>
+        </div>
+
+        <div className="card p-8 md:p-10 max-w-6xl mx-auto space-y-8 text-left">
+          <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-200">
+            {/* Col 1: Validation */}
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">
+                Validation & local ecosystem
+              </h3>
+              <p>
+                • Formal registration at the Chamber of Commerce and connection
+                to the city&apos;s business ecosystem.
+              </p>
+              <p>
+                • Filings and active processes with entities such as{" "}
+                <span className="font-semibold">MinCiencias</span> and{" "}
+                <span className="font-semibold">SIC</span>, aligning SOLYON
+                with science, technology and innovation frameworks.
+              </p>
+              <p>
+                • Inclusion in conversations with innovation hubs and programs
+                seeking high-impact DeepTech projects.
+              </p>
+            </div>
+
+            {/* Col 2: IP & Science */}
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">
+                Intellectual property & science
+              </h3>
+              <p>
+                • Core tech in{" "}
+                <span className="text-[#FFD700] font-semibold">
+                  Patent Pending
+                </span>{" "}
+                status: fractal memory, anti-hallucination, cognitive
+                orchestration and multi-agent ecosystem.
+              </p>
+              <p>
+                • Alignment with MinCiencias product categories and SIC
+                processes to protect SOLYON&apos;s technological heart.
+              </p>
+              <p>
+                • Integration with{" "}
+                <span className="font-semibold">Wompi</span>, the payment
+                gateway of Colombia&apos;s financial system, with
+                PCI-DSS-certified infrastructure.
+              </p>
+            </div>
+
+            {/* Col 3: Recognition & Opportunity */}
+            <div className="space-y-2">
+              <h3 className="font-display text-base gradient-gold">
+                Early recognition & opportunity
+              </h3>
+              <p>
+                • Invitation to visibility spaces such as the{" "}
+                <span className="font-semibold">Cinco Días Awards</span>
+                ceremony, where SOLYON is positioned as an emerging DeepTech
+                player.
+              </p>
+              <p>
+                • Ecosystem developed almost entirely by two people —Sergio and
+                Elizabeth— demonstrating extreme execution capacity with limited
+                resources.
+              </p>
+              <p>
+                • Unique opportunity for allies who want to join at the stage
+                where architecture is ready, IP is in motion and growth is still
+                early.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 border-t border-[#2A2A2A]">
+            <p className="text-gray-400 text-sm max-w-2xl">
+              We are open to alliances with funds, corporates, universities and
+              grant programs that want to support a DeepTech ecosystem born from
+              Latin American reality, with global impact and a sovereign tech
+              architecture already in motion.
+            </p>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=sergio@solyontechnologies.com&su=SOLYON%20strategic%20alliance&body=Hi%20SOLYON%20team%2C%0D%0A%0D%0AI%27d%20like%20to%20explore%20a%20potential%20strategic%20alliance%20or%20access%20to%20grants%20for%20the%20ecosystem.%0D%0A%0D%0A----%0D%0AName%3A%0D%0AOrganization%3A%0D%0ARole%3A%0D%0A%0D%0A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn px-8 py-3 text-sm md:text-base"
+            >
+              Start alliance conversation
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* STRATEGIC FAQ */}
+      <section className="section space-y-8 text-left" id="faq">
+        <div className="space-y-3 text-center max-w-3xl mx-auto">
+          <h2 className="font-display text-3xl md:text-4xl gradient-gold">
+            Frequently asked questions
+          </h2>
+          <p className="text-gray-300 text-sm md:text-base">
+            Some quick answers so you can make a clear decision.
+          </p>
+        </div>
+
+        <div className="card p-6 md:p-8 space-y-4">
+          <details className="group">
+            <summary className="cursor-pointer text-sm md:text-base text-gray-100 flex justify-between items-center">
+              <span>What exactly do I get when I buy the SOLYON Digital Kit?</span>
+              <span className="text-[#FFD700] text-xs ml-4 group-open:rotate-90 transition-transform">
+                ❯
+              </span>
+            </summary>
+            <p className="mt-2 text-gray-300 text-sm">
+              You receive the strategic architecture of the SOLYON ecosystem,
+              system maps, operational templates and a mental framework to
+              structure your DeepTech project with purpose. It is material ready
+              to use for calls, grants, accelerators and investor decks.
+            </p>
+          </details>
+
+          <details className="group">
+            <summary className="cursor-pointer text-sm md:text-base text-gray-100 flex justify-between items-center">
+              <span>How are contributions to the SOLYON lab used?</span>
+              <span className="text-[#FFD700] text-xs ml-4 group-open:rotate-90 transition-transform">
+                ❯
+              </span>
+            </summary>
+            <p className="mt-2 text-gray-300 text-sm">
+              They go to tech infrastructure, development hours, documentation,
+              proof-of-concepts and, progressively, to scholarships for Latin
+              talent who want to learn and build inside the ecosystem.
+            </p>
+          </details>
+
+          <details className="group">
+            <summary className="cursor-pointer text-sm md:text-base text-gray-100 flex justify-between items-center">
+              <span>Is SOLYON only for truckers and insurance?</span>
+              <span className="text-[#FFD700] text-xs ml-4 group-open:rotate-90 transition-transform">
+                ❯
+              </span>
+            </summary>
+            <p className="mt-2 text-gray-300 text-sm">
+              No. Our starting point is transport and insurance because we know
+              that industry deeply, but the architecture of Arcanum, Nexus and
+              Azoth is designed to extend into education, health, finance,
+              cities and more.
+            </p>
+          </details>
+
+          <details className="group">
+            <summary className="cursor-pointer text-sm md:text-base text-gray-100 flex justify-between items-center">
+              <span>What kind of alliances are you looking for right now?</span>
+              <span className="text-[#FFD700] text-xs ml-4 group-open:rotate-90 transition-transform">
+                ❯
+              </span>
+            </summary>
+            <p className="mt-2 text-gray-300 text-sm">
+              We are looking for funds, corporates, universities and science /
+              innovation programs that want to co-develop pilots, support our
+              IP and amplify impact in LATAM. We are in the perfect phase:
+              solid architecture, early recognition and room to build big.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="section mt-24 border-t border-[#2A2A2A] pt-10 text-sm text-gray-300">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <p>
+            © {new Date().getFullYear()} SOLYON Technologies. All rights
+            reserved.
+          </p>
+          <p>Contact: {process.env.NEXT_PUBLIC_CONTACT_EMAIL}</p>
+        </div>
+      </footer>
+    </>
   );
 }
