@@ -1,52 +1,115 @@
+// src/app/layout.jsx
 import "./../styles/globals.css";
 import { LanguageProvider } from "@/lib/language";
 import MainHeader from "@/components/MainHeader";
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.solyontechnologies.com";
+
+/**
+ * SEO global & social
+ * Asegura:
+ * - metadataBase (elimina warnings de Next)
+ * - Open Graph / Twitter
+ * - Canonical y alternates para ES/EN
+ */
 export const metadata = {
-  title: "SOLYON Technologies – DeepTech de lujo",
+  metadataBase: new URL(SITE_URL),
+  title: "SOLYON Technologies – DeepTech de lujo desde LATAM",
   description:
-    "Casa DeepTech de lujo: inteligencia cognitiva, sistemas autónomos y experiencias humanas elevadas.",
+    "Casa DeepTech soberana: Arcanum, Nexus y un ecosistema de aplicaciones de lujo que expanden la conciencia y transforman negocios reales.",
+  keywords: [
+    "SOLYON",
+    "DeepTech",
+    "inteligencia artificial",
+    "Arcanum",
+    "Nexus",
+    "IA soberana",
+    "ecosistema cognitivo",
+    "LATAM",
+    "tecnología de lujo",
+  ],
   openGraph: {
-    title: "SOLYON Technologies",
+    title: "SOLYON Technologies – DeepTech soberana desde LATAM",
     description:
-      "DeepTech de lujo para empoderar a la comunidad latina. Arcanum, Nexus, Azoth, TruckBoss y más.",
-    images: ["/og-cover.jpg"],
+      "Ecosistema cognitivo con Arcanum, Nexus y aplicaciones soberanas como TruckBoss, Azoth y Sovereign TruckGuard.",
+    url: SITE_URL,
+    siteName: "SOLYON Technologies",
     type: "website",
-    url:
-      process.env.NEXT_PUBLIC_SITE_URL ||
-      "https://solyontechnologies.com",
+    images: [
+      {
+        url: "/og-cover.jpg",
+        width: 1200,
+        height: 630,
+        alt: "SOLYON Technologies – DeepTech de lujo",
+      },
+    ],
+    locale: "es_CO",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SOLYON Technologies",
+    title: "SOLYON Technologies – DeepTech de lujo",
     description:
-      "DeepTech de lujo: donde la tecnología se convierte en conciencia.",
+      "Casa DeepTech soberana: inteligencia cognitiva, sistemas autónomos y experiencias humanas elevadas.",
     images: ["/og-cover.jpg"],
+  },
+  alternates: {
+    canonical: "/",
+    languages: {
+      "es-CO": "/",
+      "en-US": "/?lang=en",
+    },
   },
 };
 
+/**
+ * Layout raíz de la App
+ */
 export default function RootLayout({ children }) {
-  return (
-    <html lang="es">
-      <head>
-        {/* Script Wompi se mantiene igual */}
-        <script src="https://checkout.wompi.co/widget.js" async></script>
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "SOLYON Technologies",
+    url: SITE_URL,
+    logo: `${SITE_URL}/logo-solyon.svg`,
+    description:
+      "Casa DeepTech soberana que construye un ecosistema cognitivo de lujo desde LATAM para el mundo.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Medellín",
+      addressRegion: "Antioquia",
+      addressCountry: "CO",
+    },
+    sameAs: [
+      // Agrega tus redes reales cuando las tengas:
+      // "https://www.linkedin.com/company/XXXX",
+      // "https://twitter.com/XXXX",
+    ],
+  };
 
-        {/* Fuentes originales */}
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@700;800&display=swap"
-          rel="stylesheet"
+  return (
+    <html lang="es" suppressHydrationWarning>
+      <head>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+        <link rel="icon" href="/favicon.ico" />
+        {/* Schema.org para Organization (mejora presencia en Google) */}
+        <script
+          type="application/ld+json"
+          // No uses hooks aquí; es server component
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
       </head>
       <body className="bg-black text-gray-100 antialiased">
-        {/* CONTEXTO DE IDIOMA GLOBAL (ES / EN + autodetección) */}
+        {/* CONTEXTO DE IDIOMA GLOBAL (ES / EN + autodetección en el cliente) */}
         <LanguageProvider>
-          {/* HEADER GLOBAL CON BANDERAS (reemplaza al header inline anterior) */}
+          {/* HEADER GLOBAL CON NAV + SELECTOR ES/EN */}
           <MainHeader />
 
-          {/* AQUÍ SE RENDERIZA CADA PÁGINA */}
+          {/* CONTENIDO DE CADA PÁGINA */}
           {children}
         </LanguageProvider>
       </body>
