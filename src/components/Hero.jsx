@@ -221,12 +221,13 @@ export default function Hero() {
           </a>
 
           {/* 3. ECOSISTEMA (Tercero: Navegación Interna) */}
-          <button
-             onClick={() => document.getElementById('ecosistema')?.scrollIntoView({ behavior: 'smooth' })}
-             className="px-8 py-3 text-base font-medium text-[#FFD700] border border-[#FFD700]/40 rounded-full hover:bg-[#FFD700]/10 hover:border-[#FFD700] transition-all duration-300"
-          >
+         // 2. ECOSISTEMA (Secundario)
+          <a
+            href="/ecosystem" // AHORA NAVEGA DIRECTO A /ecosystem
+            className="px-8 py-3 text-base font-medium text-[#FFD700] border border-[#FFD700]/40 rounded-full hover:bg-[#FFD700]/10 hover:border-[#FFD700] transition-all duration-300"
+           >
             {t.btnEcosystem}
-          </button>
+          </a>
            
         </motion.div>
 
