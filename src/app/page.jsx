@@ -1,6 +1,6 @@
 "use client";
 
-import Hero from "@/components/Hero";
+import DynamicHero from "@/components/DynamicHero";
 import SupportModal from "@/components/SupportModal";
 import { useLanguage } from "@/lib/language";
 
@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <main className="space-y-24 pb-24">
       {/* HERO – slogan y CTAs principales (aún en ES, lo internacionalizamos después si quieres) */}
-      <Hero />
+      <DynamicHero />
 
       {lang === "es" ? <SpanishHome /> : <EnglishHome />}
     </main>
