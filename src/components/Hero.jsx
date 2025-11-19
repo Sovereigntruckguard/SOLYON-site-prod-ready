@@ -4,7 +4,16 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { useLanguage } from "@/lib/language";
+
+// Esta función se utiliza para simular la importación de tu hook de idioma.
+const useLanguage = (() => {
+    try {
+        return require('@/lib/language').useLanguage;
+    } catch (e) {
+        return () => ({ lang: 'es' });
+    }
+})();
+
 
 /**
  * RING CUÁNTICO PRINCIPAL
@@ -54,16 +63,18 @@ function RingCluster() {
  */
 function QuantumParticles() {
   const ref = useRef();
-
   const count = 400;
+  
   const positions = new Float32Array(count * 3);
+  
   for (let i = 0; i < count; i++) {
     const r = 4.5 + Math.random() * 2.5;
     const angle = Math.random() * Math.PI * 2;
     const y = (Math.random() - 0.5) * 2.5;
-    positions[i * 3] = Math.cos(angle) * r;
-    positions[i * 3 + 1] = y;
-    positions[i * 3 + 2] = Math.sin(angle) * r;
+    
+    positions[i * 3] = Math.cos(angle) * r;     // x
+    positions[i * 3 + 1] = y;                   // y
+    positions[i * 3 + 2] = Math.sin(angle) * r; // z
   }
 
   useFrame((state, delta) => {
@@ -112,10 +123,13 @@ function QuantumScene() {
  * HERO PRINCIPAL SOLYON – BILINGÜE
  */
 export default function Hero() {
+  // Variables de entorno reales para producción
   const kitUrl = process.env.NEXT_PUBLIC_WOMPI_KIT_URL;
-  const donateUrl = process.env.NEXT_PUBLIC_WOMPI_DONATE_URL;
+  const donateUrl = process.env.NEXT_PUBLIC_WOMPI_DONATE_URL; // Usamos el link de donaciones para el apoyo
+  const arcanumUrl = "https://arcanum.solyontechnologies.com";
 
-  const { lang } = useLanguage();
+  // Usamos el hook de tu aplicación. 
+  const { lang } = useLanguage ? useLanguage() : { lang: 'es' }; 
   const t = lang === "es" ? heroEs : heroEn;
 
   return (
@@ -146,6 +160,7 @@ export default function Hero() {
               src="/logo-solyon.svg"
               alt="SOLYON Logo"
               className="h-10 w-10 object-contain"
+              onError={(e) => { e.target.style.display = 'none'; }} // Fallback si no carga
             />
           </div>
 
@@ -161,7 +176,7 @@ export default function Hero() {
           transition={{ delay: 0.1, duration: 0.8, ease: "easeOut" }}
           className="space-y-4 max-w-4xl"
         >
-          <h1 className="font-display text-4xl md:text-6xl leading-tight gradient-title">
+          <h1 className="font-display text-4xl md:text-6xl leading-tight bg-clip-text text-transparent bg-gradient-to-r from-[#D792A8] to-[#FFD700]">
             {t.title}
           </h1>
 
@@ -178,43 +193,41 @@ export default function Hero() {
           </p>
         </motion.div>
 
-        {/* CTA BUTTONS */}
+        {/* CTA BUTTONS - ESTRATEGIA REVISADA */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
           className="flex flex-wrap justify-center gap-4 mt-4"
         >
-          {/* Kit → Wompi */}
+          {/* 1. ARCANUM (Principal: Producto) - Oro Brillante */}
           <a
-            href={kitUrl || "#"}
+            href={arcanumUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn px-8 py-3 text-sm md:text-base shadow-[0_0_30px_rgba(255,215,0,0.35)]"
+            className="px-8 py-3 text-base font-bold text-black bg-gradient-to-r from-[#FFD700] to-[#E8B9C9] rounded-full hover:shadow-[0_0_20px_rgba(255,215,0,0.7)] transition-all duration-300 transform hover:scale-105 text-center flex items-center gap-2"
           >
-            {t.btnKit}
+            <span>🚀</span> {t.btnLaunch}
           </a>
 
-          {/* Ecosistema → página Ecosystem */}
+          {/* 2. APOYO (Secundario Estratégico: Oro Rosado / Lujo Sutil) */}
           <a
-            href="/ecosystem"
-            className="px-8 py-3 rounded-2xl border border-[#FFD700]/60 text-sm md:text-base text-gray-100 hover:bg-[#181818] hover:border-[#FFD700] transition-colors"
-          >
-            {t.btnEcosystem}
-          </a>
-
-          {/* Apoyo → Wompi donaciones */}
-          <a
-            href={donateUrl || "#"}
+            href={donateUrl || "/#acceso"} // Usamos el link de donaciones, o bajamos a la sección de acceso
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 rounded-2xl bg-[#111111] border border-[#ff9ecf]/60 text-sm md:text-base text-[#ffcee8] hover:bg-[#181818] transition-colors flex items-center gap-2"
+            className="px-8 py-3 text-base font-bold text-black bg-gradient-to-r from-[#D792A8] to-[#ffb6f0] rounded-full hover:shadow-[0_0_20px_rgba(255,182,240,0.6)] transition-all duration-300 transform hover:scale-105 text-center flex items-center gap-2"
           >
             {t.btnSupport}
-            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-[#ff9ecf] to-[#FFD700] text-[0.7rem] text-black shadow-[0_0_18px_rgba(255,158,207,0.9)]">
-              ♥
-            </span>
           </a>
+
+          {/* 3. ECOSISTEMA (Tercero: Navegación Interna) */}
+          <button
+             onClick={() => document.getElementById('ecosistema')?.scrollIntoView({ behavior: 'smooth' })}
+             className="px-8 py-3 text-base font-medium text-[#FFD700] border border-[#FFD700]/40 rounded-full hover:bg-[#FFD700]/10 hover:border-[#FFD700] transition-all duration-300"
+          >
+            {t.btnEcosystem}
+          </button>
+           
         </motion.div>
 
         {/* TEXTO INFERIOR */}
@@ -232,7 +245,7 @@ export default function Hero() {
 }
 
 /* =============================================================
-   TEXTOS ES / EN — Manteniendo tu narrativa original
+   TEXTOS ES / EN
    ============================================================= */
 
 const heroEs = {
@@ -243,9 +256,9 @@ const heroEs = {
   subtitleAfter: "y transforma negocios, ciudades y vidas reales.",
   description:
     "El primer ecosistema cognitivo creado desde LATAM para el mundo: Arcanum como cerebro, Nexus como sistema nervioso y aplicaciones soberanas que convierten la tecnología en legado e impacto medible.",
-  btnKit: "Comprar Kit Premium",
-  btnEcosystem: "Conocer ecosistema",
-  btnSupport: "Apoyar el ecosistema",
+  btnLaunch: "Lanzar Arcanum Beta",
+  btnEcosystem: "Explorar Ecosistema",
+  btnSupport: "Apoyar Ecosistema", // Cambio clave: Título de Apoyo
   bottom:
     "Construimos una arquitectura DeepTech integral – motor cognitivo, orquestación multi-agente y aplicaciones soberanas – para que la próxima generación de innovación no dependa de infraestructuras que LATAM no controla.",
 };
@@ -258,9 +271,9 @@ const heroEn = {
   subtitleAfter: "and transforms businesses, cities and real lives.",
   description:
     "The first cognitive ecosystem created from LATAM for the world: Arcanum as the brain, Nexus as the nervous system and sovereign applications that turn technology into legacy and measurable impact.",
-  btnKit: "Buy Premium Kit",
-  btnEcosystem: "Explore ecosystem",
-  btnSupport: "Support the ecosystem",
+  btnLaunch: "Launch Arcanum Beta",
+  btnEcosystem: "Explore Ecosystem",
+  btnSupport: "Support Ecosystem", // Cambio clave: Título de Apoyo
   bottom:
     "We build a fully integrated DeepTech architecture – cognitive engine, multi-agent orchestration and sovereign applications – so the next generation of innovation does not depend on infrastructures LATAM does not control.",
 };
