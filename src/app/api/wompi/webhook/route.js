@@ -1,6 +1,6 @@
 import crypto from "crypto";
 import { NextResponse } from "next/server";
-import { appendCsv, postToSheet } from "@/lib/logger";
+import { appendCsv, postToSheet } from "console";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
