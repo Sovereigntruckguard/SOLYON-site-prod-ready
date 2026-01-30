@@ -9,66 +9,67 @@ export default function ImpactPage() {
         </h1>
 
         <p className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto">
-          El impacto de SOLYON no se mide en promesas,
-          se mide en personas que recuperan control sobre su vida,
-          su trabajo y su futuro.
+          El impacto de SOLYON no se mide en discursos.
+          Se mide en sistemas que funcionan mejor y en personas
+          que recuperan control sobre su trabajo y su futuro.
         </p>
 
         <p className="text-gray-400 text-sm">
-          Tecnología aplicada · Impacto real · Dignidad operativa
+          Tecnología aplicada · Sistema camionero · Dignidad operativa
         </p>
       </section>
 
-      {/* IMPACTO HUMANO */}
+      {/* IMPACTO HUMANO – CAMIONEROS LATINOS */}
       <section className="section max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
         <div className="space-y-6">
           <h2 className="font-display text-3xl text-[#FFD700]">
-            Impacto humano
+            Impacto humano: camioneros latinos en EE. UU.
           </h2>
 
           <p className="text-gray-300 text-lg">
-            SOLYON construye tecnología para personas que históricamente
-            han sido ignoradas por los grandes sistemas tecnológicos.
+            El sistema camionero de Estados Unidos depende de cientos de miles
+            de camioneros latinos que operan en condiciones de alta presión,
+            barreras de idioma y desventaja estructural.
           </p>
 
           <p className="text-gray-400 text-sm">
-            Camioneros latinos, operadores independientes,
-            personas con movilidad reducida y equipos sin acceso
-            a herramientas reales.
+            SOLYON diseña tecnología para reducir esa brecha:
+            seguros más claros, educación operativa en inglés DOT,
+            menos multas, menos errores y más estabilidad financiera.
           </p>
         </div>
 
         <img
           src="/visual/impact-human.png"
-          alt="Impacto humano SOLYON"
+          alt="Impacto humano en camioneros latinos en Estados Unidos"
           className="max-w-md w-full rounded-2xl shadow-[0_30px_90px_rgba(0,0,0,0.6)]"
         />
       </section>
 
-      {/* IMPACTO OPERATIVO */}
+      {/* IMPACTO EN EL SISTEMA CAMIONERO */}
       <section className="section max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
         <img
           src="/visual/impact-operational.png"
-          alt="Impacto operativo SOLYON"
+          alt="Impacto operativo en el sistema camionero de EE. UU."
           className="max-w-md w-full rounded-2xl shadow-[0_30px_90px_rgba(0,0,0,0.6)]"
         />
 
         <div className="space-y-6">
           <h2 className="font-display text-3xl text-[#FFD700]">
-            Impacto operativo
+            Impacto en el sistema camionero de EE. UU.
           </h2>
 
           <p className="text-gray-300 text-lg">
-            La tecnología de SOLYON reduce fricción real:
-            menos errores, menos multas, menos tiempo perdido,
-            más decisiones correctas.
+            SOLYON no solo ayuda a individuos.
+            Mejora el funcionamiento del sistema camionero completo.
           </p>
 
           <ul className="text-gray-400 text-sm space-y-2">
-            <li>• Cotización precisa y transparente</li>
-            <li>• Cumplimiento normativo asistido</li>
-            <li>• Evidencia automática y trazabilidad</li>
-            <li>• Control financiero y operativo</li>
+            <li>• Menos pólizas mal cotizadas</li>
+            <li>• Menos cancelaciones por errores operativos</li>
+            <li>• Mejor evaluación de riesgo</li>
+            <li>• Mayor estabilidad para aseguradoras y brokers</li>
+            <li>• Transporte más seguro y predecible</li>
           </ul>
         </div>
       </section>
@@ -82,20 +83,20 @@ export default function ImpactPage() {
 
           <p className="text-gray-300 text-lg">
             SOLYON demuestra que es posible construir
-            infraestructura DeepTech soberana desde LATAM,
-            operando en mercados regulados como Estados Unidos.
+            infraestructura DeepTech soberana desde LATAM
+            que opera en mercados altamente regulados como Estados Unidos.
           </p>
 
           <p className="text-gray-400 text-sm">
-            Arcanum, nuestra IA con memoria fractal jerárquica,
-            anti-alucinación y autoaprendizaje,
-            conecta todas las tecnologías del ecosistema.
+            Nuestra IA Arcanum —con memoria fractal jerárquica,
+            fórmula anti-alucinación y autoaprendizaje—
+            conecta y optimiza todo el ecosistema.
           </p>
         </div>
 
         <img
           src="/visual/impact-systemic.png"
-          alt="Impacto sistémico SOLYON"
+          alt="Impacto sistémico de SOLYON"
           className="max-w-md w-full rounded-2xl shadow-[0_30px_90px_rgba(0,0,0,0.6)]"
         />
       </section>
@@ -104,7 +105,7 @@ export default function ImpactPage() {
       <section className="section max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
         <img
           src="/visual/impact-institutional.png"
-          alt="Impacto institucional SOLYON"
+          alt="Impacto institucional de SOLYON"
           className="max-w-md w-full rounded-2xl shadow-[0_30px_90px_rgba(0,0,0,0.6)]"
         />
 
@@ -120,8 +121,8 @@ export default function ImpactPage() {
           </p>
 
           <p className="text-gray-400 text-sm">
-            Impacto medible, trazable y defendible ante aliados,
-            entidades públicas e inversionistas.
+            Impacto medible, trazable y defendible
+            ante aseguradoras, entidades públicas e inversionistas.
           </p>
         </div>
       </section>
@@ -129,8 +130,9 @@ export default function ImpactPage() {
       {/* CIERRE */}
       <section className="section max-w-5xl mx-auto text-center space-y-6">
         <p className="text-gray-400 text-lg">
-          El verdadero impacto no es escalar rápido.
-          Es construir algo que resista el mundo real.
+          Mejorar la vida de los camioneros
+          también mejora el sistema de transporte.
+          Ese es el verdadero impacto.
         </p>
       </section>
 
