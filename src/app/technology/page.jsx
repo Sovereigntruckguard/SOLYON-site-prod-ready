@@ -47,7 +47,7 @@ export default function TechnologyPage() {
         />
       </section>
 
-      {/* MOTOR DE COTIZACIÓN */}
+      {/* MOTOR DE COTIZACIÓN – TRUCKBOSS */}
       <section className="section max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
         <div className="space-y-6">
           <h2 className="font-display text-3xl text-[#FFD700]">
@@ -55,19 +55,18 @@ export default function TechnologyPage() {
           </h2>
 
           <p className="text-gray-300 text-lg">
-            Motor diseñado para aseguradoras y MGAs.
-            Automatiza cotización, underwriting y escenarios de riesgo
-            en seguros de transporte.
+            Motor financiero y de underwriting diseñado para aseguradoras,
+            MGAs y agencias de transporte.
           </p>
 
           <p className="text-gray-400 text-sm">
-            Ajustable a reglas de cada carrier · Precisión financiera · Escalable
+            Cotización en tiempo real · Down payment · Mensualidades · Decisión asistida
           </p>
         </div>
 
         <img
-          src="/visual/product-coldchain-laptop.png"
-          alt="Motor de cotización y riesgo SOLYON"
+          src="/visual/product-truckboss-quoting-mobile.png"
+          alt="Motor de cotización TruckBoss en móvil"
           className="max-w-md w-full rounded-2xl shadow-[0_30px_90px_rgba(0,0,0,0.6)]"
         />
       </section>
