@@ -15,14 +15,10 @@ export default function DeeptechSystemVisual({ compact = false }) {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(230,188,104,0.12),transparent_28rem)]" />
       <div className="relative flex items-center justify-between border-b border-white/10 pb-4">
         <div>
-          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-[#E6BC68]">
-            SOLYON SYSTEM LAB
-          </p>
+          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-[#E6BC68]">SOLYON SYSTEM LAB</p>
           <p className="mt-1 text-xs text-white/45">{t.subtitle}</p>
         </div>
-        <span className="rounded-full border border-[#E6BC68]/35 bg-[#E6BC68]/10 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-[#E6BC68]">
-          MOCKUP
-        </span>
+        <span className="rounded-full border border-[#E6BC68]/35 bg-[#E6BC68]/10 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-[#E6BC68]">MOCKUP</span>
       </div>
 
       <div className="relative mt-5 grid gap-4 lg:grid-cols-[1.35fr_0.65fr]">
@@ -30,9 +26,7 @@ export default function DeeptechSystemVisual({ compact = false }) {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-xs font-medium text-white/80">{t.core}</p>
-              <p className="mt-1 text-[0.68rem] uppercase tracking-[0.16em] text-white/35">
-                Intelligence Latin Truck Risk OS
-              </p>
+              <p className="mt-1 text-[0.68rem] uppercase tracking-[0.16em] text-white/35">Intelligence Latin Truck Risk OS</p>
             </div>
             <div className="h-2.5 w-2.5 rounded-full bg-emerald-400 shadow-[0_0_18px_rgba(52,211,153,0.8)]" />
           </div>
@@ -40,16 +34,12 @@ export default function DeeptechSystemVisual({ compact = false }) {
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {t.modules.map((module, index) => (
               <div key={module.title} className="rounded-xl border border-white/10 bg-[#0d1118] p-3.5">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-3">
                   <span className="text-[0.62rem] font-semibold text-[#E6BC68]">0{index + 1}</span>
-                  <span className="text-[0.58rem] uppercase tracking-[0.14em] text-white/30">
-                    {module.status}
-                  </span>
+                  <span className="rounded-full border border-white/10 px-2 py-1 text-[0.55rem] uppercase tracking-[0.12em] text-white/38">{module.status}</span>
                 </div>
                 <p className="mt-3 text-sm font-medium text-white/85">{module.title}</p>
-                <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/5">
-                  <div className="h-full rounded-full bg-gradient-to-r from-[#E6BC68] to-[#8f6a2a]" style={{ width: module.progress }} />
-                </div>
+                <p className="mt-2 text-[0.62rem] leading-4 text-white/34">{module.body}</p>
               </div>
             ))}
           </div>
@@ -62,9 +52,7 @@ export default function DeeptechSystemVisual({ compact = false }) {
             <div className="mt-4 grid grid-cols-4 gap-2">
               {t.pipelineSteps.map((step, index) => (
                 <div key={step} className="relative text-center">
-                  <div className="mx-auto flex h-8 w-8 items-center justify-center rounded-full border border-[#E6BC68]/35 bg-[#E6BC68]/10 text-xs font-semibold text-[#E6BC68]">
-                    {index + 1}
-                  </div>
+                  <div className="mx-auto flex h-8 w-8 items-center justify-center rounded-full border border-[#E6BC68]/35 bg-[#E6BC68]/10 text-xs font-semibold text-[#E6BC68]">{index + 1}</div>
                   <p className="mt-2 text-[0.6rem] leading-4 text-white/45">{step}</p>
                 </div>
               ))}
@@ -96,18 +84,14 @@ export default function DeeptechSystemVisual({ compact = false }) {
             <p className="mt-2 text-xs leading-5 text-white/48">{t.originBody}</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {t.originTags.map((tag) => (
-                <span key={tag} className="rounded-full border border-white/10 px-2.5 py-1 text-[0.58rem] uppercase tracking-[0.12em] text-white/38">
-                  {tag}
-                </span>
+                <span key={tag} className="rounded-full border border-white/10 px-2.5 py-1 text-[0.58rem] uppercase tracking-[0.12em] text-white/38">{tag}</span>
               ))}
             </div>
           </div>
         </div>
       </div>
 
-      <p className="relative mt-4 text-[0.62rem] leading-4 text-white/30">
-        {t.disclaimer}
-      </p>
+      <p className="relative mt-4 text-[0.62rem] leading-4 text-white/30">{t.disclaimer}</p>
     </div>
   );
 }
@@ -119,10 +103,10 @@ const es = {
   pipeline: "Flujo de conocimiento",
   live: "Validación progresiva",
   modules: [
-    { title: "Inteligencia de riesgo", status: "Diseño", progress: "78%" },
-    { title: "CRM operativo", status: "Validación", progress: "66%" },
-    { title: "Automatización y agentes", status: "Desarrollo", progress: "54%" },
-    { title: "Evidencia y trazabilidad", status: "Activo", progress: "84%" },
+    { title: "Inteligencia de riesgo", status: "En diseño", body: "Variables, señales y criterios de apoyo a decisiones." },
+    { title: "CRM operativo", status: "En validación", body: "Contactabilidad, oportunidades y seguimiento de operación." },
+    { title: "Automatización y agentes", status: "En desarrollo", body: "Flujos definidos, asistencia especializada y memoria." },
+    { title: "Evidencia y trazabilidad", status: "Capacidad activa", body: "Documentación, controles y aprendizaje estructurado." },
   ],
   pipelineSteps: ["Operación", "Evidencia", "Modelado", "Sistema"],
   validation: "Entornos de validación",
@@ -133,7 +117,7 @@ const es = {
   origin: "Origen de capacidad",
   originBody: "Laboratorio construido desde Medellín con experiencia operativa, incubación, talento y validación institucional.",
   originTags: ["DeepTech", "IA aplicada", "Riesgo", "Movilidad"],
-  disclaimer: "MOCKUP CONCEPTUAL: representación visual de capacidades y relaciones. Se reemplazará por interfaces reales a medida que cada activo sea aprobado para publicación.",
+  disclaimer: "MOCKUP CONCEPTUAL: representa capacidades y relaciones, no porcentajes de terminación ni una plataforma final desplegada.",
 };
 
 const en = {
@@ -143,10 +127,10 @@ const en = {
   pipeline: "Knowledge pipeline",
   live: "Progressive validation",
   modules: [
-    { title: "Risk intelligence", status: "Design", progress: "78%" },
-    { title: "Operating CRM", status: "Validation", progress: "66%" },
-    { title: "Automation and agents", status: "Development", progress: "54%" },
-    { title: "Evidence and traceability", status: "Active", progress: "84%" },
+    { title: "Risk intelligence", status: "In design", body: "Variables, signals and criteria supporting decisions." },
+    { title: "Operating CRM", status: "In validation", body: "Contactability, opportunities and operating follow-up." },
+    { title: "Automation and agents", status: "In development", body: "Defined workflows, specialized assistance and memory." },
+    { title: "Evidence and traceability", status: "Active capability", body: "Documentation, controls and structured learning." },
   ],
   pipelineSteps: ["Operations", "Evidence", "Modeling", "System"],
   validation: "Validation environments",
@@ -157,5 +141,5 @@ const en = {
   origin: "Capability origin",
   originBody: "A laboratory built in Medellín through operating experience, incubation, talent and institutional validation.",
   originTags: ["DeepTech", "Applied AI", "Risk", "Mobility"],
-  disclaimer: "CONCEPT MOCKUP: visual representation of capabilities and relationships. It will be replaced with approved real interfaces as assets become publishable.",
+  disclaimer: "CONCEPT MOCKUP: represents capabilities and relationships, not completion percentages or a fully deployed platform.",
 };
