@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import DynamicHero from "@/components/DynamicHero";
+import SiteFooter from "@/components/SiteFooter";
 import { useLanguage } from "@/lib/language";
 
 export default function Page() {
@@ -99,22 +100,7 @@ export default function Page() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10">
-        <div className="section-shell grid gap-8 py-12 text-xs text-white/45 md:grid-cols-3">
-          <div>
-            <p className="font-semibold text-white/75">SOLYON Technologies S.A.S.</p>
-            <p className="mt-2">Medellin, Colombia</p>
-          </div>
-          <div>
-            <p>sergio@solyontechnologies.com</p>
-            <p className="mt-2">+57 314 790 3517</p>
-          </div>
-          <div className="md:text-right">
-            <p>© {new Date().getFullYear()} SOLYON Technologies S.A.S.</p>
-            <p className="mt-2">{t.footer}</p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
@@ -172,7 +158,6 @@ const es = {
   ctaBody:
     "Conversamos con instituciones, compañías, investigadores, aseguradoras, operadores e inversionistas estratégicos cuando existe un problema verificable y una ruta clara de validación.",
   ctaButton: "Contacto institucional",
-  footer: "Todos los derechos reservados.",
 };
 
 const en = {
@@ -228,5 +213,4 @@ const en = {
   ctaBody:
     "We engage institutions, companies, researchers, insurers, operators and strategic investors when there is a verifiable problem and a clear validation path.",
   ctaButton: "Institutional contact",
-  footer: "All rights reserved.",
 };
