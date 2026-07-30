@@ -288,7 +288,7 @@ export const copy = {
       apiLabel: "Solyon Move API in development and institutional demonstration · May 2026",
     },
     evidence: {
-      seoTitle: "Evidence & Traction — Solyon Technologies",
+      seoTitle: "Evidence & Traction",
       seoDescription:
         "Dated commercial, product and institutional evidence from Solyon Technologies, with clear definitions and validation boundaries.",
       eyebrow: "DATED EVIDENCE · CLEAR DEFINITIONS",
@@ -400,7 +400,7 @@ export const copy = {
       ],
     },
     company: {
-      seoTitle: "Company — Solyon Technologies",
+      seoTitle: "Company",
       seoDescription:
         "Meet the founders and execution team building Solyon Technologies from Medellín for the U.S. commercial trucking market.",
       eyebrow: "COMPANY & LABORATORY",
@@ -450,7 +450,7 @@ export const copy = {
       ],
     },
     investors: {
-      seoTitle: "Investors — Solyon Technologies Seed Round",
+      seoTitle: "Seed Round — Investors",
       seoDescription:
         "Solyon Technologies is raising a Seed round to scale its trucking risk operating system, U.S. commercial engine and Medellín laboratory.",
       eyebrow: "SEED ROUND · ACTIVE",
@@ -500,7 +500,7 @@ export const copy = {
         "This page is for information only and is not an offer to sell securities. Any investment is subject to definitive documents, eligibility requirements and applicable law.",
     },
     contact: {
-      seoTitle: "Contact — Solyon Technologies",
+      seoTitle: "Contact",
       seoDescription:
         "Contact Solyon Technologies for insurance operations, technology partnerships, institutions, media or investment conversations.",
       eyebrow: "START WITH THE RIGHT CONTEXT",
@@ -544,7 +544,7 @@ export const copy = {
       read: "Read insight",
     },
     privacy: {
-      seoTitle: "Privacy Notice — Solyon Technologies",
+      seoTitle: "Privacy Notice",
       seoDescription:
         "Privacy notice for the Solyon Technologies corporate website.",
       eyebrow: "PRIVACY NOTICE",
@@ -813,7 +813,7 @@ export const copy = {
       apiLabel: "API de Solyon Move en desarrollo y demostración institucional · mayo de 2026",
     },
     evidence: {
-      seoTitle: "Evidencia y Tracción — Solyon Technologies",
+      seoTitle: "Evidencia y Tracción",
       seoDescription:
         "Evidencia comercial, tecnológica e institucional fechada de Solyon Technologies, con definiciones y límites claros.",
       eyebrow: "EVIDENCIA FECHADA · DEFINICIONES CLARAS",
@@ -890,7 +890,7 @@ export const copy = {
       ],
     },
     company: {
-      seoTitle: "Compañía — Solyon Technologies",
+      seoTitle: "Compañía",
       seoDescription:
         "Conoce a los fundadores y al equipo que construye Solyon Technologies desde Medellín para el mercado de trucking comercial en EE. UU.",
       eyebrow: "COMPAÑÍA Y LABORATORIO",
@@ -940,7 +940,7 @@ export const copy = {
       ],
     },
     investors: {
-      seoTitle: "Inversionistas — Ronda Seed Solyon Technologies",
+      seoTitle: "Ronda Seed — Inversionistas",
       seoDescription:
         "Solyon Technologies levanta una ronda Seed para escalar su sistema operativo de riesgo, motor comercial en EE. UU. y laboratorio en Medellín.",
       eyebrow: "RONDA SEED · ABIERTA",
@@ -990,7 +990,7 @@ export const copy = {
         "Esta página es informativa y no constituye oferta de valores. Cualquier inversión queda sujeta a documentos definitivos, requisitos de elegibilidad y ley aplicable.",
     },
     contact: {
-      seoTitle: "Contacto — Solyon Technologies",
+      seoTitle: "Contacto",
       seoDescription:
         "Contacta a Solyon Technologies para operaciones de seguros, alianzas tecnológicas, instituciones, prensa o inversión.",
       eyebrow: "EMPIEZA CON EL CONTEXTO CORRECTO",
@@ -1018,7 +1018,7 @@ export const copy = {
       read: "Leer insight",
     },
     privacy: {
-      seoTitle: "Aviso de Privacidad — Solyon Technologies",
+      seoTitle: "Aviso de Privacidad",
       seoDescription:
         "Aviso de privacidad del sitio corporativo de Solyon Technologies.",
       eyebrow: "AVISO DE PRIVACIDAD",
