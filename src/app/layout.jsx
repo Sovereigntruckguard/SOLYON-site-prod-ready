@@ -140,16 +140,6 @@ export default function RootLayout({ children }) {
         creator: { "@id": `${SITE_URL}/#organization` },
         url: `${SITE_URL}/solyon-move`,
       },
-      {
-        "@type": "VideoObject",
-        name: "SOLYON Technologies project video",
-        description: "Video presentation of SOLYON Technologies and its applied technology ecosystem.",
-        thumbnailUrl: [`${SITE_URL}/og-cover.jpg`],
-        uploadDate: "2026-01-01",
-        contentUrl: "https://www.youtube.com/watch?v=0SyayXeU42g",
-        embedUrl: "https://www.youtube.com/embed/0SyayXeU42g",
-        publisher: { "@id": `${SITE_URL}/#organization` },
-      },
     ],
   };
 
