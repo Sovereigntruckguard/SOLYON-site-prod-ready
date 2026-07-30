@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import DeeptechSystemVisual from "@/components/DeeptechSystemVisual";
 import { useLanguage } from "@/lib/language";
 
 export default function DynamicHero() {
@@ -9,9 +9,9 @@ export default function DynamicHero() {
   const t = lang === "es" ? es : en;
 
   return (
-    <section className="relative min-h-[92vh] w-full overflow-hidden border-b border-white/10">
+    <section className="relative min-h-[94vh] w-full overflow-hidden border-b border-white/10">
       <video
-        className="absolute inset-0 h-full w-full object-cover opacity-35"
+        className="absolute inset-0 h-full w-full object-cover opacity-25"
         src="/hero/hero-solyon.mp4"
         autoPlay
         muted
@@ -20,12 +20,12 @@ export default function DynamicHero() {
         preload="metadata"
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-[#07090c]/72" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_35%,rgba(230,188,104,0.16),transparent_32rem)]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#07090c] via-[#07090c]/88 to-[#07090c]/45" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#07090c] via-transparent to-[#07090c]/70" />
+      <div className="absolute inset-0 bg-[#07090c]/78" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_35%,rgba(230,188,104,0.14),transparent_35rem)]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#07090c] via-[#07090c]/92 to-[#07090c]/62" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#07090c] via-transparent to-[#07090c]/75" />
 
-      <div className="relative z-10 mx-auto grid min-h-[92vh] max-w-7xl items-center gap-14 px-6 py-24 md:px-10 lg:grid-cols-[1.08fr_0.92fr]">
+      <div className="relative z-10 mx-auto grid min-h-[94vh] max-w-7xl items-center gap-14 px-6 py-24 md:px-10 lg:grid-cols-[0.93fr_1.07fr]">
         <div className="max-w-4xl">
           <p className="mb-7 text-xs font-semibold uppercase tracking-[0.28em] text-[#E6BC68]">
             {t.eyebrow}
@@ -41,13 +41,13 @@ export default function DynamicHero() {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Link
-              href="/solyon-move"
+              href="/technology"
               className="inline-flex items-center justify-center rounded-full bg-[#E6BC68] px-7 py-3.5 text-sm font-semibold text-[#090b0e] transition hover:bg-[#F0CA7E]"
             >
               {t.primary}
             </Link>
             <Link
-              href="/technology"
+              href="/ecosystem"
               className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/5"
             >
               {t.secondary}
@@ -63,33 +63,10 @@ export default function DynamicHero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
+        <div className="relative mx-auto w-full max-w-2xl lg:max-w-none">
           <div className="absolute -inset-10 rounded-full bg-[#E6BC68]/10 blur-3xl" />
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/15 bg-[#0b0e12]/90 p-3 shadow-[0_40px_120px_rgba(0,0,0,0.65)]">
-            <Image
-              src="/visual/solyon_move_institucional.png"
-              alt="SOLYON Move, tecnología de movilidad accesible desarrollada en Medellín"
-              width={1200}
-              height={820}
-              priority
-              sizes="(max-width: 1024px) 100vw, 44vw"
-              className="h-auto w-full rounded-[1.45rem] object-cover"
-            />
-            <div className="absolute inset-x-6 bottom-6 rounded-2xl border border-white/15 bg-[#07090c]/88 p-5 backdrop-blur-xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6BC68]">SOLYON Move</p>
-              <p className="mt-2 text-sm leading-6 text-white/72">{t.visualCaption}</p>
-            </div>
-          </div>
-
-          <div className="relative -mt-7 ml-auto w-[78%] overflow-hidden rounded-2xl border border-white/15 bg-[#0b0e12] p-2 shadow-[0_25px_70px_rgba(0,0,0,0.55)] sm:-mt-10 sm:w-[70%] lg:absolute lg:-bottom-16 lg:-right-8 lg:mt-0">
-            <Image
-              src="/visual/product-azoth-desktop.png"
-              alt="Arquitectura operativa y de riesgo desarrollada por SOLYON Technologies"
-              width={1000}
-              height={640}
-              sizes="(max-width: 1024px) 70vw, 30vw"
-              className="h-auto w-full rounded-xl object-cover"
-            />
+          <div className="relative">
+            <DeeptechSystemVisual />
           </div>
         </div>
       </div>
@@ -98,29 +75,27 @@ export default function DynamicHero() {
 }
 
 const es = {
-  eyebrow: "DeepTech desde Medellín · IA aplicada · Sistemas de riesgo y movilidad",
-  title: "Tecnología profunda para convertir problemas reales en sistemas inteligentes.",
-  body: "SOLYON Technologies construye desde Medellín sistemas de inteligencia artificial aplicada para riesgo, seguros, trucking y movilidad accesible. Unimos conocimiento operativo, evidencia documentada y desarrollo tecnológico para crear infraestructura con impacto regional y alcance global.",
-  primary: "Descubrir SOLYON Move",
-  secondary: "Explorar la tecnología",
-  visualCaption: "Movilidad accesible desarrollada y validada mediante un piloto institucional en Medellín.",
+  eyebrow: "DeepTech desde Medellín · IA aplicada · Infraestructura tecnológica",
+  title: "Convertimos conocimiento operativo en sistemas inteligentes.",
+  body: "SOLYON Technologies es la compañía madre y laboratorio DeepTech del ecosistema. Desde Medellín transformamos años de experiencia, documentación y validación real en tecnología para riesgo, seguros, trucking, movilidad e inteligencia operativa.",
+  primary: "Explorar nuestra tecnología",
+  secondary: "Entender el ecosistema",
   proof: [
-    "Laboratorio DeepTech y de IA aplicada construido en Medellín",
-    "Piloto institucional con Ruta N y Toyota Mobility Foundation",
-    "Validación operativa en seguros de trucking en Estados Unidos",
+    "Proyecto central de inteligencia de riesgo para trucking latino",
+    "Validación operativa en seguros comerciales en Estados Unidos",
+    "Validación institucional y de ciudad mediante SOLYON Move",
   ],
 };
 
 const en = {
-  eyebrow: "DeepTech from Medellín · Applied AI · Risk and mobility systems",
-  title: "Deep technology turning real-world problems into intelligent systems.",
-  body: "SOLYON Technologies builds applied artificial intelligence systems in Medellín for risk, insurance, trucking and accessible mobility. We combine operating knowledge, documented evidence and technology development to create infrastructure with regional impact and global reach.",
-  primary: "Discover SOLYON Move",
-  secondary: "Explore the technology",
-  visualCaption: "Accessible mobility technology developed and validated through an institutional pilot in Medellín.",
+  eyebrow: "DeepTech from Medellín · Applied AI · Technology infrastructure",
+  title: "We turn operating knowledge into intelligent systems.",
+  body: "SOLYON Technologies is the parent company and DeepTech laboratory of the ecosystem. From Medellín, we transform years of experience, documentation and real-world validation into technology for risk, insurance, trucking, mobility and operational intelligence.",
+  primary: "Explore our technology",
+  secondary: "Understand the ecosystem",
   proof: [
-    "DeepTech and applied AI laboratory built in Medellín",
-    "Institutional pilot with Ruta N and Toyota Mobility Foundation",
-    "Operating validation in United States trucking insurance",
+    "Central risk-intelligence project for Latin trucking",
+    "Operating validation in United States commercial insurance",
+    "Institutional and city validation through SOLYON Move",
   ],
 };
