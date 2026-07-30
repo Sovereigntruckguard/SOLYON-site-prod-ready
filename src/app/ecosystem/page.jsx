@@ -1,267 +1,161 @@
+"use client";
+
+import SiteFooter from "@/components/SiteFooter";
+import { useLanguage } from "@/lib/language";
+
 export default function EcosystemPage() {
+  const { lang } = useLanguage();
+  const t = lang === "es" ? es : en;
+
   return (
-    <main className="space-y-28 pb-32 bg-gradient-to-b from-[#0B0F14] via-[#0E131A] to-[#0B0F14]">
-
-      {/* HERO */}
-      <section className="section max-w-6xl mx-auto text-center space-y-6">
-        <h1 className="font-display text-4xl md:text-5xl text-[#FFD700]">
-          Ecosistema SOLYON
-        </h1>
-
-        <p className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto">
-          SOLYON es un ecosistema DeepTech integrado.
-          Todas nuestras tecnologías operan conectadas a un mismo cerebro
-          de inteligencia artificial y a una infraestructura cloud de nivel global.
-        </p>
-
-        <p className="text-gray-400 text-sm">
-          Diseñado en Medellín · Operado en Estados Unidos · Infraestructura Google Cloud
-        </p>
+    <main className="bg-[#07090c] text-white">
+      <section className="section-shell py-24 md:py-32">
+        <p className="eyebrow">{t.eyebrow}</p>
+        <h1 className="section-title mt-5">{t.title}</h1>
+        <p className="section-copy mt-7">{t.intro}</p>
       </section>
 
-      {/* ARQUITECTURA */}
-      <section className="section max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
-        <div className="space-y-6">
-          <h2 className="font-display text-3xl text-[#FFD700]">
-            Arquitectura Cognitiva Integrada
-          </h2>
+      <section className="border-y border-white/10 bg-white/[0.025] py-24 md:py-32">
+        <div className="section-shell">
+          <p className="eyebrow">{t.architectureEyebrow}</p>
+          <h2 className="section-title mt-5">{t.architectureTitle}</h2>
+          <p className="section-copy mt-7">{t.architectureBody}</p>
 
-          <p className="text-gray-300 text-lg">
-            El ecosistema SOLYON se construye sobre una arquitectura centralizada
-            de inteligencia artificial.
-            <strong> Arcanum</strong> actúa como cerebro cognitivo,
-            mientras <strong>Nexus</strong> orquesta flujos, agentes y decisiones.
-          </p>
-
-          <ul className="text-gray-400 text-sm space-y-2">
-            <li>• Memoria fractal jerárquica</li>
-            <li>• Fórmula anti-alucinación propia</li>
-            <li>• Autoaprendizaje continuo</li>
-            <li>• Orquestación multi-agente</li>
-          </ul>
-
-          <p className="text-gray-400 text-sm">
-            Tecnología con patente provisional presentada en Estados Unidos.
-          </p>
+          <div className="mt-14 grid gap-6 lg:grid-cols-3">
+            {t.entities.map((item) => (
+              <article key={item.name} className="system-card flex min-h-[330px] flex-col">
+                <p className="text-xs uppercase tracking-[0.18em] text-white/40">{item.type}</p>
+                <h3 className="mt-5 text-2xl font-semibold">{item.name}</h3>
+                <p className="mt-5 flex-1 text-sm leading-7 text-white/55">{item.body}</p>
+                <p className="mt-7 border-t border-white/10 pt-5 text-xs leading-6 text-[#E6BC68]">{item.status}</p>
+              </article>
+            ))}
+          </div>
         </div>
-
-        <img
-          src="/visual/visual-arcanum-nexus.png"
-          alt="Arquitectura cognitiva SOLYON"
-          className="max-w-sm w-full rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
-        />
       </section>
 
-      {/* INFRAESTRUCTURA */}
-      <section className="section max-w-5xl mx-auto text-center space-y-6">
-        <h2 className="font-display text-3xl text-[#FFD700]">
-          Infraestructura & Validación
-        </h2>
-
-        <p className="text-gray-300 text-lg">
-          Todas las tecnologías SOLYON se despliegan sobre
-          <strong> Google Cloud Platform</strong>,
-          utilizando infraestructura escalable, segura y preparada
-          para sistemas de misión crítica.
-        </p>
-
-        <p className="text-gray-400 text-sm">
-          SOLYON participa en el programa <strong>Google for Startups</strong>.
-        </p>
-      </section>
-
-      {/* MODELO OPERATIVO USA */}
-      <section className="section max-w-6xl mx-auto text-center space-y-6">
-        <h2 className="font-display text-3xl text-[#FFD700]">
-          Modelo Operativo & Distribución en EE. UU.
-        </h2>
-
-        <p className="text-gray-300 text-lg max-w-4xl mx-auto">
-          La tecnología SOLYON no se queda en laboratorio.
-          Se prueba, valida y mejora continuamente dentro de un modelo
-          de negocio real en Estados Unidos.
-        </p>
-
-        <p className="text-gray-300 text-lg max-w-4xl mx-auto">
-          <strong>Sovereign TruckGuard LLC</strong> es la operación aseguradora
-          y el laboratorio vivo donde nuestras tecnologías se utilizan en
-          escenarios reales, con clientes reales y flujos financieros reales.
-        </p>
-
-        <p className="text-gray-400 text-sm max-w-4xl mx-auto">
-          Sovereign TruckGuard LLC actúa además como
-          <strong> distribuidor autorizado de la tecnología SOLYON</strong>
-          para el mercado estadounidense.
-        </p>
-      </section>
-
-      {/* PRODUCTOS */}
-      <section className="section max-w-6xl mx-auto space-y-20">
-
-        {/* TRUCKBOSS */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-4">
-            <h3 className="font-display text-2xl text-[#FFD700]">
-              TruckBoss
-            </h3>
-
-            <p className="text-gray-300 text-base">
-              Plataforma central del ecosistema camionero.
-              Incluye motor de cotización B2B para agencias
-              y centro operativo B2C para camioneros.
-            </p>
-
-            <p className="text-gray-400 text-sm">
-              Conectado directamente a Arcanum para decisión financiera y operativa.
-            </p>
-          </div>
-
-          <div className="flex gap-4 justify-center">
-            <img
-              src="/visual/product-truckboss-quoting-mobile.png"
-              alt="TruckBoss Motor de Cotización"
-              className="w-40 rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
-            />
-            <img
-              src="/visual/product-truckboss-dashboard-mobile.png"
-              alt="TruckBoss Control Center"
-              className="w-40 rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
-            />
-          </div>
-        </div>
-
-        {/* COLDCHAIN */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-4">
-            <h3 className="font-display text-2xl text-[#FFD700]">
-              ColdChain Intelligence
-            </h3>
-
-            <p className="text-gray-300 text-base">
-              Plataforma de inteligencia y seguro telemático
-              para brokers de carga refrigerada.
-            </p>
-
-            <p className="text-gray-400 text-sm">
-              Riesgo, evidencia y prevención de pérdidas en tiempo real.
-            </p>
-          </div>
-
-          <img
-            src="/visual/product-coldchain-laptop.png"
-            alt="ColdChain Intelligence"
-            className="max-w-sm w-full rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
-          />
-        </div>
-
-        {/* AZOTH */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-4">
-            <h3 className="font-display text-2xl text-[#FFD700]">
-              AZOTH
-            </h3>
-
-            <p className="text-gray-300 text-base">
-              CRM y centro de control interno del ecosistema SOLYON.
-              Automatización, cumplimiento, clientes y evidencia.
-            </p>
-
-            <p className="text-gray-400 text-sm">
-              Control soberano de la operación.
-            </p>
-          </div>
-
-          <img
-            src="/visual/product-azoth-desktop.png"
-            alt="AZOTH CRM"
-            className="max-w-sm w-full rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
-          />
-        </div>
-
-        {/* EL-VÍA */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-4">
-            <h3 className="font-display text-2xl text-[#FFD700]">
-              EL-VÍA · DOT Express
-            </h3>
-
-            <p className="text-gray-300 text-base">
-              Aplicación móvil educativa para camioneros latinos.
-              Inglés DOT aplicado a inspecciones reales.
-            </p>
-
-            <p className="text-gray-400 text-sm">
-              Educación práctica integrada al ecosistema.
-            </p>
-          </div>
-
-          <img
-            src="/visual/product-elvia-mobile.png"
-            alt="EL-VÍA DOT Express"
-            className="w-40 rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
-          />
-        </div>
-
-        {/* SOLYON MOVE */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-4">
-            <h3 className="font-display text-2xl text-[#FFD700]">
-              SOLYON Move
-            </h3>
-
-            <p className="text-gray-300 text-base">
-              Piloto institucional de movilidad accesible
-              para personas con movilidad reducida.
-            </p>
-
-            <p className="text-gray-400 text-sm">
-              Integrado a ciudades y entidades públicas.
-            </p>
-          </div>
-
-          <img
-            src="/visual/solyon_move_institucional.png"
-            alt="SOLYON Move"
-            className="max-w-sm w-full rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
-          />
-        </div>
-
-      </section>
-
-      {/* CIERRE */}
-      <section className="section max-w-5xl mx-auto text-center space-y-6">
-        <p className="text-gray-400 text-lg">
-          Todas las tecnologías SOLYON comparten una misma inteligencia,
-          una misma infraestructura y una misma visión.
-        </p>
-      </section>
-
-      {/* FOOTER – MISMO DEL HOME */}
-      <footer className="section border-t border-white/10 pt-14">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 text-sm text-gray-400">
+      <section className="section-shell py-24 md:py-32">
+        <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="text-gray-200 font-medium">SOLYON Technologies S.A.S.</p>
-            <p>Carrera 65 # 1 Sur - 21</p>
-            <p>Medellín, Colombia</p>
-            <p>
-              NIT: <span className="text-gray-200 font-semibold">902028596-1</span>
-            </p>
+            <p className="eyebrow">{t.relationshipsEyebrow}</p>
+            <h2 className="section-title mt-5">{t.relationshipsTitle}</h2>
+            <p className="section-copy mt-7">{t.relationshipsBody}</p>
           </div>
-
-          <div>
-            <p className="text-gray-200 font-medium">Contacto</p>
-            <p>Email: sergio@solyontechnologies.com</p>
-            <p>WhatsApp: +57 314 790 3517</p>
-          </div>
-
-          <div>
-            <p className="text-gray-200 font-medium">Legal</p>
-            <p>© {new Date().getFullYear()} SOLYON Technologies S.A.S.</p>
-            <p>Todos los derechos reservados.</p>
+          <div className="space-y-5">
+            {t.relationships.map((item, index) => (
+              <article key={item.title} className="system-card flex gap-5">
+                <span className="text-xs font-semibold text-[#E6BC68]">0{index + 1}</span>
+                <div>
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-white/55">{item.body}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
-      </footer>
+      </section>
 
+      <section className="border-y border-white/10 bg-white/[0.025] py-24 md:py-32">
+        <div className="section-shell">
+          <p className="eyebrow">{t.modulesEyebrow}</p>
+          <h2 className="section-title mt-5">{t.modulesTitle}</h2>
+          <p className="section-copy mt-7">{t.modulesBody}</p>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {t.modules.map((module) => (
+              <div key={module} className="rounded-xl border border-white/10 bg-white/[0.02] p-5 text-sm text-white/65">
+                {module}
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 max-w-4xl text-xs leading-6 text-white/40">{t.modulesNote}</p>
+        </div>
+      </section>
+
+      <SiteFooter />
     </main>
   );
 }
+
+const es = {
+  eyebrow: "Ecosistema",
+  title: "Una arquitectura empresarial clara, no una colección de proyectos.",
+  intro: "SOLYON organiza compañías, proyectos, productos y módulos según su función real. Esta separación permite proteger la tesis central, asignar recursos con disciplina y comunicar el nivel de validación sin inflación narrativa.",
+  architectureEyebrow: "Estructura",
+  architectureTitle: "Compañía madre, proyecto central y entornos diferenciados",
+  architectureBody: "Cada entidad tiene un usuario, una función y una dependencia específica dentro del ecosistema.",
+  entities: [
+    {
+      type: "Compañía madre y laboratorio",
+      name: "SOLYON Technologies",
+      body: "Desarrolla la arquitectura tecnológica, capacidades de IA aplicada, productos, propiedad intelectual y conocimiento reutilizable del ecosistema.",
+      status: "Base tecnológica y organizacional del ecosistema.",
+    },
+    {
+      type: "Operación de seguros y validación",
+      name: "Sovereign Truckguard",
+      body: "Opera como canal comercial y entorno real para aprender de adquisición, cotización, servicio, cumplimiento, documentación y renovación dentro del trucking estadounidense.",
+      status: "No se presenta actualmente como insurer ni MGA.",
+    },
+    {
+      type: "Producto independiente",
+      name: "SOLYON Move",
+      body: "Producto de movilidad y accesibilidad para personas con movilidad reducida. Su valor es tecnológico e institucional y mantiene una tesis propia separada del trucking.",
+      status: "Validación institucional propia en Medellín.",
+    },
+  ],
+  relationshipsEyebrow: "Cómo se conectan",
+  relationshipsTitle: "Una relación de evidencia, tecnología y aplicación",
+  relationshipsBody: "La integración no significa que todas las iniciativas sean el mismo negocio. Significa que comparten capacidades, aprendizaje y disciplina de construcción.",
+  relationships: [
+    { title: "La operación genera evidencia", body: "Sovereign Truckguard expone problemas, flujos y restricciones del mercado camionero y de seguros." },
+    { title: "El laboratorio convierte evidencia en capacidad", body: "SOLYON estructura conocimiento y desarrolla herramientas, módulos y sistemas con alcance definido." },
+    { title: "Los productos validan capacidades", body: "Cada implementación demuestra utilidad en un contexto específico sin extrapolar automáticamente sus resultados a todo el ecosistema." },
+  ],
+  modulesEyebrow: "Módulos SOS",
+  modulesTitle: "Capacidades interoperables, no negocios independientes",
+  modulesBody: "Los módulos se desarrollan para resolver partes concretas del sistema operativo y pueden compartir infraestructura, datos y reglas.",
+  modules: ["Contactabilidad y CRM", "Cotización y underwriting", "Cumplimiento y documentación", "Certificados y servicio", "Renovación y seguimiento", "Formación y Academy", "Reporting y analítica", "Orquestación de agentes"],
+  modulesNote: "La presencia de un módulo en esta arquitectura no implica disponibilidad comercial, validación completa ni autonomía como unidad de negocio. Cada capacidad conserva su etapa real: descubrimiento, validación, construcción, piloto o comercialización.",
+};
+
+const en = {
+  eyebrow: "Ecosystem",
+  title: "A clear enterprise architecture, not a collection of projects.",
+  intro: "SOLYON organizes companies, projects, products and modules according to their actual function. This separation protects the central thesis, supports disciplined resource allocation and communicates validation levels without narrative inflation.",
+  architectureEyebrow: "Structure",
+  architectureTitle: "Parent company, central project and distinct environments",
+  architectureBody: "Each entity has a specific user, function and dependency within the ecosystem.",
+  entities: [
+    {
+      type: "Parent company and laboratory",
+      name: "SOLYON Technologies",
+      body: "Develops the technology architecture, applied AI capabilities, products, intellectual property and reusable knowledge of the ecosystem.",
+      status: "Technology and organizational foundation of the ecosystem.",
+    },
+    {
+      type: "Insurance operation and validation",
+      name: "Sovereign Truckguard",
+      body: "Operates as a commercial channel and real environment for learning from acquisition, quoting, service, compliance, documentation and renewal in US trucking.",
+      status: "Not currently presented as an insurer or MGA.",
+    },
+    {
+      type: "Independent product",
+      name: "SOLYON Move",
+      body: "Mobility and accessibility product for people with reduced mobility. Its value is technological and institutional, with a thesis separate from trucking.",
+      status: "Independent institutional validation in Medellín.",
+    },
+  ],
+  relationshipsEyebrow: "How they connect",
+  relationshipsTitle: "A relationship between evidence, technology and application",
+  relationshipsBody: "Integration does not mean every initiative is the same business. It means they share capabilities, learning and construction discipline.",
+  relationships: [
+    { title: "Operations generate evidence", body: "Sovereign Truckguard exposes problems, workflows and constraints in trucking and insurance." },
+    { title: "The laboratory turns evidence into capability", body: "SOLYON structures knowledge and develops tools, modules and systems with defined scope." },
+    { title: "Products validate capabilities", body: "Each implementation demonstrates utility in a specific context without automatically extrapolating results across the ecosystem." },
+  ],
+  modulesEyebrow: "SOS modules",
+  modulesTitle: "Interoperable capabilities, not standalone businesses",
+  modulesBody: "Modules are developed to solve specific parts of the operating system and may share infrastructure, data and rules.",
+  modules: ["Contactability and CRM", "Quoting and underwriting", "Compliance and documentation", "Certificates and service", "Renewal and follow-up", "Training and Academy", "Reporting and analytics", "Agent orchestration"],
+  modulesNote: "A module's presence in this architecture does not imply commercial availability, complete validation or autonomy as a business unit. Each capability retains its actual stage: discovery, validation, construction, pilot or commercialization.",
+};
