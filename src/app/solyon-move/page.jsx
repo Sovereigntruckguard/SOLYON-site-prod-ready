@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import GooglePlayLink from "@/components/GooglePlayLink";
 import MoveCRMVisual from "@/components/MoveCRMVisual";
 import SiteFooter from "@/components/SiteFooter";
 import { useLanguage } from "@/lib/language";
@@ -22,10 +23,12 @@ export default function SolyonMovePage() {
             <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.025] p-5 text-sm leading-7 text-white/58">
               <strong className="text-white/85">{t.roleLabel}</strong> {t.roleBody}
             </div>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link href="/ecosystem" className="inline-flex justify-center rounded-full bg-[#E6BC68] px-7 py-3 text-sm font-semibold text-[#090b0e]">{t.primary}</Link>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+              <GooglePlayLink label={t.download} />
+              <Link href="/ecosystem" className="inline-flex justify-center rounded-full border border-white/20 px-7 py-3 text-sm font-semibold text-white">{t.primary}</Link>
               <a href="https://www.youtube.com/watch?v=0SyayXeU42g" target="_blank" rel="noopener noreferrer" className="inline-flex justify-center rounded-full border border-white/20 px-7 py-3 text-sm font-semibold text-white">{t.video}</a>
             </div>
+            <p className="mt-4 text-xs leading-5 text-white/42">{t.downloadNote}</p>
           </div>
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0e12] p-3 shadow-[0_35px_100px_rgba(0,0,0,0.55)]">
             <Image src="/visual/solyon_move_institucional.png" alt={t.heroAlt} width={1200} height={820} priority sizes="(max-width: 1024px) 100vw, 55vw" className="w-full rounded-[1.45rem] object-cover" />
@@ -67,6 +70,7 @@ export default function SolyonMovePage() {
               <div className="mt-7 space-y-3">
                 {t.appItems.map((item) => <div key={item} className="rounded-xl border border-white/10 bg-white/[0.025] p-4 text-sm leading-6 text-white/55">{item}</div>)}
               </div>
+              <GooglePlayLink label={t.download} className="mt-8" />
             </article>
             <article className="rounded-[2rem] border border-white/10 bg-[#0b0e12] p-8">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-300">{t.crmLabel}</p>
@@ -130,7 +134,10 @@ export default function SolyonMovePage() {
           <p className="eyebrow">{t.ctaEyebrow}</p>
           <h2 className="section-title mt-5">{t.ctaTitle}</h2>
           <p className="section-copy mt-6">{t.ctaBody}</p>
-          <Link href="/contact" className="mt-9 inline-flex rounded-full bg-[#E6BC68] px-7 py-3 text-sm font-semibold text-[#090b0e]">{t.ctaButton}</Link>
+          <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+            <GooglePlayLink label={t.download} />
+            <Link href="/contact" className="inline-flex justify-center rounded-full bg-[#E6BC68] px-7 py-3 text-sm font-semibold text-[#090b0e]">{t.ctaButton}</Link>
+          </div>
         </div>
       </section>
 
@@ -147,6 +154,8 @@ const es = {
   roleBody: "no es el centro de SOLYON Technologies. Es un entorno de validación que demuestra capacidad de producto, CRM, personalización, ejecución institucional e integración de datos urbanos.",
   primary: "Entender el ecosistema completo",
   video: "Ver video del proyecto",
+  download: "Descargar gratis en Google Play",
+  downloadNote: "La aplicación está publicada oficialmente y disponible sin costo para dispositivos Android.",
   heroAlt: "SOLYON Move como solución de movilidad accesible desarrollada en Medellín",
   assetLabel: "ACTIVO EXISTENTE · VALIDAR REEMPLAZO",
   problemEyebrow: "Problema urbano",
@@ -204,6 +213,8 @@ const en = {
   roleBody: "it is not the center of SOLYON Technologies. It is a validation environment demonstrating product, CRM, personalization, institutional execution and urban-data integration capabilities.",
   primary: "Understand the complete ecosystem",
   video: "Watch the project video",
+  download: "Download free on Google Play",
+  downloadNote: "The application is officially published and available at no cost for Android devices.",
   heroAlt: "SOLYON Move accessible mobility solution developed in Medellín",
   assetLabel: "EXISTING ASSET · REPLACEMENT REVIEW",
   problemEyebrow: "Urban problem",
