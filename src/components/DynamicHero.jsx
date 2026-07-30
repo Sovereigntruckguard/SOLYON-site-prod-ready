@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import DeeptechSystemVisual from "@/components/DeeptechSystemVisual";
+import GooglePlayLink from "@/components/GooglePlayLink";
 import { useLanguage } from "@/lib/language";
 
 export default function DynamicHero() {
@@ -39,7 +40,7 @@ export default function DynamicHero() {
             {t.body}
           </p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
             <Link
               href="/technology"
               className="inline-flex items-center justify-center rounded-full bg-[#E6BC68] px-7 py-3.5 text-sm font-semibold text-[#090b0e] transition hover:bg-[#F0CA7E]"
@@ -52,9 +53,12 @@ export default function DynamicHero() {
             >
               {t.secondary}
             </Link>
+            <GooglePlayLink label={t.download} />
           </div>
 
-          <div className="mt-14 grid max-w-4xl gap-4 border-t border-white/15 pt-7 text-sm leading-6 text-white/58 sm:grid-cols-3">
+          <p className="mt-4 max-w-2xl text-xs leading-5 text-white/40">{t.downloadNote}</p>
+
+          <div className="mt-12 grid max-w-4xl gap-4 border-t border-white/15 pt-7 text-sm leading-6 text-white/58 sm:grid-cols-3">
             {t.proof.map((item) => (
               <div key={item} className="border-l border-[#E6BC68]/45 pl-4">
                 {item}
@@ -80,6 +84,8 @@ const es = {
   body: "SOLYON Technologies es la compañía madre y laboratorio DeepTech del ecosistema. Desde Medellín transformamos años de experiencia, documentación y validación real en tecnología para riesgo, seguros, trucking, movilidad e inteligencia operativa.",
   primary: "Explorar nuestra tecnología",
   secondary: "Entender el ecosistema",
+  download: "Descargar SOLYON Move gratis",
+  downloadNote: "SOLYON Move está disponible públicamente y sin costo en Google Play como una de las validaciones reales del laboratorio.",
   proof: [
     "Proyecto central de inteligencia de riesgo para trucking latino",
     "Validación operativa en seguros comerciales en Estados Unidos",
@@ -93,6 +99,8 @@ const en = {
   body: "SOLYON Technologies is the parent company and DeepTech laboratory of the ecosystem. From Medellín, we transform years of experience, documentation and real-world validation into technology for risk, insurance, trucking, mobility and operational intelligence.",
   primary: "Explore our technology",
   secondary: "Understand the ecosystem",
+  download: "Download SOLYON Move free",
+  downloadNote: "SOLYON Move is publicly available at no cost on Google Play as one of the laboratory's real-world validations.",
   proof: [
     "Central risk-intelligence project for Latin trucking",
     "Operating validation in United States commercial insurance",
