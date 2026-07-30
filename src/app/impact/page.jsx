@@ -1,167 +1,145 @@
+"use client";
+
+import SiteFooter from "@/components/SiteFooter";
+import { useLanguage } from "@/lib/language";
+
 export default function ImpactPage() {
+  const { lang } = useLanguage();
+  const t = lang === "es" ? es : en;
+
   return (
-    <main className="space-y-32 pb-32 bg-gradient-to-b from-[#0B0F14] via-[#0E131A] to-[#0B0F14]">
-
-      {/* HERO */}
-      <section className="section max-w-6xl mx-auto text-center space-y-6">
-        <h1 className="font-display text-4xl md:text-5xl text-[#FFD700]">
-          Impacto
-        </h1>
-
-        <p className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto">
-          El impacto de SOLYON no se mide en discursos.
-          Se mide en sistemas que funcionan mejor y en personas
-          que recuperan control sobre su trabajo y su futuro.
-        </p>
-
-        <p className="text-gray-400 text-sm">
-          Tecnología aplicada · Sistema camionero · Dignidad operativa
-        </p>
+    <main className="bg-[#07090c] text-white">
+      <section className="section-shell py-24 md:py-32">
+        <p className="eyebrow">{t.eyebrow}</p>
+        <h1 className="section-title mt-5">{t.title}</h1>
+        <p className="section-copy mt-7">{t.intro}</p>
       </section>
 
-      {/* IMPACTO HUMANO – CAMIONEROS LATINOS */}
-      <section className="section max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
-        <div className="space-y-6">
-          <h2 className="font-display text-3xl text-[#FFD700]">
-            Impacto humano: camioneros latinos en EE. UU.
-          </h2>
-
-          <p className="text-gray-300 text-lg">
-            El sistema camionero de Estados Unidos depende de cientos de miles
-            de camioneros latinos que operan en condiciones de alta presión,
-            barreras de idioma y desventaja estructural.
-          </p>
-
-          <p className="text-gray-400 text-sm">
-            SOLYON diseña tecnología para reducir esa brecha:
-            seguros más claros, educación operativa en inglés DOT,
-            menos multas, menos errores y más estabilidad financiera.
-          </p>
-        </div>
-
-        <img
-          src="/visual/impact-human.png"
-          alt="Impacto humano en camioneros latinos en Estados Unidos"
-          className="max-w-md w-full rounded-2xl shadow-[0_30px_90px_rgba(0,0,0,0.6)]"
-        />
-      </section>
-
-      {/* IMPACTO EN EL SISTEMA CAMIONERO */}
-      <section className="section max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
-        <img
-          src="/visual/impact-operational.png"
-          alt="Impacto operativo en el sistema camionero de EE. UU."
-          className="max-w-md w-full rounded-2xl shadow-[0_30px_90px_rgba(0,0,0,0.6)]"
-        />
-
-        <div className="space-y-6">
-          <h2 className="font-display text-3xl text-[#FFD700]">
-            Impacto en el sistema camionero de EE. UU.
-          </h2>
-
-          <p className="text-gray-300 text-lg">
-            SOLYON no solo ayuda a individuos.
-            Mejora el funcionamiento del sistema camionero completo.
-          </p>
-
-          <ul className="text-gray-400 text-sm space-y-2">
-            <li>• Menos pólizas mal cotizadas</li>
-            <li>• Menos cancelaciones por errores operativos</li>
-            <li>• Mejor evaluación de riesgo</li>
-            <li>• Mayor estabilidad para aseguradoras y brokers</li>
-            <li>• Transporte más seguro y predecible</li>
-          </ul>
+      <section className="border-y border-white/10 bg-white/[0.025] py-24 md:py-32">
+        <div className="section-shell grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {t.evidence.map((item) => (
+            <article key={item.value} className="system-card">
+              <p className="text-3xl font-semibold text-white">{item.value}</p>
+              <p className="mt-4 text-sm leading-7 text-white/55">{item.label}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* IMPACTO SISTÉMICO */}
-      <section className="section max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
-        <div className="space-y-6">
-          <h2 className="font-display text-3xl text-[#FFD700]">
-            Impacto sistémico
-          </h2>
-
-          <p className="text-gray-300 text-lg">
-            SOLYON demuestra que es posible construir
-            infraestructura DeepTech soberana desde LATAM
-            que opera en mercados altamente regulados como Estados Unidos.
-          </p>
-
-          <p className="text-gray-400 text-sm">
-            Nuestra IA Arcanum —con memoria fractal jerárquica,
-            fórmula anti-alucinación y autoaprendizaje—
-            conecta y optimiza todo el ecosistema.
-          </p>
-        </div>
-
-        <img
-          src="/visual/impact-systemic.png"
-          alt="Impacto sistémico de SOLYON"
-          className="max-w-md w-full rounded-2xl shadow-[0_30px_90px_rgba(0,0,0,0.6)]"
-        />
-      </section>
-
-      {/* IMPACTO INSTITUCIONAL */}
-      <section className="section max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
-        <img
-          src="/visual/impact-institutional.png"
-          alt="Impacto institucional de SOLYON"
-          className="max-w-md w-full rounded-2xl shadow-[0_30px_90px_rgba(0,0,0,0.6)]"
-        />
-
-        <div className="space-y-6">
-          <h2 className="font-display text-3xl text-[#FFD700]">
-            Impacto institucional
-          </h2>
-
-          <p className="text-gray-300 text-lg">
-            La tecnología SOLYON se valida en operación real
-            a través de Sovereign TruckGuard LLC en Estados Unidos
-            y en pilotos institucionales en Colombia.
-          </p>
-
-          <p className="text-gray-400 text-sm">
-            Impacto medible, trazable y defendible
-            ante aseguradoras, entidades públicas e inversionistas.
-          </p>
+      <section className="section-shell py-24 md:py-32">
+        <p className="eyebrow">{t.areasEyebrow}</p>
+        <h2 className="section-title mt-5">{t.areasTitle}</h2>
+        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          {t.areas.map((area) => (
+            <article key={area.title} className="system-card">
+              <h3 className="text-2xl font-semibold">{area.title}</h3>
+              <p className="mt-5 text-sm leading-7 text-white/55">{area.body}</p>
+              <p className="mt-7 border-t border-white/10 pt-5 text-xs leading-6 text-[#E6BC68]">{area.status}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* CIERRE */}
-      <section className="section max-w-5xl mx-auto text-center space-y-6">
-        <p className="text-gray-400 text-lg">
-          Mejorar la vida de los camioneros
-          también mejora el sistema de transporte.
-          Ese es el verdadero impacto.
-        </p>
-      </section>
-
-      {/* FOOTER – MISMO DEL HOME */}
-      <footer className="section border-t border-white/10 pt-14">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 text-sm text-gray-400">
+      <section className="border-y border-white/10 bg-white/[0.025] py-24 md:py-32">
+        <div className="section-shell grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="text-gray-200 font-medium">SOLYON Technologies S.A.S.</p>
-            <p>Carrera 65 # 1 Sur - 21</p>
-            <p>Medellín, Colombia</p>
-            <p>
-              NIT: <span className="text-gray-200 font-semibold">902028596-1</span>
-            </p>
+            <p className="eyebrow">{t.principlesEyebrow}</p>
+            <h2 className="section-title mt-5">{t.principlesTitle}</h2>
+            <p className="section-copy mt-7">{t.principlesBody}</p>
           </div>
-
-          <div>
-            <p className="text-gray-200 font-medium">Contacto</p>
-            <p>Email: sergio@solyontechnologies.com</p>
-            <p>WhatsApp: +57 314 790 3517</p>
-          </div>
-
-          <div>
-            <p className="text-gray-200 font-medium">Legal</p>
-            <p>© {new Date().getFullYear()} SOLYON Technologies S.A.S.</p>
-            <p>Todos los derechos reservados.</p>
+          <div className="space-y-4">
+            {t.principles.map((item) => (
+              <div key={item} className="rounded-xl border border-white/10 bg-white/[0.02] p-5 text-sm leading-7 text-white/60">
+                {item}
+              </div>
+            ))}
           </div>
         </div>
-      </footer>
+      </section>
 
+      <SiteFooter />
     </main>
   );
 }
+
+const es = {
+  eyebrow: "Impacto",
+  title: "Impacto verificable antes que narrativa.",
+  intro: "SOLYON mide su impacto por capacidad creada, tecnología ejecutada, conocimiento estructurado y problemas abordados con evidencia. No presentamos proyecciones como resultados ni participación institucional como inversión.",
+  evidence: [
+    { value: "8+ años", label: "de aprendizaje operativo acumulado alrededor del trucking y procesos relacionados en Estados Unidos" },
+    { value: "17 cuadernos", label: "de registro manuscrito que documenta procesos, decisiones y evolución empresarial" },
+    { value: "89 GB", label: "de documentación operativa y evidencia organizada como base de conocimiento" },
+    { value: "2 países", label: "con desarrollo tecnológico en Colombia y aplicación operativa en Estados Unidos" },
+  ],
+  areasEyebrow: "Ámbitos de impacto",
+  areasTitle: "Tecnología construida en Medellín para problemas operativos reales",
+  areas: [
+    {
+      title: "Capacidad tecnológica local",
+      body: "Desarrollo de software, QA, producto, automatización e inteligencia aplicada desde Medellín, conectando talento regional con problemas internacionales.",
+      status: "Impacto actual: creación y fortalecimiento de capacidad técnica.",
+    },
+    {
+      title: "Trucking latino en Estados Unidos",
+      body: "Construcción progresiva de herramientas para reducir fricción en seguros, documentación, cumplimiento, contactabilidad, formación y servicio.",
+      status: "Impacto en validación: utilidad operativa por capacidades, no transformación sistémica demostrada todavía.",
+    },
+    {
+      title: "Movilidad y accesibilidad",
+      body: "SOLYON Move aplica tecnología a la planificación de viajes de personas con movilidad reducida mediante una trayectoria institucional propia.",
+      status: "Impacto institucional: piloto desarrollado con Ruta N y Toyota Mobility Foundation.",
+    },
+  ],
+  principlesEyebrow: "Disciplina de medición",
+  principlesTitle: "Cómo comunicamos el impacto",
+  principlesBody: "Cada afirmación pública debe corresponder a una evidencia, una etapa y un alcance concretos.",
+  principles: [
+    "Un piloto demuestra capacidad de ejecución, no product-market fit.",
+    "Una participación en un programa demuestra selección o acompañamiento, no inversión ni alianza permanente.",
+    "Una operación real genera evidencia, pero no prueba por sí sola escalabilidad global.",
+    "Una visión regulatoria de largo plazo no se presenta como condición legal actual.",
+    "Las métricas financieras permanecen privadas salvo decisión expresa y contexto adecuado.",
+  ],
+};
+
+const en = {
+  eyebrow: "Impact",
+  title: "Verifiable impact before narrative.",
+  intro: "SOLYON measures impact through capability created, technology executed, knowledge structured and problems addressed with evidence. We do not present projections as results or institutional participation as investment.",
+  evidence: [
+    { value: "8+ years", label: "of accumulated operating learning around trucking and related processes in the United States" },
+    { value: "17 notebooks", label: "of handwritten records documenting processes, decisions and enterprise evolution" },
+    { value: "89 GB", label: "of operating documentation and evidence organized as a knowledge base" },
+    { value: "2 countries", label: "with technology development in Colombia and operating application in the United States" },
+  ],
+  areasEyebrow: "Impact areas",
+  areasTitle: "Technology built in Medellín for real operating problems",
+  areas: [
+    {
+      title: "Local technology capability",
+      body: "Software, QA, product, automation and applied intelligence developed from Medellín, connecting regional talent with international problems.",
+      status: "Current impact: creation and strengthening of technical capability.",
+    },
+    {
+      title: "Latin trucking in the United States",
+      body: "Progressive construction of tools to reduce friction in insurance, documentation, compliance, contactability, training and service.",
+      status: "Impact under validation: operational utility by capability, not yet demonstrated systemic transformation.",
+    },
+    {
+      title: "Mobility and accessibility",
+      body: "SOLYON Move applies technology to trip planning for people with reduced mobility through its own institutional trajectory.",
+      status: "Institutional impact: pilot developed with Ruta N and Toyota Mobility Foundation.",
+    },
+  ],
+  principlesEyebrow: "Measurement discipline",
+  principlesTitle: "How we communicate impact",
+  principlesBody: "Every public claim must correspond to specific evidence, stage and scope.",
+  principles: [
+    "A pilot demonstrates execution capability, not product-market fit.",
+    "Participation in a program demonstrates selection or support, not investment or permanent partnership.",
+    "A real operation generates evidence, but does not by itself prove global scalability.",
+    "A long-term regulatory vision is not presented as current legal status.",
+    "Financial metrics remain private unless expressly approved and properly contextualized.",
+  ],
+};
