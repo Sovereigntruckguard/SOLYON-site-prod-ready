@@ -1,6 +1,6 @@
-// src/components/MainHeader.jsx
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useLanguage } from "@/lib/language";
 
@@ -9,83 +9,66 @@ export default function MainHeader() {
   const t = lang === "es" ? es : en;
   const [open, setOpen] = useState(false);
 
-  return (
-    <header className="sticky top-0 z-40 border-b border-[#2A2A2A] bg-black/70 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
+  const links = [
+    ["/", t.nav.home],
+    ["/technology", t.nav.technology],
+    ["/ecosystem", t.nav.ecosystem],
+    ["/impact", t.nav.impact],
+    ["/about", t.nav.about],
+  ];
 
-        {/* Logo + slogan */}
-        <a href="/" className="flex items-center gap-3">
-          <img
-            src="/logo.png"
-            alt="SOLYON"
-            className="w-10 h-10 object-contain drop-shadow-xl"
-          />
-          <div className="flex flex-col">
-            <span className="font-display text-lg md:text-xl">
-              <span className="gradient-gold">SOLYON</span>{" "}
-              <span className="text-gray-100">Technologies</span>
+  return (
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#07090c]/90 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 md:px-8">
+        <Link href="/" className="flex items-center gap-3" aria-label="SOLYON Technologies">
+          <img src="/logo.png" alt="SOLYON" className="h-9 w-9 object-contain" />
+          <div className="flex flex-col leading-tight">
+            <span className="text-sm font-semibold tracking-[0.12em] text-white md:text-base">
+              SOLYON TECHNOLOGIES
             </span>
-            <span className="text-[0.7rem] text-gray-400">
+            <span className="text-[0.65rem] tracking-[0.08em] text-white/45">
               {t.slogan}
             </span>
           </div>
-        </a>
+        </Link>
 
-        {/* Navegación desktop */}
-        <nav className="hidden items-center gap-5 text-xs text-gray-200 md:flex">
-          <a href="/" className="hover:text-white">{t.nav.home}</a>
-          <a href="/ecosystem" className="hover:text-white">{t.nav.ecosystem}</a>
-          <a href="/technology" className="hover:text-white">{t.nav.technology}</a>
-          <a href="/impact" className="hover:text-white">{t.nav.impact}</a>
-          <a href="/about" className="hover:text-white">{t.nav.about}</a>
-          <a href="/store" className="hover:text-white">{t.nav.store}</a>
-          <a href="/investors" className="hover:text-white">{t.nav.investors}</a>
-          <a href="/contact" className="hover:text-white">{t.nav.contact}</a>
+        <nav className="hidden items-center gap-7 text-xs font-medium text-white/70 md:flex">
+          {links.map(([href, label]) => (
+            <Link key={href} href={href} className="transition hover:text-white">
+              {label}
+            </Link>
+          ))}
+          <Link
+            href="/contact"
+            className="rounded-full border border-white/20 px-4 py-2 text-white transition hover:border-[#C99A3D] hover:text-[#E6BC68]"
+          >
+            {t.nav.contact}
+          </Link>
         </nav>
 
-        {/* Idioma + hamburger */}
         <div className="flex items-center gap-2 text-xs">
-
-          {/* Idiomas */}
           <button
             type="button"
-            onClick={() => setLang("es")}
-            className={`flex items-center gap-1 rounded-full border px-2 py-1 transition ${
-              lang === "es"
-                ? "border-[#FFD700] bg-[#FFD700]/10 text-[#FFD700]"
-                : "border-[#333] text-gray-300 hover:border-[#555]"
-            }`}
+            onClick={() => setLang(lang === "es" ? "en" : "es")}
+            className="rounded-full border border-white/15 px-3 py-1.5 text-white/70 transition hover:border-white/30 hover:text-white"
+            aria-label={t.languageLabel}
           >
-            <span>🇨🇴</span>
-            <span>ES</span>
+            {lang === "es" ? "EN" : "ES"}
           </button>
 
-          <button
-            type="button"
-            onClick={() => setLang("en")}
-            className={`flex items-center gap-1 rounded-full border px-2 py-1 transition ${
-              lang === "en"
-                ? "border-[#FFD700] bg-[#FFD700]/10 text-[#FFD700]"
-                : "border-[#333] text-gray-300 hover:border-[#555]"
-            }`}
-          >
-            <span>🇺🇸</span>
-            <span>EN</span>
-          </button>
-
-          {/* Hamburger (solo móvil) */}
           <button
             type="button"
             onClick={() => setOpen(!open)}
-            className="ml-2 flex items-center justify-center rounded-md border border-[#333] p-2 text-gray-300 hover:border-[#555] md:hidden"
-            aria-label="Abrir menú"
+            className="flex items-center justify-center rounded-md border border-white/15 p-2 text-white/70 md:hidden"
+            aria-label={t.menuLabel}
+            aria-expanded={open}
           >
             {open ? (
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" strokeWidth="2" />
               </svg>
             ) : (
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" />
               </svg>
             )}
@@ -93,18 +76,22 @@ export default function MainHeader() {
         </div>
       </div>
 
-      {/* Menú móvil */}
       {open && (
-        <div className="md:hidden border-t border-[#2A2A2A] bg-black/90 backdrop-blur-md">
-          <nav className="flex flex-col px-4 py-4 text-sm text-gray-200">
-            <a onClick={() => setOpen(false)} href="/" className="py-2 hover:text-white">{t.nav.home}</a>
-            <a onClick={() => setOpen(false)} href="/ecosystem" className="py-2 hover:text-white">{t.nav.ecosystem}</a>
-            <a onClick={() => setOpen(false)} href="/technology" className="py-2 hover:text-white">{t.nav.technology}</a>
-            <a onClick={() => setOpen(false)} href="/impact" className="py-2 hover:text-white">{t.nav.impact}</a>
-            <a onClick={() => setOpen(false)} href="/about" className="py-2 hover:text-white">{t.nav.about}</a>
-            <a onClick={() => setOpen(false)} href="/store" className="py-2 hover:text-white">{t.nav.store}</a>
-            <a onClick={() => setOpen(false)} href="/investors" className="py-2 hover:text-white">{t.nav.investors}</a>
-            <a onClick={() => setOpen(false)} href="/contact" className="py-2 hover:text-white">{t.nav.contact}</a>
+        <div className="border-t border-white/10 bg-[#07090c] md:hidden">
+          <nav className="flex flex-col px-5 py-4 text-sm text-white/75">
+            {links.map(([href, label]) => (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setOpen(false)}
+                className="border-b border-white/5 py-3 last:border-0"
+              >
+                {label}
+              </Link>
+            ))}
+            <Link href="/contact" onClick={() => setOpen(false)} className="py-3 text-[#E6BC68]">
+              {t.nav.contact}
+            </Link>
           </nav>
         </div>
       )}
@@ -113,29 +100,29 @@ export default function MainHeader() {
 }
 
 const es = {
-  slogan: "No buscamos cambiar el mundo, expandimos la forma de verlo.",
+  slogan: "IA aplicada desde Medellín",
+  languageLabel: "Cambiar sitio a inglés",
+  menuLabel: "Abrir menú",
   nav: {
     home: "Inicio",
-    ecosystem: "Ecosistema",
     technology: "Tecnología",
+    ecosystem: "Ecosistema",
     impact: "Impacto",
     about: "Nosotros",
-    store: "Store",
-    investors: "Investors",
     contact: "Contacto",
   },
 };
 
 const en = {
-  slogan: "We don’t try to change the world, we expand how we see it.",
+  slogan: "Applied AI from Medellin",
+  languageLabel: "Switch website to Spanish",
+  menuLabel: "Open menu",
   nav: {
     home: "Home",
-    ecosystem: "Ecosystem",
     technology: "Technology",
+    ecosystem: "Ecosystem",
     impact: "Impact",
     about: "About",
-    store: "Store",
-    investors: "Investors",
     contact: "Contact",
   },
 };
