@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import GooglePlayLink from "@/components/GooglePlayLink";
 import { useLanguage } from "@/lib/language";
 
 const socials = [
@@ -21,6 +22,7 @@ export default function SiteFooter() {
           <p className="font-semibold tracking-[0.08em] text-white/85">SOLYON TECHNOLOGIES S.A.S.</p>
           <p className="mt-3">Medellín, Colombia</p>
           <p className="mt-1">{t.descriptor}</p>
+          <GooglePlayLink label={t.download} compact className="mt-5" />
         </div>
 
         <nav className="grid gap-y-3" aria-label={t.navigationLabel}>
@@ -60,6 +62,7 @@ const es = {
   about: "Nosotros",
   contact: "Contacto",
   social: "Canales oficiales",
+  download: "SOLYON Move gratis en Google Play",
   rights: "Todos los derechos reservados.",
 };
 
@@ -72,5 +75,6 @@ const en = {
   about: "About",
   contact: "Contact",
   social: "Official channels",
+  download: "Get SOLYON Move free on Google Play",
   rights: "All rights reserved.",
 };
