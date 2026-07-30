@@ -3,6 +3,13 @@ import { LanguageProvider } from "@/lib/language";
 import MainHeader from "@/components/MainHeader";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.solyontechnologies.com";
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.solyon.move";
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -34,6 +41,7 @@ export const metadata = {
   authors: [{ name: "SOLYON Technologies S.A.S.", url: SITE_URL }],
   creator: "SOLYON Technologies S.A.S.",
   publisher: "SOLYON Technologies S.A.S.",
+  icons: { icon: "/favicon.ico" },
   openGraph: {
     title: "SOLYON Technologies | DeepTech e IA aplicada desde Medellín",
     description:
@@ -41,41 +49,24 @@ export const metadata = {
     url: SITE_URL,
     siteName: "SOLYON Technologies",
     type: "website",
-    images: [
-      {
-        url: "/og-cover.jpg",
-        width: 1200,
-        height: 630,
-        alt: "SOLYON Technologies, DeepTech e inteligencia artificial aplicada desde Medellín",
-      },
-    ],
+    images: [{ url: "/og-cover.jpg", width: 1200, height: 630, alt: "SOLYON Technologies, DeepTech e inteligencia artificial aplicada desde Medellín" }],
     locale: "es_CO",
     alternateLocale: ["en_US"],
   },
   twitter: {
     card: "summary_large_image",
     title: "SOLYON Technologies | DeepTech desde Medellín",
-    description:
-      "IA aplicada para riesgo, seguros de trucking y movilidad accesible, construida desde evidencia operativa real.",
+    description: "IA aplicada para riesgo, seguros de trucking y movilidad accesible, construida desde evidencia operativa real.",
     images: ["/og-cover.jpg"],
   },
   alternates: {
     canonical: "/",
-    languages: {
-      "es-CO": "/",
-      "en-US": "/?lang=en",
-    },
+    languages: { "es-CO": "/", "en-US": "/?lang=en" },
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
   },
 };
 
@@ -98,28 +89,12 @@ export default function RootLayout({ children }) {
         url: SITE_URL,
         logo: `${SITE_URL}/logo.png`,
         image: `${SITE_URL}/og-cover.jpg`,
-        description:
-          "DeepTech and applied artificial intelligence company based in Medellín, Colombia, building technology for risk, trucking insurance and accessible mobility.",
-        foundingLocation: {
-          "@type": "Place",
-          name: "Medellín, Colombia",
-        },
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Medellín",
-          addressRegion: "Antioquia",
-          addressCountry: "CO",
-        },
+        description: "DeepTech and applied artificial intelligence company based in Medellín, Colombia, building technology for risk, trucking insurance and accessible mobility.",
+        foundingLocation: { "@type": "Place", name: "Medellín, Colombia" },
+        address: { "@type": "PostalAddress", addressLocality: "Medellín", addressRegion: "Antioquia", addressCountry: "CO" },
         email: "sergio@solyontechnologies.com",
         sameAs,
-        knowsAbout: [
-          "Applied artificial intelligence",
-          "Deep technology",
-          "Risk intelligence",
-          "Commercial trucking insurance technology",
-          "Accessible mobility",
-          "Operational automation",
-        ],
+        knowsAbout: ["Applied artificial intelligence", "Deep technology", "Risk intelligence", "Commercial trucking insurance technology", "Accessible mobility", "Operational automation"],
       },
       {
         "@type": "WebSite",
@@ -135,23 +110,20 @@ export default function RootLayout({ children }) {
         name: "SOLYON Move",
         applicationCategory: "TravelApplication",
         operatingSystem: "Android",
-        description:
-          "Accessible mobility technology developed in Medellín to support personalized and safer trip planning for people with reduced mobility.",
+        description: "Accessible mobility technology developed in Medellín to support personalized and safer trip planning for people with reduced mobility.",
         creator: { "@id": `${SITE_URL}/#organization` },
         url: `${SITE_URL}/solyon-move`,
+        downloadUrl: PLAY_STORE_URL,
+        installUrl: PLAY_STORE_URL,
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD", availability: "https://schema.org/InStock" },
       },
     ],
   };
 
   return (
     <html lang="es" suppressHydrationWarning>
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <link rel="icon" href="/favicon.ico" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(graphJsonLd) }} />
-      </head>
       <body className="bg-[#07090c] text-gray-100 antialiased">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(graphJsonLd) }} />
         <LanguageProvider>
           <MainHeader />
           {children}
