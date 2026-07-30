@@ -1,4 +1,3 @@
-// src/app/layout.jsx
 import "./../styles/globals.css";
 import { LanguageProvider } from "@/lib/language";
 import MainHeader from "@/components/MainHeader";
@@ -6,33 +5,28 @@ import MainHeader from "@/components/MainHeader";
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://www.solyontechnologies.com";
 
-/**
- * SEO global & social
- * Asegura:
- * - metadataBase (elimina warnings de Next)
- * - Open Graph / Twitter
- * - Canonical y alternates para ES/EN
- */
 export const metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "SOLYON Technologies – DeepTech de lujo desde LATAM",
+  title: {
+    default: "SOLYON Technologies | Applied AI for complex operations",
+    template: "%s | SOLYON Technologies",
+  },
   description:
-    "Casa DeepTech soberana: Arcanum, Nexus y un ecosistema de aplicaciones de lujo que expanden la conciencia y transforman negocios reales.",
+    "Technology company and applied AI laboratory based in Medellin, building operating systems for complex, regulated and high-friction environments.",
   keywords: [
-    "SOLYON",
-    "DeepTech",
-    "inteligencia artificial",
-    "Arcanum",
-    "Nexus",
-    "IA soberana",
-    "ecosistema cognitivo",
-    "LATAM",
-    "tecnología de lujo",
+    "SOLYON Technologies",
+    "applied artificial intelligence",
+    "deep technology Colombia",
+    "operating systems",
+    "commercial trucking technology",
+    "risk intelligence",
+    "accessible mobility",
+    "Medellin technology company",
   ],
   openGraph: {
-    title: "SOLYON Technologies – DeepTech soberana desde LATAM",
+    title: "SOLYON Technologies | Applied AI for complex operations",
     description:
-      "Ecosistema cognitivo con Arcanum, Nexus y aplicaciones soberanas como TruckBoss, Azoth y Sovereign TruckGuard.",
+      "We transform operational evidence into applied AI systems for trucking risk, insurance operations and accessible mobility.",
     url: SITE_URL,
     siteName: "SOLYON Technologies",
     type: "website",
@@ -41,16 +35,16 @@ export const metadata = {
         url: "/og-cover.jpg",
         width: 1200,
         height: 630,
-        alt: "SOLYON Technologies – DeepTech de lujo",
+        alt: "SOLYON Technologies",
       },
     ],
     locale: "es_CO",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SOLYON Technologies – DeepTech de lujo",
+    title: "SOLYON Technologies | Applied AI for complex operations",
     description:
-      "Casa DeepTech soberana: inteligencia cognitiva, sistemas autónomos y experiencias humanas elevadas.",
+      "Applied AI, operational intelligence and technology built from real-world evidence.",
     images: ["/og-cover.jpg"],
   },
   alternates: {
@@ -62,29 +56,26 @@ export const metadata = {
   },
 };
 
-/**
- * Layout raíz de la App
- */
 export default function RootLayout({ children }) {
   const orgJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "SOLYON Technologies",
+    name: "SOLYON Technologies S.A.S.",
     url: SITE_URL,
-    logo: `${SITE_URL}/logo-solyon.svg`,
+    logo: `${SITE_URL}/logo.png`,
     description:
-      "Casa DeepTech soberana que construye un ecosistema cognitivo de lujo desde LATAM para el mundo.",
+      "Technology company and applied AI laboratory based in Medellin, Colombia.",
+    foundingLocation: {
+      "@type": "Place",
+      name: "Medellin, Colombia",
+    },
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Medellín",
+      addressLocality: "Medellin",
       addressRegion: "Antioquia",
       addressCountry: "CO",
     },
-    sameAs: [
-      // Agrega tus redes reales cuando las tengas:
-      // "https://www.linkedin.com/company/XXXX",
-      // "https://twitter.com/XXXX",
-    ],
+    email: "sergio@solyontechnologies.com",
   };
 
   return (
@@ -96,20 +87,14 @@ export default function RootLayout({ children }) {
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
         <link rel="icon" href="/favicon.ico" />
-        {/* Schema.org para Organization (mejora presencia en Google) */}
         <script
           type="application/ld+json"
-          // No uses hooks aquí; es server component
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
         />
       </head>
-      <body className="bg-black text-gray-100 antialiased">
-        {/* CONTEXTO DE IDIOMA GLOBAL (ES / EN + autodetección en el cliente) */}
+      <body className="bg-[#07090c] text-gray-100 antialiased">
         <LanguageProvider>
-          {/* HEADER GLOBAL CON NAV + SELECTOR ES/EN */}
           <MainHeader />
-
-          {/* CONTENIDO DE CADA PÁGINA */}
           {children}
         </LanguageProvider>
       </body>
