@@ -63,7 +63,7 @@ export default function SolyonMovePage() {
 
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0e12] p-3 shadow-[0_35px_100px_rgba(0,0,0,0.55)]">
             <Image
-              src="/visual/solyon-move-field-validation.jpg"
+              src="/visual/solyon-move-field-validation.jpeg"
               alt={t.heroAlt}
               width={1400}
               height={1000}
@@ -141,7 +141,7 @@ export default function SolyonMovePage() {
 
           <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-[2.4rem] border border-white/10 bg-[#0b0e12] p-3">
             <Image
-              src="/visual/solyon-move-app-real.png"
+              src="/visual/solyon-move-app-real.jpeg"
               alt={t.appAlt}
               width={900}
               height={1600}
@@ -180,7 +180,7 @@ export default function SolyonMovePage() {
 
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0e12] p-3">
             <Image
-              src="/visual/solyon-move-barriers.jpg"
+              src="/visual/solyon-move-barriers.png"
               alt={t.barriersAlt}
               width={1400}
               height={950}
@@ -205,7 +205,7 @@ export default function SolyonMovePage() {
 
           <div className="mt-14 relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0e12] p-3">
             <Image
-              src="/visual/solyon-move-crm-historical.png"
+              src="/visual/solyon-move-crm-historica.png"
               alt={t.crmAlt}
               width={1800}
               height={1050}
