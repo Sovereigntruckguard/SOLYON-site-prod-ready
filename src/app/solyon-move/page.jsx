@@ -292,7 +292,7 @@ export default function SolyonMovePage() {
 
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0e12] p-3">
               <Image
-                src="/visual/solyon-move-field-validation.jpg"
+                src="/visual/solyon-move-field-validation.jpeg"
                 alt={t.fieldAlt}
                 width={1400}
                 height={1000}
