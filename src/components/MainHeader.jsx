@@ -21,9 +21,7 @@ export default function MainHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#07090c]/95 backdrop-blur-xl">
-      <div className="section-shell flex min-h-[74px] items-center justify-between gap-6 py-2">
-        
-        {/* BRAND */}
+      <div className="section-shell flex min-h-[78px] items-center justify-between gap-6 py-3">
         <Link
           href="/"
           className="flex shrink-0 items-center gap-3"
@@ -31,22 +29,24 @@ export default function MainHeader() {
           onClick={() => setOpen(false)}
         >
           <Image
-            src="/visual/solyon-technologies-logo.png"
-            alt="SOLYON Technologies"
-            width={420}
-            height={520}
+            src="/visual/solyon-symbol.png"
+            alt="SOLYON Technologies symbol"
+            width={120}
+            height={120}
             priority
-            className="h-[54px] w-auto object-contain sm:h-[60px]"
+            className="h-11 w-auto object-contain sm:h-12"
           />
 
-          <div className="hidden border-l border-white/10 pl-3 lg:block">
-            <p className="max-w-[190px] text-[0.62rem] font-medium leading-4 tracking-[0.08em] text-white/40">
+          <div className="min-w-0">
+            <p className="text-[0.95rem] font-semibold leading-none tracking-[0.14em] text-white sm:text-[1.05rem]">
+              SOLYON TECHNOLOGIES
+            </p>
+            <p className="mt-1 text-[0.68rem] leading-4 text-white/45 sm:text-[0.72rem]">
               {t.slogan}
             </p>
           </div>
         </Link>
 
-        {/* DESKTOP NAV */}
         <nav className="hidden items-center gap-5 text-xs font-medium text-white/70 xl:flex">
           {links.map(([href, label]) => (
             <Link
@@ -66,7 +66,6 @@ export default function MainHeader() {
           </Link>
         </nav>
 
-        {/* LANGUAGE + MOBILE MENU */}
         <div className="flex items-center gap-2 text-xs">
           <button
             type="button"
@@ -117,7 +116,6 @@ export default function MainHeader() {
         </div>
       </div>
 
-      {/* MOBILE NAV */}
       {open && (
         <div className="border-t border-white/10 bg-[#07090c] xl:hidden">
           <nav className="section-shell flex flex-col py-4 text-sm text-white/75">
