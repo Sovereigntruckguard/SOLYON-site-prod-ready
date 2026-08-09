@@ -38,19 +38,17 @@ export default function MainHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#07090c]/90 backdrop-blur-xl">
       <div className="section-shell flex min-h-[72px] items-center justify-between gap-4">
-        {/* =====================================================
-            BRAND
-        ===================================================== */}
+        {/* BRAND */}
         <Link
           href="/"
           className="flex min-w-0 shrink-0 items-center gap-3"
           aria-label="SOLYON Technologies"
           onClick={() => setOpen(false)}
         >
-          {/* LOGO OFICIAL SOLYON */}
+          {/* ISOTIPO OFICIAL SOLYON */}
           <div className="relative h-10 w-10 shrink-0">
             <Image
-              src="/logo-solyon.svg"
+              src="/visual/solyon-symbol.png"
               alt="SOLYON Technologies"
               fill
               priority
@@ -70,9 +68,7 @@ export default function MainHeader() {
           </div>
         </Link>
 
-        {/* =====================================================
-            DESKTOP NAVIGATION
-        ===================================================== */}
+        {/* DESKTOP NAVIGATION */}
         <nav
           className="hidden items-center gap-5 text-xs font-medium xl:flex"
           aria-label={t.navigationLabel}
@@ -111,9 +107,7 @@ export default function MainHeader() {
           </Link>
         </nav>
 
-        {/* =====================================================
-            ACTIONS
-        ===================================================== */}
+        {/* ACTIONS */}
         <div className="flex shrink-0 items-center gap-2 text-xs">
           <button
             type="button"
@@ -167,9 +161,7 @@ export default function MainHeader() {
         </div>
       </div>
 
-      {/* =====================================================
-          MOBILE NAVIGATION
-      ===================================================== */}
+      {/* MOBILE NAVIGATION */}
       {open && (
         <div
           id="solyon-mobile-navigation"
@@ -227,26 +219,13 @@ export default function MainHeader() {
 }
 
 const es = {
-  slogan:
-    "DeepTech e IA aplicada desde Medellín",
-
-  languageLabel:
-    "Cambiar sitio a inglés",
-
-  menuLabel:
-    "Abrir menú",
-
-  closeMenuLabel:
-    "Cerrar menú",
-
-  navigationLabel:
-    "Navegación principal",
-
-  mobileNavigationLabel:
-    "Navegación móvil",
-
-  mobileFooter:
-    "SOLYON Technologies · Medellín, Colombia",
+  slogan: "DeepTech e IA aplicada desde Medellín",
+  languageLabel: "Cambiar sitio a inglés",
+  menuLabel: "Abrir menú",
+  closeMenuLabel: "Cerrar menú",
+  navigationLabel: "Navegación principal",
+  mobileNavigationLabel: "Navegación móvil",
+  mobileFooter: "SOLYON Technologies · Medellín, Colombia",
 
   nav: {
     home: "Inicio",
@@ -260,26 +239,13 @@ const es = {
 };
 
 const en = {
-  slogan:
-    "DeepTech and applied AI from Medellín",
-
-  languageLabel:
-    "Switch website to Spanish",
-
-  menuLabel:
-    "Open menu",
-
-  closeMenuLabel:
-    "Close menu",
-
-  navigationLabel:
-    "Main navigation",
-
-  mobileNavigationLabel:
-    "Mobile navigation",
-
-  mobileFooter:
-    "SOLYON Technologies · Medellín, Colombia",
+  slogan: "DeepTech and applied AI from Medellín",
+  languageLabel: "Switch website to Spanish",
+  menuLabel: "Open menu",
+  closeMenuLabel: "Close menu",
+  navigationLabel: "Main navigation",
+  mobileNavigationLabel: "Mobile navigation",
+  mobileFooter: "SOLYON Technologies · Medellín, Colombia",
 
   nav: {
     home: "Home",
