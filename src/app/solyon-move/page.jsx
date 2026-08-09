@@ -2,18 +2,86 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import GooglePlayLink from "@/components/GooglePlayLink";
 import SiteFooter from "@/components/SiteFooter";
 import { useLanguage } from "@/lib/language";
 
 const RUTAN_STORY =
   "https://rutanmedellin.org/noticias/en-medell%C3%ADn-crean-dos-plataformas-con-inteligencia-artificial-para-facilitar-los-viajes-de-personas-con-movilidad-reducida";
 
+const GOOGLE_PLAY_URL =
+  "https://play.google.com/store/apps/details?id=com.solyon.move";
+
 const sectionTitleClass =
   "mt-4 max-w-4xl text-3xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-4xl md:text-5xl";
 
 const sectionCopyClass =
   "mt-5 max-w-3xl text-base leading-7 text-white/58 md:text-lg";
+
+function GooglePlayIcon() {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+      className="h-5 w-5 shrink-0"
+    >
+      <defs>
+        <linearGradient id="play-green" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stopColor="#00D6A0" />
+          <stop offset="100%" stopColor="#00A878" />
+        </linearGradient>
+
+        <linearGradient id="play-blue" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stopColor="#00A8FF" />
+          <stop offset="100%" stopColor="#0077FF" />
+        </linearGradient>
+
+        <linearGradient id="play-yellow" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stopColor="#FFD45A" />
+          <stop offset="100%" stopColor="#FFB800" />
+        </linearGradient>
+
+        <linearGradient id="play-red" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stopColor="#FF5A68" />
+          <stop offset="100%" stopColor="#FF314A" />
+        </linearGradient>
+      </defs>
+
+      <path
+        d="M4.5 3.6c-.7.7-1.1 1.8-1.1 3.2v18.4c0 1.4.4 2.5 1.1 3.2L17 16Z"
+        fill="url(#play-green)"
+      />
+
+      <path
+        d="M17 16 5.1 3.9c.7-.4 1.6-.3 2.6.3l14.6 8.4Z"
+        fill="url(#play-blue)"
+      />
+
+      <path
+        d="m17 16 5.3 3.4-14.6 8.4c-1 .6-1.9.7-2.6.3Z"
+        fill="url(#play-yellow)"
+      />
+
+      <path
+        d="M22.3 12.6 27 15.3c1.5.9 1.5 2.3 0 3.2l-4.7 2.7L17 16Z"
+        fill="url(#play-red)"
+      />
+    </svg>
+  );
+}
+
+function GooglePlayButton({ label, className = "" }) {
+  return (
+    <a
+      href={GOOGLE_PLAY_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex items-center justify-center gap-2.5 rounded-full border border-white/20 bg-white/[0.02] px-6 py-3 text-sm font-semibold text-white transition hover:border-white/35 hover:bg-white/[0.055] ${className}`}
+    >
+      <GooglePlayIcon />
+      <span>{label}</span>
+    </a>
+  );
+}
 
 export default function SolyonMovePage() {
   const { lang } = useLanguage();
@@ -49,11 +117,11 @@ export default function SolyonMovePage() {
             </div>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <GooglePlayLink label={t.download} />
+              <GooglePlayButton label={t.download} />
 
               <Link
                 href="/technology"
-                className="inline-flex justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white"
+                className="inline-flex justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/35 hover:bg-white/[0.04]"
               >
                 {t.technology}
               </Link>
@@ -62,7 +130,7 @@ export default function SolyonMovePage() {
                 href="https://www.youtube.com/watch?v=0SyayXeU42g"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white"
+                className="inline-flex justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/35 hover:bg-white/[0.04]"
               >
                 {t.video}
               </a>
@@ -91,7 +159,9 @@ export default function SolyonMovePage() {
       <section className="section-shell py-16 md:py-20">
         <div className="max-w-4xl">
           <p className="eyebrow">{t.systemEyebrow}</p>
+
           <h2 className={sectionTitleClass}>{t.systemTitle}</h2>
+
           <p className={sectionCopyClass}>{t.systemBody}</p>
         </div>
 
@@ -150,7 +220,7 @@ export default function SolyonMovePage() {
               ))}
             </div>
 
-            <GooglePlayLink label={t.download} className="mt-6" />
+            <GooglePlayButton label={t.download} className="mt-6" />
           </div>
 
           <div className="relative mx-auto w-full max-w-sm overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0e12] p-2.5">
@@ -196,17 +266,17 @@ export default function SolyonMovePage() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0e12] p-2.5">
+          <div className="relative flex min-h-[360px] items-center justify-center overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0e12] p-2.5 md:min-h-[430px]">
             <Image
               src="/visual/solyon-move-barriers.png"
               alt={t.barriersAlt}
               width={1400}
               height={950}
               sizes="(max-width: 1024px) 100vw, 55vw"
-              className="aspect-[16/10] w-full rounded-[1.25rem] object-cover object-top"
+              className="h-auto max-h-[520px] w-full rounded-[1.25rem] bg-white object-contain"
             />
 
-            <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-[#07090c]/85 px-3 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-white/70">
+            <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-[#07090c]/90 px-3 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-white/70 backdrop-blur-lg">
               {t.territoryEvidence}
             </span>
           </div>
@@ -355,7 +425,7 @@ export default function SolyonMovePage() {
               href={RUTAN_STORY}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white"
+              className="mt-6 inline-flex rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/35 hover:bg-white/[0.04]"
             >
               {t.mediaButton}
             </a>
@@ -409,11 +479,11 @@ export default function SolyonMovePage() {
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <GooglePlayLink label={t.download} />
+            <GooglePlayButton label={t.download} />
 
             <Link
               href="/contact"
-              className="inline-flex justify-center rounded-full bg-[#E6BC68] px-6 py-3 text-sm font-semibold text-[#090b0e]"
+              className="inline-flex justify-center rounded-full bg-[#E6BC68] px-6 py-3 text-sm font-semibold text-[#090b0e] transition hover:brightness-105"
             >
               {t.ctaButton}
             </Link>
@@ -428,10 +498,13 @@ export default function SolyonMovePage() {
 
 const es = {
   eyebrow: "Infraestructura de movilidad accesible · Medellín",
+
   title:
     "SOLYON Move convierte movilidad y territorio en inteligencia operativa.",
+
   body:
     "Una infraestructura que integra experiencia móvil, datos territoriales, APIs, CRM e inteligencia urbana.",
+
   capabilityTags: [
     "Mobile Product",
     "Applied AI",
@@ -440,16 +513,24 @@ const es = {
     "Institutional CRM",
     "Urban Intelligence",
   ],
+
   download: "Descargar gratis en Google Play",
+
   technology: "Explorar tecnología SOLYON",
+
   video: "Ver video del proyecto",
+
   heroAlt: "Validación real de SOLYON Move en territorio",
+
   realEvidence: "EVIDENCIA REAL · VALIDACIÓN EN CAMPO",
 
   systemEyebrow: "La infraestructura",
+
   systemTitle: "La app es solo la capa visible.",
+
   systemBody:
     "Detrás opera una arquitectura que captura territorio, estructura datos, conecta servicios y habilita gestión institucional.",
+
   architecture: [
     {
       title: "Citizen Layer",
@@ -472,14 +553,19 @@ const es = {
       body: "Visualización territorial y patrones.",
     },
   ],
+
   loopLabel: "Ciclo de inteligencia:",
+
   loop:
     "territorio → observación → dato → estructuración → operación → aprendizaje.",
 
   userEyebrow: "Capa ciudadana",
+
   userTitle: "Movilidad diseñada alrededor de la persona.",
+
   userBody:
     "La app personaliza la experiencia y conecta al usuario con la infraestructura de datos que opera detrás.",
+
   userItems: [
     "Perfil y tipo de movilidad",
     "Variables personales y contexto",
@@ -488,13 +574,18 @@ const es = {
     "Reporte de barreras",
     "Participación comunitaria",
   ],
+
   appAlt: "Interfaz real de la aplicación SOLYON Move",
+
   productEvidence: "PRODUCTO REAL",
 
   dataEyebrow: "Territorio como dato",
+
   dataTitle: "El territorio se convierte en datos.",
+
   dataBody:
     "Barreras, pendientes, superficies y obstáculos se documentan con contexto y evidencia para alimentar la inteligencia del sistema.",
+
   dataFlow: [
     "Observación en territorio",
     "Reporte digital",
@@ -502,18 +593,26 @@ const es = {
     "Estructuración del dato",
     "Visualización institucional",
   ],
+
   barriersAlt:
     "Evidencia real de barreras urbanas documentadas durante SOLYON Move",
+
   territoryEvidence: "EVIDENCIA TERRITORIAL",
 
   crmEyebrow: "Capa institucional",
+
   crmTitle: "Del dato a una visión operacional del territorio.",
+
   crmBody:
     "El CRM organiza usuarios, rutas, incidentes y evidencia dentro de una capa operativa para seguimiento y análisis.",
+
   crmAlt: "Interfaz del CRM y mapa territorial de SOLYON Move",
+
   historicalLabel: "CAPA INSTITUCIONAL · EVOLUCIÓN DEL PRODUCTO",
+
   crmDisclaimer:
     "La interfaz muestra una etapa operacional del sistema. Las métricas corresponden al corte visible en la captura.",
+
   crmCapabilities: [
     {
       title: "Usuarios",
@@ -534,9 +633,12 @@ const es = {
   ],
 
   apiEyebrow: "Arquitectura conectable",
+
   apiTitle: "Una infraestructura diseñada para intercambiar información.",
+
   apiBody:
     "La capa de integración conecta experiencia móvil, datos, herramientas institucionales y sistemas externos.",
+
   integrationNodes: [
     "Mobile App",
     "Data Services",
@@ -544,29 +646,42 @@ const es = {
     "Institutional CRM",
     "External Systems",
   ],
+
   apiNote:
     "La arquitectura puede evolucionar hacia nuevas integraciones y fuentes externas a medida que sean implementadas y verificadas.",
 
   validationEyebrow: "Del laboratorio al territorio",
+
   validationTitle: "Probada en condiciones urbanas reales.",
+
   validationBody:
-    "La validación en campo permite confrontar producto, datos y experiencia con barreras, pendientes y superficies reales.",
+    "La validación en campo confronta producto, datos y experiencia con barreras, pendientes y superficies reales.",
+
   programLabel: "MOVILIDAD PARA TODOS · MEDELLÍN",
+
   programBody:
     "SOLYON Move fue desarrollado y validado en el marco de Movilidad para Todos, iniciativa impulsada por Ruta N y Toyota Mobility Foundation.",
+
   fieldAlt: "Prueba y validación de SOLYON Move en calles de Medellín",
 
   mediaEyebrow: "Validación de terceros",
+
   mediaTitle: "Ruta N documentó públicamente SOLYON Move.",
+
   mediaBody:
     "En agosto de 2026, Ruta N presentó a SOLYON Move como una de las plataformas desarrolladas para mejorar la movilidad de personas con movilidad reducida en Medellín.",
+
   mediaButton: "Leer publicación oficial ↗",
+
   mediaAlt: "Publicación de Ruta N sobre SOLYON Move",
 
   labEyebrow: "Capacidad del laboratorio",
+
   labTitle: "Un sistema completo, no un producto aislado.",
+
   labBody:
     "SOLYON Move demuestra capacidad para construir producto, datos, APIs, software institucional y validación en condiciones reales.",
+
   labCapabilities: [
     {
       label: "01",
@@ -591,19 +706,25 @@ const es = {
   ],
 
   ctaEyebrow: "SOLYON Technologies",
+
   ctaTitle:
     "SOLYON Move demuestra cómo SOLYON construye infraestructura aplicada.",
+
   ctaBody:
     "El laboratorio convierte problemas complejos en sistemas donde convergen inteligencia artificial, datos y operaciones.",
+
   ctaButton: "Conversar con SOLYON",
 };
 
 const en = {
   eyebrow: "Accessible mobility infrastructure · Medellín",
+
   title:
     "SOLYON Move turns mobility and territory into operating intelligence.",
+
   body:
     "An infrastructure integrating mobile experience, territorial data, APIs, CRM and urban intelligence.",
+
   capabilityTags: [
     "Mobile Product",
     "Applied AI",
@@ -612,16 +733,24 @@ const en = {
     "Institutional CRM",
     "Urban Intelligence",
   ],
+
   download: "Download free on Google Play",
+
   technology: "Explore SOLYON technology",
+
   video: "Watch project video",
+
   heroAlt: "Real-world SOLYON Move field validation",
+
   realEvidence: "REAL EVIDENCE · FIELD VALIDATION",
 
   systemEyebrow: "The infrastructure",
+
   systemTitle: "The app is only the visible layer.",
+
   systemBody:
     "Behind it sits an architecture capturing territory, structuring data, connecting services and enabling institutional operations.",
+
   architecture: [
     {
       title: "Citizen Layer",
@@ -644,14 +773,19 @@ const en = {
       body: "Territorial visualization and patterns.",
     },
   ],
+
   loopLabel: "Intelligence loop:",
+
   loop:
     "territory → observation → data → structuring → operations → learning.",
 
   userEyebrow: "Citizen layer",
+
   userTitle: "Mobility designed around the person.",
+
   userBody:
     "The app personalizes mobility and connects the user with the data infrastructure operating behind it.",
+
   userItems: [
     "Mobility profile and type",
     "Personal variables and context",
@@ -660,13 +794,18 @@ const en = {
     "Barrier reporting",
     "Community participation",
   ],
+
   appAlt: "Real SOLYON Move application interface",
+
   productEvidence: "REAL PRODUCT",
 
   dataEyebrow: "Territory as data",
+
   dataTitle: "Territory becomes data.",
+
   dataBody:
     "Barriers, slopes, surfaces and obstacles are documented with context and evidence to feed the system's intelligence.",
+
   dataFlow: [
     "Territorial observation",
     "Digital reporting",
@@ -674,17 +813,25 @@ const en = {
     "Data structuring",
     "Institutional visualization",
   ],
+
   barriersAlt: "Real urban barriers documented through SOLYON Move",
+
   territoryEvidence: "TERRITORIAL EVIDENCE",
 
   crmEyebrow: "Institutional layer",
+
   crmTitle: "From data to an operational view of territory.",
+
   crmBody:
     "The CRM organizes users, routes, incidents and evidence within an operating layer for monitoring and analysis.",
+
   crmAlt: "SOLYON Move CRM interface and territorial map",
+
   historicalLabel: "INSTITUTIONAL LAYER · PRODUCT EVOLUTION",
+
   crmDisclaimer:
     "The interface shows an operational stage of the system. Metrics correspond to the snapshot visible in the image.",
+
   crmCapabilities: [
     {
       title: "Users",
@@ -705,9 +852,12 @@ const en = {
   ],
 
   apiEyebrow: "Connectable architecture",
+
   apiTitle: "Infrastructure designed to exchange information.",
+
   apiBody:
     "The integration layer connects mobile experience, data, institutional tooling and external systems.",
+
   integrationNodes: [
     "Mobile App",
     "Data Services",
@@ -715,29 +865,42 @@ const en = {
     "Institutional CRM",
     "External Systems",
   ],
+
   apiNote:
     "The architecture can evolve toward new integrations and external sources as they are implemented and verified.",
 
   validationEyebrow: "From laboratory to territory",
+
   validationTitle: "Tested under real urban conditions.",
+
   validationBody:
     "Field validation confronts product, data and experience with real barriers, slopes and surfaces.",
+
   programLabel: "MOBILITY FOR ALL · MEDELLÍN",
+
   programBody:
     "SOLYON Move was developed and validated under Mobility for All, an initiative driven by Ruta N and Toyota Mobility Foundation.",
+
   fieldAlt: "SOLYON Move testing and validation in Medellín",
 
   mediaEyebrow: "Third-party validation",
+
   mediaTitle: "Ruta N publicly documented SOLYON Move.",
+
   mediaBody:
     "In August 2026, Ruta N featured SOLYON Move among the platforms developed to improve mobility for people with reduced mobility in Medellín.",
+
   mediaButton: "Read official story ↗",
+
   mediaAlt: "Ruta N publication featuring SOLYON Move",
 
   labEyebrow: "Laboratory capability",
+
   labTitle: "A complete system, not an isolated product.",
+
   labBody:
     "SOLYON Move demonstrates capability across product, data, APIs, institutional software and real-world validation.",
+
   labCapabilities: [
     {
       label: "01",
@@ -762,9 +925,12 @@ const en = {
   ],
 
   ctaEyebrow: "SOLYON Technologies",
+
   ctaTitle:
     "SOLYON Move demonstrates how SOLYON builds applied infrastructure.",
+
   ctaBody:
     "The laboratory turns complex problems into systems where artificial intelligence, data and operations converge.",
+
   ctaButton: "Talk with SOLYON",
 };
