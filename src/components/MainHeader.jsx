@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -46,49 +47,16 @@ export default function MainHeader() {
           aria-label="SOLYON Technologies"
           onClick={() => setOpen(false)}
         >
-          {/* SOLYON MARK */}
-          <div className="relative flex h-9 w-9 shrink-0 items-center justify-center">
-            <svg
-              viewBox="0 0 40 40"
-              width="36"
-              height="36"
-              fill="none"
-              aria-hidden="true"
-            >
-              <circle
-                cx="20"
-                cy="20"
-                r="15"
-                stroke="#E6BC68"
-                strokeWidth="1.8"
-                opacity="0.95"
-              />
-
-              <circle
-                cx="20"
-                cy="20"
-                r="10"
-                stroke="#7C8DFF"
-                strokeWidth="1.6"
-                opacity="0.85"
-              />
-
-              <circle
-                cx="20"
-                cy="20"
-                r="5"
-                stroke="#4CC9B0"
-                strokeWidth="1.6"
-                opacity="0.9"
-              />
-
-              <circle
-                cx="20"
-                cy="20"
-                r="1.8"
-                fill="#E6BC68"
-              />
-            </svg>
+          {/* LOGO OFICIAL SOLYON */}
+          <div className="relative h-10 w-10 shrink-0">
+            <Image
+              src="/logo-solyon.svg"
+              alt="SOLYON Technologies"
+              fill
+              priority
+              sizes="40px"
+              className="object-contain"
+            />
           </div>
 
           <div className="min-w-0">
@@ -147,7 +115,6 @@ export default function MainHeader() {
             ACTIONS
         ===================================================== */}
         <div className="flex shrink-0 items-center gap-2 text-xs">
-          {/* LANGUAGE */}
           <button
             type="button"
             onClick={toggleLanguage}
@@ -157,7 +124,6 @@ export default function MainHeader() {
             {lang === "es" ? "EN" : "ES"}
           </button>
 
-          {/* MOBILE MENU BUTTON */}
           <button
             type="button"
             onClick={() => setOpen((current) => !current)}
@@ -260,10 +226,6 @@ export default function MainHeader() {
   );
 }
 
-/* =========================================================
-   ESPAÑOL
-========================================================= */
-
 const es = {
   slogan:
     "DeepTech e IA aplicada desde Medellín",
@@ -296,10 +258,6 @@ const es = {
     contact: "Contacto",
   },
 };
-
-/* =========================================================
-   ENGLISH
-========================================================= */
 
 const en = {
   slogan:
