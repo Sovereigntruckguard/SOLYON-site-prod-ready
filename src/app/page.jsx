@@ -180,9 +180,7 @@ export default function HomePage() {
               </div>
 
               <div className="mt-4 rounded-xl border border-violet-400/20 bg-violet-400/[0.035] px-4 py-3 text-xs leading-5 text-white/50">
-                <strong className="text-white/82">
-                  {t.osLoopLabel}
-                </strong>{" "}
+                <strong className="text-white/82">{t.osLoopLabel}</strong>{" "}
                 {t.osLoop}
               </div>
 
@@ -218,9 +216,7 @@ export default function HomePage() {
               {t.wedgeRuleLabel}
             </p>
 
-            <p className="mt-2 text-xl font-semibold">
-              {t.wedgeRule}
-            </p>
+            <p className="mt-2 text-xl font-semibold">{t.wedgeRule}</p>
 
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {t.wedgeGates.map((item, index) => (
@@ -232,9 +228,7 @@ export default function HomePage() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <h3 className="mt-2 text-sm font-semibold">
-                    {item.title}
-                  </h3>
+                  <h3 className="mt-2 text-sm font-semibold">{item.title}</h3>
 
                   <p className="mt-1.5 text-xs leading-5 text-white/43">
                     {item.body}
@@ -287,9 +281,7 @@ export default function HomePage() {
                     {String(index + 1).padStart(2, "0")}
                   </p>
 
-                  <h3 className="mt-2 text-sm font-semibold">
-                    {item.title}
-                  </h3>
+                  <h3 className="mt-2 text-sm font-semibold">{item.title}</h3>
 
                   <p className="mt-1.5 text-xs leading-5 text-white/44">
                     {item.body}
@@ -427,9 +419,7 @@ export default function HomePage() {
                 {String(index + 1).padStart(2, "0")}
               </p>
 
-              <h3 className="mt-2 text-sm font-semibold">
-                {item.title}
-              </h3>
+              <h3 className="mt-2 text-sm font-semibold">{item.title}</h3>
 
               <p className="mt-1.5 text-xs leading-5 text-white/43">
                 {item.body}
@@ -583,7 +573,7 @@ const es = {
     "Insurance Operations es el primer mercado de validación comercial de SOLYON OS.",
 
   wedgeBody:
-    "Comenzamos por operaciones y agencias especializadas en commercial trucking insurance, donde existe conocimiento profundo del dominio, acceso a compradores y problemas operativos documentados.",
+    "Comenzamos por operaciones especializadas de commercial insurance, con énfasis inicial en trucking, donde existe conocimiento profundo del dominio, acceso a compradores y problemas operativos documentados.",
 
   wedgeRuleLabel:
     "DISCIPLINA DE EJECUCIÓN",
@@ -611,7 +601,7 @@ const es = {
   ],
 
   wedgeNote:
-    "El objetivo del wedge no es convertir a SOLYON en una compañía de seguros, sino demostrar que SOLYON OS puede convertir conocimiento operacional en producto reutilizable, ROI medible y recurrencia.",
+    "El objetivo del wedge no es definir a SOLYON como una compañía de seguros. Insurance Operations funciona como un mercado inicial para demostrar que SOLYON OS puede convertir conocimiento operacional en producto reutilizable, ROI medible y recurrencia.",
 
   methodEyebrow:
     "Laboratorio SOLYON",
@@ -854,7 +844,7 @@ const en = {
     "Insurance Operations is SOLYON OS's first commercial validation market.",
 
   wedgeBody:
-    "We begin with operations and specialized commercial trucking insurance agencies, where the founders hold deep domain knowledge, buyer access and documented operational problems.",
+    "We begin with specialized commercial insurance operations, initially focused on trucking, where the founders hold deep domain knowledge, buyer access and documented operational problems.",
 
   wedgeRuleLabel:
     "EXECUTION DISCIPLINE",
@@ -882,7 +872,7 @@ const en = {
   ],
 
   wedgeNote:
-    "The purpose of the wedge is not to define SOLYON as an insurance company, but to demonstrate that SOLYON OS can convert operational knowledge into reusable product, measurable ROI and recurring revenue.",
+    "The wedge does not define SOLYON as an insurance company. Insurance Operations is an initial market for demonstrating that SOLYON OS can convert operational knowledge into reusable product, measurable ROI and recurring revenue.",
 
   methodEyebrow:
     "SOLYON laboratory",
