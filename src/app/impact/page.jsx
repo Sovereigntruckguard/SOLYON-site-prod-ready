@@ -103,6 +103,10 @@ export default function ImpactPage() {
           <p className="max-w-2xl text-base leading-7 text-white/55">
             {t.principleBody}
           </p>
+
+          <h3 className="mt-3 text-xl font-semibold text-white/90">
+            {route.title}
+          </h3>
         </div>
 
         <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
