@@ -161,6 +161,7 @@ export default function RootLayout({
       SITE_URL,
 
     logo:
+      `${SITE_URL}//visual/solyon-symbol.png`,
       `${SITE_URL}/logo-solyon.svg`,
 
     description:

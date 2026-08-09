@@ -2,105 +2,102 @@
 @tailwind components;
 @tailwind utilities;
 
-/* FONDO GLOBAL CINEMATOGRÁFICO */
-html,
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #07090c;
+}
+
 body {
-  background: radial-gradient(circle at top, #141414 0, #050505 45%, #020202 80%);
-  color: #ffffff;
-  font-family: "Lato", ui-sans-serif, system-ui;
-}
-
-/* TÍTULO DORADO ROSADO */
-.gradient-gold {
-  background: linear-gradient(
-    135deg,
-    #ffd2e1 0%,
-    #e8a0b0 30%,
-    #ffc26b 60%,
-    #ffd700 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* CARDS PREMIUM TIPO ANDURIL / PALANTIR */
-.card {
-  @apply rounded-3xl border border-[#2A2A2A];
-  background: radial-gradient(circle at top left, #1b1b1b 0%, #050505 60%);
-  box-shadow:
-    0 24px 60px rgba(0, 0, 0, 0.9),
-    0 0 0 0.5px rgba(255, 255, 255, 0.02);
-  transition:
-    transform 200ms ease-out,
-    box-shadow 200ms ease-out,
-    border-color 200ms ease-out,
-    background 200ms ease-out;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 215, 0, 0.35);
-  box-shadow:
-    0 32px 80px rgba(0, 0, 0, 0.95),
-    0 0 30px rgba(255, 192, 203, 0.25);
-  background: radial-gradient(circle at top left, #222222 0%, #050505 60%);
-}
-
-/* BOTONES CON BRILLO SUAVE */
-.btn {
-  @apply inline-flex items-center justify-center rounded-full px-5 py-3 font-semibold transition;
-  background: linear-gradient(135deg, #e8a0b0, #ffd700);
-  color: #181818;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75);
-}
-
-.btn:hover {
-  filter: brightness(1.05);
-  transform: translateY(-2px);
-  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.9);
-}
-
-/* CONTENEDOR DE SECCIONES */
-.section {
-  @apply max-w-6xl mx-auto px-6 md:px-10;
-  position: relative;
-  opacity: 0;
-  transform: translateY(18px);
-  animation: sectionFade 0.9s ease-out forwards;
-  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* HALO ALQUÍMICO ALREDEDOR DE CADA SECCIÓN */
-.section::before {
-  content: "";
-  position: absolute;
-  inset: -40px -24px;
-  border-radius: 3rem;
+  margin: 0;
   background:
-    radial-gradient(circle at top, rgba(255, 182, 240, 0.16), transparent 55%),
-    radial-gradient(circle at bottom, rgba(255, 215, 0, 0.12), transparent 60%);
-  opacity: 0.6;
-  pointer-events: none;
-  z-index: -1;
-  filter: blur(4px);
+    radial-gradient(circle at 15% 0%, rgba(230, 188, 104, 0.07), transparent 28rem),
+    #07090c;
+  color: #ffffff;
+  font-family: Arial, Helvetica, ui-sans-serif, system-ui, sans-serif;
 }
 
-/* ANIMACIÓN SUAVE DE ENTRADA PARA TODAS LAS SECCIONES */
-@keyframes sectionFade {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(230, 188, 104, 0.3);
+  color: #ffffff;
+}
+
+.section-shell {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  line-height: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e6bc68;
+}
+
+.section-title {
+  max-width: 56rem;
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.section-copy {
+  max-width: 48rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.system-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.012));
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.system-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(230, 188, 104, 0.28);
+  background:
+    linear-gradient(145deg, rgba(230, 188, 104, 0.06), rgba(255, 255, 255, 0.015));
+}
+
+@media (min-width: 768px) {
+  .section-shell {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 }
 
-/* GRANO / TEXTURA SUAVE TIPO DASHBOARD DEEPTECH (OPCIONAL) */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='noStitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
-  mix-blend-mode: soft-light;
-  z-index: -1;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

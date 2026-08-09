@@ -1,110 +1,216 @@
-// src/components/MainHeader.jsx
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useLanguage } from "@/lib/language";
 
 export default function MainHeader() {
   const { lang, setLang } = useLanguage();
   const t = lang === "es" ? es : en;
+
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
+  const links = [
+    ["/", t.nav.home],
+    ["/technology", t.nav.technology],
+    ["/ecosystem", t.nav.ecosystem],
+    ["/solyon-move", t.nav.move],
+    ["/impact", t.nav.impact],
+    ["/about", t.nav.about],
+  ];
+
+  const isActive = (href) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === href || pathname?.startsWith(`${href}/`);
+  };
+
+  const toggleLanguage = () => {
+    setLang(lang === "es" ? "en" : "es");
+    setOpen(false);
+  };
+
   return (
-    <header className="sticky top-0 z-40 border-b border-[#2A2A2A] bg-black/70 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:py-4">
-
-        {/* Logo + slogan */}
-        <a href="/" className="flex items-center gap-3">
-          <img
-            src="/logo.png"
-            alt="SOLYON"
-            className="w-10 h-10 object-contain drop-shadow-xl"
-          />
-          <div className="flex flex-col">
-            <span className="font-display text-lg md:text-xl">
-              <span className="gradient-gold">SOLYON</span>{" "}
-              <span className="text-gray-100">Technologies</span>
-            </span>
-            <span className="text-[0.7rem] text-gray-400">
-              {t.slogan}
-            </span>
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#07090c]/90 backdrop-blur-xl">
+      <div className="section-shell flex min-h-[72px] items-center justify-between gap-4">
+        {/* BRAND */}
+        <Link
+          href="/"
+          className="flex min-w-0 shrink-0 items-center gap-3"
+          aria-label="SOLYON Technologies"
+          onClick={() => setOpen(false)}
+        >
+          {/* ISOTIPO OFICIAL SOLYON */}
+          <div className="relative h-10 w-10 shrink-0">
+            <Image
+              src="/visual/solyon-symbol.png"
+              alt="SOLYON Technologies"
+              fill
+              priority
+              sizes="40px"
+              className="object-contain"
+            />
           </div>
-        </a>
 
-        {/* Navegación desktop */}
-        <nav className="hidden items-center gap-5 text-xs text-gray-200 md:flex">
-          <a href="/" className="hover:text-white">{t.nav.home}</a>
-          <a href="/ecosystem" className="hover:text-white">{t.nav.ecosystem}</a>
-          <a href="/technology" className="hover:text-white">{t.nav.technology}</a>
-          <a href="/impact" className="hover:text-white">{t.nav.impact}</a>
-          <a href="/about" className="hover:text-white">{t.nav.about}</a>
-          <a href="/store" className="hover:text-white">{t.nav.store}</a>
-          <a href="/investors" className="hover:text-white">{t.nav.investors}</a>
-          <a href="/contact" className="hover:text-white">{t.nav.contact}</a>
+          <div className="min-w-0">
+            <p className="whitespace-nowrap text-[0.88rem] font-semibold leading-none tracking-[0.13em] text-white sm:text-[1rem]">
+              SOLYON TECHNOLOGIES
+            </p>
+
+            <p className="mt-1 hidden text-[0.66rem] leading-4 text-white/45 sm:block sm:text-[0.7rem]">
+              {t.slogan}
+            </p>
+          </div>
+        </Link>
+
+        {/* DESKTOP NAVIGATION */}
+        <nav
+          className="hidden items-center gap-5 text-xs font-medium xl:flex"
+          aria-label={t.navigationLabel}
+        >
+          {links.map(([href, label]) => {
+            const active = isActive(href);
+
+            return (
+              <Link
+                key={href}
+                href={href}
+                className={`relative py-2 transition ${
+                  active
+                    ? "text-white"
+                    : "text-white/58 hover:text-white"
+                }`}
+              >
+                {label}
+
+                {active && (
+                  <span className="absolute inset-x-0 -bottom-[1px] mx-auto h-px w-4 bg-[#E6BC68]" />
+                )}
+              </Link>
+            );
+          })}
+
+          <Link
+            href="/contact"
+            className={`rounded-full border px-4 py-2 transition ${
+              isActive("/contact")
+                ? "border-[#E6BC68]/50 bg-[#E6BC68]/10 text-[#E6BC68]"
+                : "border-white/20 text-white hover:border-[#E6BC68]/50 hover:text-[#E6BC68]"
+            }`}
+          >
+            {t.nav.contact}
+          </Link>
         </nav>
 
-        {/* Idioma + hamburger */}
-        <div className="flex items-center gap-2 text-xs">
-
-          {/* Idiomas */}
+        {/* ACTIONS */}
+        <div className="flex shrink-0 items-center gap-2 text-xs">
           <button
             type="button"
-            onClick={() => setLang("es")}
-            className={`flex items-center gap-1 rounded-full border px-2 py-1 transition ${
-              lang === "es"
-                ? "border-[#FFD700] bg-[#FFD700]/10 text-[#FFD700]"
-                : "border-[#333] text-gray-300 hover:border-[#555]"
-            }`}
+            onClick={toggleLanguage}
+            className="rounded-full border border-white/15 px-3 py-1.5 font-medium text-white/70 transition hover:border-white/30 hover:text-white"
+            aria-label={t.languageLabel}
           >
-            <span>🇨🇴</span>
-            <span>ES</span>
+            {lang === "es" ? "EN" : "ES"}
           </button>
 
           <button
             type="button"
-            onClick={() => setLang("en")}
-            className={`flex items-center gap-1 rounded-full border px-2 py-1 transition ${
-              lang === "en"
-                ? "border-[#FFD700] bg-[#FFD700]/10 text-[#FFD700]"
-                : "border-[#333] text-gray-300 hover:border-[#555]"
-            }`}
-          >
-            <span>🇺🇸</span>
-            <span>EN</span>
-          </button>
-
-          {/* Hamburger (solo móvil) */}
-          <button
-            type="button"
-            onClick={() => setOpen(!open)}
-            className="ml-2 flex items-center justify-center rounded-md border border-[#333] p-2 text-gray-300 hover:border-[#555] md:hidden"
-            aria-label="Abrir menú"
+            onClick={() => setOpen((current) => !current)}
+            className="flex items-center justify-center rounded-md border border-white/15 p-2 text-white/70 transition hover:border-white/30 hover:text-white xl:hidden"
+            aria-label={open ? t.closeMenuLabel : t.menuLabel}
+            aria-expanded={open}
+            aria-controls="solyon-mobile-navigation"
           >
             {open ? (
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" strokeWidth="2" />
+              <svg
+                width="19"
+                height="19"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M6 18L18 6M6 6l12 12"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                />
               </svg>
             ) : (
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" />
+              <svg
+                width="19"
+                height="19"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 6h16M4 12h16M4 18h16"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                />
               </svg>
             )}
           </button>
         </div>
       </div>
 
-      {/* Menú móvil */}
+      {/* MOBILE NAVIGATION */}
       {open && (
-        <div className="md:hidden border-t border-[#2A2A2A] bg-black/90 backdrop-blur-md">
-          <nav className="flex flex-col px-4 py-4 text-sm text-gray-200">
-            <a onClick={() => setOpen(false)} href="/" className="py-2 hover:text-white">{t.nav.home}</a>
-            <a onClick={() => setOpen(false)} href="/ecosystem" className="py-2 hover:text-white">{t.nav.ecosystem}</a>
-            <a onClick={() => setOpen(false)} href="/technology" className="py-2 hover:text-white">{t.nav.technology}</a>
-            <a onClick={() => setOpen(false)} href="/impact" className="py-2 hover:text-white">{t.nav.impact}</a>
-            <a onClick={() => setOpen(false)} href="/about" className="py-2 hover:text-white">{t.nav.about}</a>
-            <a onClick={() => setOpen(false)} href="/store" className="py-2 hover:text-white">{t.nav.store}</a>
-            <a onClick={() => setOpen(false)} href="/investors" className="py-2 hover:text-white">{t.nav.investors}</a>
-            <a onClick={() => setOpen(false)} href="/contact" className="py-2 hover:text-white">{t.nav.contact}</a>
+        <div
+          id="solyon-mobile-navigation"
+          className="border-t border-white/10 bg-[#07090c]/98 xl:hidden"
+        >
+          <nav
+            className="section-shell flex flex-col py-3 text-sm"
+            aria-label={t.mobileNavigationLabel}
+          >
+            {links.map(([href, label]) => {
+              const active = isActive(href);
+
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  onClick={() => setOpen(false)}
+                  className={`flex items-center justify-between border-b border-white/5 py-3 transition ${
+                    active
+                      ? "text-[#E6BC68]"
+                      : "text-white/68 hover:text-white"
+                  }`}
+                >
+                  <span>{label}</span>
+
+                  {active && (
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#E6BC68]" />
+                  )}
+                </Link>
+              );
+            })}
+
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className={`mt-3 inline-flex justify-center rounded-full px-5 py-3 font-semibold transition ${
+                isActive("/contact")
+                  ? "bg-[#E6BC68] text-[#090b0e]"
+                  : "border border-[#E6BC68]/35 text-[#E6BC68]"
+              }`}
+            >
+              {t.nav.contact}
+            </Link>
+
+            <div className="mt-4 border-t border-white/5 pt-4">
+              <p className="text-[0.65rem] leading-5 text-white/30">
+                {t.mobileFooter}
+              </p>
+            </div>
           </nav>
         </div>
       )}
@@ -113,29 +219,41 @@ export default function MainHeader() {
 }
 
 const es = {
-  slogan: "No buscamos cambiar el mundo, expandimos la forma de verlo.",
+  slogan: "DeepTech e IA aplicada desde Medellín",
+  languageLabel: "Cambiar sitio a inglés",
+  menuLabel: "Abrir menú",
+  closeMenuLabel: "Cerrar menú",
+  navigationLabel: "Navegación principal",
+  mobileNavigationLabel: "Navegación móvil",
+  mobileFooter: "SOLYON Technologies · Medellín, Colombia",
+
   nav: {
     home: "Inicio",
-    ecosystem: "Ecosistema",
     technology: "Tecnología",
+    ecosystem: "Ecosistema",
+    move: "SOLYON Move",
     impact: "Impacto",
     about: "Nosotros",
-    store: "Store",
-    investors: "Investors",
     contact: "Contacto",
   },
 };
 
 const en = {
-  slogan: "We don’t try to change the world, we expand how we see it.",
+  slogan: "DeepTech and applied AI from Medellín",
+  languageLabel: "Switch website to Spanish",
+  menuLabel: "Open menu",
+  closeMenuLabel: "Close menu",
+  navigationLabel: "Main navigation",
+  mobileNavigationLabel: "Mobile navigation",
+  mobileFooter: "SOLYON Technologies · Medellín, Colombia",
+
   nav: {
     home: "Home",
-    ecosystem: "Ecosystem",
     technology: "Technology",
+    ecosystem: "Ecosystem",
+    move: "SOLYON Move",
     impact: "Impact",
     about: "About",
-    store: "Store",
-    investors: "Investors",
     contact: "Contact",
   },
 };

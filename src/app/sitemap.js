@@ -1,33 +1,20 @@
-// src/app/sitemap.js
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.solyontechnologies.com";
 
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://www.solyontechnologies.com";
-
-/**
- * Sitemap nativo de Next.js (App Router)
- * Documentación: https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap
- */
 export default function sitemap() {
   const routes = [
-    "",
-    "/ecosystem",
-    "/technology",
-    "/impact",
-    "/about",
-    "/store",
-    "/investors",
-    "/contact",
-    "/press",
-    "/legal",
-    "/thankyou",
+    { path: "", priority: 1, changeFrequency: "weekly" },
+    { path: "/solyon-move", priority: 0.9, changeFrequency: "monthly" },
+    { path: "/technology", priority: 0.85, changeFrequency: "monthly" },
+    { path: "/ecosystem", priority: 0.85, changeFrequency: "monthly" },
+    { path: "/impact", priority: 0.8, changeFrequency: "monthly" },
+    { path: "/about", priority: 0.75, changeFrequency: "monthly" },
+    { path: "/contact", priority: 0.7, changeFrequency: "monthly" },
   ];
 
-  const now = new Date();
-
-  return routes.map((route) => ({
-    url: `${SITE_URL}${route}`,
-    lastModified: now,
-    changefreq: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1.0 : 0.7,
+  return routes.map(({ path, priority, changeFrequency }) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified: new Date(),
+    changeFrequency,
+    priority,
   }));
 }
