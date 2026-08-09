@@ -161,7 +161,7 @@ export default function RootLayout({
       SITE_URL,
 
     logo:
-      `${SITE_URL}/logo-solyon.svg`,
+      `${SITE_URL}//visual/solyon-symbol.png`,
 
     description:
       "DeepTech laboratory from Medellín building operational intelligence infrastructure through applied AI, data systems, software and automation.",
