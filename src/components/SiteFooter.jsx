@@ -1,19 +1,36 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import GooglePlayLink from "@/components/GooglePlayLink";
 import { useLanguage } from "@/lib/language";
 
-const ELEVENLABS_GRANTS_URL = "https://elevenlabs.io/startup-grants";
+const ELEVENLABS_GRANTS_URL =
+  "https://elevenlabs.io/startup-grants";
 
 const ELEVENLABS_GRANTS_LOGO =
   "https://eleven-public-cdn.elevenlabs.io/payloadcms/cy7rxce8uki-IIElevenLabsGrants%201.webp";
 
+const EMAIL = "sergio@solyontechnologies.com";
+const WHATSAPP = "https://wa.me/573147903517";
+
 const socials = [
-  ["LinkedIn", "https://www.linkedin.com/company/solyon-technologies/"],
-  ["Instagram", "https://www.instagram.com/solyontechnologies/"],
-  ["Facebook", "https://www.facebook.com/profile.php?id=61584609184819"],
-  ["YouTube", "https://www.youtube.com/watch?v=0SyayXeU42g"],
+  [
+    "LinkedIn",
+    "https://www.linkedin.com/company/solyon-technologies/",
+  ],
+  [
+    "Instagram",
+    "https://www.instagram.com/solyontechnologies/",
+  ],
+  [
+    "Facebook",
+    "https://www.facebook.com/profile.php?id=61584609184819",
+  ],
+  [
+    "YouTube",
+    "https://www.youtube.com/watch?v=0SyayXeU42g",
+  ],
 ];
 
 export default function SiteFooter() {
@@ -21,33 +38,73 @@ export default function SiteFooter() {
   const t = lang === "es" ? es : en;
 
   return (
-    <footer className="border-t border-white/10 bg-[#07090c] text-white">
+    <footer className="border-t border-white/10 bg-[#06080b]">
       <div className="section-shell py-10 md:py-12">
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-[1.25fr_0.7fr_0.7fr_1fr]">
-          {/* COMPANY */}
+        <div className="grid gap-9 md:grid-cols-2 xl:grid-cols-[1.35fr_0.7fr_0.7fr_1.1fr]">
+          {/* =====================================================
+              COMPANY
+          ===================================================== */}
           <div>
-            <p className="text-sm font-semibold tracking-[0.16em] text-white/90">
-              SOLYON TECHNOLOGIES S.A.S.
-            </p>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-3"
+              aria-label="SOLYON Technologies"
+            >
+              <div className="relative h-10 w-10 shrink-0">
+                <Image
+                  src="/visual/solyon-symbol.png"
+                  alt="SOLYON Technologies"
+                  fill
+                  sizes="40px"
+                  className="object-contain"
+                />
+              </div>
 
-            <p className="mt-2 text-xs text-white/42">
-              Medellín, Colombia
-            </p>
+              <div>
+                <p className="text-sm font-semibold tracking-[0.12em] text-white">
+                  SOLYON TECHNOLOGIES
+                </p>
 
-            <p className="mt-3 max-w-xs text-sm leading-6 text-white/48">
+                <p className="mt-1 text-[0.65rem] text-white/38">
+                  Medellín · Colombia
+                </p>
+              </div>
+            </Link>
+
+            <p className="mt-4 max-w-sm text-sm leading-6 text-white/45">
               {t.descriptor}
             </p>
 
-            <div className="mt-5">
+            <div className="mt-5 flex flex-wrap gap-2">
+              <span className="rounded-full border border-white/10 px-3 py-1.5 text-[0.62rem] text-white/40">
+                DeepTech
+              </span>
+
+              <span className="rounded-full border border-white/10 px-3 py-1.5 text-[0.62rem] text-white/40">
+                Applied AI
+              </span>
+
+              <span className="rounded-full border border-white/10 px-3 py-1.5 text-[0.62rem] text-white/40">
+                Operational Intelligence
+              </span>
+            </div>
+
+            <div className="mt-6">
               <GooglePlayLink label={t.download} />
             </div>
           </div>
 
-          {/* NAVIGATION */}
+          {/* =====================================================
+              NAVIGATION
+          ===================================================== */}
           <nav
             className="grid content-start gap-y-3 text-sm text-white/48"
             aria-label={t.navigationLabel}
           >
+            <p className="mb-1 text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-white/30">
+              {t.navigationTitle}
+            </p>
+
             <Link
               href="/technology"
               className="transition hover:text-white"
@@ -91,13 +148,15 @@ export default function SiteFooter() {
             </Link>
           </nav>
 
-          {/* SOCIAL */}
+          {/* =====================================================
+              SOCIAL
+          ===================================================== */}
           <div className="text-sm text-white/48">
-            <p className="font-medium text-white/75">
+            <p className="mb-4 text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-white/30">
               {t.social}
             </p>
 
-            <div className="mt-3 grid gap-3">
+            <div className="grid gap-3">
               {socials.map(([label, href]) => (
                 <a
                   key={label}
@@ -112,17 +171,35 @@ export default function SiteFooter() {
             </div>
           </div>
 
-          {/* CONTACT + ELEVENLABS */}
+          {/* =====================================================
+              CONTACT + ELEVENLABS
+          ===================================================== */}
           <div className="text-sm text-white/48 xl:text-right">
-            <a
-              href="mailto:sergio@solyontechnologies.com"
-              className="transition hover:text-white"
-            >
-              sergio@solyontechnologies.com
-            </a>
+            <p className="text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-white/30">
+              {t.contactTitle}
+            </p>
 
-            <div className="mt-6 xl:flex xl:flex-col xl:items-end">
-              <p className="text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-white/32">
+            <div className="mt-4 grid gap-2 xl:justify-items-end">
+              <a
+                href={`mailto:${EMAIL}`}
+                className="transition hover:text-white"
+              >
+                {EMAIL}
+              </a>
+
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-white"
+              >
+                WhatsApp · +57 314 790 3517
+              </a>
+            </div>
+
+            {/* ELEVENLABS */}
+            <div className="mt-7 xl:flex xl:flex-col xl:items-end">
+              <p className="text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-white/30">
                 {t.aiProgram}
               </p>
 
@@ -137,36 +214,57 @@ export default function SiteFooter() {
                   src={ELEVENLABS_GRANTS_LOGO}
                   alt="ElevenLabs Grants"
                   loading="lazy"
-                  className="h-auto w-[155px] md:w-[170px]"
+                  className="h-auto w-[150px] md:w-[165px]"
                 />
               </a>
 
-              <p className="mt-3 max-w-[260px] text-xs leading-5 text-white/34">
+              <p className="mt-3 max-w-[270px] text-xs leading-5 text-white/32">
                 {t.grantDescriptor}
               </p>
             </div>
           </div>
         </div>
 
-        {/* LEGAL */}
-        <div className="mt-9 flex flex-col gap-2 border-t border-white/10 pt-5 text-xs text-white/30 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {new Date().getFullYear()} SOLYON Technologies S.A.S.
-          </p>
+        {/* =====================================================
+            LEGAL
+        ===================================================== */}
+        <div className="mt-9 flex flex-col gap-3 border-t border-white/10 pt-5 text-xs text-white/28 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-1 sm:flex-row sm:gap-3">
+            <p>
+              © {new Date().getFullYear()} SOLYON Technologies S.A.S.
+            </p>
 
-          <p>{t.rights}</p>
+            <p className="hidden sm:block">
+              ·
+            </p>
+
+            <p>
+              Medellín, Colombia
+            </p>
+          </div>
+
+          <p>
+            {t.rights}
+          </p>
         </div>
       </div>
     </footer>
   );
 }
 
+/* =========================================================
+   ESPAÑOL
+========================================================= */
+
 const es = {
   descriptor:
-    "Laboratorio DeepTech y de inteligencia artificial aplicada",
+    "Laboratorio DeepTech desde Medellín que construye infraestructura tecnológica con IA aplicada, datos, software y automatización.",
 
   navigationLabel:
     "Navegación del pie de página",
+
+  navigationTitle:
+    "Explorar",
 
   technology:
     "Tecnología",
@@ -181,6 +279,9 @@ const es = {
     "Nosotros",
 
   contact:
+    "Contacto",
+
+  contactTitle:
     "Contacto",
 
   social:
@@ -199,12 +300,19 @@ const es = {
     "Todos los derechos reservados.",
 };
 
+/* =========================================================
+   ENGLISH
+========================================================= */
+
 const en = {
   descriptor:
-    "DeepTech and applied artificial intelligence laboratory",
+    "DeepTech laboratory from Medellín building technology infrastructure with applied AI, data, software and automation.",
 
   navigationLabel:
     "Footer navigation",
+
+  navigationTitle:
+    "Explore",
 
   technology:
     "Technology",
@@ -219,6 +327,9 @@ const en = {
     "About",
 
   contact:
+    "Contact",
+
+  contactTitle:
     "Contact",
 
   social:
