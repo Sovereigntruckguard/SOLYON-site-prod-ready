@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import DynamicHero from "@/components/DynamicHero";
 import GooglePlayLink from "@/components/GooglePlayLink";
 import SiteFooter from "@/components/SiteFooter";
 import { useLanguage } from "@/lib/language";
 
-const ELEVENLABS_GRANTS_URL = "https://elevenlabs.io/startup-grants";
+const ELEVENLABS_GRANTS_URL =
+  "https://elevenlabs.io/startup-grants";
 
 const ELEVENLABS_GRANTS_LOGO =
   "https://eleven-public-cdn.elevenlabs.io/payloadcms/cy7rxce8uki-IIElevenLabsGrants%201.webp";
@@ -29,82 +31,7 @@ export default function HomePage() {
       {/* =========================================================
           HERO
       ========================================================= */}
-      <section className="relative overflow-hidden border-b border-white/10 py-12 md:py-14">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_30%,rgba(230,188,104,0.08),transparent_28rem),radial-gradient(circle_at_30%_80%,rgba(59,130,246,0.05),transparent_26rem)]" />
-
-        <div className="section-shell relative grid gap-9 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <p className="eyebrow">
-              {t.heroEyebrow}
-            </p>
-
-            <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-[0.99] tracking-[-0.055em] sm:text-5xl lg:text-[3.55rem]">
-              {t.heroTitle}
-            </h1>
-
-            <p className="mt-5 max-w-xl text-base leading-7 text-white/62">
-              {t.heroBody}
-            </p>
-
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
-                href="/technology"
-                className="inline-flex justify-center rounded-full bg-[#E6BC68] px-6 py-3 text-sm font-semibold text-[#090b0e] transition hover:bg-[#efca7d]"
-              >
-                {t.heroTechnology}
-              </Link>
-
-              <Link
-                href="/ecosystem"
-                className="inline-flex justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/35"
-              >
-                {t.heroEcosystem}
-              </Link>
-            </div>
-
-            <div className="mt-7 grid max-w-xl gap-3 border-t border-white/10 pt-5 sm:grid-cols-3">
-              {t.heroSignals.map((item) => (
-                <div
-                  key={item}
-                  className="border-l border-[#E6BC68]/35 pl-3 text-xs leading-5 text-white/58"
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative overflow-hidden rounded-[1.6rem] border border-white/10 bg-[#0b0e12] p-2.5 shadow-[0_25px_70px_rgba(0,0,0,0.45)]">
-            <Image
-              src="/visual/home-lab-tech-main.png"
-              alt={t.heroAlt}
-              width={1536}
-              height={1024}
-              priority
-              sizes="(max-width: 1024px) 100vw, 55vw"
-              className="aspect-[16/10] w-full rounded-[1.15rem] object-cover"
-            />
-
-            <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/10 bg-[#07090c]/85 p-4 backdrop-blur-xl">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div>
-                  <p className="text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-[#E6BC68]">
-                    SOLYON OS
-                  </p>
-
-                  <p className="mt-1 text-sm font-semibold text-white/90">
-                    Operational Intelligence Infrastructure
-                  </p>
-                </div>
-
-                <span className="rounded-full border border-[#E6BC68]/25 bg-[#E6BC68]/[0.06] px-3 py-1 text-[0.56rem] font-semibold uppercase tracking-[0.14em] text-[#E6BC68]">
-                  {t.centralPlatform}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <DynamicHero />
 
       {/* =========================================================
           COMPANY
@@ -595,33 +522,6 @@ export default function HomePage() {
 ========================================================= */
 
 const es = {
-  heroEyebrow:
-    "DeepTech desde Medellín · IA aplicada · infraestructura tecnológica",
-
-  heroTitle:
-    "Convertimos conocimiento operativo en sistemas inteligentes.",
-
-  heroBody:
-    "SOLYON Technologies construye infraestructura de inteligencia operativa para transformar operaciones complejas en sistemas trazables, automatizables, medibles y escalables.",
-
-  heroTechnology:
-    "Explorar nuestra tecnología",
-
-  heroEcosystem:
-    "Entender SOLYON",
-
-  heroSignals: [
-    "Operational Intelligence",
-    "Datos · software · automatización",
-    "IA aplicada",
-  ],
-
-  heroAlt:
-    "Laboratorio tecnológico conceptual de SOLYON Technologies",
-
-  centralPlatform:
-    "PLATAFORMA CENTRAL",
-
   companyEyebrow:
     "Compañía · laboratorio tecnológico",
 
@@ -902,33 +802,6 @@ const es = {
 ========================================================= */
 
 const en = {
-  heroEyebrow:
-    "DeepTech from Medellín · Applied AI · technology infrastructure",
-
-  heroTitle:
-    "We turn operational knowledge into intelligent systems.",
-
-  heroBody:
-    "SOLYON Technologies builds operational intelligence infrastructure to transform complex operations into traceable, automatable, measurable and scalable systems.",
-
-  heroTechnology:
-    "Explore our technology",
-
-  heroEcosystem:
-    "Understand SOLYON",
-
-  heroSignals: [
-    "Operational Intelligence",
-    "Data · software · automation",
-    "Applied AI",
-  ],
-
-  heroAlt:
-    "Conceptual SOLYON Technologies technology laboratory",
-
-  centralPlatform:
-    "CORE PLATFORM",
-
   companyEyebrow:
     "Company · technology laboratory",
 
