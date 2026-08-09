@@ -10,7 +10,7 @@ export default function DynamicHero() {
   return (
     <section className="relative min-h-[82vh] overflow-hidden border-b border-white/10 bg-[#07090c]">
       {/* =========================================================
-          VIDEO BACKGROUND
+          VIDEO DE FONDO
       ========================================================= */}
       <div className="absolute inset-0">
         <video
@@ -30,36 +30,36 @@ export default function DynamicHero() {
         </video>
 
         {/* Oscurecimiento general */}
-        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute inset-0 bg-black/20" />
 
-        {/* Zona de lectura izquierda */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07090c]/98 via-[#07090c]/78 to-[#07090c]/20" />
+        {/* Zona oscura para lectura */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07090c]/95 via-[#07090c]/70 to-[#07090c]/15" />
 
         {/* Profundidad inferior */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07090c]/75 via-transparent to-[#07090c]/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07090c]/70 via-transparent to-[#07090c]/15" />
 
-        {/* Glow sutil */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_42%,rgba(59,130,246,0.07),transparent_32rem)]" />
+        {/* Glow tecnológico sutil */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_45%,rgba(59,130,246,0.08),transparent_32rem)]" />
       </div>
 
       {/* =========================================================
-          HERO CONTENT
+          CONTENIDO PRINCIPAL
       ========================================================= */}
       <div className="section-shell relative z-10 flex min-h-[82vh] items-center py-16 md:py-20">
-        <div className="max-w-[760px]">
+        <div className="max-w-[720px]">
           <p className="text-[0.66rem] font-semibold uppercase tracking-[0.24em] text-[#E6BC68] sm:text-xs">
             {t.eyebrow}
           </p>
 
-          <h1 className="mt-5 max-w-[740px] text-4xl font-semibold leading-[0.98] tracking-[-0.052em] text-white sm:text-5xl md:text-6xl lg:text-[4.45rem]">
+          <h1 className="mt-5 max-w-[700px] text-4xl font-semibold leading-[0.98] tracking-[-0.052em] text-white sm:text-5xl md:text-6xl lg:text-[4.25rem]">
             {t.title}
           </h1>
 
-          <p className="mt-6 max-w-[590px] text-base leading-7 text-white/66 md:text-lg md:leading-8">
+          <p className="mt-6 max-w-[560px] text-base leading-7 text-white/68 md:text-lg md:leading-8">
             {t.body}
           </p>
 
-          {/* ÚNICO CTA */}
+          {/* CTA ÚNICO */}
           <div className="mt-8">
             <Link
               href="/technology"
@@ -88,9 +88,9 @@ export default function DynamicHero() {
       </div>
 
       {/* =========================================================
-          VIDEO IDENTITY
+          IDENTIDAD SOLYON OS
       ========================================================= */}
-      <div className="pointer-events-none absolute bottom-6 right-6 z-20 hidden md:block lg:bottom-8 lg:right-10">
+      <div className="pointer-events-none absolute bottom-7 right-7 z-20 hidden md:block lg:bottom-9 lg:right-10">
         <div className="rounded-2xl border border-white/10 bg-[#07090c]/55 px-4 py-3 backdrop-blur-xl">
           <p className="text-[0.56rem] font-semibold uppercase tracking-[0.2em] text-[#E6BC68]">
             SOLYON OS
@@ -103,7 +103,7 @@ export default function DynamicHero() {
       </div>
 
       {/* =========================================================
-          LOCATION MARKER
+          MOBILE LOCATION
       ========================================================= */}
       <div className="pointer-events-none absolute bottom-6 left-6 z-20 md:hidden">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#07090c]/60 px-3 py-1.5 text-[0.58rem] font-semibold uppercase tracking-[0.15em] text-white/65 backdrop-blur-xl">
