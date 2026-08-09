@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import DeeptechSystemVisual from "@/components/DeeptechSystemVisual";
-import GooglePlayLink from "@/components/GooglePlayLink";
 import { useLanguage } from "@/lib/language";
 
 export default function DynamicHero() {
@@ -10,100 +8,145 @@ export default function DynamicHero() {
   const t = lang === "es" ? es : en;
 
   return (
-    <section className="relative min-h-[94vh] w-full overflow-hidden border-b border-white/10">
-      <video
-        className="absolute inset-0 h-full w-full object-cover opacity-25"
-        src="/hero/hero-solyon.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        aria-hidden="true"
-      />
-      <div className="absolute inset-0 bg-[#07090c]/78" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_35%,rgba(230,188,104,0.14),transparent_35rem)]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#07090c] via-[#07090c]/92 to-[#07090c]/62" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#07090c] via-transparent to-[#07090c]/75" />
+    <section className="relative min-h-[82vh] overflow-hidden border-b border-white/10 bg-[#07090c]">
+      {/* =========================================================
+          VIDEO BACKGROUND
+      ========================================================= */}
+      <div className="absolute inset-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/visual/home-lab-tech-main.png"
+          aria-hidden="true"
+          className="h-full w-full object-cover object-center"
+        >
+          <source
+            src="/hero/solyon-lab-hero.mp4"
+            type="video/mp4"
+          />
+        </video>
 
-      <div className="relative z-10 mx-auto grid min-h-[94vh] max-w-7xl items-center gap-14 px-6 py-24 md:px-10 lg:grid-cols-[0.93fr_1.07fr]">
-        <div className="max-w-4xl">
-          <p className="mb-7 text-xs font-semibold uppercase tracking-[0.28em] text-[#E6BC68]">
+        {/* Oscurecimiento general */}
+        <div className="absolute inset-0 bg-black/25" />
+
+        {/* Zona de lectura izquierda */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07090c]/98 via-[#07090c]/78 to-[#07090c]/20" />
+
+        {/* Profundidad inferior */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07090c]/75 via-transparent to-[#07090c]/20" />
+
+        {/* Glow sutil */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_42%,rgba(59,130,246,0.07),transparent_32rem)]" />
+      </div>
+
+      {/* =========================================================
+          HERO CONTENT
+      ========================================================= */}
+      <div className="section-shell relative z-10 flex min-h-[82vh] items-center py-16 md:py-20">
+        <div className="max-w-[760px]">
+          <p className="text-[0.66rem] font-semibold uppercase tracking-[0.24em] text-[#E6BC68] sm:text-xs">
             {t.eyebrow}
           </p>
 
-          <h1 className="max-w-4xl text-4xl font-semibold leading-[1.02] tracking-[-0.05em] text-white sm:text-5xl md:text-7xl">
+          <h1 className="mt-5 max-w-[740px] text-4xl font-semibold leading-[0.98] tracking-[-0.052em] text-white sm:text-5xl md:text-6xl lg:text-[4.45rem]">
             {t.title}
           </h1>
 
-          <p className="mt-7 max-w-3xl text-lg leading-relaxed text-white/72 md:text-xl">
+          <p className="mt-6 max-w-[590px] text-base leading-7 text-white/66 md:text-lg md:leading-8">
             {t.body}
           </p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+          {/* ÚNICO CTA */}
+          <div className="mt-8">
             <Link
               href="/technology"
-              className="inline-flex items-center justify-center rounded-full bg-[#E6BC68] px-7 py-3.5 text-sm font-semibold text-[#090b0e] transition hover:bg-[#F0CA7E]"
+              className="inline-flex items-center gap-3 rounded-full bg-[#E6BC68] px-6 py-3.5 text-sm font-semibold text-[#090b0e] transition duration-300 hover:-translate-y-0.5 hover:bg-[#F0CA7E]"
             >
               {t.primary}
-            </Link>
-            <Link
-              href="/ecosystem"
-              className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/5"
-            >
-              {t.secondary}
-            </Link>
-            <GooglePlayLink label={t.download} />
-          </div>
 
-          <p className="mt-4 max-w-2xl text-xs leading-5 text-white/40">{t.downloadNote}</p>
-
-          <div className="mt-12 grid max-w-4xl gap-4 border-t border-white/15 pt-7 text-sm leading-6 text-white/58 sm:grid-cols-3">
-            {t.proof.map((item) => (
-              <div key={item} className="border-l border-[#E6BC68]/45 pl-4">
-                {item}
-              </div>
-            ))}
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 12h14M13 6l6 6-6 6"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </Link>
           </div>
         </div>
+      </div>
 
-        <div className="relative mx-auto w-full max-w-2xl lg:max-w-none">
-          <div className="absolute -inset-10 rounded-full bg-[#E6BC68]/10 blur-3xl" />
-          <div className="relative">
-            <DeeptechSystemVisual />
-          </div>
+      {/* =========================================================
+          VIDEO IDENTITY
+      ========================================================= */}
+      <div className="pointer-events-none absolute bottom-6 right-6 z-20 hidden md:block lg:bottom-8 lg:right-10">
+        <div className="rounded-2xl border border-white/10 bg-[#07090c]/55 px-4 py-3 backdrop-blur-xl">
+          <p className="text-[0.56rem] font-semibold uppercase tracking-[0.2em] text-[#E6BC68]">
+            SOLYON OS
+          </p>
+
+          <p className="mt-1 text-xs font-medium text-white/70">
+            Operational Intelligence Infrastructure
+          </p>
         </div>
+      </div>
+
+      {/* =========================================================
+          LOCATION MARKER
+      ========================================================= */}
+      <div className="pointer-events-none absolute bottom-6 left-6 z-20 md:hidden">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#07090c]/60 px-3 py-1.5 text-[0.58rem] font-semibold uppercase tracking-[0.15em] text-white/65 backdrop-blur-xl">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#E6BC68]" />
+          Medellín · Colombia
+        </span>
       </div>
     </section>
   );
 }
 
+/* =============================================================
+   ESPAÑOL
+============================================================= */
+
 const es = {
-  eyebrow: "DeepTech desde Medellín · IA aplicada · Infraestructura tecnológica",
-  title: "Convertimos conocimiento operativo en sistemas inteligentes.",
-  body: "SOLYON Technologies es la compañía madre y laboratorio DeepTech del ecosistema. Desde Medellín transformamos años de experiencia, documentación y validación real en tecnología para riesgo, seguros, trucking, movilidad e inteligencia operativa.",
-  primary: "Explorar nuestra tecnología",
-  secondary: "Entender el ecosistema",
-  download: "Descargar SOLYON Move gratis",
-  downloadNote: "SOLYON Move está disponible públicamente y sin costo en Google Play como una de las validaciones reales del laboratorio.",
-  proof: [
-    "Proyecto central de inteligencia de riesgo para trucking latino",
-    "Validación operativa en seguros comerciales en Estados Unidos",
-    "Validación institucional y de ciudad mediante SOLYON Move",
-  ],
+  eyebrow:
+    "LABORATORIO DEEPTECH · MEDELLÍN",
+
+  title:
+    "Construimos infraestructura tecnológica con IA aplicada.",
+
+  body:
+    "Software, datos y automatización para convertir operaciones reales en sistemas inteligentes.",
+
+  primary:
+    "Explorar tecnología",
 };
 
+/* =============================================================
+   ENGLISH
+============================================================= */
+
 const en = {
-  eyebrow: "DeepTech from Medellín · Applied AI · Technology infrastructure",
-  title: "We turn operating knowledge into intelligent systems.",
-  body: "SOLYON Technologies is the parent company and DeepTech laboratory of the ecosystem. From Medellín, we transform years of experience, documentation and real-world validation into technology for risk, insurance, trucking, mobility and operational intelligence.",
-  primary: "Explore our technology",
-  secondary: "Understand the ecosystem",
-  download: "Download SOLYON Move free",
-  downloadNote: "SOLYON Move is publicly available at no cost on Google Play as one of the laboratory's real-world validations.",
-  proof: [
-    "Central risk-intelligence project for Latin trucking",
-    "Operating validation in United States commercial insurance",
-    "Institutional and city validation through SOLYON Move",
-  ],
+  eyebrow:
+    "DEEPTECH LABORATORY · MEDELLÍN",
+
+  title:
+    "We build technology infrastructure with applied AI.",
+
+  body:
+    "Software, data and automation that turn real-world operations into intelligent systems.",
+
+  primary:
+    "Explore technology",
 };
