@@ -6,6 +6,11 @@ import GooglePlayLink from "@/components/GooglePlayLink";
 import SiteFooter from "@/components/SiteFooter";
 import { useLanguage } from "@/lib/language";
 
+const ELEVENLABS_GRANTS_URL = "https://elevenlabs.io/startup-grants";
+
+const ELEVENLABS_GRANTS_LOGO =
+  "https://eleven-public-cdn.elevenlabs.io/payloadcms/cy7rxce8uki-IIElevenLabsGrants%201.webp";
+
 const sectionTitleClass =
   "mt-3 max-w-3xl text-3xl font-semibold leading-[1.03] tracking-[-0.045em] sm:text-4xl lg:text-[2.8rem]";
 
@@ -29,7 +34,9 @@ export default function HomePage() {
 
         <div className="section-shell relative grid gap-9 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <p className="eyebrow">{t.heroEyebrow}</p>
+            <p className="eyebrow">
+              {t.heroEyebrow}
+            </p>
 
             <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-[0.99] tracking-[-0.055em] sm:text-5xl lg:text-[3.55rem]">
               {t.heroTitle}
@@ -105,9 +112,13 @@ export default function HomePage() {
       <section className="section-shell py-11 md:py-14">
         <div className="grid gap-8 lg:grid-cols-[0.76fr_1.24fr] lg:items-end">
           <div>
-            <p className="eyebrow">{t.companyEyebrow}</p>
+            <p className="eyebrow">
+              {t.companyEyebrow}
+            </p>
 
-            <h2 className={sectionTitleClass}>{t.companyTitle}</h2>
+            <h2 className={sectionTitleClass}>
+              {t.companyTitle}
+            </h2>
           </div>
 
           <div>
@@ -117,7 +128,10 @@ export default function HomePage() {
 
             <div className="mt-5 flex flex-wrap gap-2">
               {t.companyTags.map((item) => (
-                <span key={item} className={pillClass}>
+                <span
+                  key={item}
+                  className={pillClass}
+                >
                   {item}
                 </span>
               ))}
@@ -133,11 +147,17 @@ export default function HomePage() {
         <div className="section-shell">
           <div className="grid gap-9 lg:grid-cols-[0.76fr_1.24fr] lg:items-start">
             <div>
-              <p className="eyebrow">{t.osEyebrow}</p>
+              <p className="eyebrow">
+                {t.osEyebrow}
+              </p>
 
-              <h2 className={sectionTitleClass}>{t.osTitle}</h2>
+              <h2 className={sectionTitleClass}>
+                {t.osTitle}
+              </h2>
 
-              <p className={sectionCopyClass}>{t.osBody}</p>
+              <p className={sectionCopyClass}>
+                {t.osBody}
+              </p>
 
               <Link
                 href="/technology"
@@ -180,13 +200,61 @@ export default function HomePage() {
               </div>
 
               <div className="mt-4 rounded-xl border border-violet-400/20 bg-violet-400/[0.035] px-4 py-3 text-xs leading-5 text-white/50">
-                <strong className="text-white/82">{t.osLoopLabel}</strong>{" "}
+                <strong className="text-white/82">
+                  {t.osLoopLabel}
+                </strong>{" "}
                 {t.osLoop}
               </div>
 
               <p className="mt-4 text-[0.67rem] leading-5 text-white/32">
                 {t.osDisclaimer}
               </p>
+            </div>
+          </div>
+
+          {/* =====================================================
+              ELEVENLABS GRANT
+          ===================================================== */}
+          <div className="mt-6 grid gap-5 rounded-[1.35rem] border border-white/10 bg-[#090b0f] p-5 md:grid-cols-[190px_1fr] md:items-center md:p-6">
+            <div>
+              <a
+                href={ELEVENLABS_GRANTS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ElevenLabs Grants"
+                className="inline-flex opacity-80 transition hover:opacity-100"
+              >
+                <img
+                  src={ELEVENLABS_GRANTS_LOGO}
+                  alt="ElevenLabs Grants"
+                  className="h-auto w-[165px] md:w-[180px]"
+                />
+              </a>
+            </div>
+
+            <div>
+              <p className="text-[0.6rem] font-semibold uppercase tracking-[0.19em] text-[#E6BC68]">
+                {t.elevenEyebrow}
+              </p>
+
+              <h3 className="mt-2 text-lg font-semibold text-white/90 md:text-xl">
+                {t.elevenTitle}
+              </h3>
+
+              <p className="mt-2 max-w-3xl text-sm leading-6 text-white/48">
+                {t.elevenBody}
+              </p>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {t.elevenTags.map((item) => (
+                  <span
+                    key={item}
+                    className={pillClass}
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -198,16 +266,30 @@ export default function HomePage() {
       <section className="section-shell py-11 md:py-14">
         <div className="grid gap-9 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <p className="eyebrow">{t.wedgeEyebrow}</p>
+            <p className="eyebrow">
+              {t.wedgeEyebrow}
+            </p>
 
-            <h2 className={sectionTitleClass}>{t.wedgeTitle}</h2>
+            <h2 className={sectionTitleClass}>
+              {t.wedgeTitle}
+            </h2>
 
-            <p className={sectionCopyClass}>{t.wedgeBody}</p>
+            <p className={sectionCopyClass}>
+              {t.wedgeBody}
+            </p>
 
             <div className="mt-5 flex flex-wrap gap-2">
-              <span className={pillClass}>Insurance Operations</span>
-              <span className={pillClass}>Commercial Insurance</span>
-              <span className={pillClass}>Operational Intelligence</span>
+              <span className={pillClass}>
+                Insurance Operations
+              </span>
+
+              <span className={pillClass}>
+                Commercial Insurance
+              </span>
+
+              <span className={pillClass}>
+                Operational Intelligence
+              </span>
             </div>
           </div>
 
@@ -216,7 +298,9 @@ export default function HomePage() {
               {t.wedgeRuleLabel}
             </p>
 
-            <p className="mt-2 text-xl font-semibold">{t.wedgeRule}</p>
+            <p className="mt-2 text-xl font-semibold">
+              {t.wedgeRule}
+            </p>
 
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {t.wedgeGates.map((item, index) => (
@@ -228,7 +312,9 @@ export default function HomePage() {
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
-                  <h3 className="mt-2 text-sm font-semibold">{item.title}</h3>
+                  <h3 className="mt-2 text-sm font-semibold">
+                    {item.title}
+                  </h3>
 
                   <p className="mt-1.5 text-xs leading-5 text-white/43">
                     {item.body}
@@ -265,11 +351,17 @@ export default function HomePage() {
           </div>
 
           <div>
-            <p className="eyebrow">{t.methodEyebrow}</p>
+            <p className="eyebrow">
+              {t.methodEyebrow}
+            </p>
 
-            <h2 className={sectionTitleClass}>{t.methodTitle}</h2>
+            <h2 className={sectionTitleClass}>
+              {t.methodTitle}
+            </h2>
 
-            <p className={sectionCopyClass}>{t.methodBody}</p>
+            <p className={sectionCopyClass}>
+              {t.methodBody}
+            </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {t.methodSteps.map((item, index) => (
@@ -281,7 +373,9 @@ export default function HomePage() {
                     {String(index + 1).padStart(2, "0")}
                   </p>
 
-                  <h3 className="mt-2 text-sm font-semibold">{item.title}</h3>
+                  <h3 className="mt-2 text-sm font-semibold">
+                    {item.title}
+                  </h3>
 
                   <p className="mt-1.5 text-xs leading-5 text-white/44">
                     {item.body}
@@ -299,15 +393,24 @@ export default function HomePage() {
       <section className="section-shell py-11 md:py-14">
         <div className="grid gap-9 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
           <div>
-            <p className="eyebrow">{t.moveEyebrow}</p>
+            <p className="eyebrow">
+              {t.moveEyebrow}
+            </p>
 
-            <h2 className={sectionTitleClass}>{t.moveTitle}</h2>
+            <h2 className={sectionTitleClass}>
+              {t.moveTitle}
+            </h2>
 
-            <p className={sectionCopyClass}>{t.moveBody}</p>
+            <p className={sectionCopyClass}>
+              {t.moveBody}
+            </p>
 
             <div className="mt-5 flex flex-wrap gap-2">
               {t.moveTags.map((item) => (
-                <span key={item} className={pillClass}>
+                <span
+                  key={item}
+                  className={pillClass}
+                >
                   {item}
                 </span>
               ))}
@@ -367,11 +470,17 @@ export default function HomePage() {
           </div>
 
           <div>
-            <p className="eyebrow">{t.cityEyebrow}</p>
+            <p className="eyebrow">
+              {t.cityEyebrow}
+            </p>
 
-            <h2 className={sectionTitleClass}>{t.cityTitle}</h2>
+            <h2 className={sectionTitleClass}>
+              {t.cityTitle}
+            </h2>
 
-            <p className={sectionCopyClass}>{t.cityBody}</p>
+            <p className={sectionCopyClass}>
+              {t.cityBody}
+            </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {t.cityPoints.map((item) => (
@@ -399,9 +508,13 @@ export default function HomePage() {
       <section className="section-shell py-11 md:py-14">
         <div className="grid gap-8 lg:grid-cols-[0.74fr_1.26fr] lg:items-end">
           <div>
-            <p className="eyebrow">{t.moatEyebrow}</p>
+            <p className="eyebrow">
+              {t.moatEyebrow}
+            </p>
 
-            <h2 className={sectionTitleClass}>{t.moatTitle}</h2>
+            <h2 className={sectionTitleClass}>
+              {t.moatTitle}
+            </h2>
           </div>
 
           <p className="max-w-2xl text-base leading-7 text-white/55">
@@ -419,7 +532,9 @@ export default function HomePage() {
                 {String(index + 1).padStart(2, "0")}
               </p>
 
-              <h3 className="mt-2 text-sm font-semibold">{item.title}</h3>
+              <h3 className="mt-2 text-sm font-semibold">
+                {item.title}
+              </h3>
 
               <p className="mt-1.5 text-xs leading-5 text-white/43">
                 {item.body}
@@ -437,7 +552,9 @@ export default function HomePage() {
           <div className="rounded-[1.55rem] border border-[#E6BC68]/25 bg-gradient-to-br from-[#17140d] via-[#0d0e10] to-[#090b0e] p-6 md:p-8">
             <div className="grid gap-7 lg:grid-cols-[1fr_auto] lg:items-end">
               <div>
-                <p className="eyebrow">{t.ctaEyebrow}</p>
+                <p className="eyebrow">
+                  {t.ctaEyebrow}
+                </p>
 
                 <h2 className="mt-3 max-w-3xl text-3xl font-semibold leading-[1.03] tracking-[-0.045em] sm:text-4xl">
                   {t.ctaTitle}
@@ -529,7 +646,7 @@ const es = {
     "SOLYON OS — Operational Intelligence Infrastructure.",
 
   osBody:
-    "La plataforma estructura conocimiento, datos, workflows, permisos, controles, automatización y orquestación de IA sobre una arquitectura reutilizable.",
+    "La plataforma estructura conocimiento, datos, workflows, permisos, controles, automatización y agentes de IA sobre una arquitectura reutilizable.",
 
   osButton:
     "Explorar SOLYON OS",
@@ -538,22 +655,26 @@ const es = {
     {
       label: "KNOWLEDGE",
       title: "Operational Knowledge",
-      body: "Evidencia, reglas, decisiones, contexto y conocimiento estructurado.",
+      body:
+        "Evidencia, reglas, decisiones, contexto y conocimiento estructurado.",
     },
     {
       label: "DATA",
       title: "Data Infrastructure",
-      body: "Datos, trazabilidad, servicios e interoperabilidad.",
+      body:
+        "Datos, trazabilidad, servicios e interoperabilidad.",
     },
     {
       label: "OPERATIONS",
       title: "Operational Systems",
-      body: "Software, interfaces, controles, permisos y herramientas operativas.",
+      body:
+        "Software, interfaces, controles, permisos y herramientas operativas.",
     },
     {
-      label: "AI + AUTO",
-      title: "AI & Automation",
-      body: "Workflows, automatización y orquestación de inteligencia artificial.",
+      label: "AGENTS",
+      title: "Agents & Automation",
+      body:
+        "Workflows, automatización, agentes conversacionales y orquestación de IA.",
     },
   ],
 
@@ -565,6 +686,22 @@ const es = {
 
   osDisclaimer:
     "SOLYON OS define la arquitectura tecnológica central y la dirección de convergencia. No implica que todos los productos actuales ya operen sobre un único core técnico; los componentes compartidos se demostrarán progresivamente cuando exista justificación técnica y económica.",
+
+  elevenEyebrow:
+    "Infraestructura de IA · validación externa",
+
+  elevenTitle:
+    "SOLYON Technologies fue seleccionada para recibir un ElevenLabs Grant.",
+
+  elevenBody:
+    "Los créditos y recursos del programa apoyarán el desarrollo de capacidades conversacionales y agentes dentro de SOLYON OS, comenzando por SOLYON Academy y SOLYON Move Fase 2.",
+
+  elevenTags: [
+    "Conversational AI",
+    "AI Agents",
+    "SOLYON Academy",
+    "SOLYON Move · Fase 2",
+  ],
 
   wedgeEyebrow:
     "Wedge comercial prioritario",
@@ -584,19 +721,23 @@ const es = {
   wedgeGates: [
     {
       title: "Problema + comprador",
-      body: "Confirmar problemas prioritarios y buyer económico mediante discovery.",
+      body:
+        "Confirmar problemas prioritarios y buyer económico mediante discovery.",
     },
     {
       title: "Paid validation",
-      body: "Convertir discovery en design partners o contratos tecnológicos externos.",
+      body:
+        "Convertir discovery en design partners o contratos tecnológicos externos.",
     },
     {
       title: "Resultado medible",
-      body: "Demostrar mejoras operacionales con evidencia antes/después.",
+      body:
+        "Demostrar mejoras operacionales con evidencia antes/después.",
     },
     {
       title: "Reutilización + recurrencia",
-      body: "Probar capacidades reutilizables y convertir valor en revenue recurrente.",
+      body:
+        "Probar capacidades reutilizables y convertir valor en revenue recurrente.",
     },
   ],
 
@@ -615,19 +756,23 @@ const es = {
   methodSteps: [
     {
       title: "Operación",
-      body: "Procesos, actores, restricciones y decisiones.",
+      body:
+        "Procesos, actores, restricciones y decisiones.",
     },
     {
       title: "Evidencia",
-      body: "Casos reales, documentación, patrones y excepciones.",
+      body:
+        "Casos reales, documentación, patrones y excepciones.",
     },
     {
       title: "Arquitectura",
-      body: "Datos, módulos, APIs, workflows y controles.",
+      body:
+        "Datos, módulos, APIs, workflows y controles.",
     },
     {
       title: "Validación",
-      body: "Producto confrontado con condiciones y compradores reales.",
+      body:
+        "Producto confrontado con condiciones y compradores reales.",
     },
   ],
 
@@ -684,19 +829,23 @@ const es = {
   cityPoints: [
     {
       title: "Laboratorio",
-      body: "Construcción tecnológica y documentación continua.",
+      body:
+        "Construcción tecnológica y documentación continua.",
     },
     {
       title: "Territorio",
-      body: "Validación frente a condiciones urbanas reales.",
+      body:
+        "Validación frente a condiciones urbanas reales.",
     },
     {
       title: "Instituciones",
-      body: "Interacción con actores del ecosistema de innovación.",
+      body:
+        "Interacción con actores del ecosistema de innovación.",
     },
     {
       title: "Aprendizaje",
-      body: "Evidencia convertida en capacidad tecnológica reproducible.",
+      body:
+        "Evidencia convertida en capacidad tecnológica reproducible.",
     },
   ],
 
@@ -712,19 +861,23 @@ const es = {
   moatItems: [
     {
       title: "Knowledge",
-      body: "Conocimiento operacional convertido en estructura.",
+      body:
+        "Conocimiento operacional convertido en estructura.",
     },
     {
       title: "Data",
-      body: "Información organizada, trazable y reutilizable.",
+      body:
+        "Información organizada, trazable y reutilizable.",
     },
     {
       title: "Systems",
-      body: "Componentes tecnológicos construidos alrededor de problemas reales.",
+      body:
+        "Componentes tecnológicos construidos alrededor de problemas reales.",
     },
     {
       title: "Learning",
-      body: "Validación documentada que mejora las siguientes iteraciones.",
+      body:
+        "Validación documentada que mejora las siguientes iteraciones.",
     },
   ],
 
@@ -735,7 +888,7 @@ const es = {
     "Construimos infraestructura para convertir conocimiento en capacidad operativa.",
 
   ctaBody:
-    "SOLYON OS conecta conocimiento, software, datos, automatización e inteligencia artificial para desarrollar sistemas operativos más trazables, medibles y escalables.",
+    "SOLYON OS conecta conocimiento, software, datos, automatización y agentes de inteligencia artificial para desarrollar sistemas operativos más trazables, medibles y escalables.",
 
   ctaContact:
     "Conversar con SOLYON",
@@ -800,7 +953,7 @@ const en = {
     "SOLYON OS — Operational Intelligence Infrastructure.",
 
   osBody:
-    "The platform structures knowledge, data, workflows, permissions, controls, automation and AI orchestration on top of a reusable architecture.",
+    "The platform structures knowledge, data, workflows, permissions, controls, automation and AI agents on top of a reusable architecture.",
 
   osButton:
     "Explore SOLYON OS",
@@ -809,22 +962,26 @@ const en = {
     {
       label: "KNOWLEDGE",
       title: "Operational Knowledge",
-      body: "Evidence, rules, decisions, context and structured knowledge.",
+      body:
+        "Evidence, rules, decisions, context and structured knowledge.",
     },
     {
       label: "DATA",
       title: "Data Infrastructure",
-      body: "Data, traceability, services and interoperability.",
+      body:
+        "Data, traceability, services and interoperability.",
     },
     {
       label: "OPERATIONS",
       title: "Operational Systems",
-      body: "Software, interfaces, controls, permissions and operating tools.",
+      body:
+        "Software, interfaces, controls, permissions and operating tools.",
     },
     {
-      label: "AI + AUTO",
-      title: "AI & Automation",
-      body: "Workflows, automation and artificial intelligence orchestration.",
+      label: "AGENTS",
+      title: "Agents & Automation",
+      body:
+        "Workflows, automation, conversational agents and AI orchestration.",
     },
   ],
 
@@ -836,6 +993,22 @@ const en = {
 
   osDisclaimer:
     "SOLYON OS defines the company's core technology architecture and convergence direction. It does not imply that every current product already runs on a single technical core; shared components will be demonstrated progressively where technical and economic justification exists.",
+
+  elevenEyebrow:
+    "AI infrastructure · external validation",
+
+  elevenTitle:
+    "SOLYON Technologies was selected to receive an ElevenLabs Grant.",
+
+  elevenBody:
+    "Program credits and resources will support the development of conversational capabilities and AI agents within SOLYON OS, beginning with SOLYON Academy and SOLYON Move Phase 2.",
+
+  elevenTags: [
+    "Conversational AI",
+    "AI Agents",
+    "SOLYON Academy",
+    "SOLYON Move · Phase 2",
+  ],
 
   wedgeEyebrow:
     "Priority commercial wedge",
@@ -855,19 +1028,23 @@ const en = {
   wedgeGates: [
     {
       title: "Problem + buyer",
-      body: "Confirm priority problems and economic buyers through disciplined discovery.",
+      body:
+        "Confirm priority problems and economic buyers through disciplined discovery.",
     },
     {
       title: "Paid validation",
-      body: "Turn discovery into paid design partnerships or external technology contracts.",
+      body:
+        "Turn discovery into paid design partnerships or external technology contracts.",
     },
     {
       title: "Measurable outcome",
-      body: "Demonstrate operational improvement with before-and-after evidence.",
+      body:
+        "Demonstrate operational improvement with before-and-after evidence.",
     },
     {
       title: "Reuse + recurrence",
-      body: "Prove reusable capabilities and convert value into recurring revenue.",
+      body:
+        "Prove reusable capabilities and convert value into recurring revenue.",
     },
   ],
 
@@ -886,19 +1063,23 @@ const en = {
   methodSteps: [
     {
       title: "Operations",
-      body: "Processes, actors, constraints and decisions.",
+      body:
+        "Processes, actors, constraints and decisions.",
     },
     {
       title: "Evidence",
-      body: "Real cases, documentation, patterns and exceptions.",
+      body:
+        "Real cases, documentation, patterns and exceptions.",
     },
     {
       title: "Architecture",
-      body: "Data, modules, APIs, workflows and controls.",
+      body:
+        "Data, modules, APIs, workflows and controls.",
     },
     {
       title: "Validation",
-      body: "Products tested against real conditions and buyers.",
+      body:
+        "Products tested against real conditions and buyers.",
     },
   ],
 
@@ -955,19 +1136,23 @@ const en = {
   cityPoints: [
     {
       title: "Laboratory",
-      body: "Technology building and continuous documentation.",
+      body:
+        "Technology building and continuous documentation.",
     },
     {
       title: "Territory",
-      body: "Validation against real urban conditions.",
+      body:
+        "Validation against real urban conditions.",
     },
     {
       title: "Institutions",
-      body: "Interaction with actors across the innovation ecosystem.",
+      body:
+        "Interaction with actors across the innovation ecosystem.",
     },
     {
       title: "Learning",
-      body: "Evidence converted into reproducible technology capability.",
+      body:
+        "Evidence converted into reproducible technology capability.",
     },
   ],
 
@@ -983,19 +1168,23 @@ const en = {
   moatItems: [
     {
       title: "Knowledge",
-      body: "Operational knowledge converted into structure.",
+      body:
+        "Operational knowledge converted into structure.",
     },
     {
       title: "Data",
-      body: "Organized, traceable and reusable information.",
+      body:
+        "Organized, traceable and reusable information.",
     },
     {
       title: "Systems",
-      body: "Technology components built around real problems.",
+      body:
+        "Technology components built around real problems.",
     },
     {
       title: "Learning",
-      body: "Documented validation improving subsequent iterations.",
+      body:
+        "Documented validation improving subsequent iterations.",
     },
   ],
 
@@ -1006,7 +1195,7 @@ const en = {
     "We build infrastructure that turns knowledge into operating capability.",
 
   ctaBody:
-    "SOLYON OS connects knowledge, software, data, automation and artificial intelligence to build more traceable, measurable and scalable operating systems.",
+    "SOLYON OS connects knowledge, software, data, automation and artificial intelligence agents to build more traceable, measurable and scalable operating systems.",
 
   ctaContact:
     "Talk with SOLYON",
