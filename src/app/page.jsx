@@ -2,199 +2,489 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import DynamicHero from "@/components/DynamicHero";
-import DeeptechSystemVisual from "@/components/DeeptechSystemVisual";
+import GooglePlayLink from "@/components/GooglePlayLink";
 import SiteFooter from "@/components/SiteFooter";
 import { useLanguage } from "@/lib/language";
 
-function AssetFrame({ src, alt, label, mockup = false, className = "" }) {
-  return (
-    <div className={`relative overflow-hidden rounded-3xl border border-white/10 bg-[#0b0e12] p-3 ${className}`}>
-      <Image
-        src={src}
-        alt={alt}
-        width={1200}
-        height={820}
-        sizes="(max-width: 1024px) 100vw, 50vw"
-        className="h-full min-h-[280px] w-full rounded-2xl object-cover"
-      />
-      <div className="absolute left-6 top-6 rounded-full border border-white/15 bg-[#07090c]/85 px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-white/65 backdrop-blur-lg">
-        {mockup ? `MOCKUP · ${label}` : label}
-      </div>
-    </div>
-  );
-}
+const sectionTitleClass =
+  "mt-3 max-w-3xl text-3xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-4xl md:text-5xl";
 
-export default function Page() {
+const sectionCopyClass =
+  "mt-4 max-w-2xl text-base leading-7 text-white/58 md:text-[1.05rem]";
+
+export default function HomePage() {
   const { lang } = useLanguage();
   const t = lang === "es" ? es : en;
 
   return (
-    <main className="bg-[#07090c] text-white">
-      <DynamicHero />
+    <main className="overflow-hidden bg-[#07090c] text-white">
+      {/* =========================================================
+          HERO
+      ========================================================= */}
+      <section className="relative border-b border-white/10 py-14 md:py-16">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(230,188,104,0.08),transparent_31rem),radial-gradient(circle_at_30%_70%,rgba(61,146,255,0.055),transparent_28rem)]" />
 
-      <section className="section-shell py-24 md:py-32">
-        <div className="grid gap-14 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+        <div className="section-shell relative grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
-            <p className="eyebrow">{t.companyEyebrow}</p>
-            <h2 className="section-title mt-5">{t.companyTitle}</h2>
-            <p className="section-copy mt-6">{t.companyBody}</p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              {t.companyTags.map((tag) => (
-                <span key={tag} className="rounded-full border border-white/10 bg-white/[0.025] px-4 py-2 text-xs text-white/55">
-                  {tag}
-                </span>
+            <p className="eyebrow">{t.heroEyebrow}</p>
+
+            <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.055em] sm:text-5xl md:text-6xl">
+              {t.heroTitle}
+            </h1>
+
+            <p className="mt-5 max-w-2xl text-base leading-7 text-white/62 md:text-lg">
+              {t.heroBody}
+            </p>
+
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                href="/technology"
+                className="inline-flex justify-center rounded-full bg-[#E6BC68] px-6 py-3 text-sm font-semibold text-[#090b0e] transition hover:bg-[#efca7d]"
+              >
+                {t.heroTechnology}
+              </Link>
+
+              <Link
+                href="/ecosystem"
+                className="inline-flex justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/35"
+              >
+                {t.heroEcosystem}
+              </Link>
+
+              <GooglePlayLink label={t.downloadMove} />
+            </div>
+
+            <div className="mt-8 grid max-w-2xl gap-3 border-t border-white/10 pt-5 sm:grid-cols-3">
+              {t.heroSignals.map((item) => (
+                <div
+                  key={item}
+                  className="border-l border-[#E6BC68]/35 pl-4 text-sm leading-5 text-white/65"
+                >
+                  {item}
+                </div>
               ))}
             </div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <AssetFrame src="/visual/about-lab.png" alt={t.labAlt} label={t.realAsset} />
-            <AssetFrame src="/visual/about-origin.png" alt={t.originAlt} label={t.realAsset} className="sm:mt-12" />
+
+          {/* HERO SYSTEM PANEL */}
+          <div className="rounded-[1.7rem] border border-white/10 bg-[#0b0e12]/95 p-4 shadow-[0_25px_80px_rgba(0,0,0,0.45)] md:p-5">
+            <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-4">
+              <div>
+                <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[#E6BC68]">
+                  SOLYON SYSTEM LAB
+                </p>
+
+                <p className="mt-1 text-xs text-white/38">
+                  {t.systemPanelSubtitle}
+                </p>
+              </div>
+
+              <span className="rounded-full border border-[#E6BC68]/25 bg-[#E6BC68]/[0.06] px-3 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-[#E6BC68]">
+                {t.mockup}
+              </span>
+            </div>
+
+            <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.025] p-4">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-xs font-medium text-white/70">
+                    {t.centralProject}
+                  </p>
+
+                  <p className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.13em] text-white/35">
+                    Intelligence Latin Truck Risk OS
+                  </p>
+                </div>
+
+                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_18px_rgba(52,211,153,0.8)]" />
+              </div>
+
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                {t.systemCards.map((item, index) => (
+                  <article
+                    key={item.title}
+                    className="rounded-xl border border-white/10 bg-[#090c12] p-4"
+                  >
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-[0.62rem] font-semibold text-[#E6BC68]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+
+                      <span className="rounded-full border border-white/10 px-2 py-1 text-[0.52rem] font-semibold uppercase tracking-[0.1em] text-white/45">
+                        {item.status}
+                      </span>
+                    </div>
+
+                    <h3 className="mt-3 text-sm font-semibold text-white/90">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-2 text-xs leading-5 text-white/42">
+                      {item.body}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+              <article className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-white/35">
+                  {t.validationEnvironment}
+                </p>
+
+                <h3 className="mt-3 text-base font-semibold">
+                  SOLYON Move
+                </h3>
+
+                <p className="mt-2 text-xs leading-5 text-white/45">
+                  {t.movePanel}
+                </p>
+              </article>
+
+              <article className="rounded-xl border border-[#E6BC68]/20 bg-[#E6BC68]/[0.035] p-4">
+                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-[#E6BC68]">
+                  {t.originCapacity}
+                </p>
+
+                <h3 className="mt-3 text-xl font-semibold">Medellín</h3>
+
+                <p className="mt-2 text-xs leading-5 text-white/48">
+                  {t.medellinPanel}
+                </p>
+              </article>
+            </div>
+
+            <p className="mt-4 text-[0.62rem] leading-5 text-white/28">
+              {t.mockupDisclaimer}
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-white/[0.025] py-24 md:py-32">
+      {/* =========================================================
+          COMPANY / LAB
+      ========================================================= */}
+      <section className="section-shell py-12 md:py-16">
+        <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+          <div>
+            <p className="eyebrow">{t.companyEyebrow}</p>
+
+            <h2 className={sectionTitleClass}>{t.companyTitle}</h2>
+
+            <p className={sectionCopyClass}>{t.companyBody}</p>
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              {t.companyTags.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/10 bg-white/[0.025] px-3 py-1.5 text-xs text-white/55"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0e12] p-2.5">
+            <Image
+              src="/visual/home-lab-tech-main.png"
+              alt={t.labMainAlt}
+              width={1536}
+              height={1024}
+              sizes="(max-width: 1024px) 100vw, 55vw"
+              className="aspect-[16/10] w-full rounded-[1.25rem] object-cover"
+            />
+
+            <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-[#07090c]/85 px-3 py-1.5 text-[0.58rem] font-semibold uppercase tracking-[0.15em] text-white/70 backdrop-blur-lg">
+              {t.labVisualLabel}
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          METHOD
+      ========================================================= */}
+      <section className="border-y border-white/10 bg-white/[0.025] py-12 md:py-16">
         <div className="section-shell">
-          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
             <div>
               <p className="eyebrow">{t.methodEyebrow}</p>
-              <h2 className="section-title mt-5">{t.methodTitle}</h2>
+
+              <h2 className={sectionTitleClass}>{t.methodTitle}</h2>
+
+              <p className={sectionCopyClass}>{t.methodBody}</p>
+
+              <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                {t.methodSteps.map((item, index) => (
+                  <article
+                    key={item.title}
+                    className="rounded-xl border border-white/10 bg-[#0b0e12] p-4"
+                  >
+                    <p className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-[#E6BC68]">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+
+                    <h3 className="mt-2 text-sm font-semibold">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-1.5 text-xs leading-5 text-white/45">
+                      {item.body}
+                    </p>
+                  </article>
+                ))}
+              </div>
             </div>
-            <p className="section-copy">{t.methodBody}</p>
+
+            <div className="relative mx-auto w-full max-w-xl overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0e12] p-2.5">
+              <Image
+                src="/visual/home-ecosystem-lab-vertical.png"
+                alt={t.methodAlt}
+                width={1024}
+                height={1536}
+                sizes="(max-width: 1024px) 100vw, 44vw"
+                className="aspect-[4/5] w-full rounded-[1.25rem] object-cover"
+              />
+
+              <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-[#07090c]/85 px-3 py-1.5 text-[0.58rem] font-semibold uppercase tracking-[0.15em] text-white/70">
+                {t.labConstructionLabel}
+              </span>
+            </div>
           </div>
-          <div className="mt-14 grid gap-5 md:grid-cols-4">
-            {t.methodCards.map((card, index) => (
-              <article key={card.title} className="system-card">
-                <span className="text-xs font-semibold text-[#E6BC68]">0{index + 1}</span>
-                <h3 className="mt-6 text-xl font-semibold">{card.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-white/55">{card.body}</p>
+        </div>
+      </section>
+
+      {/* =========================================================
+          CENTRAL TECHNOLOGY
+      ========================================================= */}
+      <section className="section-shell py-12 md:py-16">
+        <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
+          <div>
+            <p className="eyebrow">{t.techEyebrow}</p>
+
+            <h2 className={sectionTitleClass}>{t.techTitle}</h2>
+
+            <p className={sectionCopyClass}>{t.techBody}</p>
+
+            <Link
+              href="/technology"
+              className="mt-6 inline-flex rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-[#E6BC68]/50 hover:text-[#E6BC68]"
+            >
+              {t.techButton}
+            </Link>
+          </div>
+
+          <div className="rounded-[1.7rem] border border-white/10 bg-[#0b0e12] p-5 md:p-6">
+            <div className="grid gap-3 md:grid-cols-2">
+              {t.techLayers.map((item, index) => (
+                <article
+                  key={item.title}
+                  className={`rounded-xl border p-4 ${
+                    index === 0
+                      ? "border-[#E6BC68]/25 bg-[#E6BC68]/[0.04]"
+                      : "border-white/10 bg-white/[0.02]"
+                  }`}
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-[#E6BC68]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span className="text-[0.55rem] uppercase tracking-[0.12em] text-white/30">
+                      {item.label}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-3 text-base font-semibold">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-2 text-xs leading-5 text-white/45">
+                    {item.body}
+                  </p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-4 rounded-xl border border-violet-400/20 bg-violet-400/[0.035] px-4 py-3 text-xs leading-6 text-white/52">
+              <strong className="text-white/85">{t.systemLoopLabel}</strong>{" "}
+              {t.systemLoop}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          SOLYON MOVE / VALIDATION
+      ========================================================= */}
+      <section className="border-y border-white/10 bg-white/[0.025] py-12 md:py-16">
+        <div className="section-shell grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+          <div>
+            <p className="eyebrow">{t.moveEyebrow}</p>
+
+            <h2 className={sectionTitleClass}>{t.moveTitle}</h2>
+
+            <p className={sectionCopyClass}>{t.moveBody}</p>
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              {t.moveTags.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/10 bg-[#0b0e12] px-3 py-1.5 text-xs text-white/55"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                href="/solyon-move"
+                className="inline-flex justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white"
+              >
+                {t.moveButton}
+              </Link>
+
+              <GooglePlayLink label={t.downloadMove} />
+            </div>
+          </div>
+
+          <div className="relative overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0e12] p-2.5">
+            <Image
+              src="/visual/home-validation-rutan-toyota.png"
+              alt={t.validationAlt}
+              width={1536}
+              height={1024}
+              sizes="(max-width: 1024px) 100vw, 55vw"
+              className="aspect-[16/10] w-full rounded-[1.25rem] object-cover"
+            />
+
+            <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-[#07090c]/85 px-3 py-1.5 text-[0.58rem] font-semibold uppercase tracking-[0.15em] text-white/70 backdrop-blur-lg">
+              {t.validationLabel}
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          MEDELLÍN
+      ========================================================= */}
+      <section className="section-shell py-12 md:py-16">
+        <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+          <div className="relative mx-auto w-full max-w-lg overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0e12] p-2.5">
+            <Image
+              src="/visual/home-ecosystem-city-vertical.png"
+              alt={t.cityAlt}
+              width={1024}
+              height={1536}
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="aspect-[4/5] w-full rounded-[1.25rem] object-cover"
+            />
+
+            <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-[#07090c]/85 px-3 py-1.5 text-[0.58rem] font-semibold uppercase tracking-[0.15em] text-white/70">
+              {t.cityVisualLabel}
+            </span>
+          </div>
+
+          <div>
+            <p className="eyebrow">{t.cityEyebrow}</p>
+
+            <h2 className={sectionTitleClass}>{t.cityTitle}</h2>
+
+            <p className={sectionCopyClass}>{t.cityBody}</p>
+
+            <div className="mt-7 grid gap-3 sm:grid-cols-2">
+              {t.cityPoints.map((item) => (
+                <article
+                  key={item.title}
+                  className="rounded-xl border border-white/10 bg-[#0b0e12] p-4"
+                >
+                  <h3 className="text-sm font-semibold text-white/85">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-1.5 text-xs leading-5 text-white/45">
+                    {item.body}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          KNOWLEDGE MOAT
+      ========================================================= */}
+      <section className="border-y border-white/10 bg-[#0b0e12] py-12 md:py-16">
+        <div className="section-shell">
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div>
+              <p className="eyebrow">{t.moatEyebrow}</p>
+
+              <h2 className={sectionTitleClass}>{t.moatTitle}</h2>
+            </div>
+
+            <p className="max-w-2xl text-base leading-7 text-white/55 md:text-lg">
+              {t.moatBody}
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {t.moatItems.map((item, index) => (
+              <article
+                key={item.title}
+                className="rounded-xl border border-white/10 bg-white/[0.02] p-4"
+              >
+                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-[#E6BC68]">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+
+                <h3 className="mt-3 text-base font-semibold">{item.title}</h3>
+
+                <p className="mt-2 text-xs leading-5 text-white/45">
+                  {item.body}
+                </p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section-shell py-24 md:py-32">
-        <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
-          <div>
-            <p className="eyebrow">{t.coreEyebrow}</p>
-            <h2 className="section-title mt-5">{t.coreTitle}</h2>
-            <p className="section-copy mt-6">{t.coreBody}</p>
-            <div className="mt-8 space-y-3">
-              {t.coreCapabilities.map((item) => (
-                <div key={item} className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.025] p-4 text-sm leading-6 text-white/62">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#E6BC68]" />
-                  {item}
-                </div>
-              ))}
-            </div>
-            <Link href="/technology" className="mt-9 inline-flex rounded-full bg-[#E6BC68] px-7 py-3 text-sm font-semibold text-[#090b0e] transition hover:bg-[#F0CA7E]">
-              {t.coreButton}
-            </Link>
-          </div>
-          <DeeptechSystemVisual compact />
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-white/[0.025] py-24 md:py-32">
-        <div className="section-shell">
-          <div className="max-w-4xl">
-            <p className="eyebrow">{t.validationEyebrow}</p>
-            <h2 className="section-title mt-5">{t.validationTitle}</h2>
-            <p className="section-copy mt-6">{t.validationBody}</p>
-          </div>
-
-          <div className="mt-14 grid gap-7 lg:grid-cols-2">
-            <article className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0e12]">
-              <div className="relative h-64 overflow-hidden border-b border-white/10">
-                <Image src="/visual/product-truckboss-quoting-mobile.png" alt={t.sovereignAlt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover opacity-85" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e12] via-transparent to-transparent" />
-                <span className="absolute left-6 top-6 rounded-full border border-[#E6BC68]/35 bg-[#07090c]/85 px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-[#E6BC68] backdrop-blur-lg">
-                  {t.productVisual}
-                </span>
-              </div>
-              <div className="p-8 md:p-10">
-                <p className="text-xs uppercase tracking-[0.2em] text-[#E6BC68]">{t.sovereignType}</p>
-                <h3 className="mt-4 text-3xl font-semibold">Sovereign Truckguard</h3>
-                <p className="mt-5 text-sm leading-7 text-white/58">{t.sovereignBody}</p>
-                <div className="mt-7 grid gap-3 sm:grid-cols-2">
-                  {t.sovereignProof.map((item) => <div key={item} className="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-xs leading-5 text-white/50">{item}</div>)}
-                </div>
-              </div>
-            </article>
-
-            <article className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0e12]">
-              <div className="relative h-64 overflow-hidden border-b border-white/10">
-                <Image src="/visual/solyon_move_institucional.png" alt={t.moveAlt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover opacity-90" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e12] via-transparent to-transparent" />
-                <span className="absolute left-6 top-6 rounded-full border border-[#E6BC68]/35 bg-[#07090c]/85 px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-[#E6BC68] backdrop-blur-lg">
-                  {t.existingAsset}
-                </span>
-              </div>
-              <div className="p-8 md:p-10">
-                <p className="text-xs uppercase tracking-[0.2em] text-[#E6BC68]">{t.moveType}</p>
-                <h3 className="mt-4 text-3xl font-semibold">SOLYON Move</h3>
-                <p className="mt-5 text-sm leading-7 text-white/58">{t.moveBody}</p>
-                <div className="mt-7 grid gap-3 sm:grid-cols-2">
-                  {t.moveProof.map((item) => <div key={item} className="rounded-xl border border-white/10 bg-white/[0.02] p-4 text-xs leading-5 text-white/50">{item}</div>)}
-                </div>
-                <Link href="/solyon-move" className="mt-8 inline-flex text-sm font-semibold text-[#E6BC68] transition hover:text-[#F0CA7E]">{t.moveButton} →</Link>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-shell py-24 md:py-32">
-        <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div>
-            <p className="eyebrow">{t.cityEyebrow}</p>
-            <h2 className="section-title mt-5">{t.cityTitle}</h2>
-            <p className="section-copy mt-6">{t.cityBody}</p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {t.cityEvidence.map((item) => (
-                <div key={item.title} className="rounded-xl border border-white/10 bg-white/[0.025] p-5">
-                  <p className="text-sm font-semibold text-white/85">{item.title}</p>
-                  <p className="mt-2 text-xs leading-5 text-white/45">{item.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <AssetFrame src="/visual/impact-institutional.png" alt={t.cityAlt} label={t.existingAsset} />
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-white/[0.025] py-24 md:py-32">
-        <div className="section-shell grid gap-14 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="eyebrow">{t.evidenceEyebrow}</p>
-            <h2 className="section-title mt-5">{t.evidenceTitle}</h2>
-            <p className="section-copy mt-6">{t.evidenceBody}</p>
-          </div>
-          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
-            {t.evidenceItems.map((item) => (
-              <div key={item.label} className="bg-[#0b0e12] p-7">
-                <p className="text-2xl font-semibold text-white md:text-3xl">{item.value}</p>
-                <p className="mt-3 text-xs leading-5 text-white/45">{item.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section-shell py-24 md:py-32">
-        <div className="overflow-hidden rounded-3xl border border-[#E6BC68]/25 bg-gradient-to-br from-[#17140d] to-[#0b0e12]">
-          <div className="grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div className="p-8 md:p-14">
+      {/* =========================================================
+          SCALE / CTA
+      ========================================================= */}
+      <section className="section-shell py-12 md:py-16">
+        <div className="rounded-[1.7rem] border border-[#E6BC68]/25 bg-gradient-to-br from-[#17140d] via-[#0d0e10] to-[#090b0e] p-7 md:p-9">
+          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div>
               <p className="eyebrow">{t.ctaEyebrow}</p>
-              <h2 className="section-title mt-5">{t.ctaTitle}</h2>
-              <p className="section-copy mt-6">{t.ctaBody}</p>
-              <Link href="/contact" className="mt-9 inline-flex rounded-full bg-[#E6BC68] px-7 py-3 text-sm font-semibold text-[#090b0e] transition hover:bg-[#F0CA7E]">{t.ctaButton}</Link>
+
+              <h2 className="mt-4 max-w-4xl text-3xl font-semibold leading-[1.03] tracking-[-0.045em] sm:text-4xl md:text-5xl">
+                {t.ctaTitle}
+              </h2>
+
+              <p className="mt-4 max-w-3xl text-base leading-7 text-white/55">
+                {t.ctaBody}
+              </p>
             </div>
-            <div className="relative min-h-[380px]">
-              <Image src="/visual/impact-systemic.png" alt={t.ctaAlt} fill sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#17140d] via-transparent to-transparent" />
+
+            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+              <Link
+                href="/contact"
+                className="inline-flex justify-center rounded-full bg-[#E6BC68] px-6 py-3 text-sm font-semibold text-[#090b0e]"
+              >
+                {t.ctaContact}
+              </Link>
+
+              <Link
+                href="/technology"
+                className="inline-flex justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white"
+              >
+                {t.ctaTechnology}
+              </Link>
             </div>
           </div>
         </div>
@@ -205,131 +495,482 @@ export default function Page() {
   );
 }
 
+/* =========================================================
+   SPANISH
+========================================================= */
+
 const es = {
-  companyEyebrow: "Compañía madre · Laboratorio DeepTech",
-  companyTitle: "SOLYON construye la capacidad que conecta todo el ecosistema.",
-  companyBody: "No somos una colección de aplicaciones aisladas. SOLYON Technologies convierte conocimiento operativo, evidencia documental y problemas complejos en sistemas tecnológicos. Desde Medellín diseñamos la arquitectura, desarrollamos producto y validamos capacidades en Colombia y Estados Unidos.",
-  companyTags: ["IA aplicada", "Inteligencia de riesgo", "CRM y automatización", "Movilidad y ciudad", "Insurance technology"],
-  labAlt: "Equipo y laboratorio de SOLYON Technologies en Medellín",
-  originAlt: "Historia operativa y documental que da origen a SOLYON Technologies",
-  realAsset: "ACTIVO EXISTENTE",
-  existingAsset: "ACTIVO EXISTENTE · VALIDAR REEMPLAZO",
-  productVisual: "VISUAL DE PRODUCTO · VALIDAR REEMPLAZO",
+  heroEyebrow:
+    "DeepTech desde Medellín · IA aplicada · infraestructura tecnológica",
+
+  heroTitle:
+    "Convertimos conocimiento operativo en sistemas inteligentes.",
+
+  heroBody:
+    "SOLYON Technologies diseña infraestructura tecnológica para convertir problemas complejos, datos y experiencia real en capacidad operativa.",
+
+  heroTechnology: "Explorar nuestra tecnología",
+  heroEcosystem: "Entender el ecosistema",
+  downloadMove: "Descargar SOLYON Move gratis",
+
+  heroSignals: [
+    "Inteligencia aplicada a riesgo y operaciones",
+    "Producto, datos, APIs y automatización",
+    "Validación tecnológica en territorio real",
+  ],
+
+  systemPanelSubtitle:
+    "Arquitectura conceptual de capacidades del laboratorio",
+
+  mockup: "MOCKUP",
+  centralProject: "Proyecto tecnológico central",
+
+  systemCards: [
+    {
+      status: "EN DISEÑO",
+      title: "Inteligencia de riesgo",
+      body: "Variables, señales y criterios para apoyar decisiones.",
+    },
+    {
+      status: "EN VALIDACIÓN",
+      title: "Sistemas operativos",
+      body: "CRM, datos, trazabilidad y flujos de operación.",
+    },
+    {
+      status: "EN DESARROLLO",
+      title: "Automatización y agentes",
+      body: "Procesos definidos y asistencia tecnológica especializada.",
+    },
+    {
+      status: "CAPACIDAD ACTIVA",
+      title: "Evidencia y aprendizaje",
+      body: "Documentación, controles y conocimiento estructurado.",
+    },
+  ],
+
+  validationEnvironment: "Validación tecnológica",
+  movePanel:
+    "Movilidad accesible, producto digital, CRM e inteligencia territorial.",
+
+  originCapacity: "Origen de capacidad",
+  medellinPanel:
+    "Laboratorio construido desde Medellín con producto, talento y validación institucional.",
+
+  mockupDisclaimer:
+    "Representación conceptual de capacidades y relaciones del laboratorio. No representa porcentajes de terminación ni una plataforma final desplegada.",
+
+  companyEyebrow: "Compañía madre · laboratorio DeepTech",
+
+  companyTitle:
+    "SOLYON construye la capacidad tecnológica que conecta el ecosistema.",
+
+  companyBody:
+    "Convertimos experiencia operativa, evidencia y problemas complejos en arquitectura, software, datos e inteligencia aplicada.",
+
+  companyTags: [
+    "IA aplicada",
+    "Inteligencia de riesgo",
+    "CRM y automatización",
+    "Movilidad y ciudad",
+    "Data infrastructure",
+  ],
+
+  labMainAlt:
+    "Laboratorio tecnológico de SOLYON Technologies desarrollando sistemas de inteligencia aplicada",
+
+  labVisualLabel: "SOLYON TECHNOLOGIES · SYSTEM LAB",
+
   methodEyebrow: "Nuestro método",
   methodTitle: "La tecnología comienza antes del código.",
-  methodBody: "Partimos de procesos conocidos desde dentro. Capturamos evidencia, modelamos decisiones y excepciones, construimos capacidades y las llevamos a entornos donde pueden validarse con restricciones reales.",
-  methodCards: [
-    { title: "Operación", body: "Experiencia directa en procesos de alta fricción, usuarios reales y decisiones críticas." },
-    { title: "Evidencia", body: "Documentación histórica, casos, datos y conocimiento tácito convertido en estructura." },
-    { title: "Arquitectura", body: "Reglas, flujos, controles, interfaces y modelos diseñados como sistema." },
-    { title: "Validación", body: "Prueba progresiva en operación comercial, producto e iniciativas institucionales." },
+
+  methodBody:
+    "Primero entendemos la operación. Después estructuramos evidencia, decisiones y arquitectura. El software llega como consecuencia.",
+
+  methodSteps: [
+    {
+      title: "Operación",
+      body: "Comprender procesos, actores y restricciones reales.",
+    },
+    {
+      title: "Evidencia",
+      body: "Documentar patrones, excepciones y decisiones.",
+    },
+    {
+      title: "Arquitectura",
+      body: "Convertir conocimiento en datos, módulos e interfaces.",
+    },
+    {
+      title: "Validación",
+      body: "Probar capacidades fuera del entorno controlado.",
+    },
   ],
-  coreEyebrow: "Proyecto tecnológico central",
-  coreTitle: "Intelligence Latin Truck Risk Operating System.",
-  coreBody: "La tesis central de SOLYON es construir una capa de inteligencia operativa y de riesgo para el camionero latino y el ecosistema de seguros de trucking en Estados Unidos. La arquitectura se desarrolla por capacidades, no se presenta todavía como una plataforma completamente terminada.",
-  coreCapabilities: [
-    "Inteligencia de riesgo y soporte a decisiones.",
-    "CRM operativo, contactabilidad y gestión de oportunidades.",
-    "Automatización de flujos, agentes y memoria estructurada.",
-    "Evidencia, trazabilidad, reporting y control de procesos.",
+
+  methodAlt:
+    "Construcción tecnológica y desarrollo de sistemas dentro del laboratorio SOLYON",
+
+  labConstructionLabel: "CONSTRUCCIÓN TECNOLÓGICA",
+
+  techEyebrow: "Proyecto tecnológico central",
+  techTitle: "Intelligence Latin Truck Risk Operating System.",
+
+  techBody:
+    "Una arquitectura orientada a estructurar conocimiento de riesgo, operación y decisión para el trucking latino en Estados Unidos.",
+
+  techButton: "Explorar arquitectura tecnológica",
+
+  techLayers: [
+    {
+      label: "RISK",
+      title: "Inteligencia de riesgo",
+      body: "Variables, criterios, señales y evidencia para enriquecer decisiones.",
+    },
+    {
+      label: "DATA",
+      title: "Capa de datos",
+      body: "Estructuración y trazabilidad del conocimiento operativo.",
+    },
+    {
+      label: "OPS",
+      title: "Sistemas operativos",
+      body: "CRM, workflows, automatización y seguimiento.",
+    },
+    {
+      label: "AI",
+      title: "IA aplicada",
+      body: "Asistencia, análisis y agentes especializados sobre procesos definidos.",
+    },
   ],
-  coreButton: "Ver arquitectura tecnológica",
-  validationEyebrow: "Entornos de validación",
-  validationTitle: "Dos industrias distintas demuestran una misma capacidad de laboratorio.",
-  validationBody: "Sovereign Truckguard y SOLYON Move no compiten por ser el centro. Cada uno somete las capacidades de SOLYON a problemas, usuarios, instituciones y restricciones diferentes.",
-  sovereignType: "Seguros · Trucking · Estados Unidos",
-  sovereignAlt: "Tecnología aplicada a la operación de seguros de trucking",
-  sovereignBody: "Sovereign Truckguard es la operación y canal comercial donde SOLYON aprende y valida procesos de seguros comerciales: contacto, cotización, cumplimiento, documentación, servicio, ventas y renovaciones. Actualmente no se presenta como insurer ni MGA.",
-  sovereignProof: ["Dominio operativo de trucking insurance", "Validación de CRM y flujos comerciales", "Datos y excepciones de operación real", "Ruta futura hacia infraestructura aseguradora"],
-  moveType: "Movilidad · Ciudad · Validación institucional",
-  moveAlt: "SOLYON Move como entorno de validación de tecnología de movilidad y ciudad",
-  moveBody: "SOLYON Move valida la capacidad de SOLYON para construir producto, experiencia de usuario, personalización, CRM institucional, gestión operativa e integración futura de datos urbanos. Su valor está tanto en la app como en la capa que permite administrar, observar y escalar programas de movilidad accesible.",
-  moveProof: ["App para usuarios y rutas accesibles", "CRM y capa de gestión institucional", "Piloto con Ruta N y Toyota Mobility Foundation", "Roadmap de integración urbana y SIATA"],
-  moveButton: "Conocer el caso SOLYON Move",
-  cityEyebrow: "DeepTech construido en Medellín",
-  cityTitle: "La ciudad no es solo nuestra ubicación. Es parte de nuestra ventaja.",
-  cityBody: "SOLYON combina talento local, experiencia internacional y aprendizaje institucional. La incubación y acompañamiento dentro del ecosistema de ciencia, tecnología e innovación de Medellín ayudaron a convertir una trayectoria operativa en una compañía con capacidad de producto, laboratorio e impacto.",
-  cityEvidence: [
-    { title: "Distrito CTI de Medellín", body: "Proceso de incubación y fortalecimiento dentro del ecosistema local de ciencia, tecnología e innovación." },
-    { title: "Créame y UPB", body: "Acompañamiento empresarial y tecnológico durante la etapa de estructuración." },
-    { title: "Ruta N", body: "Articulación institucional y entorno de ejecución para validar tecnología aplicada." },
-    { title: "Toyota Mobility Foundation", body: "Contexto internacional de innovación en movilidad y accesibilidad." },
+
+  systemLoopLabel: "Principio de diseño:",
+  systemLoop:
+    "operación → evidencia → datos → modelado → decisión → aprendizaje.",
+
+  moveEyebrow: "Capacidad demostrada · SOLYON Move",
+
+  moveTitle: "El laboratorio también se valida en la ciudad.",
+
+  moveBody:
+    "SOLYON Move integra aplicación móvil, datos territoriales, APIs, CRM e inteligencia urbana y ha sido llevado a condiciones reales en Medellín.",
+
+  moveTags: [
+    "Mobile product",
+    "API layer",
+    "Institutional CRM",
+    "Territorial data",
+    "Urban intelligence",
   ],
-  cityAlt: "Validación institucional y valor de ciudad de SOLYON Technologies en Medellín",
-  evidenceEyebrow: "Moat de conocimiento",
-  evidenceTitle: "El código puede replicarse. El recorrido que lo alimenta, no fácilmente.",
-  evidenceBody: "La ventaja de SOLYON está en la combinación de conocimiento especializado, documentación histórica, comprensión de usuarios y capacidad para convertir esa base en sistemas, productos y propiedad intelectual protegible.",
-  evidenceItems: [
-    { value: "8+ años", label: "de experiencia acumulada en operaciones vinculadas al trucking en Estados Unidos" },
-    { value: "17", label: "cuadernos manuscritos que documentan procesos, decisiones y aprendizaje" },
-    { value: "89 GB", label: "de evidencia y documentación organizada como corpus empresarial" },
-    { value: "2 países", label: "desarrollo y validación operativa e institucional en Colombia y Estados Unidos" },
+
+  moveButton: "Explorar SOLYON Move",
+
+  validationAlt:
+    "Validación institucional y territorial de SOLYON Move en Medellín",
+
+  validationLabel: "RUTA N · TOYOTA MOBILITY FOUNDATION · TERRITORIO",
+
+  cityEyebrow: "Medellín · laboratorio de ciudad",
+
+  cityTitle: "La ciudad permite confrontar tecnología con realidad.",
+
+  cityBody:
+    "Medellín conecta al laboratorio con movilidad, topografía, accesibilidad, instituciones y condiciones urbanas que obligan a diseñar mejor.",
+
+  cityAlt:
+    "SOLYON Move funcionando en Medellín como entorno real de validación tecnológica",
+
+  cityVisualLabel: "MEDELLÍN · VALIDACIÓN REAL",
+
+  cityPoints: [
+    {
+      title: "Territorio",
+      body: "Pendientes, superficies, barreras y contexto urbano.",
+    },
+    {
+      title: "Producto",
+      body: "Interacción real entre personas y tecnología.",
+    },
+    {
+      title: "Instituciones",
+      body: "Validación dentro de ecosistemas públicos y de innovación.",
+    },
+    {
+      title: "Aprendizaje",
+      body: "Evidencia que retroalimenta arquitectura y producto.",
+    },
   ],
-  ctaEyebrow: "Escalamiento",
-  ctaTitle: "Construimos desde Latinoamérica para problemas que trascienden la región.",
-  ctaBody: "Buscamos capital y aliados estratégicos para acelerar el laboratorio, consolidar el sistema operativo de riesgo y convertir validaciones reales en infraestructura tecnológica escalable.",
-  ctaButton: "Abrir una conversación",
-  ctaAlt: "Impacto y visión global de SOLYON Technologies",
+
+  moatEyebrow: "Moat de conocimiento",
+  moatTitle: "La ventaja no es solamente el software.",
+
+  moatBody:
+    "SOLYON acumula conocimiento operativo, documentación, datos, arquitectura y aprendizaje de implementación. Ese conocimiento compuesto es la base de sistemas cada vez más difíciles de replicar.",
+
+  moatItems: [
+    {
+      title: "Conocimiento operativo",
+      body: "Procesos entendidos desde dentro.",
+    },
+    {
+      title: "Evidencia estructurada",
+      body: "Documentación convertida en capacidad reutilizable.",
+    },
+    {
+      title: "Arquitectura propia",
+      body: "Capas tecnológicas construidas sobre necesidades reales.",
+    },
+    {
+      title: "Validación",
+      body: "Aprendizaje generado fuera del laboratorio.",
+    },
+  ],
+
+  ctaEyebrow: "Construimos desde Medellín",
+
+  ctaTitle:
+    "De problemas complejos a infraestructura tecnológica aplicada.",
+
+  ctaBody:
+    "SOLYON Technologies conecta inteligencia artificial, datos, software y conocimiento operativo para construir sistemas con capacidad de escalar.",
+
+  ctaContact: "Conversar con SOLYON",
+  ctaTechnology: "Ver tecnología",
 };
 
+/* =========================================================
+   ENGLISH
+========================================================= */
+
 const en = {
+  heroEyebrow:
+    "DeepTech from Medellín · Applied AI · technology infrastructure",
+
+  heroTitle:
+    "We turn operational knowledge into intelligent systems.",
+
+  heroBody:
+    "SOLYON Technologies designs technology infrastructure that turns complex problems, data and real-world experience into operating capability.",
+
+  heroTechnology: "Explore our technology",
+  heroEcosystem: "Understand the ecosystem",
+  downloadMove: "Download SOLYON Move free",
+
+  heroSignals: [
+    "Applied intelligence for risk and operations",
+    "Product, data, APIs and automation",
+    "Technology validation in real environments",
+  ],
+
+  systemPanelSubtitle:
+    "Conceptual architecture of laboratory capabilities",
+
+  mockup: "MOCKUP",
+  centralProject: "Central technology project",
+
+  systemCards: [
+    {
+      status: "IN DESIGN",
+      title: "Risk intelligence",
+      body: "Variables, signals and criteria supporting decisions.",
+    },
+    {
+      status: "IN VALIDATION",
+      title: "Operating systems",
+      body: "CRM, data, traceability and operational workflows.",
+    },
+    {
+      status: "IN DEVELOPMENT",
+      title: "Automation and agents",
+      body: "Defined processes and specialized technological assistance.",
+    },
+    {
+      status: "ACTIVE CAPABILITY",
+      title: "Evidence and learning",
+      body: "Documentation, controls and structured knowledge.",
+    },
+  ],
+
+  validationEnvironment: "Technology validation",
+  movePanel:
+    "Accessible mobility, digital product, CRM and territorial intelligence.",
+
+  originCapacity: "Capability origin",
+  medellinPanel:
+    "A laboratory built from Medellín through product, talent and institutional validation.",
+
+  mockupDisclaimer:
+    "Conceptual representation of laboratory capabilities and relationships. It does not represent completion percentages or a final deployed platform.",
+
   companyEyebrow: "Parent company · DeepTech laboratory",
-  companyTitle: "SOLYON builds the capability connecting the entire ecosystem.",
-  companyBody: "We are not a collection of isolated applications. SOLYON Technologies turns operating knowledge, documented evidence and complex problems into technology systems. From Medellín, we design architecture, develop products and validate capabilities in Colombia and the United States.",
-  companyTags: ["Applied AI", "Risk intelligence", "CRM and automation", "Mobility and cities", "Insurance technology"],
-  labAlt: "SOLYON Technologies team and laboratory in Medellín",
-  originAlt: "Operating and documentary history behind SOLYON Technologies",
-  realAsset: "EXISTING ASSET",
-  existingAsset: "EXISTING ASSET · REPLACEMENT REVIEW",
-  productVisual: "PRODUCT VISUAL · REPLACEMENT REVIEW",
+
+  companyTitle:
+    "SOLYON builds the technology capability connecting the ecosystem.",
+
+  companyBody:
+    "We turn operational experience, evidence and complex problems into architecture, software, data and applied intelligence.",
+
+  companyTags: [
+    "Applied AI",
+    "Risk intelligence",
+    "CRM and automation",
+    "Mobility and cities",
+    "Data infrastructure",
+  ],
+
+  labMainAlt:
+    "SOLYON Technologies laboratory building applied intelligence systems",
+
+  labVisualLabel: "SOLYON TECHNOLOGIES · SYSTEM LAB",
+
   methodEyebrow: "Our method",
   methodTitle: "Technology begins before code.",
-  methodBody: "We begin with processes we know from the inside. We capture evidence, model decisions and exceptions, build capabilities and take them into environments where they can be tested under real constraints.",
-  methodCards: [
-    { title: "Operations", body: "Direct experience with high-friction processes, real users and critical decisions." },
-    { title: "Evidence", body: "Historical documentation, cases, data and tacit knowledge converted into structure." },
-    { title: "Architecture", body: "Rules, workflows, controls, interfaces and models designed as a system." },
-    { title: "Validation", body: "Progressive testing through commercial operations, products and institutional initiatives." },
+
+  methodBody:
+    "We first understand operations. Then we structure evidence, decisions and architecture. Software follows from that understanding.",
+
+  methodSteps: [
+    {
+      title: "Operations",
+      body: "Understand real processes, actors and constraints.",
+    },
+    {
+      title: "Evidence",
+      body: "Document patterns, exceptions and decisions.",
+    },
+    {
+      title: "Architecture",
+      body: "Turn knowledge into data, modules and interfaces.",
+    },
+    {
+      title: "Validation",
+      body: "Test capabilities beyond controlled environments.",
+    },
   ],
-  coreEyebrow: "Central technology project",
-  coreTitle: "Intelligence Latin Truck Risk Operating System.",
-  coreBody: "SOLYON's central thesis is to build an operational and risk intelligence layer for Latin truckers and the United States trucking-insurance ecosystem. The architecture is developed capability by capability and is not yet presented as a fully completed platform.",
-  coreCapabilities: ["Risk intelligence and decision support.", "Operating CRM, contactability and opportunity management.", "Workflow automation, agents and structured memory.", "Evidence, traceability, reporting and process control."],
-  coreButton: "Explore the technology architecture",
-  validationEyebrow: "Validation environments",
-  validationTitle: "Two different industries demonstrate one laboratory capability.",
-  validationBody: "Sovereign Truckguard and SOLYON Move do not compete to be the center. Each subjects SOLYON's capabilities to different problems, users, institutions and constraints.",
-  sovereignType: "Insurance · Trucking · United States",
-  sovereignAlt: "Technology applied to trucking-insurance operations",
-  sovereignBody: "Sovereign Truckguard is the operation and commercial channel where SOLYON learns from and validates commercial-insurance processes: contact, quoting, compliance, documentation, service, sales and renewals. It is not currently presented as an insurer or MGA.",
-  sovereignProof: ["Trucking-insurance operating domain", "CRM and commercial workflow validation", "Real operating data and exceptions", "Long-term route toward insurance infrastructure"],
-  moveType: "Mobility · City · Institutional validation",
-  moveAlt: "SOLYON Move as a validation environment for mobility and city technology",
-  moveBody: "SOLYON Move validates SOLYON's ability to build products, user experiences, personalization, institutional CRM, operating management and future urban-data integration. Its value lies in both the application and the layer used to manage, observe and scale accessible-mobility programs.",
-  moveProof: ["User app and accessible routes", "CRM and institutional management layer", "Pilot with Ruta N and Toyota Mobility Foundation", "Urban integration and SIATA roadmap"],
-  moveButton: "Explore the SOLYON Move case",
-  cityEyebrow: "DeepTech built in Medellín",
-  cityTitle: "The city is not merely our location. It is part of our advantage.",
-  cityBody: "SOLYON combines local talent, international operating experience and institutional learning. Incubation and support within Medellín's science, technology and innovation ecosystem helped transform an operating journey into a company with product, laboratory and impact capabilities.",
-  cityEvidence: [
-    { title: "Medellín CTI District", body: "Incubation and strengthening within the local science, technology and innovation ecosystem." },
-    { title: "Créame and UPB", body: "Business and technology support during the structuring stage." },
-    { title: "Ruta N", body: "Institutional articulation and an execution environment for applied technology validation." },
-    { title: "Toyota Mobility Foundation", body: "International context for mobility and accessibility innovation." },
+
+  methodAlt:
+    "Technology development and system building inside the SOLYON laboratory",
+
+  labConstructionLabel: "TECHNOLOGY BUILDING",
+
+  techEyebrow: "Central technology project",
+  techTitle: "Intelligence Latin Truck Risk Operating System.",
+
+  techBody:
+    "An architecture designed to structure risk, operations and decision knowledge for Latin trucking in the United States.",
+
+  techButton: "Explore technology architecture",
+
+  techLayers: [
+    {
+      label: "RISK",
+      title: "Risk intelligence",
+      body: "Variables, criteria, signals and evidence enriching decisions.",
+    },
+    {
+      label: "DATA",
+      title: "Data layer",
+      body: "Structuring and traceability of operational knowledge.",
+    },
+    {
+      label: "OPS",
+      title: "Operating systems",
+      body: "CRM, workflows, automation and monitoring.",
+    },
+    {
+      label: "AI",
+      title: "Applied AI",
+      body: "Assistance, analysis and specialized agents over defined processes.",
+    },
   ],
-  cityAlt: "Institutional validation and city value created by SOLYON Technologies in Medellín",
-  evidenceEyebrow: "Knowledge moat",
-  evidenceTitle: "Code can be replicated. The journey feeding it cannot be copied easily.",
-  evidenceBody: "SOLYON's advantage lies in the combination of specialized knowledge, historical documentation, user understanding and the ability to turn that base into systems, products and protectable intellectual property.",
-  evidenceItems: [
-    { value: "8+ years", label: "of accumulated experience in operations connected to United States trucking" },
-    { value: "17", label: "handwritten notebooks documenting processes, decisions and operating lessons" },
-    { value: "89 GB", label: "of evidence and documentation organized as an enterprise corpus" },
-    { value: "2 countries", label: "operating and institutional development and validation in Colombia and the United States" },
+
+  systemLoopLabel: "Design principle:",
+  systemLoop:
+    "operations → evidence → data → modeling → decision → learning.",
+
+  moveEyebrow: "Demonstrated capability · SOLYON Move",
+
+  moveTitle: "The laboratory is also validated in the city.",
+
+  moveBody:
+    "SOLYON Move integrates mobile product, territorial data, APIs, CRM and urban intelligence and has been tested under real conditions in Medellín.",
+
+  moveTags: [
+    "Mobile product",
+    "API layer",
+    "Institutional CRM",
+    "Territorial data",
+    "Urban intelligence",
   ],
-  ctaEyebrow: "Scale",
-  ctaTitle: "We build in Latin America for problems extending beyond the region.",
-  ctaBody: "We seek capital and strategic partners to accelerate the laboratory, consolidate the risk operating system and turn real validation into scalable technology infrastructure.",
-  ctaButton: "Start a conversation",
-  ctaAlt: "SOLYON Technologies global vision and impact",
+
+  moveButton: "Explore SOLYON Move",
+
+  validationAlt:
+    "Institutional and territorial validation of SOLYON Move in Medellín",
+
+  validationLabel: "RUTA N · TOYOTA MOBILITY FOUNDATION · FIELD",
+
+  cityEyebrow: "Medellín · city laboratory",
+
+  cityTitle: "The city confronts technology with reality.",
+
+  cityBody:
+    "Medellín connects the laboratory with mobility, topography, accessibility, institutions and urban conditions that force better design.",
+
+  cityAlt:
+    "SOLYON Move operating in Medellín as a real technology validation environment",
+
+  cityVisualLabel: "MEDELLÍN · REAL VALIDATION",
+
+  cityPoints: [
+    {
+      title: "Territory",
+      body: "Slopes, surfaces, barriers and urban context.",
+    },
+    {
+      title: "Product",
+      body: "Real interaction between people and technology.",
+    },
+    {
+      title: "Institutions",
+      body: "Validation within public and innovation ecosystems.",
+    },
+    {
+      title: "Learning",
+      body: "Evidence feeding back into architecture and product.",
+    },
+  ],
+
+  moatEyebrow: "Knowledge moat",
+  moatTitle: "The advantage is not only the software.",
+
+  moatBody:
+    "SOLYON accumulates operational knowledge, documentation, data, architecture and implementation learning. That compounding knowledge becomes the foundation for systems increasingly difficult to replicate.",
+
+  moatItems: [
+    {
+      title: "Operational knowledge",
+      body: "Processes understood from the inside.",
+    },
+    {
+      title: "Structured evidence",
+      body: "Documentation converted into reusable capability.",
+    },
+    {
+      title: "Own architecture",
+      body: "Technology layers built around real needs.",
+    },
+    {
+      title: "Validation",
+      body: "Learning generated beyond the laboratory.",
+    },
+  ],
+
+  ctaEyebrow: "Built from Medellín",
+
+  ctaTitle:
+    "From complex problems to applied technology infrastructure.",
+
+  ctaBody:
+    "SOLYON Technologies connects artificial intelligence, data, software and operational knowledge to build systems capable of scaling.",
+
+  ctaContact: "Talk with SOLYON",
+  ctaTechnology: "View technology",
 };
