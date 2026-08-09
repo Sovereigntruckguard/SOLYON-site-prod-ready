@@ -9,6 +9,12 @@ import { useLanguage } from "@/lib/language";
 const RUTAN_STORY =
   "https://rutanmedellin.org/noticias/en-medell%C3%ADn-crean-dos-plataformas-con-inteligencia-artificial-para-facilitar-los-viajes-de-personas-con-movilidad-reducida";
 
+const sectionTitleClass =
+  "mt-4 max-w-4xl text-3xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-4xl md:text-5xl";
+
+const sectionCopyClass =
+  "mt-5 max-w-3xl text-base leading-7 text-white/58 md:text-lg";
+
 export default function SolyonMovePage() {
   const { lang } = useLanguage();
   const t = lang === "es" ? es : en;
@@ -16,36 +22,38 @@ export default function SolyonMovePage() {
   return (
     <main className="bg-[#07090c] text-white">
       {/* HERO */}
-      <section className="relative overflow-hidden border-b border-white/10 py-24 md:py-32">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_18%,rgba(139,92,246,0.16),transparent_34rem)]" />
+      <section className="relative overflow-hidden border-b border-white/10 py-16 md:py-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_18%,rgba(139,92,246,0.14),transparent_32rem)]" />
 
-        <div className="section-shell relative grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div className="section-shell relative grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
           <div>
             <p className="eyebrow">{t.eyebrow}</p>
 
-            <h1 className="mt-6 max-w-5xl text-4xl font-semibold leading-[1.02] tracking-[-0.05em] sm:text-5xl md:text-7xl">
+            <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.01] tracking-[-0.05em] sm:text-5xl md:text-6xl">
               {t.title}
             </h1>
 
-            <p className="section-copy mt-7">{t.body}</p>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-white/60 md:text-lg">
+              {t.body}
+            </p>
 
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-6 flex flex-wrap gap-2">
               {t.capabilityTags.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/10 bg-white/[0.035] px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-white/55"
+                  className="rounded-full border border-white/10 bg-white/[0.035] px-3 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-white/55"
                 >
                   {item}
                 </span>
               ))}
             </div>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <GooglePlayLink label={t.download} />
 
               <Link
                 href="/technology"
-                className="inline-flex justify-center rounded-full border border-white/20 px-7 py-3 text-sm font-semibold text-white"
+                className="inline-flex justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white"
               >
                 {t.technology}
               </Link>
@@ -54,14 +62,14 @@ export default function SolyonMovePage() {
                 href="https://www.youtube.com/watch?v=0SyayXeU42g"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex justify-center rounded-full border border-white/20 px-7 py-3 text-sm font-semibold text-white"
+                className="inline-flex justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white"
               >
                 {t.video}
               </a>
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0e12] p-3 shadow-[0_35px_100px_rgba(0,0,0,0.55)]">
+          <div className="relative overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0e12] p-2.5 shadow-[0_25px_70px_rgba(0,0,0,0.45)]">
             <Image
               src="/visual/solyon-move-field-validation.jpeg"
               alt={t.heroAlt}
@@ -69,40 +77,44 @@ export default function SolyonMovePage() {
               height={1000}
               priority
               sizes="(max-width: 1024px) 100vw, 55vw"
-              className="aspect-[4/3] w-full rounded-[1.45rem] object-cover"
+              className="aspect-[16/10] w-full rounded-[1.25rem] object-cover"
             />
 
-            <span className="absolute left-6 top-6 rounded-full border border-white/15 bg-[#07090c]/85 px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-white/70 backdrop-blur-lg">
+            <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-[#07090c]/85 px-3 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-white/70 backdrop-blur-lg">
               {t.realEvidence}
             </span>
           </div>
         </div>
       </section>
 
-      {/* NOT JUST AN APP */}
-      <section className="section-shell py-24 md:py-32">
-        <div className="max-w-5xl">
+      {/* INFRASTRUCTURE */}
+      <section className="section-shell py-16 md:py-20">
+        <div className="max-w-4xl">
           <p className="eyebrow">{t.systemEyebrow}</p>
-          <h2 className="section-title mt-5">{t.systemTitle}</h2>
-          <p className="section-copy mt-6">{t.systemBody}</p>
+          <h2 className={sectionTitleClass}>{t.systemTitle}</h2>
+          <p className={sectionCopyClass}>{t.systemBody}</p>
         </div>
 
-        <div className="mt-16 rounded-[2rem] border border-white/10 bg-[#0b0e12] p-5 md:p-10">
-          <div className="grid gap-4 lg:grid-cols-5">
+        <div className="mt-10 rounded-[1.7rem] border border-white/10 bg-[#0b0e12] p-4 md:p-6">
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-5">
             {t.architecture.map((item, index) => (
               <div key={item.title} className="relative">
-                <article className="h-full rounded-2xl border border-white/10 bg-white/[0.025] p-6">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#E6BC68]">
+                <article className="h-full rounded-xl border border-white/10 bg-white/[0.025] p-4">
+                  <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#E6BC68]">
                     {String(index + 1).padStart(2, "0")}
                   </p>
-                  <h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-white/50">
+
+                  <h3 className="mt-3 text-base font-semibold">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-2 text-xs leading-5 text-white/50">
                     {item.body}
                   </p>
                 </article>
 
                 {index < t.architecture.length - 1 && (
-                  <div className="mx-auto my-2 flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-white/35 lg:absolute lg:-right-6 lg:top-1/2 lg:z-10 lg:my-0 lg:-translate-y-1/2">
+                  <div className="mx-auto my-2 flex h-7 w-7 items-center justify-center rounded-full border border-white/10 text-xs text-white/35 lg:absolute lg:-right-5 lg:top-1/2 lg:z-10 lg:my-0 lg:-translate-y-1/2">
                     →
                   </div>
                 )}
@@ -110,45 +122,48 @@ export default function SolyonMovePage() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-2xl border border-violet-400/20 bg-violet-400/[0.045] p-5 text-sm leading-7 text-white/60">
-            <strong className="text-white/90">{t.loopLabel}</strong>{" "}
+          <div className="mt-5 rounded-xl border border-violet-400/20 bg-violet-400/[0.04] px-4 py-3 text-xs leading-6 text-white/55 md:text-sm">
+            <strong className="text-white/88">{t.loopLabel}</strong>{" "}
             {t.loop}
           </div>
         </div>
       </section>
 
       {/* USER LAYER */}
-      <section className="border-y border-white/10 bg-white/[0.025] py-24 md:py-32">
-        <div className="section-shell grid gap-14 lg:grid-cols-2 lg:items-center">
+      <section className="border-y border-white/10 bg-white/[0.025] py-16 md:py-20">
+        <div className="section-shell grid gap-10 lg:grid-cols-[1fr_0.82fr] lg:items-center">
           <div>
             <p className="eyebrow">{t.userEyebrow}</p>
-            <h2 className="section-title mt-5">{t.userTitle}</h2>
-            <p className="section-copy mt-6">{t.userBody}</p>
 
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <h2 className={sectionTitleClass}>{t.userTitle}</h2>
+
+            <p className={sectionCopyClass}>{t.userBody}</p>
+
+            <div className="mt-6 grid gap-2.5 sm:grid-cols-2">
               {t.userItems.map((item) => (
                 <div
                   key={item}
-                  className="rounded-xl border border-white/10 bg-[#0b0e12] p-4 text-sm leading-6 text-white/55"
+                  className="rounded-xl border border-white/10 bg-[#0b0e12] px-4 py-3 text-sm text-white/55"
                 >
                   {item}
                 </div>
               ))}
             </div>
 
-            <GooglePlayLink label={t.download} className="mt-8" />
+            <GooglePlayLink label={t.download} className="mt-6" />
           </div>
 
-          <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-[2.4rem] border border-white/10 bg-[#0b0e12] p-3">
+          <div className="relative mx-auto w-full max-w-sm overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0e12] p-2.5">
             <Image
               src="/visual/solyon-move-app-real.jpeg"
               alt={t.appAlt}
               width={900}
               height={1600}
-              sizes="(max-width: 1024px) 90vw, 420px"
-              className="w-full rounded-[1.9rem] object-cover"
+              sizes="(max-width: 1024px) 85vw, 380px"
+              className="aspect-[4/3] w-full rounded-[1.25rem] object-cover"
             />
-            <span className="absolute left-6 top-6 rounded-full border border-white/15 bg-[#07090c]/85 px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-white/70">
+
+            <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-[#07090c]/85 px-3 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-white/70">
               {t.productEvidence}
             </span>
           </div>
@@ -156,38 +171,42 @@ export default function SolyonMovePage() {
       </section>
 
       {/* TERRITORY -> DATA */}
-      <section className="section-shell py-24 md:py-32">
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+      <section className="section-shell py-16 md:py-20">
+        <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
           <div>
             <p className="eyebrow">{t.dataEyebrow}</p>
-            <h2 className="section-title mt-5">{t.dataTitle}</h2>
-            <p className="section-copy mt-6">{t.dataBody}</p>
 
-            <div className="mt-8 space-y-3">
+            <h2 className={sectionTitleClass}>{t.dataTitle}</h2>
+
+            <p className={sectionCopyClass}>{t.dataBody}</p>
+
+            <div className="mt-6 space-y-2.5">
               {t.dataFlow.map((item, index) => (
                 <div
                   key={item}
-                  className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.025] p-4"
+                  className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.025] px-4 py-3"
                 >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E6BC68] text-xs font-bold text-[#090b0e]">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#E6BC68] text-[0.7rem] font-bold text-[#090b0e]">
                     {index + 1}
                   </span>
-                  <span className="text-sm text-white/65">{item}</span>
+
+                  <span className="text-sm text-white/60">{item}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0e12] p-3">
+          <div className="relative overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0e12] p-2.5">
             <Image
               src="/visual/solyon-move-barriers.png"
               alt={t.barriersAlt}
               width={1400}
               height={950}
               sizes="(max-width: 1024px) 100vw, 55vw"
-              className="aspect-[4/3] w-full rounded-[1.45rem] object-cover"
+              className="aspect-[16/10] w-full rounded-[1.25rem] object-cover object-top"
             />
-            <span className="absolute left-6 top-6 rounded-full border border-white/15 bg-[#07090c]/85 px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-white/70">
+
+            <span className="absolute left-5 top-5 rounded-full border border-white/15 bg-[#07090c]/85 px-3 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-white/70">
               {t.territoryEvidence}
             </span>
           </div>
@@ -195,43 +214,46 @@ export default function SolyonMovePage() {
       </section>
 
       {/* CRM / URBAN INTELLIGENCE */}
-      <section className="border-y border-white/10 bg-white/[0.025] py-24 md:py-32">
+      <section className="border-y border-white/10 bg-white/[0.025] py-16 md:py-20">
         <div className="section-shell">
-          <div className="max-w-5xl">
+          <div className="max-w-4xl">
             <p className="eyebrow">{t.crmEyebrow}</p>
-            <h2 className="section-title mt-5">{t.crmTitle}</h2>
-            <p className="section-copy mt-6">{t.crmBody}</p>
+
+            <h2 className={sectionTitleClass}>{t.crmTitle}</h2>
+
+            <p className={sectionCopyClass}>{t.crmBody}</p>
           </div>
 
-          <div className="mt-14 relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0e12] p-3">
+          <div className="relative mt-10 overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0e12] p-2.5">
             <Image
               src="/visual/solyon-move-crm-historica.png"
               alt={t.crmAlt}
               width={1800}
               height={1050}
               sizes="100vw"
-              className="w-full rounded-[1.45rem] object-cover"
+              className="aspect-[16/8.5] w-full rounded-[1.25rem] object-cover object-top"
             />
 
-            <span className="absolute left-6 top-6 rounded-full border border-[#E6BC68]/25 bg-[#090b0e]/90 px-3 py-1.5 text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-[#E6BC68] backdrop-blur-lg">
+            <span className="absolute left-5 top-5 rounded-full border border-[#E6BC68]/25 bg-[#090b0e]/90 px-3 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.15em] text-[#E6BC68] backdrop-blur-lg">
               {t.historicalLabel}
             </span>
           </div>
 
-          <p className="mt-5 max-w-4xl text-xs leading-6 text-white/40">
+          <p className="mt-4 max-w-4xl text-xs leading-5 text-white/38">
             {t.crmDisclaimer}
           </p>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {t.crmCapabilities.map((item) => (
               <article
                 key={item.title}
-                className="rounded-2xl border border-white/10 bg-[#0b0e12] p-5"
+                className="rounded-xl border border-white/10 bg-[#0b0e12] p-4"
               >
-                <h3 className="text-sm font-semibold text-white/85">
+                <h3 className="text-sm font-semibold text-white/82">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-xs leading-5 text-white/42">
+
+                <p className="mt-1.5 text-xs leading-5 text-white/42">
                   {item.body}
                 </p>
               </article>
@@ -240,94 +262,100 @@ export default function SolyonMovePage() {
         </div>
       </section>
 
-      {/* API & INTEGRATIONS */}
-      <section className="section-shell py-24 md:py-32">
-        <div className="max-w-5xl">
+      {/* API */}
+      <section className="section-shell py-16 md:py-20">
+        <div className="max-w-4xl">
           <p className="eyebrow">{t.apiEyebrow}</p>
-          <h2 className="section-title mt-5">{t.apiTitle}</h2>
-          <p className="section-copy mt-6">{t.apiBody}</p>
+
+          <h2 className={sectionTitleClass}>{t.apiTitle}</h2>
+
+          <p className={sectionCopyClass}>{t.apiBody}</p>
         </div>
 
-        <div className="mt-14 grid gap-4 lg:grid-cols-5">
+        <div className="mt-9 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {t.integrationNodes.map((item, index) => (
             <article
               key={item}
-              className={`rounded-2xl border p-6 ${
+              className={`rounded-xl border p-4 ${
                 index === 2
                   ? "border-[#E6BC68]/30 bg-[#E6BC68]/[0.055]"
                   : "border-white/10 bg-[#0b0e12]"
               }`}
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/35">
+              <p className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-white/35">
                 NODE {String(index + 1).padStart(2, "0")}
               </p>
-              <h3 className="mt-4 text-lg font-semibold">{item}</h3>
+
+              <h3 className="mt-2 text-sm font-semibold">{item}</h3>
             </article>
           ))}
         </div>
 
-        <p className="mt-8 max-w-4xl text-sm leading-7 text-white/50">
+        <p className="mt-5 max-w-3xl text-xs leading-6 text-white/42">
           {t.apiNote}
         </p>
       </section>
 
       {/* FIELD VALIDATION */}
-      <section className="border-y border-white/10 bg-white/[0.025] py-24 md:py-32">
-        <div className="section-shell">
-          <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-            <div>
-              <p className="eyebrow">{t.validationEyebrow}</p>
-              <h2 className="section-title mt-5">{t.validationTitle}</h2>
-              <p className="section-copy mt-6">{t.validationBody}</p>
+      <section className="border-y border-white/10 bg-white/[0.025] py-16 md:py-20">
+        <div className="section-shell grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+          <div>
+            <p className="eyebrow">{t.validationEyebrow}</p>
 
-              <div className="mt-8 rounded-2xl border border-white/10 bg-[#0b0e12] p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#E6BC68]">
-                  {t.programLabel}
-                </p>
-                <p className="mt-3 text-sm leading-7 text-white/58">
-                  {t.programBody}
-                </p>
-              </div>
-            </div>
+            <h2 className={sectionTitleClass}>{t.validationTitle}</h2>
 
-            <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0e12] p-3">
-              <Image
-                src="/visual/solyon-move-field-validation.jpeg"
-                alt={t.fieldAlt}
-                width={1400}
-                height={1000}
-                sizes="(max-width: 1024px) 100vw, 55vw"
-                className="aspect-[4/3] w-full rounded-[1.45rem] object-cover"
-              />
+            <p className={sectionCopyClass}>{t.validationBody}</p>
+
+            <div className="mt-6 rounded-xl border border-white/10 bg-[#0b0e12] p-4">
+              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#E6BC68]">
+                {t.programLabel}
+              </p>
+
+              <p className="mt-2 text-sm leading-6 text-white/55">
+                {t.programBody}
+              </p>
             </div>
+          </div>
+
+          <div className="relative overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0e12] p-2.5">
+            <Image
+              src="/visual/solyon-move-field-validation.jpeg"
+              alt={t.fieldAlt}
+              width={1400}
+              height={1000}
+              sizes="(max-width: 1024px) 100vw, 55vw"
+              className="aspect-[16/10] w-full rounded-[1.25rem] object-cover"
+            />
           </div>
         </div>
       </section>
 
       {/* THIRD-PARTY VALIDATION */}
-      <section className="section-shell py-24 md:py-32">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0e12] p-3">
+      <section className="section-shell py-16 md:py-20">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="relative mx-auto w-full max-w-xl overflow-hidden rounded-[1.7rem] border border-white/10 bg-[#0b0e12] p-2.5">
             <Image
               src="/visual/solyon-move-rutan-feature.png"
               alt={t.mediaAlt}
               width={1100}
               height={900}
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="w-full rounded-[1.45rem] object-cover"
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="w-full rounded-[1.25rem] object-cover"
             />
           </div>
 
           <div>
             <p className="eyebrow">{t.mediaEyebrow}</p>
-            <h2 className="section-title mt-5">{t.mediaTitle}</h2>
-            <p className="section-copy mt-6">{t.mediaBody}</p>
+
+            <h2 className={sectionTitleClass}>{t.mediaTitle}</h2>
+
+            <p className={sectionCopyClass}>{t.mediaBody}</p>
 
             <a
               href={RUTAN_STORY}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex rounded-full border border-white/20 px-7 py-3 text-sm font-semibold text-white"
+              className="mt-6 inline-flex rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white"
             >
               {t.mediaButton}
             </a>
@@ -336,22 +364,29 @@ export default function SolyonMovePage() {
       </section>
 
       {/* LAB CAPABILITY */}
-      <section className="border-y border-white/10 bg-[#0b0e12] py-24 md:py-32">
+      <section className="border-y border-white/10 bg-[#0b0e12] py-16 md:py-20">
         <div className="section-shell">
-          <div className="max-w-5xl">
+          <div className="max-w-4xl">
             <p className="eyebrow">{t.labEyebrow}</p>
-            <h2 className="section-title mt-5">{t.labTitle}</h2>
-            <p className="section-copy mt-6">{t.labBody}</p>
+
+            <h2 className={sectionTitleClass}>{t.labTitle}</h2>
+
+            <p className={sectionCopyClass}>{t.labBody}</p>
           </div>
 
-          <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-9 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {t.labCapabilities.map((item) => (
-              <article key={item.title} className="system-card">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#E6BC68]">
+              <article
+                key={item.title}
+                className="rounded-xl border border-white/10 bg-white/[0.02] p-4"
+              >
+                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-[#E6BC68]">
                   {item.label}
                 </p>
-                <h3 className="mt-5 text-xl font-semibold">{item.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-white/55">
+
+                <h3 className="mt-3 text-base font-semibold">{item.title}</h3>
+
+                <p className="mt-2 text-xs leading-5 text-white/50">
                   {item.body}
                 </p>
               </article>
@@ -361,18 +396,24 @@ export default function SolyonMovePage() {
       </section>
 
       {/* CTA */}
-      <section className="section-shell py-24 md:py-32">
-        <div className="rounded-3xl border border-[#E6BC68]/25 bg-gradient-to-br from-[#17140d] to-[#0b0e12] p-8 md:p-14">
+      <section className="section-shell py-16 md:py-20">
+        <div className="rounded-[1.7rem] border border-[#E6BC68]/25 bg-gradient-to-br from-[#17140d] to-[#0b0e12] p-7 md:p-10">
           <p className="eyebrow">{t.ctaEyebrow}</p>
-          <h2 className="section-title mt-5">{t.ctaTitle}</h2>
-          <p className="section-copy mt-6">{t.ctaBody}</p>
 
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+          <h2 className="mt-4 max-w-4xl text-3xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-4xl">
+            {t.ctaTitle}
+          </h2>
+
+          <p className="mt-4 max-w-3xl text-base leading-7 text-white/55">
+            {t.ctaBody}
+          </p>
+
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <GooglePlayLink label={t.download} />
 
             <Link
               href="/contact"
-              className="inline-flex justify-center rounded-full bg-[#E6BC68] px-7 py-3 text-sm font-semibold text-[#090b0e]"
+              className="inline-flex justify-center rounded-full bg-[#E6BC68] px-6 py-3 text-sm font-semibold text-[#090b0e]"
             >
               {t.ctaButton}
             </Link>
@@ -387,9 +428,10 @@ export default function SolyonMovePage() {
 
 const es = {
   eyebrow: "Infraestructura de movilidad accesible · Medellín",
-  title: "SOLYON Move convierte movilidad, territorio y contexto urbano en inteligencia operativa.",
+  title:
+    "SOLYON Move convierte movilidad y territorio en inteligencia operativa.",
   body:
-    "SOLYON Move no es solamente una aplicación. Es una infraestructura tecnológica desarrollada por SOLYON Technologies que conecta experiencia móvil, personalización, datos territoriales, APIs, gestión institucional y visualización de barreras para comprender mejor la movilidad accesible.",
+    "Una infraestructura que integra experiencia móvil, datos territoriales, APIs, CRM e inteligencia urbana.",
   capabilityTags: [
     "Mobile Product",
     "Applied AI",
@@ -405,39 +447,39 @@ const es = {
   realEvidence: "EVIDENCIA REAL · VALIDACIÓN EN CAMPO",
 
   systemEyebrow: "La infraestructura",
-  systemTitle: "La app es solamente la capa visible del sistema.",
+  systemTitle: "La app es solo la capa visible.",
   systemBody:
-    "Detrás de la experiencia del usuario existe una arquitectura que captura señales del territorio, estructura información, conecta componentes mediante APIs y habilita herramientas institucionales para seguimiento, análisis y toma de decisiones.",
+    "Detrás opera una arquitectura que captura territorio, estructura datos, conecta servicios y habilita gestión institucional.",
   architecture: [
     {
       title: "Citizen Layer",
-      body: "Perfil, necesidades de movilidad, navegación, alertas y reportes desde la experiencia móvil.",
+      body: "Perfil, rutas, alertas y reportes.",
     },
     {
       title: "Data Layer",
-      body: "Estructuración de condiciones territoriales, barreras, rutas y contexto operacional.",
+      body: "Barreras, territorio y contexto operacional.",
     },
     {
       title: "API Layer",
-      body: "Intercambio de información entre aplicaciones, servicios, datos e integraciones.",
+      body: "Intercambio entre servicios e integraciones.",
     },
     {
       title: "Institutional Layer",
-      body: "CRM, operación, incidentes, usuarios, evidencia y seguimiento institucional.",
+      body: "CRM, usuarios, incidentes y operación.",
     },
     {
       title: "Urban Intelligence",
-      body: "Visualización territorial y base para análisis de patrones, riesgos y oportunidades de intervención.",
+      body: "Visualización territorial y patrones.",
     },
   ],
   loopLabel: "Ciclo de inteligencia:",
   loop:
-    "territorio → observación → dato → estructuración → operación institucional → aprendizaje de ciudad.",
+    "territorio → observación → dato → estructuración → operación → aprendizaje.",
 
   userEyebrow: "Capa ciudadana",
-  userTitle: "Una experiencia móvil diseñada alrededor de la persona, no solamente del destino.",
+  userTitle: "Movilidad diseñada alrededor de la persona.",
   userBody:
-    "SOLYON Move busca comprender cómo las características individuales y las condiciones de un trayecto pueden modificar la experiencia de movilidad. La interfaz móvil es el punto de contacto entre esa personalización y la infraestructura que opera detrás.",
+    "La app personaliza la experiencia y conecta al usuario con la infraestructura de datos que opera detrás.",
   userItems: [
     "Perfil y tipo de movilidad",
     "Variables personales y contexto",
@@ -450,50 +492,51 @@ const es = {
   productEvidence: "PRODUCTO REAL",
 
   dataEyebrow: "Territorio como dato",
-  dataTitle: "Una barrera física puede convertirse en evidencia estructurada.",
+  dataTitle: "El territorio se convierte en datos.",
   dataBody:
-    "Huecos, obstáculos, ausencia de rampas, superficies complejas y otras barreras pueden documentarse para construir una representación más útil de la experiencia real de movilidad.",
+    "Barreras, pendientes, superficies y obstáculos se documentan con contexto y evidencia para alimentar la inteligencia del sistema.",
   dataFlow: [
     "Observación en territorio",
-    "Reporte desde la experiencia digital",
-    "Evidencia fotográfica y contexto",
+    "Reporte digital",
+    "Evidencia y contexto",
     "Estructuración del dato",
-    "Visualización y uso institucional",
+    "Visualización institucional",
   ],
-  barriersAlt: "Evidencia real de barreras urbanas documentadas durante SOLYON Move",
+  barriersAlt:
+    "Evidencia real de barreras urbanas documentadas durante SOLYON Move",
   territoryEvidence: "EVIDENCIA TERRITORIAL",
 
   crmEyebrow: "Capa institucional",
-  crmTitle: "Del dato individual a una visión operacional del territorio.",
+  crmTitle: "Del dato a una visión operacional del territorio.",
   crmBody:
-    "SOLYON Move incorporó una capa institucional para organizar usuarios, rutas, incidentes, evidencias y visualización territorial. Esta capa permite demostrar que el producto fue concebido como infraestructura operativa y no como una aplicación aislada.",
-  crmAlt: "Interfaz histórica del CRM y mapa territorial de SOLYON Move",
-  historicalLabel: "INTERFAZ HISTÓRICA · EVOLUCIÓN DEL PRODUCTO",
+    "El CRM organiza usuarios, rutas, incidentes y evidencia dentro de una capa operativa para seguimiento y análisis.",
+  crmAlt: "Interfaz del CRM y mapa territorial de SOLYON Move",
+  historicalLabel: "CAPA INSTITUCIONAL · EVOLUCIÓN DEL PRODUCTO",
   crmDisclaimer:
-    "La imagen corresponde a una versión anterior de la interfaz institucional. Sus métricas visibles pertenecen a ese corte histórico y no representan las cifras actuales de SOLYON Move.",
+    "La interfaz muestra una etapa operacional del sistema. Las métricas corresponden al corte visible en la captura.",
   crmCapabilities: [
     {
       title: "Usuarios",
-      body: "Seguimiento de perfiles y participación dentro del sistema.",
+      body: "Perfiles y participación.",
     },
     {
       title: "Rutas",
-      body: "Registro y observación de información asociada a trayectos.",
+      body: "Información asociada a trayectos.",
     },
     {
       title: "Incidentes",
-      body: "Documentación de barreras con contexto y evidencia.",
+      body: "Barreras, contexto y evidencia.",
     },
     {
       title: "Reporting",
-      body: "Base operativa para análisis, seguimiento y aprendizaje institucional.",
+      body: "Seguimiento y análisis institucional.",
     },
   ],
 
   apiEyebrow: "Arquitectura conectable",
-  apiTitle: "La infraestructura está diseñada para intercambiar información, no para vivir aislada.",
+  apiTitle: "Una infraestructura diseñada para intercambiar información.",
   apiBody:
-    "La capa de integración permite conectar experiencia móvil, lógica de datos, herramientas institucionales y fuentes externas dentro de una misma arquitectura tecnológica.",
+    "La capa de integración conecta experiencia móvil, datos, herramientas institucionales y sistemas externos.",
   integrationNodes: [
     "Mobile App",
     "Data Services",
@@ -502,63 +545,65 @@ const es = {
     "External Systems",
   ],
   apiNote:
-    "La arquitectura permite evolucionar hacia nuevas integraciones de ciudad y fuentes externas. Las capacidades se publican únicamente cuando han sido implementadas y verificadas.",
+    "La arquitectura puede evolucionar hacia nuevas integraciones y fuentes externas a medida que sean implementadas y verificadas.",
 
   validationEyebrow: "Del laboratorio al territorio",
-  validationTitle: "La infraestructura fue llevada a condiciones urbanas reales.",
+  validationTitle: "Probada en condiciones urbanas reales.",
   validationBody:
-    "La validación territorial permite observar cómo se comportan la experiencia móvil, la captura de información y las decisiones de producto frente a barreras, pendientes, superficies y situaciones que no aparecen en un entorno de laboratorio.",
+    "La validación en campo permite confrontar producto, datos y experiencia con barreras, pendientes y superficies reales.",
   programLabel: "MOVILIDAD PARA TODOS · MEDELLÍN",
   programBody:
-    "SOLYON Move fue desarrollado y validado dentro del ecosistema de innovación de Medellín, en el marco de Movilidad para Todos, iniciativa impulsada por Ruta N y Toyota Mobility Foundation.",
+    "SOLYON Move fue desarrollado y validado en el marco de Movilidad para Todos, iniciativa impulsada por Ruta N y Toyota Mobility Foundation.",
   fieldAlt: "Prueba y validación de SOLYON Move en calles de Medellín",
 
   mediaEyebrow: "Validación de terceros",
-  mediaTitle: "Ruta N documentó públicamente el desarrollo de SOLYON Move.",
+  mediaTitle: "Ruta N documentó públicamente SOLYON Move.",
   mediaBody:
-    "En agosto de 2026, Ruta N publicó una historia sobre las soluciones desarrolladas para facilitar los viajes de personas con movilidad reducida en Medellín e identificó a SOLYON Move como una plataforma de SOLYON Technologies.",
+    "En agosto de 2026, Ruta N presentó a SOLYON Move como una de las plataformas desarrolladas para mejorar la movilidad de personas con movilidad reducida en Medellín.",
   mediaButton: "Leer publicación oficial ↗",
   mediaAlt: "Publicación de Ruta N sobre SOLYON Move",
 
   labEyebrow: "Capacidad del laboratorio",
-  labTitle: "SOLYON Move demuestra cómo SOLYON Technologies construye sistemas completos.",
+  labTitle: "Un sistema completo, no un producto aislado.",
   labBody:
-    "El valor estratégico del proyecto no está únicamente en su caso de uso. Está en haber recorrido múltiples capas de construcción tecnológica: experiencia de usuario, software, datos, APIs, infraestructura institucional, validación territorial y documentación.",
+    "SOLYON Move demuestra capacidad para construir producto, datos, APIs, software institucional y validación en condiciones reales.",
   labCapabilities: [
     {
       label: "01",
       title: "Product Engineering",
-      body: "Diseño y evolución de una experiencia digital orientada a necesidades reales.",
+      body: "Experiencias digitales para necesidades reales.",
     },
     {
       label: "02",
       title: "Applied AI & Data",
-      body: "Modelado de contexto, personalización y estructuración de información operacional.",
+      body: "Contexto, personalización y datos operacionales.",
     },
     {
       label: "03",
       title: "Institutional Software",
-      body: "CRM, visualización y herramientas para convertir interacción en capacidad de gestión.",
+      body: "CRM, visualización y operación.",
     },
     {
       label: "04",
       title: "Field Validation",
-      body: "Prueba del sistema fuera del laboratorio, bajo condiciones reales de ciudad.",
+      body: "Pruebas fuera del laboratorio.",
     },
   ],
 
   ctaEyebrow: "SOLYON Technologies",
-  ctaTitle: "SOLYON Move es un caso de infraestructura aplicada. El laboratorio es la plataforma.",
+  ctaTitle:
+    "SOLYON Move demuestra cómo SOLYON construye infraestructura aplicada.",
   ctaBody:
-    "SOLYON Technologies utiliza el aprendizaje de sistemas reales para construir infraestructura tecnológica en problemas complejos donde convergen inteligencia artificial, datos, operaciones y decisiones.",
+    "El laboratorio convierte problemas complejos en sistemas donde convergen inteligencia artificial, datos y operaciones.",
   ctaButton: "Conversar con SOLYON",
 };
 
 const en = {
   eyebrow: "Accessible mobility infrastructure · Medellín",
-  title: "SOLYON Move turns mobility, territory and urban context into operating intelligence.",
+  title:
+    "SOLYON Move turns mobility and territory into operating intelligence.",
   body:
-    "SOLYON Move is not merely an application. It is a technology infrastructure developed by SOLYON Technologies connecting mobile experience, personalization, territorial data, APIs, institutional management and barrier visualization to better understand accessible mobility.",
+    "An infrastructure integrating mobile experience, territorial data, APIs, CRM and urban intelligence.",
   capabilityTags: [
     "Mobile Product",
     "Applied AI",
@@ -574,39 +619,39 @@ const en = {
   realEvidence: "REAL EVIDENCE · FIELD VALIDATION",
 
   systemEyebrow: "The infrastructure",
-  systemTitle: "The app is only the visible layer of the system.",
+  systemTitle: "The app is only the visible layer.",
   systemBody:
-    "Behind the user experience sits an architecture capturing territorial signals, structuring information, connecting components through APIs and enabling institutional tools for monitoring, analysis and decision-making.",
+    "Behind it sits an architecture capturing territory, structuring data, connecting services and enabling institutional operations.",
   architecture: [
     {
       title: "Citizen Layer",
-      body: "Profile, mobility needs, navigation, alerts and reporting through the mobile experience.",
+      body: "Profiles, routes, alerts and reports.",
     },
     {
       title: "Data Layer",
-      body: "Structuring territorial conditions, barriers, routes and operating context.",
+      body: "Barriers, territory and operating context.",
     },
     {
       title: "API Layer",
-      body: "Information exchange among applications, services, data and integrations.",
+      body: "Exchange among services and integrations.",
     },
     {
       title: "Institutional Layer",
-      body: "CRM, operations, incidents, users, evidence and institutional monitoring.",
+      body: "CRM, users, incidents and operations.",
     },
     {
       title: "Urban Intelligence",
-      body: "Territorial visualization and a foundation for analyzing patterns, risks and intervention opportunities.",
+      body: "Territorial visualization and patterns.",
     },
   ],
   loopLabel: "Intelligence loop:",
   loop:
-    "territory → observation → data → structuring → institutional operations → city learning.",
+    "territory → observation → data → structuring → operations → learning.",
 
   userEyebrow: "Citizen layer",
-  userTitle: "A mobile experience designed around the person, not merely the destination.",
+  userTitle: "Mobility designed around the person.",
   userBody:
-    "SOLYON Move seeks to understand how individual characteristics and route conditions may change the mobility experience. The mobile interface is the contact point between personalization and the infrastructure operating behind it.",
+    "The app personalizes mobility and connects the user with the data infrastructure operating behind it.",
   userItems: [
     "Mobility profile and type",
     "Personal variables and context",
@@ -619,50 +664,50 @@ const en = {
   productEvidence: "REAL PRODUCT",
 
   dataEyebrow: "Territory as data",
-  dataTitle: "A physical barrier can become structured evidence.",
+  dataTitle: "Territory becomes data.",
   dataBody:
-    "Potholes, obstacles, missing ramps, complex surfaces and other barriers can be documented to build a more useful representation of real mobility experience.",
+    "Barriers, slopes, surfaces and obstacles are documented with context and evidence to feed the system's intelligence.",
   dataFlow: [
     "Territorial observation",
     "Digital reporting",
-    "Photographic evidence and context",
+    "Evidence and context",
     "Data structuring",
-    "Institutional visualization and use",
+    "Institutional visualization",
   ],
   barriersAlt: "Real urban barriers documented through SOLYON Move",
   territoryEvidence: "TERRITORIAL EVIDENCE",
 
   crmEyebrow: "Institutional layer",
-  crmTitle: "From individual data to an operational view of territory.",
+  crmTitle: "From data to an operational view of territory.",
   crmBody:
-    "SOLYON Move incorporated an institutional layer to organize users, routes, incidents, evidence and territorial visualization. This layer demonstrates that the product was conceived as operating infrastructure rather than an isolated application.",
-  crmAlt: "Historical SOLYON Move CRM interface and territorial map",
-  historicalLabel: "HISTORICAL INTERFACE · PRODUCT EVOLUTION",
+    "The CRM organizes users, routes, incidents and evidence within an operating layer for monitoring and analysis.",
+  crmAlt: "SOLYON Move CRM interface and territorial map",
+  historicalLabel: "INSTITUTIONAL LAYER · PRODUCT EVOLUTION",
   crmDisclaimer:
-    "This image corresponds to an earlier version of the institutional interface. Metrics visible in the screenshot belong to that historical snapshot and do not represent current SOLYON Move figures.",
+    "The interface shows an operational stage of the system. Metrics correspond to the snapshot visible in the image.",
   crmCapabilities: [
     {
       title: "Users",
-      body: "Monitoring profiles and participation within the system.",
+      body: "Profiles and participation.",
     },
     {
       title: "Routes",
-      body: "Recording and observing information associated with journeys.",
+      body: "Journey-related information.",
     },
     {
       title: "Incidents",
-      body: "Documenting barriers with context and evidence.",
+      body: "Barriers, context and evidence.",
     },
     {
       title: "Reporting",
-      body: "Operating foundation for analysis, monitoring and institutional learning.",
+      body: "Institutional monitoring and analysis.",
     },
   ],
 
   apiEyebrow: "Connectable architecture",
-  apiTitle: "The infrastructure is designed to exchange information, not live in isolation.",
+  apiTitle: "Infrastructure designed to exchange information.",
   apiBody:
-    "The integration layer connects mobile experience, data logic, institutional tooling and external sources within the same technology architecture.",
+    "The integration layer connects mobile experience, data, institutional tooling and external systems.",
   integrationNodes: [
     "Mobile App",
     "Data Services",
@@ -671,54 +716,55 @@ const en = {
     "External Systems",
   ],
   apiNote:
-    "The architecture can evolve toward new city integrations and external data sources. Capabilities are published only when implemented and verified.",
+    "The architecture can evolve toward new integrations and external sources as they are implemented and verified.",
 
   validationEyebrow: "From laboratory to territory",
-  validationTitle: "The infrastructure was taken into real urban conditions.",
+  validationTitle: "Tested under real urban conditions.",
   validationBody:
-    "Field validation shows how the mobile experience, data capture and product decisions behave against barriers, slopes, surfaces and situations that do not exist in a laboratory environment.",
+    "Field validation confronts product, data and experience with real barriers, slopes and surfaces.",
   programLabel: "MOBILITY FOR ALL · MEDELLÍN",
   programBody:
-    "SOLYON Move was developed and validated within Medellín's innovation ecosystem, under Mobility for All, an initiative driven by Ruta N and Toyota Mobility Foundation.",
+    "SOLYON Move was developed and validated under Mobility for All, an initiative driven by Ruta N and Toyota Mobility Foundation.",
   fieldAlt: "SOLYON Move testing and validation in Medellín",
 
   mediaEyebrow: "Third-party validation",
-  mediaTitle: "Ruta N publicly documented the development of SOLYON Move.",
+  mediaTitle: "Ruta N publicly documented SOLYON Move.",
   mediaBody:
-    "In August 2026, Ruta N published a story about solutions developed to facilitate travel for people with reduced mobility in Medellín and identified SOLYON Move as a platform by SOLYON Technologies.",
+    "In August 2026, Ruta N featured SOLYON Move among the platforms developed to improve mobility for people with reduced mobility in Medellín.",
   mediaButton: "Read official story ↗",
   mediaAlt: "Ruta N publication featuring SOLYON Move",
 
   labEyebrow: "Laboratory capability",
-  labTitle: "SOLYON Move demonstrates how SOLYON Technologies builds complete systems.",
+  labTitle: "A complete system, not an isolated product.",
   labBody:
-    "The strategic value of the project goes beyond its use case. It lies in crossing multiple technology layers: user experience, software, data, APIs, institutional infrastructure, field validation and documentation.",
+    "SOLYON Move demonstrates capability across product, data, APIs, institutional software and real-world validation.",
   labCapabilities: [
     {
       label: "01",
       title: "Product Engineering",
-      body: "Design and evolution of a digital experience focused on real needs.",
+      body: "Digital experiences for real needs.",
     },
     {
       label: "02",
       title: "Applied AI & Data",
-      body: "Context modeling, personalization and structuring of operating information.",
+      body: "Context, personalization and operating data.",
     },
     {
       label: "03",
       title: "Institutional Software",
-      body: "CRM, visualization and tools turning interactions into management capability.",
+      body: "CRM, visualization and operations.",
     },
     {
       label: "04",
       title: "Field Validation",
-      body: "Testing the system beyond the laboratory under real urban conditions.",
+      body: "Testing beyond the laboratory.",
     },
   ],
 
   ctaEyebrow: "SOLYON Technologies",
-  ctaTitle: "SOLYON Move is an applied infrastructure case. The laboratory is the platform.",
+  ctaTitle:
+    "SOLYON Move demonstrates how SOLYON builds applied infrastructure.",
   ctaBody:
-    "SOLYON Technologies uses learning from real systems to build technology infrastructure for complex problems where artificial intelligence, data, operations and decisions converge.",
+    "The laboratory turns complex problems into systems where artificial intelligence, data and operations converge.",
   ctaButton: "Talk with SOLYON",
 };
